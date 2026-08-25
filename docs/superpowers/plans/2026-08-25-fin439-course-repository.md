@@ -127,4 +127,3 @@ Expected: fetch and push URLs for `origin` point to the new FIN 439 repository.
 Run: `git status --short --branch`
 
 Expected: local `main` tracks `origin/main` with no uncommitted changes.
-
