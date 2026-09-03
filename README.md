@@ -55,5 +55,5 @@ python labs/lab-04/valuation_bridge_lab04.py
 ## 📜 Academic Integrity & AI Policy Compliance
 
 - **Edition A Baseline:** Timestamped and locked prior to project-specific AI prompting.
-- **AI Tooling Disclosure:** ChatGPT/Codex and Gemini were utilized as collaborative research studios for prompt refinement and architecture cross-examination; all data points, filing locators, accounting normalizations, and investment judgments were independently verified by the author.
+- **AI Tooling Disclosure:** Google Gemini (Antigravity) was utilized as a collaborative research studio for prompt refinement, source gathering assistance, and data cross-examination; all data points, filing locators, accounting normalizations, and investment judgments were independently verified by the author.
 - **Author:** Oladapo Olaniyan (olaniyan@purdue.edu)

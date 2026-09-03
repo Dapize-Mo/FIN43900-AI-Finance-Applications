@@ -52,7 +52,7 @@ Conducting the 15-minute silent deep read of Item 7 MD&A before prompting the AI
 
 *This report was written for FIN 43900 (AI Finance Applications, Purdue) as a learning exercise. It is not investment research and it is not financial advice.*
 
-*AI assistance: drafted with ChatGPT/Codex and Gemini, resumed from my Lab 03 session; sources gathered and verified by me; the judgments are mine.*
+*AI assistance: drafted with Google Gemini (Antigravity), resumed from my Lab 03 session; sources gathered and verified by me; the judgments are mine.*
 
 *Any remaining errors are my own.*
 

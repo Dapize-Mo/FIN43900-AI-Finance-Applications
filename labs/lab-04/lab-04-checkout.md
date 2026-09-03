@@ -42,7 +42,7 @@
 `GitHub Repo Link: https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/main/labs/lab-04/PEP-research`
 
 ### 9. AI-Use Disclaimer Confirmation
-`Confirmed: The mandatory three-line footer is present at the bottom of the report, acknowledging ChatGPT/Codex resumed from Lab 03, student-gathered sources, and student ownership of all judgments.`
+`Confirmed: The mandatory three-line footer is present at the bottom of the report, acknowledging Google Gemini (Antigravity) resumed from Lab 03, student-gathered sources, and student ownership of all judgments.`
 
 ### 10. Growth Note (Ungraded, Yours Alone)
 `Doing the 15-minute silent deep read of Item 7 MD&A before touching AI gave me an independent mental anchor for PepsiCo's actual numbers. When the AI drafted the rewrite, I immediately caught that it tried to gloss over the -2.5% volume drop in Frito-Lay as temporary; because I had read the MD&A footnote and the prior year's 10% price hikes myself, I was able to challenge the machine, force it to source the claim, and preserve my own Watch-Defer thesis.`
