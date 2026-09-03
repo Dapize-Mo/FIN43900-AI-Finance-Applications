@@ -41,6 +41,10 @@ Desktop.ini
 *.bak
 ~$*
 
+# Course starter materials (upstream reference)
+FIN43900-Fall2026-main/
+*.zip
+
 # Local worktrees
 .worktrees/
 worktrees/
