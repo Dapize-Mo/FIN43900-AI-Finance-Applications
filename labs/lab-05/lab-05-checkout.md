@@ -34,7 +34,10 @@ TEST / CHECK / RESULT — What did you test, verify, compare, challenge, or chan
 - Failure Corrected: Initial terminal value calculation returned $1,839.46M instead of $1,894.65M because the Gordon Growth numerator used raw Year 5 FCFF ($128.76M) without multiplying by (1 + g). I updated the numerator to FCFF5 * (1 + g) = $132.63M, which re-tested successfully at $1,894.65M and restored per-share value to $27.50.
 
 OPTIONAL ARTIFACT LINK — Add a GitHub, app, notebook, document, or other link if one exists. Write N/A if no artifact was produced.
-https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/main/labs/lab-05
+GitHub Lab 05 Folder: https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/main/labs/lab-05
+Python DCF Code: https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-05/dcf_starter.py
+Lab Checkout MD: https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-05/lab-05-checkout.md
+PepsiCo Inputs MD: https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-05/pep_inputs_lab05.md
 
 ATTESTATION — Type exactly: I completed this work in today's class with the teammate(s) listed above, and this checkout is truthful.
 I completed this work in today's class with the teammate(s) listed above, and this checkout is truthful.
