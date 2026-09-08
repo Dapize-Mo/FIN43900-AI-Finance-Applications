@@ -48,3 +48,8 @@ FIN43900-Fall2026-main/
 # Local worktrees
 .worktrees/
 worktrees/
+
+# Brightspace raw copy-paste submission files (ignored in git)
+brightspace/
+*brightspace_submission.txt
+*brightspace.txt
