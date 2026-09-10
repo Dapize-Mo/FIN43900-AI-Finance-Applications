@@ -327,7 +327,7 @@ def run_pepsico_analysis():
 
     grid = sensitivity_table(base_inputs, wacc_range, g_range)
     # Format grid for display
-    formatted_grid = grid.applymap(lambda v: f"${v:.2f}" if pd.notnull(v) else "BLANK (g>=WACC)")
+    formatted_grid = grid.map(lambda v: f"${v:.2f}" if pd.notnull(v) else "BLANK (g>=WACC)")
     print(formatted_grid)
 
     mono_passed, mono_msg = check_monotonicity(grid)
