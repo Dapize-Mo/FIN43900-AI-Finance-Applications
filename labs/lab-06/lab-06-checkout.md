@@ -28,8 +28,8 @@
 ## 📌 Brightspace Checkout Fields
 
 ### 1. Lab Date & Session Token
-* **Lab Date:** September 8, 2026
-* **Session Token:** `DCF-SENSITIVITY-2026`
+* **Lab Date:** September 10, 2026
+* **Session Token:** `Reverse DCF`
 
 ### 2. Partner & Teammates
 `kogbuef@purdue.edu`
