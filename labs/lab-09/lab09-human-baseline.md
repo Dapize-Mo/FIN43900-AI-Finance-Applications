@@ -25,10 +25,10 @@
   Revenue $17,999.0 · Inventory $2,135.8 · PP&E $3,070.4 · Other Assets $6,371.6 · Cash $40.4 · Floor Plan $2,027.0 · Term Debt $3,572.0 · Other Liabilities $2,127.5 · Equity $3,891.7.
 
 * **Key Ratios:**  
-  * Depreciation Ratio = $82.4\text{M} / \$3,070.4\text{M} = 2.6837\%$  
-  * Inventory Days Ratio = $\$2,135.8\text{M} / (\$17,999.0\text{M} - \$3,071.7\text{M}) = 0.143079$  
-  * Floor Plan Ratio = $\$2,027.0\text{M} / \$2,135.8\text{M} = 94.9059\%$  
-  * Working Capital Change = $0.8\%$ of $\Delta\text{Revenue}$  
+  * Depreciation Ratio = $82.4M / $3,070.4M = 2.6837%  
+  * Inventory Days Ratio = $2,135.8M / ($17,999.0M - $3,071.7M) = 0.143079  
+  * Floor Plan Ratio = $2,027.0M / $2,135.8M = 94.9059%  
+  * Working Capital Change = 0.8% of Change in Revenue  
 
 ---
 
@@ -50,5 +50,5 @@
 
 ## 4. Model Integrity & Swap-and-Break Refusal Test
 
-* **Refusal Assertion (`assert_balanced`):** Hard failure raised if $\text{Assets} - (\text{Liabilities} + \text{Equity}) \neq 0$.
-* **Break Test:** Forcing FY2026E cash to opening cash ($40.4\text{M}$) instead of calculated cash ($101.8\text{M}$) causes `proforma.py` to refuse execution, naming **FY2026E** and reporting a balance gap of **$-61.4\text{M}$** (the unrecorded cash flow change).
+* **Refusal Assertion (`assert_balanced`):** Hard failure raised if `Assets - (Liabilities + Equity) != 0`.
+* **Break Test:** Forcing FY2026E cash to opening cash ($40.4M) instead of calculated cash ($101.8M) causes `proforma.py` to refuse execution, naming **FY2026E** and reporting a balance gap of **-$61.4M** (the unrecorded cash flow change).

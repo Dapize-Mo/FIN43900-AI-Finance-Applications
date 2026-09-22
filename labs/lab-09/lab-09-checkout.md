@@ -37,7 +37,7 @@
 | **Balance Sheet Gap ($M)** | **0.0** | **0.0** | **0.0** | **0.0** | **0.0** |
 
 * **PV of 5-Year FCFE:** **$1,059.87M**
-* **Terminal Value (PV):** **$4,177.46M** ($\text{TV} = \$6,727.85\text{M}$)
+* **Terminal Value (PV):** **$4,177.46M** (Undiscounted TV = **$6,727.85M**)
 * **Total Equity Value:** **$5,237.34M**
 * **Shares Outstanding:** **17.951349M**
 * **Value per Share:** **$291.75** (Target Known Answer Matched)
@@ -47,16 +47,16 @@
 
 ## 4. Model Refusal & Swap-and-Break Test
 
-* **Assertion Function (`assert_balanced`):** `proforma.py` executes `assert_balanced` for every projected year. If $\text{Assets} - (\text{Liabilities} + \text{Equity}) \neq 0$, execution terminates immediately.
-* **Swap-and-Break Result:** Forcing FY2026E cash to opening cash ($40.4\text{M}$) instead of the computed figure causes the model to refuse, raising `ValueError` naming **FY2026E** and a balance gap of **$-61.4\text{M}$**.
+* **Assertion Function (`assert_balanced`):** `proforma.py` executes `assert_balanced` for every projected year. If `Assets - (Liabilities + Equity) != 0`, execution terminates immediately.
+* **Swap-and-Break Result:** Forcing FY2026E cash to opening cash ($40.4M) instead of the computed figure ($101.8M) causes the model to refuse, raising `ValueError` naming **FY2026E** and a balance gap of **-$61.4M**.
 
 ---
 
 ## 5. Floor Plan Mechanics & Economic Meaning
 
 1. **What it is:** Floor plan financing is specialized inventory debt provided by automobile manufacturers' finance arms (e.g., Ford Credit, Toyota Financial) or commercial banks to finance dealership inventory.
-2. **How it works in pro-forma:** Moves dynamically with inventory ($2,027.0\text{M} / \$2,135.8\text{M} \approx 94.91\%$ of inventory). Interest is computed on opening floor plan balances ($4.67\%$). Changes in floor plan financing are included inside FCFE as operating working capital financing.
-3. **Impact of removing floor plan:** If floor plan financing is omitted, the dealership must fund $2.1B+ of inventory out of operating cash flow, driving projected cash down to approximately **$-1.1\text{B}$**.
+2. **How it works in pro-forma:** Moves dynamically with inventory ($2,027.0M / $2,135.8M ≈ 94.91% of inventory). Interest is computed on opening floor plan balances (4.67%). Changes in floor plan financing are included inside FCFE as operating working capital financing.
+3. **Impact of removing floor plan:** If floor plan financing is omitted, the dealership must fund $2.1B+ of inventory out of operating cash flow, driving projected cash down to approximately **-$1.1B**.
 
 ---
 
