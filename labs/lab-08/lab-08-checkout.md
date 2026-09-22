@@ -10,30 +10,39 @@
 
 ---
 
+## 📌 Brightspace Question 1 Copy-Paste Box (5 Points)
+
+SESSION TOKEN: Career Fair
+STUDENT ANALYST: Oladapo Olaniyan
+TEAMMATES: None (Worked individually / Remote Session)
+ATTENDANCE DECLARATION: Remote session during Purdue Career Fair.
+
+---
+
 ## 📌 Brightspace Question 2 Copy-Paste Box (25 Points)
 
 DISCOVER
-Uncertain how to reconcile DCF ($140.73) vs. Comps ($138.08–$168.00) vs. Precedent Deals ($170.39) for PepsiCo (PEP), and whether pro forma M&A headline denominators are valid. Auditing the Broadcom/VMware packet proved headline pro forma $8.5B EBITDA double-counted 3-year post-close synergies (true LTM EV/EBITDA was 14.68x). Normalizing PepsiCo's EBITDA for $1,811M non-recurring charges ($18.311B vs $16.5B) shifted implied EV comps value by +$21.29/sh (to $189.29).
+Audited PepsiCo (PEP) DCF ($140.73), Trading Comps ($138.08–$168.00), and Precedent Deals ($170.39). Found Broadcom/VMware headline $8.5B EBITDA double-counted 3-year forward synergies (true LTM EV/EBITDA was 14.68x). Normalizing PepsiCo EBITDA for $1.811B non-recurring charges ($18.311B vs $16.5B) shifted EV comps value by +$21.29/sh (to $189.29).
 
 DEFINE
-Valuation triangulation and committee action for PepsiCo, Inc. (PEP) for a committee with no current position. Key boundary: Public trading multiples ($138.08–$168.00) reflect minority shares, whereas precedent deals ($170.39) embed a 100% control premium. Recommendation: WATCH-DEFER at current market price ($143.21) with a Buy trigger below $125.00 or 2 quarters of positive FLNA volume growth.
+Triangulated valuation for PEP (no position). Public comps ($138.08–$168.00) reflect minority shares; precedent deals ($170.39) embed a 100% control premium. Recommendation: WATCH-DEFER at $143.21; Buy trigger below $125.00 or 2 quarters positive FLNA volume growth.
 
 GOOD QUESTION
-What magnitude of price cuts would PepsiCo need to reverse negative FLNA organic unit volume growth (-2.5%), and at what gross margin erosion threshold does DCF fair value drop below $125.00?
+What price cuts would reverse FLNA organic unit volume decline (-2.5%), and at what gross margin erosion does DCF fair value fall below $125.00?
 
 MY CONTRIBUTION
-Worked individually on this remote lab. Reconciled synthetic precedent known answer ($17.40), audited Broadcom/VMware and Kellanova/Mars deal source packets, built and executed `triangulation_model.py`, ran the EBITDA normalization test, and formulated the committee Watch-Defer recommendation.
+Worked individually. Reconciled synthetic precedent ($17.40), audited SEC M&A packets, ran `triangulation_model.py`, conducted EBITDA normalization robustness check, and set committee action triggers.
 
 TEST / CHECK / RESULT
-1. Synthetic Precedent Test: Reconciled 14.0x EV/EBITDA training case -> $17.40/sh -> PASSED.
-2. Normalization Test: Reported EBITDA ($16.5B) = $168.00/sh vs Normalized EBITDA ($18.311B) = $189.29/sh (+$21.29/sh shift).
-3. Triangulation Summary: DCF Base = $140.73 | Comps P/E = $138.08 | Comps EV/EBITDA = $168.00 | Precedent Deal = $170.39. Market Price = $143.21 (0.98x of DCF).
+1. Synthetic Precedent: 14.0x EV/EBITDA training case = $17.40/sh -> PASSED.
+2. Normalization Test: Reported ($16.5B) = $168.00/sh vs Normalized ($18.311B) = $189.29/sh (+$21.29/sh shift).
+3. Triangulation: DCF Base $140.73 | Comps P/E $138.08 | Comps EV/EBITDA $168.00 | Precedent $170.39. Market Price $143.21.
 
 OPTIONAL ARTIFACT LINK
 https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/main/labs/lab-08
 
 ATTESTATION
-I completed this work in today’s class with the teammate(s) listed above, and this checkout is truthful.
+I completed this work individually, and this checkout is truthful.
 
 ---
 
