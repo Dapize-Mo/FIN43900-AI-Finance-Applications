@@ -1,4 +1,4 @@
-# Lab 09 — Merit Checkout: Credit Evidence & Ratio Conventions
+# Lab 09 — Merit Checkout: Pro-Forma Build (Engine & Known Answer)
 
 **Student Name:** Oladapo Olaniyan  
 **Teammate / Partner:** `kogbuef@purdue.edu`  
@@ -11,92 +11,74 @@
 
 ## 1. Header & Team Contribution
 * **Lab Date:** September 22, 2026
-* **Teammates / Learning Partners:** `kogbuef@purdue.edu` (Collaborative human baseline underwriting, ratio coding verification, AI flag reconciliation, and risk calibration).
+* **Teammates / Learning Partners:** `kogbuef@purdue.edu` (Collaborative 3-statement pro-forma engine construction, ABG assumption auditing, `proforma.py` verification, and swap-and-break balance testing).
 
 ---
 
-## 2. Decision Frame
-* **Borrower / Transaction:** Synthetic Borrower Credit Evaluation (Borrowers A–F).
-* **Exposure & Horizon:** Senior Unsecured Credit Line, 12-Month Observation Horizon ($t_0$ to $t_0 + 12\text{M}$).
-* **Decision User:** Credit Underwriting Committee / Risk Manager.
-* **Available Actions:** `Approve`, `Deeper Review`, `Reject`.
-* **Asymmetric Loss Logic:** 
-  * **False Negative (FN / Loss Cost):** Approving an unsafe borrower ($12\text{M}$ default) results in severe principal loss (high severity).
-  * **False Positive (FP / Opportunity Cost):** Rejecting or reviewing a safe borrower results in lost interest income/fees (moderate severity).
+## 2. Decision Frame & Guiding Question
+
+> **Question:** *What are five years of a company's statements worth, built from assumptions you can defend, and how do you know the statements are right?*
+
+* **Target Company:** Asbury Automotive Group, Inc. (NYSE: `ABG`)
+* **Decision Context:** Equity valuation via 5-year pro-forma Free Cash Flow to Equity (FCFE) and terminal value discounting.
+* **Why Cash is Computed Last:** Cash is the balancing line on the balance sheet. It absorbs operating net income, working capital investments, debt servicing, capital expenditures, and financing activities (revolver draw/repayment, share buybacks).
 
 ---
 
-## 3. 5-Cs Evidence & Unknowns Matrix
+## 3. Asbury Automotive Group (`ABG`) Known-Answer Grid
 
-| Credit Dimension | Observable Evidence Supplied | Missing / Uncertain Evidence | Decision Effect |
-|---|---|---|---|
-| **Character** | Historical borrower profile & payment track record. | Litigation history, credit references, management governance. | Requires qualitative background verification. |
-| **Capacity** | Borrower A: EBITDA $150M, EBIT $120M, Interest $24M (EBIT Coverage 5.00x). CFO $100M, Capex $50M. | Cash flow cyclicality across macro downturns; debt maturity structure. | Capacity is sound at 5.00x EBIT coverage; FCF yield is 8.33%. |
-| **Capital** | Total Debt $600M vs EBITDA $150M (Leverage 4.00x). | Subordinated debt breakdown, equity cushion, sponsor backing. | 4.00x leverage is at upper investment-grade threshold. |
-| **Collateral** | Current Assets $250M vs Current Liabilities $200M (Current Ratio 1.25x). | Asset encumbrances, inventory vs receivables breakdown, liquidation discounts. | Short-term liquidity buffer present; fixed asset collateral unverified. |
-| **Conditions** | Interest expense fixed at $24M. | Interest rate sensitivity (floating rate exposure), 24-month debt maturity wall. | Refinancing risk unmeasured if interest rates spike. |
+| Financial Line | FY2026E | FY2027E | FY2028E | FY2029E | FY2030E |
+|---|---:|---:|---:|---:|---:|
+| **Revenue ($M)** | **18,323.0** | 18,652.8 | 18,988.5 | 19,330.3 | **19,678.3** |
+| **Operating Income ($M)** | **844.2** | 890.3 | 938.1 | 954.5 | **971.4** |
+| **Net Income ($M)** | **413.6** | 452.8 | 493.1 | 510.1 | **527.5** |
+| **Free Cash Flow to Equity ($M)** | **211.4** | 255.1 | 299.7 | 320.9 | **342.3** |
+| **Year-End Cash ($M)** | **101.8** | 206.9 | 356.6 | 527.5 | **719.8** |
+| **Balance Sheet Gap ($M)** | **0.0** | **0.0** | **0.0** | **0.0** | **0.0** |
 
----
-
-## 4. Four Ratio Results & Documented Conventions (Borrower A Known Answers)
-
-1. **Leverage ($\text{Total Debt} / \text{LTM EBITDA}$):**  
-   $$\frac{\$600\text{M}}{\$150\text{M}} = \mathbf{4.00\text{x}}$$
-2. **Coverage ($\text{EBIT} / \text{Interest Expense}$):**  
-   $$\frac{\$150\text{M} - \$30\text{M}}{\$24\text{M}} = \frac{\$120\text{M}}{\$24\text{M}} = \mathbf{5.00\text{x}}$$
-3. **Liquidity ($\text{Current Assets} / \text{Current Liabilities}$):**  
-   $$\frac{\$250\text{M}}{\$200\text{M}} = \mathbf{1.25\text{x}}$$
-4. **FCF / Debt Yield ($(\text{CFO} - \text{Capex}) / \text{Total Debt}$):**  
-   $$\frac{\$100\text{M} - \$50\text{M}}{\$600\text{M}} = \frac{\$50\text{M}}{\$600\text{M}} = \mathbf{8.3333\%}$$
+* **PV of 5-Year FCFE:** **$1,059.87M**
+* **Terminal Value (PV):** **$4,177.46M** ($\text{TV} = \$6,727.85\text{M}$)
+* **Total Equity Value:** **$5,237.34M**
+* **Shares Outstanding:** **17.951349M**
+* **Value per Share:** **$291.75** (Target Known Answer Matched)
+* **Terminal Value Share:** **79.8%** (~80% of total value)
 
 ---
 
-## 5. Injected-Conflict Reconciliation
+## 4. Model Refusal & Swap-and-Break Test
 
-* **Definition Conflict:** Substituting EBITDA Interest Coverage ($\text{EBITDA}/\text{Interest} = \$150\text{M}/\$24\text{M} = 6.25\text{x}$) overstates debt service capacity by ignoring $30M of real depreciation/amortization asset consumption.
-* **Reconciliation:** Operating cash coverage must be evaluated using EBIT Interest Coverage ($\$120\text{M}/\$24\text{M} = 5.00\text{x}$) to reflect ongoing capital reinvestment required to maintain cash flows.
-
----
-
-## 6. Baseline Artifact Method & Timestamp
-
-* **Artifact Name:** `lab09-human-baseline.md`
-* **File Path:** [`lab09-human-baseline.md`](file:///c:/Users/dolan/OneDrive%20-%20purdue.edu/2026-Fall/FIN-43900%20-%20AI%20Finance%20Applications/labs/lab-09/lab09-human-baseline.md)
-* **Method:** Completed with AI tools closed prior to AI risk flag comparison.
-* **Timestamp:** `2026-09-22 13:45:00 EST`
+* **Assertion Function (`assert_balanced`):** `proforma.py` executes `assert_balanced` for every projected year. If $\text{Assets} - (\text{Liabilities} + \text{Equity}) \neq 0$, execution terminates immediately.
+* **Swap-and-Break Result:** Forcing FY2026E cash to opening cash ($40.4\text{M}$) instead of the computed figure causes the model to refuse, raising `ValueError` naming **FY2026E** and a balance gap of **$-61.4\text{M}$**.
 
 ---
 
-## 7. Named AI Dispositions & Source Check
+## 5. Floor Plan Mechanics & Economic Meaning
 
-| AI System | AI Risk Flag / Suggestion | Human Baseline Audit | Disposition | Rationale & Source Check |
-|---|---|---|---|---|
-| **Codex** | Suggested flagging Borrower D due to high leverage (5.00x). | Human baseline flagged Borrower D due to **Weak FCF/Debt (1.67%)** resulting from $90M Capex. | **Modified** | Accepted high risk flag, but modified primary reason to cash flow drain ($90M Capex out of $100M CFO). |
-| **Gemini** | Suggested overriding Borrower E from `Review` to `Approve` based on strong FCF yield (17.14%). | Human baseline placed Borrower E on `Review` due to current ratio below 1.0x (0.67x). | **Rejected** | Rejected override. Working capital deficit (Current Ratio 0.67x) presents immediate refinancing risk that FCF yield cannot resolve without liquidity support. |
-
----
-
-## 8. Provisional Action, Missing Evidence & Reversal Condition
-
-* **Provisional Action:** `Deeper Review`
-* **One Missing Item:** Detailed debt maturity schedule and fixed vs. floating interest rate split.
-* **Observable Reversal Condition:** 
-  * Upgrade to `Approve` if Borrower A provides proof of >85% fixed-rate debt with no debt maturities within 36 months.
-  * Downgrade to `Reject` if FCF/Debt drops below 5.00% under a 200 bps interest rate stress test.
+1. **What it is:** Floor plan financing is specialized inventory debt provided by automobile manufacturers' finance arms (e.g., Ford Credit, Toyota Financial) or commercial banks to finance dealership inventory.
+2. **How it works in pro-forma:** Moves dynamically with inventory ($2,027.0\text{M} / \$2,135.8\text{M} \approx 94.91\%$ of inventory). Interest is computed on opening floor plan balances ($4.67\%$). Changes in floor plan financing are included inside FCFE as operating working capital financing.
+3. **Impact of removing floor plan:** If floor plan financing is omitted, the dealership must fund $2.1B+ of inventory out of operating cash flow, driving projected cash down to approximately **$-1.1\text{B}$**.
 
 ---
 
-## 9. In-Person Attendance & Truth Attestation
+## 6. GitHub File Links
 
-I completed this work in today’s class with the teammate (`kogbuef@purdue.edu`) listed above, and this checkout is truthful. All reported calculations, ratio conventions, and credit decisions were verified by running `credit_screening_model.py`.
+* **Pro-Forma Engine Script:** [`proforma.py`](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/main/labs/lab-09/proforma.py)
+* **Human Baseline Artifact:** [`lab09-human-baseline.md`](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/main/labs/lab-09/lab09-human-baseline.md)
+* **Lab README:** [`README.md`](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/main/labs/lab-09/README.md)
+
+---
+
+## 7. In-Person Attendance & Truth Attestation
+
+I completed this work in today’s class with the teammate (`kogbuef@purdue.edu`) listed above, and this checkout is truthful. All reported calculations and valuation numbers were verified by running `proforma.py`.
 
 **Student Signature:** Oladapo Olaniyan  
 **Date:** September 22, 2026  
 
 ---
 
-## 10. Ungraded Growth Note
+## 8. Ungraded Growth Note
 
 *What can you do now that you could not do before this lab, and what still feels shaky?*
 
-> Before this lab, I relied heavily on headline EBITDA multiples to judge borrower debt capacity without scrutinizing the underlying cash conversion. Now, I understand how to compute and reconcile EBIT interest coverage against EBITDA coverage, identify cash drains through the FCF/Debt yield, and evaluate underwriting decisions using confusion matrix error costs (False Positives vs. False Negatives). What still feels shaky is balancing strict quantitative liquidity thresholds (like Current Ratio < 1.0x) against qualitative sponsor support when deciding whether to grant an underwriting override.
+> Before this lab, I viewed 3-statement financial modeling as a manual accounting exercise rather than an interconnected dynamic engine. Now, I understand how to programmatically link revenue growth, working capital ratios, floor plan inventory debt, revolving credit logic, and FCFE discounting into a single automated Python model that enforces balance sheet integrity at every step. What still feels shaky is selecting and defending long-term operating margin improvement assumptions when projecting companies outside automotive retail.

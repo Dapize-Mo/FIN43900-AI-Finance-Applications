@@ -1,46 +1,54 @@
-# Lab 09 — Human Credit Baseline Switch Sheet
+# Lab 09 — Human Baseline: Pro-Forma Engine & ABG Known Answer
 
-**Timestamp:** 2026-09-22 13:45:00 EST  
+**Timestamp:** 2026-09-22 14:15:00 EST  
 **Student Analyst:** Oladapo Olaniyan  
 **Teammate / Partner:** `kogbuef@purdue.edu`  
 **Course:** FIN 43900 — AI Finance Applications, Purdue University  
+**Target Case:** Asbury Automotive Group, Inc. (`ABG`)  
 
 ---
 
-## 1. Decision Frame & 5-Cs Evidence Mapping
+## 1. Core Principles & Decision Question
 
-**Provisional Decision:** `Deeper Review` (Review required due to FCF/Debt margin and working capital sensitivity in standard baseline).
+**Question:** *What are five years of a company's statements worth, built from assumptions you can defend, and how do you know the statements are right?*
 
-| Credit Dimension | Observable Evidence Supplied | Missing / Uncertain Evidence | Underwriting Decision Effect |
-|---|---|---|---|
-| **Character** | Payment history implied by baseline historical record; management governance structure. | Clean litigation check, debt covenant compliance history, bank credit reference. | Requires qualitative management check before final approval. |
-| **Capacity** | Borrower A EBITDA = $150M, EBIT = $120M, Interest = $24M (Coverage = 5.00x). CFO = $100M, Capex = $50M. | Free cash flow volatility across macro stress cycles; debt maturity schedule. | Capacity is sound at 5.00x EBIT coverage, but FCF/Debt is moderate at 8.33%. |
-| **Capital** | Total Debt = $600M against $150M EBITDA (Leverage = 4.00x). | Subordinated debt breakdown, equity cushion, sponsor backing. | 4.00x leverage is at the upper threshold for investment-grade credit. |
-| **Collateral** | Current Assets = $250M vs Current Liabilities = $200M (Current Ratio = 1.25x). | Asset encumbrances, inventory vs. receivables breakdown, liquidation discount. | Liquidity provides short-term buffer, but non-cash collateral unverified. |
-| **Conditions** | Operating environment and interest expense fixed at $24M. | Interest rate sensitivity (floating vs fixed debt), debt maturity wall in next 24M. | Refinancing risk unmeasured if market rates spike. |
+### Three Core Judgments:
+1. **Organic Revenue Growth & Margin Expansion:** Revenue grows at 1.8% annually; Gross Margin fixed at 17.05%; SG&A ratio improves from 66.5% to 64.5% of gross profit.
+2. **Capital Structure & Debt Amortization:** Scheduled debt repayment of $150.0M/year reduces opening term debt ($3,572.0M), while share buybacks of $150.0M/year reduce equity. Floor plan inventory financing moves dynamically with inventory ($2,027.0M / $2,135.8M ratio).
+3. **Cash Computed Last & Revolver Balancing:** Cash is computed as opening cash + FCFE − buybacks. If cash falls below minimum ($25.0M), a revolving line of credit is drawn; if cash exceeds minimum and revolver is outstanding, revolver is repaid first.
 
 ---
 
-## 2. Known-Answer Record (Borrower A Baseline Ratios)
+## 2. ABG Assumption Set & Opening Balance Sheet (FY2025 Base)
 
-| Ratio Name | Convention / Formula | Numerator / Denominator | Result | Reconciliation / Definition Warning |
-|---|---|---|---:|---|
-| **Leverage** | Gross Debt / LTM EBITDA | $600M / $150M | **4.00x** | Standard gross leverage. Leases/net debt omitted. |
-| **Coverage** | EBIT / Interest Expense | ($150M - $30M) / $24M = $120M / $24M | **5.00x** | **Injected Conflict:** Using EBITDA/Interest yields **6.25x**; EBIT coverage (5.00x) is the true cash interest cushion. |
-| **Liquidity** | Current Assets / Current Liabilities | $250M / $200M | **1.25x** | Current ratio. Quality of receivables/inventory uninspected. |
-| **FCF / Debt** | (CFO - Capex) / Total Debt | ($100M - $50M) / $600M = $50M / $600M | **8.3333%** | Net free cash flow yield relative to principal debt. |
+* **Opening Balance Sheet (USD Millions):**  
+  Revenue $17,999.0 · Inventory $2,135.8 · PP&E $3,070.4 · Other Assets $6,371.6 · Cash $40.4 · Floor Plan $2,027.0 · Term Debt $3,572.0 · Other Liabilities $2,127.5 · Equity $3,891.7.
 
----
-
-## 3. Injected Definition Conflict & Reconciliation
-
-* **Conflict Identified:** Standard credit screens often substitute EBITDA Interest Coverage ($\text{EBITDA}/\text{Interest} = \$150\text{M}/\$24\text{M} = 6.25\text{x}$) for true operating cash coverage.
-* **Reconciliation:** Depreciation and Amortization ($30M) represent real asset consumption necessary to maintain operating capacity. Using EBIT Interest Coverage ($\$120\text{M}/\$24\text{M} = 5.00\text{x}$) provides the accurate, un-distorted operating income available to service debt.
+* **Key Ratios:**  
+  * Depreciation Ratio = $82.4\text{M} / \$3,070.4\text{M} = 2.6837\%$  
+  * Inventory Days Ratio = $\$2,135.8\text{M} / (\$17,999.0\text{M} - \$3,071.7\text{M}) = 0.143079$  
+  * Floor Plan Ratio = $\$2,027.0\text{M} / \$2,135.8\text{M} = 94.9059\%$  
+  * Working Capital Change = $0.8\%$ of $\Delta\text{Revenue}$  
 
 ---
 
-## 4. Underwriting Action & Reversal Conditions
+## 3. Human Known-Answer Verification Record
 
-* **Provisional Action:** `Deeper Review`
-* **One Missing Item:** Detailed debt amortization schedule and floating vs. fixed rate breakdown.
-* **Observable Reversal Condition:** If Borrower A demonstrates >85% fixed-rate debt with no maturities in the next 36 months, upgrade decision to `Approve`. If FCF/Debt drops below 5.00% under a 200 bps rate spike stress, downgrade to `Reject`.
+| Financial Line | FY2026E | FY2027E | FY2028E | FY2029E | FY2030E |
+|---|---:|---:|---:|---:|---:|
+| **Revenue** | **$18,323.0M** | $18,652.8M | $18,988.5M | $19,330.3M | **$19,678.3M** |
+| **Operating Income (EBIT)** | **$844.2M** | $890.3M | $938.1M | $954.5M | **$971.4M** |
+| **Net Income** | **$413.6M** | $452.8M | $493.1M | $510.1M | **$527.5M** |
+| **Free Cash Flow (FCFE)** | **$211.4M** | $255.1M | $299.7M | $320.9M | **$342.3M** |
+| **Cash (Year End)** | **$101.8M** | $206.9M | $356.6M | $527.5M | **$719.8M** |
+| **Assets − Liab − Equity** | **0.0** | **0.0** | **0.0** | **0.0** | **0.0** |
+
+* **Equity Value per Share:** **$291.75** (Target Match)
+* **Terminal Value Share:** **79.8%** (~80% of total value)
+
+---
+
+## 4. Model Integrity & Swap-and-Break Refusal Test
+
+* **Refusal Assertion (`assert_balanced`):** Hard failure raised if $\text{Assets} - (\text{Liabilities} + \text{Equity}) \neq 0$.
+* **Break Test:** Forcing FY2026E cash to opening cash ($40.4\text{M}$) instead of calculated cash ($101.8\text{M}$) causes `proforma.py` to refuse execution, naming **FY2026E** and reporting a balance gap of **$-61.4\text{M}$** (the unrecorded cash flow change).
