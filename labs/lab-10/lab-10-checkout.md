@@ -6,6 +6,7 @@
 **Target Company:** PepsiCo, Inc. (NASDAQ: `PEP` | CIK: `0000077476`)  
 **Filing Reference:** SEC Form 10-K for Fiscal Year Ended December 28, 2024  
 **Date:** September 2026 / Thursday Merit Checkout  
+**Session Token:** `Pro-Forma`  
 
 ---
 
