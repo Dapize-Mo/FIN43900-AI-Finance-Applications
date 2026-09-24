@@ -4,12 +4,13 @@
 **Teammate / Partner:** `kogbuef@purdue.edu`  
 **Course:** FIN 43900 — AI Finance Applications, Purdue University  
 **Date:** September 22, 2026  
-**Session Token:** `[INSERT IN-CLASS SESSION TOKEN HERE]`  
+**Session Token:** `Beta 1-2-3`  
 **Repository Link:** [`labs/lab-09`](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/main/labs/lab-09)  
 
 ---
 
 ## 1. Header & Team Contribution
+
 * **Lab Date:** September 22, 2026
 * **Teammates / Learning Partners:** `kogbuef@purdue.edu` (Collaborative 3-statement pro-forma engine construction, ABG assumption auditing, `proforma.py` verification, and swap-and-break balance testing).
 
@@ -28,7 +29,7 @@
 ## 3. Asbury Automotive Group (`ABG`) Known-Answer Grid
 
 | Financial Line | FY2026E | FY2027E | FY2028E | FY2029E | FY2030E |
-|---|---:|---:|---:|---:|---:|
+| --- | ---: | ---: | ---: | ---: | ---: |
 | **Revenue ($M)** | **18,323.0** | 18,652.8 | 18,988.5 | 19,330.3 | **19,678.3** |
 | **Operating Income ($M)** | **844.2** | 890.3 | 938.1 | 954.5 | **971.4** |
 | **Net Income ($M)** | **413.6** | 452.8 | 493.1 | 510.1 | **527.5** |
