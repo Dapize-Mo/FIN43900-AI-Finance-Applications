@@ -24,9 +24,11 @@
 > **What are five years of PepsiCo's statements worth, built from assumptions you can defend?**
 
 ### Company & Ticker
+
 **PepsiCo, Inc. (NASDAQ: `PEP`)**
 
 ### Company Differentiation Line
+
 "PepsiCo is a dual-engine consumer packaged goods giant (Frito-Lay snacks + PepsiCo beverages) with high gross margins (~54%), heavy supply chain automation CapEx (~$5.3B/yr), no floor plan financing ($0.0 floor plan debt), and substantial direct cash returns to shareholders (~$7.5B/yr in dividends and buybacks)."
 
 ---
@@ -36,7 +38,7 @@
 ### 1. Three-Year Historical Financial Grid (SEC Form 10-K Traced)
 
 | Line Item (USD Millions) | FY2022 | FY2023 | FY2024 | Primary SEC Filing Source & Page Locator | Confirmation Status |
-|---|---:|---:|---:|---|---|
+| --- | ---: | ---: | ---: | --- | --- |
 | **Total Net Revenue** | $86,392.0 | $91,471.0 | $91,854.0 | SEC Form 10-K, Consolidated Statements of Income (p. 61) | Confirmed by hand |
 | **Gross Profit** | $45,781.0 | $49,701.0 | $49,864.0 | SEC Form 10-K, Consolidated Statements of Income (p. 61) | Confirmed by hand |
 | **SG&A Expenses** | $34,249.0 | $37,704.0 | $38,829.0 | SEC Form 10-K, Consolidated Statements of Income (p. 61) | Confirmed by hand |
@@ -52,7 +54,7 @@
 ### 2. Three-Year Historical Ratio Table
 
 | Historical Ratio | FY2022 | FY2023 | FY2024 | 3-Year Trend & Economic Rationale |
-|---|---:|---:|---:|---|
+| --- | ---: | ---: | ---: | --- |
 | **Gross Margin (%)** | 53.00% | 54.34% | 54.29% | Expanding ~130 bps due to pricing power across snacks and beverages. |
 | **SG&A ÷ Gross Profit (%)** | 74.81% | 75.86% | 77.87% | Reported ratio spiked in 2024 due to $1.81B one-off impairment/restructuring charges; core ratio is ~74.24%. |
 | **Inventory ÷ COGS (%)** | 12.86% | 12.77% | 12.94% | Highly stable (~47 inventory days), reflecting efficient CPG turnover. |
@@ -66,7 +68,7 @@
 ### 3. Labelled Three-Column Assumption Set
 
 | Assumption Line Item | Model Value | Label Type | Economic Rationale & Student Defense |
-|---|---:|---|---|
+| --- | ---: | --- | --- |
 | **Revenue Growth Path (2025E–2029E)** | `[3.0%, 3.5%, 4.0%, 3.5%, 3.0%]` | **Judgment** | Reflects near-term Frito-Lay North America volume stabilization from -2.5% to +0.5%, combined with 2.0%–2.5% net pricing and 6%+ international emerging market expansion. |
 | **Gross Margin** | **54.30%** | **History** | Anchored on FY2023–FY2024 average (54.31%), reflecting strong brand pricing power and productivity offsets. |
 | **SG&A ÷ Gross Profit Path** | `[74.0%, 73.5%, 73.0%, 72.5%, 72.0%]` | **Judgment** | Begins at normalized core FY2024 level (74.24% excluding one-offs) and improves 200 bps over 5 years via $1B+ annual automation and digitalization savings. |
@@ -116,10 +118,12 @@ Terminal Value Share:     85.6%
 ```
 
 ### 2. Balance Sheet Check Block Verification
+
 - **Check Block Result:** The model outputs `0.0` in every projected year (2025E: 0.0, 2026E: 0.0, 2027E: 0.0, 2028E: 0.0, 2029E: 0.0).
 - **Cash & Revolver Status:** Cash is maintained above the minimum operational cash floor ($4,000M in all years; 2025E starts at $4,462.0M). Revolver draws remain at $0.0 across the entire projection horizon.
 
 ### 3. Market Price Comparison & Valuation Interpretation
+
 - **Model FCFE Value per Share:** **$95.27**
 - **Observed Market Price:** **$143.21** (as of February 4, 2025)
 - **Valuation Ratio:** $\frac{\$95.27}{\$143.21} = \mathbf{0.67\times}$
@@ -130,6 +134,7 @@ Terminal Value Share:     85.6%
 ## E — Fresh Eyes (Partner Review & Attack)
 
 ### 1. Partner Attack on PepsiCo Model
+
 **Partner Reviewer:** Kenechukwu Ogbuefi (`kogbuef@purdue.edu`)  
 **Attack Question:**  
 *"Why assume SG&A as a percentage of gross profit improves from 74.0% down to 72.0% over 5 years when historical SG&A ÷ Gross Profit rose from 74.81% in FY2022 to 77.87% in FY2024?"*
@@ -138,6 +143,7 @@ Terminal Value Share:     85.6%
 "The FY2024 SG&A ratio spike to 77.87% was driven by $1.81B of non-recurring pre-tax restructuring, impairment, and recall charges disclosed in Note 5; stripping these out yields a core historical SG&A ratio of 74.24%. The projected 224 bps efficiency gain to 72.0% is supported by management's ongoing $1B+ annual productivity program through DSD route optimization, automated distribution hubs, and digitalization."
 
 ### 2. Student Attack on Partner Model
+
 **Target Model:** Asbury Automotive Group (`ABG`) / Peer Model  
 **Attack Question:**  
 *"Why hold ABG's SG&A ratio flat at 64.5% in Years 3–5 when dealership SG&A leverage historically degrades when unit vehicle sales volume slows down?"*
