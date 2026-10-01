@@ -123,16 +123,17 @@ $$\text{Input Shock (Revenue / Margin / SOFR)} \longrightarrow \text{Income Stat
   * **Revise:** Add explicit market impact slippage penalty on large share repurchase assumptions.
   * **Investigate:** Further analyze PBNA margin improvement trajectory in Q3 2026 10-Q filing.
 
-### As Reviewer (Evaluating `kogbuef@purdue.edu`'s Company):
+### As Reviewer (Evaluating `kogbuef@purdue.edu`'s Company — Asbury Automotive Group, `ABG`):
 * **Questions Asked across 3 Areas:**
-  1. *Selection:* Sourced rationale for peer group selection.
-  2. *Model:* Checked WACC cost of equity derivation.
-  3. *Sensitivity:* Traced input change through cash flow statement to per-share value.
-* **Source & Calculation Check:** Traced partner's Operating Profit $\rightarrow$ Taxes $\rightarrow$ NOPAT calculation. *Result: Verified and fully supported by 10-K filing.*
-* **Explanation Back:** Re-stated partner's core valuation takeaway, primary driver (gross margin), and main limitation (raw material cost inflation).
+  1. *Selection:* Sourced rationale for selecting Asbury Automotive Group (`ABG`) and dealership peer group.
+  2. *Model:* Checked WACC cost of equity derivation and historical 60-month beta (0.95).
+  3. *Sensitivity:* Traced same-store organic revenue growth input (1.8% vs 4.7% reported) through cash flow statement to per-share value.
+* **Source & Calculation Check:** Traced partner's Operating Profit $\rightarrow$ Taxes $\rightarrow$ NOPAT calculation for ABG. *Result: Verified and fully supported by 10-K filing.*
+* **Explanation Back:** Re-stated partner's core valuation takeaway for ABG, primary driver (same-store sales & gross margin), and main limitation (dealership acquisition debt burden).
 * **Feedback Given:**
   * *Strength:* Excellent 3-statement balance sheet automated check integration.
-  * *Improvement:* Explicitly model working capital seasonal swings in quarterly projections.
+  * *Improvement:* Explicitly model working capital seasonal swings in quarterly vehicle inventory projections.
+
 
 ---
 
