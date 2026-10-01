@@ -83,7 +83,7 @@ This checkout delivers the full **Lab 12 Presentation, Sensitivity, and Peer Rev
 ## 3. Stop 5 — Lab 11 Sensitivity & Causal Driver Tracing
 
 ### Causal Transmission Mechanism:
-$$\text{Input Shock (Revenue / Margin / SOFR)} \longrightarrow \text{Income Statement (EBITDA / EBIT)} \longrightarrow \text{Cash Flow (CFO / FCFF)} \longrightarrow \text{Per-Share Value \& Covenant Headroom}$$
+$$\text{Input Shock (Revenue / Margin / SOFR)} \longrightarrow \text{Income Statement (EBITDA / EBIT)} \longrightarrow \text{Cash Flow (CFO / FCFF)} \longrightarrow \text{Per-Share Value and Covenant Headroom}$$
 
 ### Base vs. Changed Input Sensitivity Matrix:
 
