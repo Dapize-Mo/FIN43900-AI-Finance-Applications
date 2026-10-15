@@ -30,4 +30,5 @@ The case is fictional **Meridian Foundation Reserve**. Use only the case and hol
 
 ## Status
 
-Draft in progress. The standard-library checker and its anchor/probe runs are complete. The student must still complete the no-AI S1–S10 section and the AI-closed candidate D judgment, CIO question, IPS mapping, and reflection. Brightspace Question 1 has been started with the verified token, confirmed Zoom attendance, and an accurate Codex disclosure. Do not submit until Oladapo reviews the attempt and completes required student-owned work.
+Draft in progress. Oladapo's S1–S10 classifications and reasons are in the worksheet exactly as provided. The standard-library checker, A/B/C anchor reconciliation, Candidate D run, and negative-weight probe are complete. Remaining student-authored work: the AI-closed Candidate D judgment, skeptical-colleague check, CIO question and answer, IPS mapping, and reflections. The required sequence was not followed in this chat: AI checker work began before Oladapo supplied S1–S10. Ask the instructor how to handle that process issue. A Brightspace attempt was started; check its current state because the 55-minute timer can auto-submit when it expires. Do not submit until Oladapo reviews and completes the remaining work.
+
