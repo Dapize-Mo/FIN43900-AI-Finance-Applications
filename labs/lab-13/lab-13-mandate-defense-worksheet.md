@@ -125,8 +125,8 @@ In your own words, answer: (1) What is an investment policy statement? (2) How d
 
 Push both files to your own GitHub repository and paste their links into the Lab 13 quiz. Complete individually.
 
-- GitHub link to `.md` file:
-- GitHub link to `mandate.py`:
+- GitHub link to `.md` file: https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/lab-13-mandate-defense-worksheet.md
+- GitHub link to `mandate.py`: https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/mandate.py
 - Session token from the October 15 course announcement: `CFA Investment`
 - AI partner used: Codex (OpenAI) — located/summarized instructions, prepared this worksheet, built/explained the standard-library checker, proposed Candidate D, and checked the A/B/C and negative-weight outputs. It did not supply the S1–S10 classifications or AI-closed reflections.
 - October 15 Zoom attendance for optional 10-point bonus: attended (confirmed by Oladapo Olaniyan).
