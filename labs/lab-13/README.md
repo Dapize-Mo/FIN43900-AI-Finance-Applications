@@ -30,12 +30,14 @@ The case is fictional **Meridian Foundation Reserve**. Use only the case and hol
 
 ## Deliverables & Links
 
+- **Checkout File:** [`checkout.md`](checkout.md)
 - **Full Checkout Deliverable:** [`lab-13-checkout.md`](lab-13-checkout.md)
 - **Mandate Defense Worksheet:** [`lab-13-mandate-defense-worksheet.md`](lab-13-mandate-defense-worksheet.md)
 - **Standard-Library Rule Checker:** [`mandate.py`](mandate.py)
+- **Direct GitHub Checkout Link:** https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/checkout.md
+- **Direct GitHub Full Package Link:** https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/lab-13-checkout.md
 - **Direct GitHub Worksheet Link:** https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/lab-13-mandate-defense-worksheet.md
 - **Direct GitHub Checker Link:** https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/mandate.py
-- **Direct GitHub Checkout Link:** https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/lab-13-checkout.md
 
 ## Status
 
