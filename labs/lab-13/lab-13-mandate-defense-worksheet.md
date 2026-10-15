@@ -13,16 +13,16 @@ For each statement, choose **objective**, **hard constraint**, **preference**, *
 
 | ID | What the CIO said | My classification | My one-line reason |
 |---|---|---|---|
-| S1 | Horizon seven years; annual rebalancing. |  |  |
-| S2 | Objective: CPI + 4% a year, net of costs, over rolling five-year periods. |  |  |
-| S3 | Pays out $0.75 million every quarter; twelve months of payouts held in cash or daily-liquid government securities. |  |  |
-| S4 | Benchmark: 60% global equities, 40% U.S. investment-grade bonds. |  |  |
-| S5 | Long-only: no borrowing, short sales, or derivatives. |  |  |
-| S6 | No single issuer above 8%. |  |  |
-| S7 | Annual turnover at most 25% without committee approval. |  |  |
-| S8 | At least 90% redeemable within five business days. |  |  |
-| S9 | “The reserve cannot have a calendar-year loss greater than 10%.” No measure, no breach rule. |  |  |
-| S10 | No sector, ESG, tax, or home-bias preference; nobody has said what the pilot should optimize. |  |  |
+| S1 | Horizon seven years; annual rebalancing. | Hard constraint | Imposes binding structural rules dictating a fixed seven-year lifespan and a mandatory annual rebalancing schedule. |
+| S2 | Objective: CPI + 4% a year, net of costs, over rolling five-year periods. | Objective | Specifies a clear, measurable target return outcome (4% real net return over rolling five-year periods) the portfolio is designed to achieve. |
+| S3 | Pays out $0.75 million every quarter; twelve months of payouts held in cash or daily-liquid government securities. | Hard constraint | Sets a mandatory, non-negotiable cash distribution schedule and a compulsory minimum liquidity reserve buffer. |
+| S4 | Benchmark: 60% global equities, 40% U.S. investment-grade bonds. | Preference | Establishes a desired strategic asset mix that guides portfolio choices while permitting active allocation tradeoffs. |
+| S5 | Long-only: no borrowing, short sales, or derivatives. | Hard constraint | Imposes strict, non-negotiable prohibitions against leverage, short positions, and derivative instruments. |
+| S6 | No single issuer above 8%. | Hard constraint | Enforces an absolute, binding concentration limit capping exposure to any single issuer at 8%. |
+| S7 | Annual turnover at most 25% without committee approval. | Preference | Acts as a desired trading volume guideline that allows tradeoffs whenever committee authorization is granted. |
+| S8 | At least 90% redeemable within five business days. | Hard constraint | Mandates a strict quantitative liquidity floor requiring at least 90% of assets to be convertible to cash within five business days. |
+| S9 | “The reserve cannot have a calendar-year loss greater than 10%.” No measure, no breach rule. | Unverifiable promise | Expresses an unachievable absolute guarantee in volatile markets that lacks any probabilistic risk metric, measurement method, or breach rule. |
+| S10 | No sector, ESG, tax, or home-bias preference; nobody has said what the pilot should optimize. | Missing | Explicitly notes that an essential design decision—the optimization objective or utility function for the pilot—has not been provided. |
 
 ## 2. Inputs for the checker
 
@@ -131,3 +131,4 @@ Push both files to your own GitHub repository and paste their links into the Lab
 - AI partner used: Codex (OpenAI) — located/summarized instructions, prepared this worksheet, built/explained the standard-library checker, proposed Candidate D, and checked the A/B/C and negative-weight outputs. It did not supply the S1–S10 classifications or AI-closed reflections.
 - October 15 Zoom attendance for optional 10-point bonus: attended (confirmed by Oladapo Olaniyan).
 - Quiz attempt / receipt:
+
