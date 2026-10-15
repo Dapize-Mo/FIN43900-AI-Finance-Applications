@@ -30,4 +30,4 @@ The case is fictional **Meridian Foundation Reserve**. Use only the case and hol
 
 ## Status
 
-The worksheet is aligned to the live GitHub prompt. Student-owned classifications, checker code/results, candidate D judgment, CIO question, IPS mapping, reflection, GitHub publication, and Brightspace checkout remain to be completed. No quiz attempt has been started or submitted.
+Draft in progress. The standard-library checker and its anchor/probe runs are complete. The student must still complete the no-AI S1–S10 section and the AI-closed candidate D judgment, CIO question, IPS mapping, and reflection. Brightspace Question 1 has been started with the verified token, confirmed Zoom attendance, and an accurate Codex disclosure. Do not submit until Oladapo reviews the attempt and completes required student-owned work.
