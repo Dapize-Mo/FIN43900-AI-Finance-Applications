@@ -130,5 +130,5 @@ Push both files to your own GitHub repository and paste their links into the Lab
 - Session token from the October 15 course announcement: `CFA Investment`
 - AI partner used: Codex (OpenAI) — located/summarized instructions, prepared this worksheet, built/explained the standard-library checker, proposed Candidate D, and checked the A/B/C and negative-weight outputs. It did not supply the S1–S10 classifications or AI-closed reflections.
 - October 15 Zoom attendance for optional 10-point bonus: attended (confirmed by Oladapo Olaniyan).
-- Quiz attempt / receipt:
+- Quiz attempt / receipt: Attempt 1 of 3 auto-submitted by the 55-minute timer on Oct. 15, 2026 at 3:03 p.m.; Brightspace showed Pending Evaluation. Last observed save status: 1 of 2 questions; Question 2 links were not saved.
 
