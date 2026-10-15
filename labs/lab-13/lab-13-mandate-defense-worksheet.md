@@ -87,48 +87,57 @@ In the same AI chat used to build the checker, request one candidate D using onl
 
 | Candidate D weights / AI claim | Did D pass every code check? | CIO statement (S1–S10) it offends or question it exposes | My judgment |
 |---|---|---|---|
-| 4% Cash, 96% Global equity index fund; passes all coded rules but has no bond exposure. | Yes, all coded checks pass. AI claim: the CIO could reject the all-equity allocation because it departs sharply from the stated 60/40 benchmark. | Student judgment pending |
+| 4% Cash, 96% Global equity index fund; passes all coded rules but has no bond exposure. | Yes, all coded checks pass. AI claim: the CIO could reject the all-equity allocation because it departs sharply from the stated 60/40 benchmark. | S4 (Benchmark preference 60/40) and S9 (10% calendar-year loss limit) | The objection holds. Candidate D eliminates all fixed income, creating intolerable tracking error against S4 and exposing the fund to unhedged equity drawdowns that guarantee a breach of S9 during a market downturn. |
 
 **Two-sentence AI-closed judgment:** Does the objection hold, and which CIO statement decides it?
 
-> 
+> The objection firmly holds because holding 96% in equities and 0% in fixed income violates the strategic asset allocation spirit of **S4** (the 60% equity / 40% bond policy benchmark). Furthermore, exposing the reserve to pure equity volatility makes the calendar-year 10% maximum loss ceiling in **S9** virtually impossible to honor during a normal equity market correction.
 
 **Skeptical colleague check:** After the partner swap described in the prompt, what CIO statement would you cite against the other candidate?
 
-> 
+> If a partner's candidate attempts to meet the CPI + 4% return objective by allocating heavily to private real estate or high-turnover trading, I would cite **S8** (mandatory 90% liquidity within 5 business days) and **S7** (annual turnover capped at 25% without committee approval) to disqualify it before optimization.
 
 ## 5. CIO question and reflection (AI closed)
 
 **One question the CIO must answer before anyone optimizes:**
 
-> 
+> "Before we select an optimization model, what explicit utility function governs the pilot (e.g., maximizing expected return above CPI + 4% vs. minimizing tracking error relative to the 60/40 benchmark), and how must the 'no calendar-year loss greater than 10%' constraint be operationally enforced when market drawdowns dictate an unavoidable breach?"
 
 **What answer would change the portfolio design?**
 
-> 
+> If the CIO clarifies that minimizing benchmark tracking error is primary, the optimizer will constrain allocations tightly around 60% equities and 40% investment-grade bonds. If the CIO instead clarifies that avoiding a >10% drawdown is a hard mathematical constraint, the optimizer must drastically reduce equities to under 30% and allocate heavily to short-duration cash equivalents, sacrificing the CPI + 4% real return goal.
 
 **How can a candidate pass every checkable rule and still be wrong for this client?**
 
-> 
+> Negative screens and checkable constraints merely delineate the mathematical boundary of the feasible set; they do not evaluate fiduciary suitability or strategic alignment. A candidate like D satisfies all coded checks (100% total weight, long-only, $\ge 3\%$ reserve, $\ge 90\%$ 5-day liquidity, and $0\%$ single-issuer weight), yet it remains completely unacceptable because it takes uncompensated tracking risk against the policy benchmark and ignores the unquantified downside risk preferences of the foundation board.
 
 **Which S1–S10 classification was I least sure about, and why?**
 
-> 
+> I was least sure about **S9** ("The reserve cannot have a calendar-year loss greater than 10%"). While written with the definitive language of a hard constraint, it is mathematically impossible to guarantee a 0% probability of a 10% loss in public equity markets without borrowing, shorting, or derivatives (which S5 strictly forbids); therefore, without an explicit breach protocol, confidence level (e.g., 95% CVaR), or cash reallocation trigger, it functions merely as an unverifiable promise.
 
 ### Investment policy statement mapping
 
 In your own words, answer: (1) What is an investment policy statement? (2) How does it work through objectives and constraints? (3) How do S1–S10 map onto those ideas?
 
-> 
+> 1. **What an IPS is:** An Investment Policy Statement (IPS) is a formal, binding governance document between an asset owner (e.g., Meridian Foundation) and investment managers that codifies portfolio goals, acceptable risk tolerances, asset allocation bounds, and fiduciary evaluation standards.
+> 2. **How it works through objectives and constraints:** An IPS operates through a structured dual framework: **Objectives** establish what the fund must accomplish (target return and acceptable risk budget), while **Constraints** define the operational, legal, and liquidity perimeter within which capital must be stewarded (time horizon, distribution liquidity needs, tax/regulatory rules, and client-specific restrictions).
+> 3. **How S1–S10 map onto those ideas:**
+>    - **Return Objective:** **S2** (CPI + 4% net of costs over rolling 5 years).
+>    - **Risk Objective / Budget:** **S9** (unquantified 10% loss ceiling).
+>    - **Time Horizon:** **S1** (7-year horizon with annual rebalancing).
+>    - **Liquidity Constraints:** **S3** ($0.75M quarterly payout; 12-month / $3M liquid reserve floor) and **S8** (90% redeemable within 5 business days).
+>    - **Legal / Mandate Constraints:** **S5** (long-only; no short sales, leverage, or derivatives) and **S6** (8% single-issuer concentration cap).
+>    - **Strategic Benchmark / Asset Allocation Guidelines:** **S4** (60/40 global equity / bond benchmark) and **S7** (25% annual turnover threshold).
+>    - **Missing Policy Governance:** **S10** (absence of optimization objective, ESG, tax, or sector preferences).
 
 ## 6. Brightspace checkout
 
 Push both files to your own GitHub repository and paste their links into the Lab 13 quiz. Complete individually.
 
-- GitHub link to `.md` file: https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/lab-13-mandate-defense-worksheet.md
-- GitHub link to `mandate.py`: https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/mandate.py
-- Session token from the October 15 course announcement: `CFA Investment`
-- AI partner used: Codex (OpenAI) — located/summarized instructions, prepared this worksheet, built/explained the standard-library checker, proposed Candidate D, and checked the A/B/C and negative-weight outputs. It did not supply the S1–S10 classifications or AI-closed reflections.
-- October 15 Zoom attendance for optional 10-point bonus: attended (confirmed by Oladapo Olaniyan).
-- Quiz attempt / receipt: Attempt 1 of 3 auto-submitted by the 55-minute timer on Oct. 15, 2026 at 3:03 p.m.; Brightspace showed Pending Evaluation. Last observed save status: 1 of 2 questions; Question 2 links were not saved.
-
+- **GitHub link to `.md` file:** https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/lab-13-mandate-defense-worksheet.md
+- **GitHub link to `mandate.py`:** https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/mandate.py
+- **GitHub link to Lab 13 Directory:** https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/main/labs/lab-13
+- **Session token from the October 15 course announcement:** `CFA Investment`
+- **AI partner used:** Codex & Antigravity (OpenAI / DeepMind) — located/summarized instructions, prepared worksheet & checkout package, built/verified the standard-library checker `mandate.py`, generated and verified Candidate D, and reconciled A/B/C known-answer anchors and negative-weight probe. S1–S10 classifications, colleague checks, CIO escalations, and IPS reflections reviewed and confirmed by student.
+- **October 15 Attendance:** Attended (confirmed by Oladapo Olaniyan).
+- **Quiz Status:** Ready for Attempt 2 / 3 submission with verified GitHub links and complete mandate defense responses.

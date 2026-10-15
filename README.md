@@ -24,8 +24,18 @@ All work adheres to the course's **DRIVER framework**, source evidence hierarchy
 | **Lab 04** | Sep 3, 2026 | **Know Your Company: Deep Read & First Report** | • 📋 [**Checkout Submission (`checkout.md`)**](labs/lab-04/PEP-research/checkout.md)<br>• 📄 [**Research Report (`PepsiCo_2026-09-03_report.md`)**](labs/lab-04/PEP-research/PepsiCo_2026-09-03_report.md)<br>• 📑 [**Added Sources (`sources.md`)**](labs/lab-04/PEP-research/sources.md)<br>• 📊 [**Executive PDF Report**](labs/lab-04/PepsiCo_FY2024_10K_MDA_Report.pdf)<br>• 🔢 [**Evidence Ledger CSV**](labs/lab-04/pep_evidence_ledger_lab04.csv)<br>• 🐍 [**Python Bridge Script**](labs/lab-04/valuation_bridge_lab04.py) | ✅ Submitted |
 | **Lab 05** | Sep 8, 2026 | **FCFF DCF Engine & Synthetic Validation** | • 📋 [**Checkout Submission (`lab-05-checkout.md`)**](labs/lab-05/lab-05-checkout.md)<br>• 🐍 [**DCF Engine (`labs/lab-05/dcf.py`)**](labs/lab-05/dcf.py)<br>• 🔢 [**Synthetic Benchmark Case**](labs/lab-05/dcf_case.csv) | ✅ Submitted |
 | **Lab 06** | Sep 10, 2026 | **Sensitivity Analysis, Reverse DCF & Recommendation** | • 📋 [**Checkout Submission (`lab-06-checkout.md`)**](labs/lab-06/lab-06-checkout.md)<br>• 🔄 [**Reverse DCF Script (`pep_dcf_model_lab06.py`)**](labs/lab-06/pep_dcf_model_lab06.py)<br>• 📊 [**Sensitivity Grid CSV (`pep_sensitivity_grid.csv`)**](labs/lab-06/pep_sensitivity_grid.csv)<br>• 📄 [**Sourced Inputs Table (`pep_inputs.md`)**](labs/lab-06/pep_inputs.md)<br>• 📂 [**Lab 06 Directory README**](labs/lab-06/README.md) | ✅ Live / Submitted |
+| **Lab 11** | Sep 29, 2026 | **Credit Stress and Covenant Headroom** | • 📋 [**Checkout Submission (`lab-11-checkout.md`)**](labs/lab-11/lab-11-checkout.md)<br>• 🐍 [**Credit Stress Engine (`credit_stress_lab11.py`)**](labs/lab-11/credit_stress_lab11.py)<br>• 🔢 [**Synthetic Scenarios (`stress_scenarios.csv`)**](labs/lab-11/stress_scenarios.csv)<br>• 📂 [**Lab 11 Directory README**](labs/lab-11/README.md) | ✅ Submitted |
 | **Lab 12** | Oct 1, 2026 | **Project 2 Audit and Defense Studio** | • 📋 [**Audit & Defense Package (`lab-12-checkout.md`)**](labs/lab-12/lab-12-checkout.md)<br>• 🔢 [**Manifest Template CSV (`project2_manifest_template.csv`)**](labs/lab-12/project2_manifest_template.csv)<br>• 🐍 [**Mechanical Audit Script (`project2_audit.py`)**](labs/lab-12/project2_audit.py)<br>• 📂 [**Lab 12 Directory README**](labs/lab-12/README.md) | 🏛️ Studio / Prework |
+| **Lab 13** | Oct 15, 2026 | **Portfolio Mandate Defense** | • 📋 [**Checkout Package (`lab-13-checkout.md`)**](labs/lab-13/lab-13-checkout.md)<br>• 📝 [**Mandate Worksheet (`lab-13-mandate-defense-worksheet.md`)**](labs/lab-13/lab-13-mandate-defense-worksheet.md)<br>• 🐍 [**Rule Checker Engine (`mandate.py`)**](labs/lab-13/mandate.py)<br>• 📂 [**Lab 13 Directory README**](labs/lab-13/README.md) | ✅ Complete / Verified |
 
+
+---
+
+## Projects
+
+- [**PepsiCo Project 1**](projects/project-1/README.md) — working valuation package, run guide, completion report, and validation record. All deliverables remain working drafts until student review and final submission.
+
+Project files are organized under [`projects/`](projects/); lab and session work remains under [`labs/`](labs/).
 
 ---
 

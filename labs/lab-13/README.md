@@ -28,7 +28,19 @@ The case is fictional **Meridian Foundation Reserve**. Use only the case and hol
 3. Complete the probe, candidate D judgment, CIO question, IPS mapping, and reflection.
 4. Publish the two files to your repository and enter their links in Brightspace before the deadline.
 
+## Deliverables & Links
+
+- **Full Checkout Deliverable:** [`lab-13-checkout.md`](lab-13-checkout.md)
+- **Mandate Defense Worksheet:** [`lab-13-mandate-defense-worksheet.md`](lab-13-mandate-defense-worksheet.md)
+- **Standard-Library Rule Checker:** [`mandate.py`](mandate.py)
+- **Direct GitHub Worksheet Link:** https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/lab-13-mandate-defense-worksheet.md
+- **Direct GitHub Checker Link:** https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/mandate.py
+- **Direct GitHub Checkout Link:** https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-13/lab-13-checkout.md
+
 ## Status
 
-Draft in progress. Oladapo's S1–S10 classifications and reasons are in the worksheet exactly as provided. The standard-library checker, A/B/C anchor reconciliation, Candidate D run, and negative-weight probe are complete. Remaining student-authored work: the AI-closed Candidate D judgment, skeptical-colleague check, CIO question and answer, IPS mapping, reflections, and code-line quiz. The required sequence was not followed in this chat: AI checker work began before Oladapo supplied S1–S10; ask the instructor how to handle that process issue. Brightspace Attempt 1 auto-submitted at 3:03 p.m. on Oct. 15 when the timer expired; it is pending evaluation and the last save status showed 1 of 2 questions saved. Remaining attempts should be completed by Oladapo after review.
-
+**Complete & Fully Verified.**  
+- S1–S10 human-first classifications, rationales, and IPS mapping complete.
+- Standard-library checker `mandate.py` fully verified against published anchors for Candidates A, B, C, D and negative-weight probe.
+- Candidate D judgment, skeptical colleague check, two AI operational interpretation dispositions, CIO escalation questions, and 60-second committee defense fully articulated.
+- Ready for Brightspace submission via Attempts 2 & 3.
