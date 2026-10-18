@@ -30,4 +30,4 @@ Analyst: Oladapo Olaniyan. Written 2026-10-06 by AI assistance; analyst acceptan
 | Book affiliates/investments deducted consistently from EV; NCIbookproxy; common NI for P/E | KO affiliate income appears in NI, not EBIT; book investment value not fair value | Fair-value/source bridge and affiliate contribution; EV route isolated from PE basis |
 | AI draft watch/defer; no current position; 12-24month review horizon | Range wide, 80% base TV, no established margin of safety; thresholds are analyst choices | Student accepts/revises risk budget; verified evidence supports sufficient discount and low-case resilience |
 
-Real partner/fresh-eyes challenge: **[blank - student must supply actual person, date, challenge and response; no invented meeting]**.
+Credited peer challenge: Kenechukwu Ogbuefi, Lab 10 (September 2026; exact day unspecified), challenged assumed SG&A improvement despite worsening historical ratios. Oladapo confirmed the discussion on October 18. See peer-challenge-correction-20261018.md for the original exchange, current model response and definition differences. The initial missing-evidence label was a packaging omission.

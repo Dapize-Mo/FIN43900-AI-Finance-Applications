@@ -16,7 +16,7 @@ The isolated local transcription environment and original Zoom recordings are de
 ## Material limitations
 42 PASS, 0 FAIL, 5 OPEN, 2 QUALIFIED is computational evidence, not blanket economic validation.
 Bridge/share dates lag valuation date; working-capital scope, peer/claim conventions, seasonality and terminal ROIC remain qualified.
-Actual fresh-eyes peer challenge evidence is not supplied. No unsupported personal or no-AI attestation is added.
+Lab 10 peer review by Kenechukwu Ogbuefi is documented and student-confirmed; see docs/peer-challenge-correction-20261018.md. No unsupported personal or no-AI attestation is added.
 The submission manifest contains the three Unlisted YouTube links with uploaded English captions. Anonymous watch-page access checked October 18, 2026: all three player statuses OK with stream formats available. The repository is public on the codex/project-1-submission branch. README, PDFs and visible result were checked without sign-in on October 18, 2026. The manifest pins the frozen project snapshot.
 
 ## Submission files
