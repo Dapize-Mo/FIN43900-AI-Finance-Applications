@@ -1,0 +1,24 @@
+{
+  "analyst":"Oladapo Olaniyan",
+  "status":"AI-proposed working assumptions; student acceptance pending; never company facts",
+  "valuation_date":"2026-10-05",
+  "fiscal_2026_end":"2026-12-26",
+  "tax_rate":0.22,
+  "beta":0.65,
+  "equity_risk_premium":0.05,
+  "debt_spread":0.008,
+  "terminal_roic":0.15,
+  "min_cash":4000,
+  "annual_debt_repayment":0,
+  "annual_buybacks":1000,
+  "dividends_2026":7900,
+  "dividend_growth":0.03,
+  "dilution_increment":3,
+  "affiliates_book_proxy":true,
+  "scenarios": {
+    "low": {"growth":[0.04,0.015,0.02,0.02,0.02],"gross_margin":[0.535,0.532,0.532,0.535,0.537],"sga_ratio":[0.4,0.405,0.402,0.4,0.398],"capex_ratio":0.049,"working_capital_extra_days":5,"wacc_shift":0.005,"terminal_growth":0.015,"causal_story":"Consumer value reset fails to restore North American volume; pricing/mix and input costs compress gross margins; slower sell-through ties up inventory and receivables; debt funding persists."},
+    "base": {"growth":[0.05,0.035,0.035,0.03,0.03],"gross_margin":[0.542,0.544,0.545,0.545,0.545],"sga_ratio":[0.398,0.398,0.397,0.395,0.393],"capex_ratio":0.047,"working_capital_extra_days":0,"wacc_shift":0,"terminal_growth":0.025,"causal_story":"FY2026 reported sales follow midpoint management4-6percent guidance; international strength offsets North American weakness; modest productivity lowers SG&A intensity while reinvestment remains below5percent of sales."},
+    "high": {"growth":[0.06,0.05,0.045,0.04,0.035],"gross_margin":[0.55,0.553,0.555,0.555,0.555],"sga_ratio":[0.394,0.392,0.39,0.389,0.388],"capex_ratio":0.047,"working_capital_extra_days":-2,"wacc_shift":-0.005,"terminal_growth":0.03,"causal_story":"Value offerings rebuild volume; stronger international mix and productivity improve gross profit and fixed-cost absorption; faster collections reduce working capital."},
+    "value_reset_failure": {"growth":[0.04,-0.03,0,0.01,0.02],"gross_margin":[0.535,0.515,0.52,0.525,0.53],"sga_ratio":[0.4,0.415,0.41,0.405,0.4],"capex_ratio":0.049,"working_capital_extra_days":10,"wacc_shift":0.01,"terminal_growth":0.01,"causal_story":"Named downside: Value Reset Failure. Demand deterioration and price cuts reduce revenue, commodity/distribution costs compress gross margin, overhead adjusts slowly, collections/inventory worsen. Cash falls, modeled funding rises and value declines. This is a separate AI-assisted scenario, not the locked human changed-input test."}
+  }
+}
