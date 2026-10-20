@@ -6,7 +6,7 @@
 **Case:** Meridian Foundation Reserve ($100 Million Reserve)  
 **Lab Date:** October 20, 2026  
 **Brightspace Item:** Lab 14 — Portfolio Baselines (Tuesday Authenticated Completion, 25 Points)  
-**Session Token:** `[Announced in Class / Room Token]`  
+**Session Token:** `portfolio`  
 
 ---
 

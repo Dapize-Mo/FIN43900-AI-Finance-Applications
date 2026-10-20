@@ -5,6 +5,7 @@ and reserve-eligible metrics for simple baselines against the Meridian mandate.
 Student / Author: Oladapo Olaniyan (oolaniy@purdue.edu)
 Case: Meridian Foundation Reserve
 Date: October 20, 2026
+Session Token: portfolio
 """
 
 import math
@@ -150,8 +151,9 @@ def print_portfolio_evaluation(result: dict) -> None:
 
 def main():
     print("=" * 70)
-    print("FIN 43900 Lab 14 — Portfolio Risk Engine")
+    print("FIN 43900 Lab 14 -- Portfolio Risk Engine")
     print("Author: Oladapo Olaniyan (oolaniy@purdue.edu)")
+    print("Session Token: portfolio")
     print("Objective Return:", f"{OBJECTIVE_RETURN*100.0:.1f}%")
     print("=" * 70)
     print()

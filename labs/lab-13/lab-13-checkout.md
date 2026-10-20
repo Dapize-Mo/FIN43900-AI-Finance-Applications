@@ -6,7 +6,7 @@
 **Case:** Meridian Foundation Reserve (Fictional Course Common Case)  
 **As-Of Date:** October 15, 2026  
 **Session Token:** `CFA Investment`  
-**Brightspace Item:** Lab 13 — Portfolio Mandate Defense (Thursday Merit Checkout, 25 Points)  
+**Brightspace Item:** Lab 13![alt text](image.png) — Portfolio Mandate Defense (Thursday Merit Checkout, 25 Points)  
 
 ---
 
@@ -15,6 +15,7 @@
 This checkout delivers the complete mandate defense and rule verification package for the **$100 million Meridian Foundation Reserve**. Before selecting or executing any mathematical portfolio optimizer, this analysis formalizes the CIO's qualitative requests into a rigorous decision contract, tests candidate portfolios against all checkable mandate constraints via a standard-library Python engine ([`mandate.py`](mandate.py)), compares two competing AI operational interpretations, and escalates foundational ambiguities requiring committee governance.
 
 ### Repository Links & Artifacts
+
 - **Mandate Defense Worksheet:** [`lab-13-mandate-defense-worksheet.md`](lab-13-mandate-defense-worksheet.md)
 - **Standard-Library Rule Checker:** [`mandate.py`](mandate.py)
 - **Lab 13 Directory README:** [`README.md`](README.md)
@@ -26,7 +27,7 @@ This checkout delivers the complete mandate defense and rule verification packag
 ## 2. Decision Contract & Boundary Definitions
 
 | Dimension | Specification | Source / Governing Fact | Fiduciary Rationale |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Intended User** | Investment Committee & CIO of Meridian Foundation | Common CIO Case § Decision Request | Governs fiduciary policy for the endowment reserve |
 | **Immediate Action** | Authorize analytical mandate and pilot sizing (not live trade execution) | Common CIO Case § Decision Request | Pre-commits constraints before running quantitative optimizers |
 | **Portfolio Horizon** | Seven (7) years with quarterly review & annual rebalancing | Fact S1 | Aligns with foundation capital commitment cycle |
@@ -43,7 +44,7 @@ This checkout delivers the complete mandate defense and rule verification packag
 Classified independently without AI per course instructions:
 
 | ID | CIO Statement | Classification | Governing Rationale |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **S1** | Horizon seven years; annual rebalancing. | **Hard constraint** | Imposes non-negotiable structural rules dictating a fixed seven-year horizon and mandatory annual rebalancing schedule. |
 | **S2** | Objective: CPI + 4% a year, net of costs, over rolling five-year periods. | **Objective** | Specifies the target quantitative outcome that portfolio design seeks to attain over rolling five-year measurement windows. |
 | **S3** | Pays out $0.75 million every quarter; twelve months of payouts held in cash or daily-liquid government securities. | **Hard constraint** | Sets an absolute cash distribution requirement ($3.0M / 3.0% floor) that must be held in daily-liquid sovereign paper or cash. |
@@ -64,7 +65,7 @@ The mechanical rule checker [`mandate.py`](mandate.py) was built using Python st
 ### Candidate Reconciliation & Probe Matrix
 
 | Check / Metric | Rule Hurdle | Candidate A | Candidate B | Candidate C | Candidate D | Candidate A Probe |
-|---|---|---:|---:|---:|---:|---:|
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
 | **Allocation Sum** | Exactly 100.0% | 100.0% (pass) | 100.0% (pass) | 100.0% (pass) | 100.0% (pass) | 100.0% (pass) |
 | **Lowest Holding Weight** | $\ge 0.0\%$ (Long-Only) | 0.0% (pass) | 0.0% (pass) | 0.0% (pass) | 0.0% (pass) | **-2.0% (FAIL)** |
 | **Reserve Floor** | $\ge 3.0\%$ ($4 \times \$0.75\text{M}$) | 14.0% (pass) | **1.0% (FAIL)** | **2.0% (FAIL)** | 4.0% (pass) | 10.0% (pass) |
@@ -80,13 +81,16 @@ The mechanical rule checker [`mandate.py`](mandate.py) was built using Python st
 ## 5. Candidate D Challenge & Skeptical Colleague Review
 
 ### Candidate D Profile
+
 - **Allocation:** 4% Cash, 96% Global Equity Index Fund, 0% Fixed Income.
 - **Checker Result:** Passes 100% of coded checks (Allocation = 100%, Min Weight = 0%, Reserve = 4% $\ge$ 3%, Liquidity = 100% $\ge$ 90%, Issuer Cap = 0% $\le$ 8%).
 
 ### Two-Sentence AI-Closed Judgment
+>
 > The CIO's objection against Candidate D firmly holds because allocating 96% to equities and 0% to fixed income completely abandons the strategic asset allocation intent of **S4** (the 60% equity / 40% bond policy benchmark). Furthermore, exposing the reserve to unmitigated equity drawdowns guarantees a catastrophic breach of **S9** (the 10% maximum calendar-year loss ceiling) during any standard equity market downturn.
 
 ### Skeptical Colleague Check
+>
 > If a partner analyst submits a candidate seeking to boost yield via an aggressive allocation to private real estate or high-turnover tactical credit, I would cite **S8** (mandatory 90% liquidity within 5 business days) and **S7** (annual turnover capped at 25% without committee approval) to disqualify the proposal before optimization.
 
 ---
@@ -96,11 +100,13 @@ The mechanical rule checker [`mandate.py`](mandate.py) was built using Python st
 Per the common course prompt, two competing interpretations were evaluated against the dated facts:
 
 ### Interpretation 1: Relative-Return / Benchmark-Tracking Mandate
+
 - **Proposed Formulation:** Minimize tracking error against the 60/40 benchmark while targeting CPI + 4% over rolling 5 years; treat the 10% calendar-year loss statement as an informal aspiration secondary to benchmark tracking.
 - **Disposition:** **REQUIRES CLARIFICATION** (Governing Facts: **S9** & **S10**).
 - **Reasoning:** While S4 explicitly provides a 60/40 benchmark, the CIO never declared whether tracking error takes priority over capital preservation. If the 60/40 benchmark suffers a -15% down year (as in 2008 or 2022), this interpretation guarantees a breach of S9.
 
 ### Interpretation 2: Absolute-Return / Downside-Protected Liability Mandate
+
 - **Proposed Formulation:** Maximize expected return subject to an absolute 1-year Value-at-Risk / CVaR loss constraint $\le 10\%$; dynamically shift capital into short-term cash/Treasuries to protect the $3.0M liquidity floor.
 - **Disposition:** **UNSUPPORTED** (Governing Facts: **S5** & **S9**).
 - **Reasoning:** S5 explicitly forbids derivatives, borrowing, and short sales. In a long-only cash/bond/equity universe, absolute downside floor protection without options requires holding prohibitive cash allocations (>60%), which guarantees the portfolio will fail the S2 real return objective of CPI + 4%.
@@ -110,16 +116,20 @@ Per the common course prompt, two competing interpretations were evaluated again
 ## 7. Escalation Question & Investment Policy Statement (IPS) Mapping
 
 ### Core Escalation Question for the CIO
+>
 > **"Before we select an optimization algorithm, what explicit mathematical utility function governs the pilot (e.g., maximizing expected return above CPI + 4% vs. minimizing tracking error relative to the 60/40 benchmark), and how must the 'no calendar-year loss greater than 10%' constraint be enforced when market drawdowns dictate an unavoidable breach?"**
 
 ### What Answer Would Change Portfolio Design?
+
 - **If Tracking Error Primary:** The optimizer will bound asset weights tightly around 60% equities and 40% bonds, accepting drawdown risk in broad market declines.
 - **If Loss Avoidance Primary:** The optimizer must cap equity weight well below 30% and shift the bulk of the portfolio into short-duration Treasuries and cash, intentionally subordinating the CPI + 4% target.
 
 ### Why Checkable Rules Are Insufficient
+
 Negative rules merely define the perimeter of mathematical feasibility; they do not establish fiduciary optimality. Candidate D satisfies every checkable constraint yet constitutes an uncompensated gamble against the foundation's strategic benchmark and risk appetite.
 
 ### Investment Policy Statement (IPS) Triangulation
+
 1. **IPS Definition:** A formal contractual charter between asset owners and fiduciaries detailing investment governance, return hurdles, risk budgets, and accountability standards.
 2. **Dual Mechanism:** Balances **Objectives** (desired financial targets and risk appetite) against **Constraints** (operational boundaries such as liquidity, time horizon, regulations, and unique circumstances).
 3. **S1–S10 IPS Mapping:**

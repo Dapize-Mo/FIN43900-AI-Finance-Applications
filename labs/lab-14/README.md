@@ -4,6 +4,7 @@
 **Student / Author:** Oladapo Olaniyan (`oolaniy@purdue.edu`)  
 **Case:** Meridian Foundation Reserve ($100 Million Reserve)  
 **Date:** October 20, 2026  
+**Session Token:** `portfolio`  
 **Category:** Tuesday Authenticated Completion (25 Points)
 
 ---

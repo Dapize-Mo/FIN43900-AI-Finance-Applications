@@ -4,6 +4,7 @@ Lab 14: Portfolio Baselines
 Student / Author: Oladapo Olaniyan (oolaniy@purdue.edu)
 Case: Meridian Foundation Reserve ($100 Million Reserve)
 Date: October 20, 2026
+Session Token: portfolio
 """
 
 from __future__ import annotations
