@@ -12,6 +12,13 @@ Session Token: webapp
 import copy
 import io
 import os
+import sys
+
+# Ensure the directory containing this script is on sys.path for direct imports
+_APP_DIR = os.path.dirname(os.path.abspath(__file__))
+if _APP_DIR not in sys.path:
+    sys.path.insert(0, _APP_DIR)
+
 import streamlit as st
 import pandas as pd
 import yfinance as yf
@@ -143,8 +150,12 @@ elif data_mode == "Local / Uploaded CSV (prices.csv)":
 
     # Use uploaded file if present, else fall back to local prices.csv in directory
     file_to_read = uploaded_file
-    if file_to_read is None and os.path.exists("prices.csv"):
-        file_to_read = "prices.csv"
+    if file_to_read is None:
+        local_candidate = os.path.join(_APP_DIR, "prices.csv")
+        if os.path.exists("prices.csv"):
+            file_to_read = "prices.csv"
+        elif os.path.exists(local_candidate):
+            file_to_read = local_candidate
 
     if file_to_read is not None:
         try:
