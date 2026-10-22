@@ -63,7 +63,9 @@ Run the application from the workspace terminal using the course Python environm
 ```powershell
 streamlit run app.py
 ```
-*(Or via direct venv path)*:
+
+*(Or via direct venv path):*
+
 ```powershell
 & "C:\Users\dolan\Code\school\Fall-2026\FIN-43900\workspace\.venv\Scripts\python.exe" -m streamlit run app.py
 ```
