@@ -11,3 +11,5 @@
 - [**`lab-04/`**](lab-04/) — **Know Your Company: Deep Read & First Report** (Item 7 MD&A deep read, research report rewrite in `PEP-research/`, contamination normalization, and executive report).
 - [**`lab-13/`**](lab-13/) — **Portfolio Mandate Defense** (Meridian Foundation Reserve case, S1–S10 human classifications, candidate audits, and standard-library rule engine).
 - [**`lab-14/`**](lab-14/) — **Portfolio Baselines** (Annualized covariance matrix derivation, Equal-Weight and Inverse-Volatility baselines, constraint audits, and fiduciary deferral protocol).
+- [**`lab-15/`**](lab-15/) — **Portfolio Stability Decision** (Interactive Streamlit optimization app `app.py`, 5-point grid search, estimation risk stress testing, trailing window analysis, and fiduciary pilot disposition).
+
