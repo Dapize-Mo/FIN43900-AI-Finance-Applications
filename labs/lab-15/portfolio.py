@@ -7,7 +7,7 @@ Student / Author: Oladapo Olaniyan (oolaniy@purdue.edu)
 Case: Meridian Foundation Reserve ($100 Million Reserve)
 Date: October 22, 2026
 Course: FIN 43900 -- AI Finance Applications, Purdue University
-Session Token: portfolio
+Session Token: webapp
 """
 
 import csv
@@ -320,9 +320,9 @@ def estimate_from_prices(
 
 def main():
     print("=" * 70)
-    print("FIN 43900 Lab 14 -- Portfolio Risk Engine")
+    print("FIN 43900 Lab 15 -- Portfolio Risk & Stability Engine")
     print("Author: Oladapo Olaniyan (oolaniy@purdue.edu)")
-    print("Session Token: portfolio")
+    print("Session Token: webapp")
     print("Objective Return:", f"{OBJECTIVE_RETURN*100.0:.1f}%")
     print("=" * 70)
     print()

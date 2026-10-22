@@ -3,13 +3,18 @@ Interactive web interface finding the lowest-risk portfolio mix meeting mandate
 objectives and reserve rules, evaluating estimation risk and portfolio stability.
 
 Author: Oladapo Olaniyan (oolaniy@purdue.edu)
+Teammate / Learning Partner: J. Maffei (maffeij@purdue.edu | Target: Oracle - ORCL)
 Course: FIN 43900 -- AI Finance Applications, Purdue University
-Session: Session 15 (Week 9)
+Session: Session 15 (Week 9, Thursday Merit Checkout)
+Session Token: webapp
 """
 
 import copy
+import io
+import os
 import streamlit as st
 import pandas as pd
+import yfinance as yf
 
 # Import calculation engine and Meridian defaults directly from portfolio.py (reusing math)
 from portfolio import (
@@ -34,7 +39,46 @@ st.set_page_config(
 
 st.title("Lab 15 — Portfolio Stability Decision")
 st.caption("built with AI help, a learning demonstration, not investment advice.")
-st.markdown("**Author:** Oladapo Olaniyan (`oolaniy@purdue.edu`) | **Course:** FIN 43900 AI Finance Applications, Purdue University")
+st.markdown(
+    "**Author:** Oladapo Olaniyan (`oolaniy@purdue.edu`) | "
+    "**Teammate:** J. Maffei (`maffeij@purdue.edu`) | "
+    "**Session Token:** `webapp` | "
+    "**Course:** FIN 43900 AI Finance Applications, Purdue University"
+)
+
+# ------------------------------------------------------------------------------
+# HELPER: CACHED YFINANCE FETCHER
+# ------------------------------------------------------------------------------
+@st.cache_data(show_spinner="Fetching live monthly prices from Yahoo Finance...")
+def fetch_prices_from_yfinance(tickers_list, period="5y"):
+    """
+    Downloads monthly adjusted close prices from Yahoo Finance for a list of tickers.
+    Returns (DataFrame of prices, CSV string with Date header).
+    """
+    prices = {}
+    for t in tickers_list:
+        t = t.strip().upper()
+        if not t:
+            continue
+        ticker_obj = yf.Ticker(t)
+        hist = ticker_obj.history(period=period, interval="1mo")
+        if hist.empty or "Close" not in hist:
+            continue
+        s = hist["Close"].copy()
+        s.index = s.index.strftime("%Y-%m-%d")
+        prices[t] = s
+
+    if not prices:
+        raise ValueError("No price data returned from Yahoo Finance for given tickers.")
+
+    df = pd.DataFrame(prices).dropna()
+    if len(df) < 2:
+        raise ValueError("Insufficient overlapping monthly observations (< 2).")
+
+    csv_buffer = io.StringIO()
+    df.to_csv(csv_buffer, index_label="Date")
+    csv_buffer.seek(0)
+    return df, csv_buffer.getvalue()
 
 # ------------------------------------------------------------------------------
 # SIDEBAR CONTROLS
@@ -61,38 +105,108 @@ reserve_min_input = st.sidebar.number_input(
 )
 reserve_min_decimal = reserve_min_input / 100.0
 
-uploaded_file = st.sidebar.file_uploader(
-    "Upload prices.csv",
-    type=["csv"],
-    help="CSV file of monthly adjusted close prices (Date first, oldest first, one column per ticker).",
+st.sidebar.write("---")
+st.sidebar.subheader("Asset Universe & Data Source")
+
+data_mode = st.sidebar.radio(
+    "Select Universe / Data Source",
+    options=[
+        "Meridian Training Case (Course Authored)",
+        "Local / Uploaded CSV (prices.csv)",
+        "Live Yahoo Finance (yfinance)",
+    ],
+    index=0,
+    help="Choose whether to run the course Meridian case, a local prices.csv, or fetch live data via yfinance.",
 )
 
-last_36_switch = st.sidebar.checkbox(
-    "Last 36 Months Only",
-    value=False,
-    help="Estimate parameters using only the most recent 36 monthly observations instead of full history.",
-)
+last_36_switch = False
 
 # ------------------------------------------------------------------------------
 # LOAD ASSET UNIVERSE & PARAMETERS
 # ------------------------------------------------------------------------------
-if uploaded_file is not None:
-    try:
-        tickers, raw_sleeves, corr_matrix, n_obs = estimate_from_prices(uploaded_file, last_36=last_36_switch)
-        data_source_label = f"Uploaded CSV ({'Last 36 Months' if last_36_switch else 'All Months'}, N={n_obs})"
-        base_sleeves = copy.deepcopy(raw_sleeves)
-        base_corr = copy.deepcopy(corr_matrix)
-    except Exception as e:
-        st.sidebar.error(f"Error parsing uploaded prices CSV: {e}")
-        base_sleeves = copy.deepcopy(MERIDIAN_SLEEVES)
-        base_corr = copy.deepcopy(MERIDIAN_CORRELATION)
-        data_source_label = "Meridian Foundation Training Values (Fallback)"
-else:
+if data_mode == "Meridian Training Case (Course Authored)":
     base_sleeves = copy.deepcopy(MERIDIAN_SLEEVES)
     base_corr = copy.deepcopy(MERIDIAN_CORRELATION)
     data_source_label = "Meridian Foundation Training Values (Course Authored)"
 
-# Compute "As-Loaded" Baseline Mix (Unedited baseline)
+elif data_mode == "Local / Uploaded CSV (prices.csv)":
+    uploaded_file = st.sidebar.file_uploader(
+        "Upload prices.csv",
+        type=["csv"],
+        help="CSV file of monthly adjusted close prices (Date first, oldest first, one column per ticker).",
+    )
+    last_36_switch = st.sidebar.checkbox(
+        "Last 36 Months Only",
+        value=False,
+        help="Estimate parameters using only the most recent 36 monthly observations instead of full history.",
+    )
+
+    # Use uploaded file if present, else fall back to local prices.csv in directory
+    file_to_read = uploaded_file
+    if file_to_read is None and os.path.exists("prices.csv"):
+        file_to_read = "prices.csv"
+
+    if file_to_read is not None:
+        try:
+            tickers, raw_sleeves, corr_matrix, n_obs = estimate_from_prices(file_to_read, last_36=last_36_switch)
+            source_desc = "Uploaded CSV" if uploaded_file is not None else "Local prices.csv"
+            data_source_label = f"{source_desc} ({'Last 36 Months' if last_36_switch else 'All Months'}, N={n_obs})"
+            base_sleeves = copy.deepcopy(raw_sleeves)
+            base_corr = copy.deepcopy(corr_matrix)
+        except Exception as e:
+            st.sidebar.error(f"Error parsing CSV: {e}")
+            base_sleeves = copy.deepcopy(MERIDIAN_SLEEVES)
+            base_corr = copy.deepcopy(MERIDIAN_CORRELATION)
+            data_source_label = "Meridian Foundation Training Values (Fallback)"
+    else:
+        st.sidebar.info("No prices.csv found. Upload a CSV to estimate from historical data.")
+        base_sleeves = copy.deepcopy(MERIDIAN_SLEEVES)
+        base_corr = copy.deepcopy(MERIDIAN_CORRELATION)
+        data_source_label = "Meridian Foundation Training Values (Fallback)"
+
+elif data_mode == "Live Yahoo Finance (yfinance)":
+    st.sidebar.markdown("**Yahoo Finance Live Query**")
+    ticker_text = st.sidebar.text_input(
+        "Tickers (comma-separated)",
+        value="BIL, IEF, LQD, VT",
+        help="Enter ETF or stock tickers for each portfolio sleeve.",
+    )
+    period_choice = st.sidebar.selectbox(
+        "Historical Period",
+        options=["5y", "3y", "2y", "10y"],
+        index=0,
+    )
+    last_36_switch = st.sidebar.checkbox(
+        "Trailing 36 Months Window",
+        value=False,
+        help="Evaluate stability by slicing the trailing 36 monthly returns.",
+    )
+
+    tickers_list = [t.strip().upper() for t in ticker_text.split(",") if t.strip()]
+
+    try:
+        df_yf, csv_text_yf = fetch_prices_from_yfinance(tickers_list, period=period_choice)
+        tickers, raw_sleeves, corr_matrix, n_obs = estimate_from_prices(io.StringIO(csv_text_yf), last_36=last_36_switch)
+        data_source_label = f"Yahoo Finance Live ({', '.join(tickers)}, {period_choice}{' [Last 36mo]' if last_36_switch else ''}, N={n_obs})"
+        base_sleeves = copy.deepcopy(raw_sleeves)
+        base_corr = copy.deepcopy(corr_matrix)
+
+        with st.sidebar.expander("📥 Export Live Yahoo Finance Prices"):
+            st.download_button(
+                label="Download prices.csv",
+                data=csv_text_yf,
+                file_name="prices.csv",
+                mime="text/csv",
+                help="Save fetched monthly adjusted close prices as local prices.csv.",
+            )
+            st.caption(f"Downloaded {len(df_yf)} monthly price records for {', '.join(tickers)}.")
+    except Exception as e:
+        st.sidebar.error(f"yfinance error: {e}")
+        base_sleeves = copy.deepcopy(MERIDIAN_SLEEVES)
+        base_corr = copy.deepcopy(MERIDIAN_CORRELATION)
+        data_source_label = "Meridian Foundation Training Values (Fallback)"
+
+# Compute 'As-Loaded' Baseline Mix (Unedited baseline)
 base_cov = build_covariance(base_sleeves, base_corr)
 base_mix = search_lowest_risk_mix(
     base_sleeves,
@@ -167,7 +281,7 @@ col_base, col_curr = st.columns(2)
 
 # Left Column: As-Loaded Baseline
 with col_base:
-    st.markdown("### 📌 As-Loaded Baseline")
+    st.markdown("### 📋 As-Loaded Baseline")
     if base_mix is not None:
         w_base_pct = [round(w * 100.0, 2) for w in base_mix["weights"]]
         w_base_str = " / ".join(f"{w:.0f}" for w in w_base_pct)

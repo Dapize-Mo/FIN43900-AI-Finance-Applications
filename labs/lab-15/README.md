@@ -2,10 +2,11 @@
 
 **Course:** FIN 43900 — AI Finance Applications, Fall 2026  
 **Student / Author:** Oladapo Olaniyan (`oolaniy@purdue.edu`)  
+**Teammate / Learning Partner:** J. Maffei (`maffeij@purdue.edu` | Target Company: Oracle Corp. — `ORCL`)  
 **Institution:** Mitchell E. Daniels, Jr. School of Business, Purdue University  
 **Case:** Meridian Foundation Reserve ($100 Million Reserve) & Student Universe  
 **Date:** October 22, 2026  
-**Session Token:** `portfolio`  
+**Session Token:** `webapp`  
 **Category:** Thursday Merit Checkout (25 Points)
 
 ---
@@ -26,7 +27,7 @@
    - `search_lowest_risk_mix()`: 5-point long-only grid search returning the minimum-volatility portfolio satisfying the target return hurdle ($\ge 6.5\%$) and minimum reserve constraint ($\ge 3.0\%$).
    - `estimate_from_prices()`: Standard-library parser calculating annualized mean return ($\text{mean} \times 12$), annualized volatility ($\text{std} \times \sqrt{12}$), and correlation matrix from monthly prices across full history or trailing 36-month window.
 2. **Streamlit Interactive Application:** [`app.py`](app.py)  
-   Interactive web application that imports the calculation engine directly without copying math. Features a configurable sidebar (target return, reserve minimum, file uploader for `prices.csv`, 36-month toggle), editable expected return boxes, reserve-eligibility checkboxes, side-by-side baseline vs. stressed mix display, and stability diagnosis showing the largest weight change in points.
+   Interactive web application that imports the calculation engine directly without copying math. Features a configurable sidebar (target return, reserve minimum, file uploader for `prices.csv`, live `yfinance` market query connector, 36-month toggle), editable expected return boxes, reserve-eligibility checkboxes, side-by-side baseline vs. stressed mix display, and stability diagnosis showing the largest weight change in points.
 3. **Historical Monthly Price Dataset:** [`prices.csv`](prices.csv)  
    Five years of monthly adjusted close prices (Nov 2021 – Oct 2026) across four liquid sleeve ETFs (`BIL`, `IEF`, `LQD`, `VT`) downloaded from Yahoo Finance on October 20, 2026.
 4. **Complete Lab Checkout Document:** [`checkout.md`](checkout.md)  

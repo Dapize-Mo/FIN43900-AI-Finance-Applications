@@ -2,11 +2,12 @@
 
 **Course:** FIN 43900 — AI Finance Applications, Purdue University  
 **Student Analyst:** **Oladapo Olaniyan** (`oolaniy@purdue.edu`)  
+**Teammate / Learning Partner:** **J. Maffei** (`maffeij@purdue.edu` | Target Company: Oracle Corp. — `ORCL`)  
 **Institution:** Mitchell E. Daniels, Jr. School of Business, Purdue University  
 **Case:** Meridian Foundation Reserve ($100 Million Reserve) & Student Universe  
 **Lab Date:** October 22, 2026  
 **Brightspace Item:** Lab 15 — Portfolio Stability Decision (Thursday Merit Checkout, 25 Points)  
-**Session Token:** `portfolio`  
+**Session Token:** `webapp`  
 **GitHub Direct Script Link:** [portfolio.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-15/portfolio.py)  
 **GitHub Direct App Link:** [app.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-15/app.py)  
 **GitHub Direct Checkout Link:** [checkout.md on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-15/checkout.md)  
