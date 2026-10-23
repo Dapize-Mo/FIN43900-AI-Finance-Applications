@@ -11,6 +11,7 @@
 **GitHub Direct Script Link:** [portfolio.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-15/portfolio.py)  
 **GitHub Direct App Link:** [app.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-15/app.py)  
 **GitHub Direct Checkout Link:** [checkout.md on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-15/checkout.md)  
+**Live Streamlit App:** [Portfolio Stability Decision](https://fin439-lab15-portfolio-stability.streamlit.app/)  
 
 ---
 
