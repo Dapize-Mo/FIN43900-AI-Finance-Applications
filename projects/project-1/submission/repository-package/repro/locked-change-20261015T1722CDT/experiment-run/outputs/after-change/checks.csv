@@ -1,0 +1,50 @@
+analyst,check,status,detail
+Oladapo Olaniyan,FY2023 filing income articulation,PASS,Reported statement lines reconcile exactly in USD millions
+Oladapo Olaniyan,FY2024 filing income articulation,PASS,Reported statement lines reconcile exactly in USD millions
+Oladapo Olaniyan,FY2025 filing income articulation,PASS,Reported statement lines reconcile exactly in USD millions
+Oladapo Olaniyan,FY2024 source balance,PASS,Assets 99467; liabilities 81296; gap 0
+Oladapo Olaniyan,FY2025 source balance,PASS,Assets 107399; liabilities 86852; gap 0
+Oladapo Olaniyan,FY2023 source cash-flow articulation,PASS,Cash+restricted ending 9761; net movement 4661
+Oladapo Olaniyan,FY2024 source cash-flow articulation,PASS,Cash+restricted ending 8553; net movement -1208
+Oladapo Olaniyan,FY2025 source cash-flow articulation,PASS,Cash+restricted ending 9204; net movement 651
+Oladapo Olaniyan,FY2025 cash vs restricted definition,PASS,Cash-flow9204 minus balance cash9159 =45 restricted; excluded from bridge
+Oladapo Olaniyan,low linked statements,PASS,Max balance gap 1.09e-11; cash articulation gap 9.09e-13
+Oladapo Olaniyan,low PP&E/intangible rollforward,PASS,Depreciation amortization separated; no negative asset balances
+Oladapo Olaniyan,low FCFF financing reconciliation,PASS,FCFF=CFO-capex+after-tax financing/nonoperating adjustment under positive pretax income; excludes draws and shareholder payouts
+Oladapo Olaniyan,low finite five years,PASS,FY2026-FY2030; all numeric outputs finite
+Oladapo Olaniyan,base linked statements,PASS,Max balance gap 1.46e-11; cash articulation gap 9.09e-13
+Oladapo Olaniyan,base PP&E/intangible rollforward,PASS,Depreciation amortization separated; no negative asset balances
+Oladapo Olaniyan,base FCFF financing reconciliation,PASS,FCFF=CFO-capex+after-tax financing/nonoperating adjustment under positive pretax income; excludes draws and shareholder payouts
+Oladapo Olaniyan,base finite five years,PASS,FY2026-FY2030; all numeric outputs finite
+Oladapo Olaniyan,high linked statements,PASS,Max balance gap 1.46e-11; cash articulation gap 3.64e-12
+Oladapo Olaniyan,high PP&E/intangible rollforward,PASS,Depreciation amortization separated; no negative asset balances
+Oladapo Olaniyan,high FCFF financing reconciliation,PASS,FCFF=CFO-capex+after-tax financing/nonoperating adjustment under positive pretax income; excludes draws and shareholder payouts
+Oladapo Olaniyan,high finite five years,PASS,FY2026-FY2030; all numeric outputs finite
+Oladapo Olaniyan,value_reset_failure linked statements,PASS,Max balance gap 7.28e-12; cash articulation gap 4.55e-13
+Oladapo Olaniyan,value_reset_failure PP&E/intangible rollforward,PASS,Depreciation amortization separated; no negative asset balances
+Oladapo Olaniyan,value_reset_failure FCFF financing reconciliation,PASS,FCFF=CFO-capex+after-tax financing/nonoperating adjustment under positive pretax income; excludes draws and shareholder payouts
+Oladapo Olaniyan,value_reset_failure finite five years,PASS,FY2026-FY2030; all numeric outputs finite
+Oladapo Olaniyan,low independent bridge,PASS,Decimal EV + cash + STI + affiliate book proxy - debt - NCI; per share difference 0
+Oladapo Olaniyan,base independent bridge,PASS,Decimal EV + cash + STI + affiliate book proxy - debt - NCI; per share difference 0
+Oladapo Olaniyan,high independent bridge,PASS,Decimal EV + cash + STI + affiliate book proxy - debt - NCI; per share difference 0
+Oladapo Olaniyan,value_reset_failure independent bridge,PASS,Decimal EV + cash + STI + affiliate book proxy - debt - NCI; per share difference 0
+Oladapo Olaniyan,DCF WACC monotonicity,PASS,Holding ordinary base FCFF fixed: +/-50bp WACC produces correct EV direction; not the locked test
+Oladapo Olaniyan,DCF g monotonicity,PASS,Holding ordinary base FCFF fixed: +/-50bp g gives correct EV direction
+Oladapo Olaniyan,DCF invalid boundary rejection,PASS,"g>=WACC, nonfinite WACC and g=-100percent all raise ValueError"
+Oladapo Olaniyan,Zero operating value boundary,PASS,EV0; equity equals bridge adjustments; terminal share undefined rather than division by0
+Oladapo Olaniyan,Market-date first flow,PASS,Only remaining2026 FCFF discounted; no full expired-year flow valued. Uniform accrual assumption is QUALIFIED separately.
+Oladapo Olaniyan,Published known-answer fixture integrity,PASS,Packaged fixtures checked against hashes of audited professor starter; independent of other lab folders
+Oladapo Olaniyan,Lab05 synthetic known-answer 12 metrics,PASS,Max absolute difference 4.7098774e-07; failures []; unchanged distributed fixture packaged under data/
+Oladapo Olaniyan,CFO-to-operating-FCFF algebra,PASS,"Includes after-tax nonoperating effect, tax normalization and separately disclosed CFO adjustments; not a claim those adjustments all recur"
+Oladapo Olaniyan,Working-capital source definition,QUALIFIED,Cash-flow delta 1212 vs balance delta 410; difference 802 preserved. Acquisition/FX/line-scope component breakdown still pending.
+Oladapo Olaniyan,Peer same numerator denominator basis,QUALIFIED,Common market date; FY2025 GAAP EBIT+D&A and common NI; EV and equity separated. Fair-value and interim rollforward gaps remain.
+Oladapo Olaniyan,Named downside causal propagation,PASS,Year2 FCFF 5936.85 vs base 10730.54; debt draw 21207.58; not a contractual covenant/default test
+Oladapo Olaniyan,Terminal growth funds reinvestment,PASS,Each case funds g/ROIC net reinvestment; terminal ROIC judgment is not validated by this arithmetic
+Oladapo Olaniyan,Reverse DCF numerical solution,PASS,"Price-implied SG&A margin shift solves market-equity target; conditional analysis, not a forecast or locked test"
+Oladapo Olaniyan,Cash-ledger corruption detected,PASS,Synthetic +100 USDm closing-cash corruption triggers articulation gap; no source or forecast input changed
+Oladapo Olaniyan,Primary capex source reconciliation,PASS,"CF capital spending4415 equals Note1 Other Segment Information: segment4192 + corporate223 = total4415. Earlier Note15/segment-total locator corrected, not AI agreement."
+Oladapo Olaniyan,Independent valuation source/definition closure,OPEN,"Annual statement arithmetic passes, but post-quarter bridge, dilution, pension/tax claims and affiliate fair values require analyst review."
+Oladapo Olaniyan,Stub seasonality and terminal ROIC judgment,OPEN,Uniform stub cashflow seasonality and terminal ROIC15percent require evidence/analyst acceptance; reinvestment arithmetic is tested separately.
+Oladapo Olaniyan,Peer policy judgment,OPEN,AI-drafted updated policy and candidate disposition require analyst acceptance; no historical human-only attestation adopted.
+Oladapo Olaniyan,Human locked changed-input record,OPEN,All fields remain blank; prediction neither proposed nor authored; test neither designed nor executed.
+Oladapo Olaniyan,Edition A recovery,OPEN,Hash preserved; report content unavailable; staff guidance not requested or invented.

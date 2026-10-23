@@ -1,0 +1,24 @@
+{
+  "student": "Oladapo Olaniyan",
+  "timestamp_utc": "2026-10-06T17:32:17.100378+00:00",
+  "source": "C:\\Users\\dolan\\Documents\\Codex\\Fall2026\\FIN43900-AI-Finance-Applications\\labs\\lab-03\\edition-a-baseline.md",
+  "source_sha256": "561fe5cdcadabc248a6d6f69164ed3a506c822df8d0f462e66792f6df5708206",
+  "copy_sha256": "561fe5cdcadabc248a6d6f69164ed3a506c822df8d0f462e66792f6df5708206",
+  "unchanged_copy": true,
+  "original_submitted_pdf_unchanged": true,
+  "original_submitted_pdf_sha256": "f745e7ea27a1445830573029a77d28967a1e4f5e53a9ba9a794079373f35464f",
+  "recovery_pdf": "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\recovery\\edition-a-20261006\\Edition-A-Recovery-Evidence.pdf",
+  "pages": 5,
+  "source_claims": "Unverified historical source text, not current attestations",
+  "instructor_acceptance": "Unresolved",
+  "submitted": false,
+  "visual_review": "All five rendered pages inspected; readable; no clipping or overlap",
+  "created": [
+    "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\recovery\\edition-a-20261006\\edition-a-draft-found-unchanged.md",
+    "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\recovery\\edition-a-20261006\\Edition-A-Recovery-Evidence.pdf",
+    "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\project1-manifest-working-v3.csv",
+    "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\recovery\\edition-a-20261006\\packet-checks.json"
+  ],
+  "source_hash_rechecked": true,
+  "render_warnings": "Poppler reports missing Symbol/ArialUnicode display mapping; actual five renders visually checked."
+}

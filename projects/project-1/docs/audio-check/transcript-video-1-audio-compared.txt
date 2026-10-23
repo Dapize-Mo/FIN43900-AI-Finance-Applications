@@ -1,0 +1,23 @@
+FIN-43900 PROJECT 1 - VIDEO 1
+Oladapo Olaniyan
+Recording: C:\Users\dolan\OneDrive\Documents\Zoom\2026-10-17 21.29.58 Oladapo Olaniyan's Zoom Meeting\video2766839541.mp4
+Matching audio: C:\Users\dolan\OneDrive\Documents\Zoom\2026-10-17 21.29.58 Oladapo Olaniyan's Zoom Meeting\audio2766839541.m4a
+Measured video duration: 136.405 seconds
+Status: audio-compared transcript draft; no human word-for-word certification.
+Method: supplied speech draft compared with independent local faster-whisper small.en recognition. Topic times are estimated within recognized audio segments and rounded down to seconds; they are not exact caption timings. Draft wording is retained where machine recognition is uncertain; discrepancies are recorded separately.
+
+[00:02] Hi, I'm Oladapo Olaniyan. This is my PepsiCo research evaluation review. My current recommendation is watch and defer, rather than buy now. The goal of this work was to rebuild the valuation using more current financial information and then decide whether the evidence supports buying at the market price.
+
+[00:20] For Edition B, I used PepsiCo's 2025 fiscal year filing and the latest interim bridge in my model. One important correction involved capital spending. Consolidated capex is 4.415 billion dollars and includes 4.192 billion from the segments and 223 million of corporate capex. This correction matters because capital spending is cash the company must invest to keep operating and growing. If I use only the segment figure, I would understate PepsiCo's total investment and overstate the cash that is available to investors. That would make the valuation look stronger than it should.
+
+[01:07] AI helped organize sources, build the model code, and prepare documentation. I recorded that use and checked key values against primary source arithmetic. I also ran validation checks to make sure the forecast statements, cash flow and valuation bridge work together. Those checks confirm the model calculations run as intended. They do not prove that every financial assumption is correct.
+
+[01:30] For the changed input test, I lowered terminal ROIC, or return on capital investment, from 15 to 12 percent. A lower ROIC means more of the company's future profits will be reinstated and reinvested to support the same growth. The estimated value per share fell from 117.29 to 111.41, a 5.88 dollar decline. This matched my recorded prediction and shows that the valuation is sensitive to long-run performance ability assumptions.
+
+[01:57] Overall, I recommend watch and defer. The remaining issues are the current date bridge, peer comparability, working capital reconciliation and final student judgment. I'll monitor revenue growth, operating margins, cash conversion and debt after future releases. Until those uncertainties are better supported, I'll monitor PepsiCo rather than recommending an immediate purchase.
+
+EDITORIAL NOTES - NOT SPOKEN
+- Standard expansion of ROIC: return on invested capital; the supplied speech says “return on capital investment.”
+- “Reinstated” is preserved from the supplied speech rendering; it may be a recognition error or spoken slip. Intended financial meaning: reinvested.
+- Correct model calculation: unrounded baseline 117.2940729555 minus changed value 111.4096394030 = 5.8844335525, a 5.0168208881% decline, correctly rounded to $5.88 and 5.02%. The rounded display values alone give about 5.01%; the original model percentage was correct.
+- Edition A: student reports TA verbally accepted a copy with matching information, and Codex preserved the receipt. This clarification is outside the recording and is not a written TA statement.

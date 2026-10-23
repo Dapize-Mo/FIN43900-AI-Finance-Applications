@@ -1,0 +1,233 @@
+{
+  "analyst": "Oladapo Olaniyan",
+  "access_date": "2026-10-06",
+  "units": "USD millions; shares millions; rates decimals",
+  "sources": {
+    "K25": {
+      "name": "PepsiCo FY2025 SEC Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/77476/000007747626000007/pep-20251227.htm",
+      "period": "2025-12-27",
+      "locator": "Income statement p57; cash flows pp59-60; balance sheet p61; Note 4 p75",
+      "status": "read directly through web tool; direct download HTTP403"
+    },
+    "Q26": {
+      "name": "PepsiCo Q2 2026 SEC Form 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/77476/000007747626000035/pep-20260613.htm",
+      "period": "24 weeks ended 2026-06-13",
+      "locator": "Cover point shares July2; income p2; balance sheet p6",
+      "status": "read directly through web tool; direct download HTTP403"
+    },
+    "G26": {
+      "name": "PepsiCo Q2 2026 earnings release",
+      "url": "https://www.sec.gov/Archives/edgar/data/77476/000007747626000037/q220268-kxexhibit991.htm",
+      "period": "2026 outlook published 2026-07-09",
+      "locator": "Fiscal 2026 Guidance and Outlook p5",
+      "status": "verified management outlook, not realized financials"
+    },
+    "M26": {
+      "name": "Stock Analysis / S&P Global historical price",
+      "url": "https://stockanalysis.com/stocks/pep/history/",
+      "period": "2026-10-05",
+      "locator": "Historical Data row Oct5 Close; sources/pep-market.html",
+      "status": "125.65 close corroborated issuer historical lookup; volume differs by provider"
+    },
+    "R26": {
+      "name": "US Treasury Daily Par Yield Curve",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "period": "2026-10-05",
+      "locator": "row10/05/2026 column10Yr; sources/treasury-2026.html",
+      "status": "verified 5.31 percent; par yield proxy for USD risk-free rate"
+    }
+  },
+  "income": [
+    {
+      "year": 2023,
+      "revenue": 91471,
+      "cogs": 41881,
+      "gross_profit": 49590,
+      "sga": 36677,
+      "impairment": 927,
+      "ebit": 11986,
+      "pension_other": 250,
+      "net_interest_other": -819,
+      "pretax": 11417,
+      "tax": 2262,
+      "net_income": 9155,
+      "nci_income": 81,
+      "common_net_income": 9074,
+      "diluted_shares": 1383,
+      "da": 2948,
+      "source": "K25"
+    },
+    {
+      "year": 2024,
+      "revenue": 91854,
+      "cogs": 41744,
+      "gross_profit": 50110,
+      "sga": 37190,
+      "impairment": 33,
+      "ebit": 12887,
+      "pension_other": -22,
+      "net_interest_other": -919,
+      "pretax": 11946,
+      "tax": 2320,
+      "net_income": 9626,
+      "nci_income": 48,
+      "common_net_income": 9578,
+      "diluted_shares": 1378,
+      "da": 3160,
+      "source": "K25"
+    },
+    {
+      "year": 2025,
+      "revenue": 93925,
+      "cogs": 43066,
+      "gross_profit": 50859,
+      "sga": 37368,
+      "impairment": 1993,
+      "ebit": 11498,
+      "pension_other": -133,
+      "net_interest_other": -1121,
+      "pretax": 10244,
+      "tax": 1949,
+      "net_income": 8295,
+      "nci_income": 55,
+      "common_net_income": 8240,
+      "diluted_shares": 1373,
+      "da": 3451,
+      "source": "K25"
+    }
+  ],
+  "balance_sheets": [
+    {
+      "year": 2024,
+      "cash": 8505,
+      "sti": 761,
+      "receivables": 10333,
+      "inventory": 5306,
+      "prepaid": 921,
+      "ppe": 28008,
+      "amortizable_intangibles": 1102,
+      "goodwill": 17534,
+      "indefinite_intangibles": 13699,
+      "affiliates": 1985,
+      "deferred_tax_assets": 4362,
+      "other_assets": 6951,
+      "short_debt": 7082,
+      "payables_other_current": 24454,
+      "long_debt": 37224,
+      "deferred_tax_liabilities": 3484,
+      "other_liabilities": 9052,
+      "common_equity": 18041,
+      "nci": 130,
+      "total_assets": 99467,
+      "total_liabilities": 81296,
+      "source": "K25"
+    },
+    {
+      "year": 2025,
+      "cash": 9159,
+      "sti": 371,
+      "receivables": 11506,
+      "inventory": 5845,
+      "prepaid": 1068,
+      "ppe": 29905,
+      "amortizable_intangibles": 1219,
+      "goodwill": 18916,
+      "indefinite_intangibles": 13847,
+      "affiliates": 2038,
+      "deferred_tax_assets": 4541,
+      "other_assets": 8984,
+      "short_debt": 6861,
+      "payables_other_current": 25903,
+      "long_debt": 42321,
+      "deferred_tax_liabilities": 3802,
+      "other_liabilities": 7965,
+      "common_equity": 20406,
+      "nci": 141,
+      "total_assets": 107399,
+      "total_liabilities": 86852,
+      "source": "K25"
+    }
+  ],
+  "cash_flows": [
+    {
+      "year": 2023,
+      "cfo": 13442,
+      "capex": 5518,
+      "ppe_sales": 198,
+      "cfi": -5495,
+      "cff": -3009,
+      "fx": -277,
+      "begin_cash_restricted": 5100,
+      "end_cash_restricted": 9761,
+      "source": "K25"
+    },
+    {
+      "year": 2024,
+      "cfo": 12507,
+      "capex": 5318,
+      "ppe_sales": 342,
+      "cfi": -5472,
+      "cff": -7556,
+      "fx": -687,
+      "begin_cash_restricted": 9761,
+      "end_cash_restricted": 8553,
+      "source": "K25"
+    },
+    {
+      "year": 2025,
+      "cfo": 12087,
+      "capex": 4415,
+      "ppe_sales": 528,
+      "cfi": -6879,
+      "cff": -4979,
+      "fx": 422,
+      "begin_cash_restricted": 8553,
+      "end_cash_restricted": 9204,
+      "cash_receivables": -580,
+      "cash_inventory": -150,
+      "cash_prepaid": 195,
+      "cash_payables": -677,
+      "source": "K25"
+    }
+  ],
+  "interim": {
+    "revenue": 43624,
+    "prior_revenue": 40645,
+    "ebit": 7236,
+    "prior_ebit": 4372,
+    "prior_impairment": 1860,
+    "cash": 10251,
+    "sti": 465,
+    "short_debt": 10602,
+    "long_debt": 42612,
+    "nci": 172,
+    "affiliates": 2180,
+    "point_shares": 1364.891558,
+    "point_share_date": "2026-07-02",
+    "period_diluted_shares": 1370,
+    "period_basic_shares": 1367,
+    "source": "Q26"
+  },
+  "market": {
+    "price": 125.65,
+    "date": "2026-10-05",
+    "risk_free": 0.0531,
+    "price_source": "M26",
+    "rate_source": "R26"
+  },
+  "base_details": {
+    "amortization": 83,
+    "source": "K25",
+    "locator": "Note4 amortization expense p75",
+    "segment_capital_spending": 4192,
+    "corporate_capital_spending": 223,
+    "total_capital_spending": 4415,
+    "capex_locator": "Note1 Other Segment Information p68: FY2025 capital spending column"
+  },
+  "known_answer_sha256": {
+    "dcf_case.csv": "af1a941c1a5f946c256be68546fae4e9217e7b8da198dbbd6a4c1cbc445ea432",
+    "dcf_expected_output.csv": "83fd4f3b15dfe924dcb918c67ab7c8193e5c133498d21284aaccf4e9e5464dcc"
+  }
+}

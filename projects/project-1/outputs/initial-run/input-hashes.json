@@ -1,0 +1,9 @@
+{
+  "data\\assumptions.json": "fc617db23d6778a877bfb68a226b6dcd122660dd6586ac54bea164f3a1cfa2e0",
+  "data\\filing-inputs.json": "2db16cd85786678222fe7bf6099139863b2c977e8ac39f69e10624962350e609",
+  "data\\peer-inputs.csv": "fef6e4268ba848953f07c790859fe5ed52db6f35b13a03838858587dfe075efd",
+  "src\\checks.py": "6bf987dcf114ab5ea8c805107d9a476d6606c1155b260ea64127e6cdf89dda17",
+  "src\\fetch_additional.py": "7fc8f32f42f693c338b6301b629c5e5dcccf429b87c5631c0d44095193eccb74",
+  "src\\fetch_sources.py": "52e230cd19994263a8ded524578ea480ae9c3c0dc6f93c105de836b1003d26c1",
+  "src\\model.py": "823104abad127180d988e6f637ddb531586a49b382faa4fe11e32e7ae1fd5439"
+}

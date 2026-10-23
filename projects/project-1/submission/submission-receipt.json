@@ -1,0 +1,38 @@
+{
+  "analyst": "Oladapo Olaniyan",
+  "assignment": "Project 1 \u2014 Corporate Finance Application \u2014 Single Assignment",
+  "submission_id": "23393007",
+  "displayed_submission_date": "Oct 18, 2026 12:11 AM",
+  "timezone": "America/Indianapolis",
+  "status": "File submission successful",
+  "files": [
+    {
+      "name": "Research-Evolution.pdf",
+      "sha256": "9ad47e2e840796fd9968f50614a7f234137557821da9fc45bfe1d40856c0447d"
+    },
+    {
+      "name": "Decision-Memo.pdf",
+      "sha256": "260c7d603ce0c4f055e3986c2c8eff0c2b01deefcd43648ccb272c67fe5cc817"
+    },
+    {
+      "name": "Validation-and-AI-Use.pdf",
+      "sha256": "2cd0e1302c01f43b57894c168130389bc2dd37d4bacf26232b2a4805eed8c404"
+    },
+    {
+      "name": "transcript-video-1.txt",
+      "sha256": "cba57d5145c307f3e977f56db619a1924dde7918becade629a11e88f1b262b36"
+    },
+    {
+      "name": "transcript-video-2.txt",
+      "sha256": "17e349caf906c62b795ea42d1fa93b8134e18392279784ff31b6d59929e42e7b"
+    },
+    {
+      "name": "transcript-video-3.txt",
+      "sha256": "8c2644300d7fa0c660520e1983e48511a86ef7e1659ba46547170282cfbd31c8"
+    },
+    {
+      "name": "submission-manifest.csv",
+      "sha256": "67096fff78054f92b53c133a3d32c6434b898d459a1e5a795f22ba8b9d3e6915"
+    }
+  ]
+}

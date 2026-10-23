@@ -1,0 +1,4 @@
+Oladapo Olaniyan | FIN-43900 Project1 | 2026-10-06
+First working-packet build failed while opening research-evolution-v2.md with the Windows cp1252 default encoding:
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x9d in position2825.
+The source/register/manifest/memo files already written were retained. Explicit UTF-8 reading fixes the PDF source-loading error; remaining PDFs are created separately, without overwriting the existing memo.

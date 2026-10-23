@@ -1,0 +1,47 @@
+{
+  "analyst": "Oladapo Olaniyan",
+  "assignment": "Project 1 \u2014 Corporate Finance Application \u2014 Single Assignment",
+  "submission_id": "23393677",
+  "supersedes": "23393007",
+  "displayed_submission_date": "Oct 18, 2026 10:24 AM",
+  "timezone": "America/Indianapolis",
+  "status": "File submission successful",
+  "files": [
+    {
+      "name": "Research-Evolution.pdf",
+      "bytes": 123808,
+      "sha256": "88fa8041254beed1245963badaa0f7a1301cab462e579e2c5a7fa6af22d55101"
+    },
+    {
+      "name": "Decision-Memo.pdf",
+      "bytes": 6727,
+      "sha256": "6cce7f4d786e884a8ae7c348213a135c960b6a29d7f34e361ee0adeea8e1e011"
+    },
+    {
+      "name": "Validation-and-AI-Use.pdf",
+      "bytes": 8002,
+      "sha256": "a7ecd925e80bf89ab8cabdff779be0a8e51676729a498c963868a55282a3de75"
+    },
+    {
+      "name": "transcript-video-1.txt",
+      "bytes": 3259,
+      "sha256": "cba57d5145c307f3e977f56db619a1924dde7918becade629a11e88f1b262b36"
+    },
+    {
+      "name": "transcript-video-2.txt",
+      "bytes": 3218,
+      "sha256": "17e349caf906c62b795ea42d1fa93b8134e18392279784ff31b6d59929e42e7b"
+    },
+    {
+      "name": "transcript-video-3.txt",
+      "bytes": 5239,
+      "sha256": "8c2644300d7fa0c660520e1983e48511a86ef7e1659ba46547170282cfbd31c8"
+    },
+    {
+      "name": "submission-manifest.csv",
+      "bytes": 8458,
+      "sha256": "c5f7afb928e8e394a50c0bb4cc1342ae3575ebbe24b85d7acd99f6c9136cf530"
+    }
+  ],
+  "correction": "Credits confirmed Kenechukwu Ogbuefi Lab 10 SG&A challenge; original recordings and financial outputs preserved"
+}

@@ -1,0 +1,31 @@
+{
+  "student": "Oladapo Olaniyan",
+  "created_utc": "2026-10-06T21:03:40.005746+00:00",
+  "guide_pages": 8,
+  "input_hashes": {
+    "outputs\\final-working-run\\results.json": "80dec212e6d40ea1c122baae7ef755a5e1e8e581e17b3d53fef6f35e080f6ec0",
+    "outputs\\final-working-run\\forecast-statements.csv": "4d70470a5df070f8f4c80a3ef28048f5fe2059d5ff1ed38ab7b02049f3d9553b",
+    "outputs\\final-working-run\\checks.csv": "991dd0721e12a43ce4bd6de2b511b169774ec6da78c384e74ca5f5ba3f1edd7a",
+    "data\\assumptions.json": "75e72c4123952ee8f17774b47b5ae0926bfbb986b8d33dee00dde1933840f1a5",
+    "data\\filing-inputs.json": "d1d8c8a3feff1988f7e85e354dd8ac98e3347ed50e52c9ce7ec75d077690c16a"
+  },
+  "inputs_unchanged": true,
+  "finance_model_rerun": false,
+  "visual_review": "Complete: current page 1 visually inspected; pages 2-8 byte-identical rendered images to previously inspected v2 pages; no clipping/overlap",
+  "preserved_first_failure": "Initial nine-page PDF/Markdown retained; worksheet note spilled onto its own page. Worksheet reorganized to keep eight pages; no financial model values changed.",
+  "preserved_visual_issue": "v2 price-reference line intersected an outside bar-value label. v3 places value labels inside the bars; v2 retained.",
+  "worksheet": "Blank ordinary committee reasoning; no locked prediction or test supplied",
+  "video_status": "Outlines only; no recordings, transcripts, actual timestamps or uploads",
+  "authoring": "AI-assisted guide, source research and layout; student owns recommendation",
+  "created": [
+    "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\presentation\\PEP-Recommendation-and-Video-Guide-v3.pdf",
+    "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\presentation\\PEP-Recommendation-and-Video-Guide-v3.md",
+    "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\presentation\\reading-guide-review-v3.json",
+    "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\src\\build_reading_guide.py"
+  ],
+  "remaining_pages_identical_to_inspected_version": true,
+  "source_links_present": 9,
+  "model_inputs_unchanged": true,
+  "render_warning": "Poppler missing Symbol/ArialUnicode display mapping warnings; actual rendered pages reviewed",
+  "final_pdf_sha256": "63caf812dfb3a73615214e111f6a319e8618733f6a1914474fbc69f923229d48"
+}

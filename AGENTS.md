@@ -1,3 +1,14 @@
+<!-- CURRENT-STORAGE-ROUTING-START -->
+## Current file locations — October 22, 2026
+
+- Read C:\Users\dolan\AGENTS.md and C:\Users\dolan\CODEX_PROJECT_PATHS.md when starting or resuming work. Use C:\Users\dolan\FILE_MANAGEMENT_MASTER.md for current dated storage decisions and C:\Users\dolan\Code\REPOSITORY_LOCATIONS.md for repository locations.
+- Local code: C:\Users\dolan\Code\school\Fall-2026\FIN-43900\workspace. All labs and projects belong there. The OneDrive course folder is document-only; do not recreate labs/projects there or beside workspace.
+- Keep Git metadata, environments, dependencies, caches and generated code in local Code folders. Keep course Office/PDF records and finalized submissions in Purdue OneDrive; personal/career documents in Personal OneDrive. Original Brightspace notebooks are allowed in OneDrive; edited Colab copies belong in Google Drive.
+- Google Drive folder: https://drive.google.com/drive/folders/1ILgtvItw5k5HfEvtSBNC-fiweuW6YrBx. Use the connected Drive plugin for working Colab files and cloud documents; do not add G: as a trusted source or claim automatic folder sync.
+- Current coursework code is under Code\school\Fall-2026; older MGMT/FRC courses under Code\school\Past Coursework. Code\_archive contains preserved historical copies, not active checkouts. Do not recreate old OneDrive code paths or overwrite newer work from a stale IDE/chat path.
+- Compare and preserve unique or newer files before migration; filename similarity is not proof of duplication. Preserve this project's existing task-specific, academic and collaboration rules below. Storage guidance is not authorization to access shared/employment content, change sharing, push/publish, or resume the held QM folder move.
+<!-- CURRENT-STORAGE-ROUTING-END -->
+
 # FIN-43900 — AI Finance Applications
 
 ## Role & Student Information
@@ -84,3 +95,13 @@ Before saying a task is complete:
 ## Communication style
 
 Be accurate, patient, direct, and practical. Ask a focused question when information is genuinely missing, but make reasonable assumptions when the risk is low and label them clearly. Start each new task by identifying what assignment, lab, project, or course task we are working on.
+
+<!-- DRIVE-CONNECTOR-START -->
+## Google Drive folder for FIN 439
+
+- Verified cloud folder: https://drive.google.com/drive/folders/1ILgtvItw5k5HfEvtSBNC-fiweuW6YrBx
+- Use the connected Google Drive plugin to list, search, read, and explicitly requested edits within this folder. Read current metadata before modifying a file.
+- This is connector routing guidance, not a local source-folder mount or an automatic synchronization claim. Do not add the G: virtual drive as a trusted Codex source folder; the app reported unsupported sandbox controls there.
+- Keep the existing OneDrive/Code source folders and primary-folder selection. Keep working Colab notebooks in Google Drive and exported course submission PDFs in Purdue OneDrive.
+- Preserve sharing, original files, and unrelated folders. Do not automatically duplicate cloud files into local project folders.
+<!-- DRIVE-CONNECTOR-END -->

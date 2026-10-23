@@ -1,0 +1,40 @@
+{
+  "analyst": "Oladapo Olaniyan",
+  "timestamp": "2026-10-06T05:29:33.120951+00:00",
+  "host_python": "C:\\Users\\dolan\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "kind": "Ordinary clean run; unchanged inputs; not locked test",
+  "copied_package": "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\repro\\cold-20261006T052933107424Z\\package",
+  "first_failure": "Inherited course .venv executable inaccessible; recorded before this clean run",
+  "clean_python": "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\repro\\cold-20261006T052933107424Z\\environment\\Scripts\\python.exe",
+  "returncode": 0,
+  "stdout": "Analyst: Oladapo Olaniyan\nOutput: C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\repro\\cold-20261006T052933107424Z\\package\\outputs\\clean-run\nlow: $76.12/share; TV share 77.7%\nbase: $117.29/share; TV share 80.1%\nhigh: $170.22/share; TV share 82.8%\nvalue_reset_failure: $51.63/share; TV share 77.2%\nChecks: {'PASS': 42, 'FAIL': 0, 'OPEN': 5, 'QUALIFIED': 2}\n",
+  "stderr": "",
+  "comparisons": {
+    "results.json": {
+      "reference_sha256": "8b9b41c593147d3b675cd0002bddc7c9781aa08ba47d566fd3529de4295867f3",
+      "cold_sha256": "8b9b41c593147d3b675cd0002bddc7c9781aa08ba47d566fd3529de4295867f3",
+      "equal": true
+    },
+    "forecast-statements.csv": {
+      "reference_sha256": "4d70470a5df070f8f4c80a3ef28048f5fe2059d5ff1ed38ab7b02049f3d9553b",
+      "cold_sha256": "4d70470a5df070f8f4c80a3ef28048f5fe2059d5ff1ed38ab7b02049f3d9553b",
+      "equal": true
+    },
+    "sensitivity.csv": {
+      "reference_sha256": "0033ee04441a8971c3232012155c57cecc1251775058fed4638bc9d676907bbb",
+      "cold_sha256": "0033ee04441a8971c3232012155c57cecc1251775058fed4638bc9d676907bbb",
+      "equal": true
+    },
+    "checks.csv": {
+      "reference_sha256": "845afb620c5a6c587d530b34f6813c84d0ea5110802379e7648c0a54cfeb9091",
+      "cold_sha256": "845afb620c5a6c587d530b34f6813c84d0ea5110802379e7648c0a54cfeb9091",
+      "equal": true
+    },
+    "peer-multiples.csv": {
+      "reference_sha256": "8300e754e7394124f22a630930312fdbeae28355b7850389842a884bdb7f9b67",
+      "cold_sha256": "8300e754e7394124f22a630930312fdbeae28355b7850389842a884bdb7f9b67",
+      "equal": true
+    }
+  },
+  "passed": true
+}

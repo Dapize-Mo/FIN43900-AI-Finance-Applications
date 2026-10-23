@@ -1,0 +1,54 @@
+[
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://www.sec.gov/Archives/edgar/data/77476/000007747626000007/pep-20251227.htm",
+    "accessed_utc": "2026-10-06T05:08:08.733190+00:00",
+    "file": "pep-2025-10k.html",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://www.sec.gov/Archives/edgar/data/77476/000007747626000035/pep-20260613.htm",
+    "accessed_utc": "2026-10-06T05:08:08.923159+00:00",
+    "file": "pep-2026-q2.html",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://raw.githubusercontent.com/CinderZhang/FIN43900-Fall2026/main/PROJECT-SUBMISSION-ARCHITECTURE.md",
+    "accessed_utc": "2026-10-06T05:08:09.041707+00:00",
+    "file": "course-architecture.md",
+    "status": "retrieved",
+    "sha256": "89d5e077896aa89d2793938fe8042411c6fe304fc43be59e3790ff220b39b12d",
+    "bytes": 20206
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://raw.githubusercontent.com/CinderZhang/FIN43900-Fall2026/main/projects/major-project-student-checklist.md",
+    "accessed_utc": "2026-10-06T05:08:09.309723+00:00",
+    "file": "course-checklist.md",
+    "status": "retrieved",
+    "sha256": "2187efb45b9f6ce676cf61607d22fc629f8331678d26f6be0311e71647a284ef",
+    "bytes": 2547
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://raw.githubusercontent.com/CinderZhang/FIN43900-Fall2026/main/projects/templates/project-submission-manifest-template.csv",
+    "accessed_utc": "2026-10-06T05:08:09.542509+00:00",
+    "file": "course-manifest.csv",
+    "status": "retrieved",
+    "sha256": "a29f6547261dee27cb29b53436ba1c0d923e3f2d02804b3966fae06c12252f42",
+    "bytes": 454
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://stockanalysis.com/stocks/pep/history/",
+    "accessed_utc": "2026-10-06T05:08:09.779875+00:00",
+    "file": "pep-market.html",
+    "status": "retrieved",
+    "sha256": "1ecee466d8df293ffcf98226a74975d651e80e380d02164cc97342de1ca1fc8d",
+    "bytes": 112633
+  }
+]

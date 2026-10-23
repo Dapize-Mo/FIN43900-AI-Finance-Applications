@@ -1,0 +1,259 @@
+1
+00:00:03,000 --> 00:00:06,555
+Hello, I'm Oladapo Olaniyan. This is my live PepsiCo valuation
+
+2
+00:00:06,555 --> 00:00:10,111
+output and my committee recommendation. My recommendation is to watch
+
+3
+00:00:10,111 --> 00:00:13,666
+the company and defer initiating a position today. The recorded
+
+4
+00:00:13,666 --> 00:00:17,222
+October 5 market price is 125.65 dollars per share, while
+
+5
+00:00:17,222 --> 00:00:20,777
+my base discounted cash flow value is 117 dollars point
+
+6
+00:00:20,777 --> 00:00:24,333
+29 per share, per diluted proxy share. That gap does
+
+7
+00:00:24,333 --> 00:00:27,888
+not automatically mean the stock is overpriced, but it means
+
+8
+00:00:27,888 --> 00:00:31,444
+the current evidence does not give me a sufficient margin
+
+9
+00:00:31,444 --> 00:00:35,000
+of safety.
+
+10
+00:00:35,000 --> 00:00:38,750
+The three main discounted cash flows scenarios are low, base,
+
+11
+00:00:38,750 --> 00:00:42,500
+and high. They produce values of 76.12 dollars, 117.29 dollars,
+
+12
+00:00:42,500 --> 00:00:46,250
+and 170.22 dollars per share, respectively. These are conditional model
+
+13
+00:00:46,250 --> 00:00:50,000
+outcomes, not probability weighted price targets, as discussed in the
+
+14
+00:00:50,000 --> 00:00:53,750
+previous video. Each outcome changes operating and valuation assumptions together,
+
+15
+00:00:53,750 --> 00:00:57,500
+so I use the range to understand what would have
+
+16
+00:00:57,500 --> 00:01:01,250
+to go right or wrong instead of pretending that one
+
+17
+00:01:01,250 --> 00:01:05,000
+exact number decides the future.
+
+18
+00:01:05,000 --> 00:01:09,125
+This section shows the main inputs, five-year forecasts, free cash
+
+19
+00:01:09,125 --> 00:01:13,250
+flow of the firm, and valuation bridge. The base cap
+
+20
+00:01:13,250 --> 00:01:17,375
+case uses a 7.66 percent WACC and 2.5 percent terminal
+
+21
+00:01:17,375 --> 00:01:21,500
+growth rate. The forecast links revenue, operating margin, taxes, capital
+
+22
+00:01:21,500 --> 00:01:25,625
+spending, and working capital to FCFF. FCFF is the cash
+
+23
+00:01:25,625 --> 00:01:29,750
+available to all capital providers after operating investment, which is
+
+24
+00:01:29,750 --> 00:01:33,875
+why it's discounted using WACC to estimate enterprise value before
+
+25
+00:01:33,875 --> 00:01:38,000
+moving to equity value per share.
+
+26
+00:01:38,000 --> 00:01:42,375
+The operating forecast assumes gradual revenue growth and margin improvements.
+
+27
+00:01:42,375 --> 00:01:46,750
+I treat those as analyst assumptions rather than company facts.
+
+28
+00:01:46,750 --> 00:01:51,125
+The model also carries capital spending and working capital investment
+
+29
+00:01:51,125 --> 00:01:55,500
+throughout the forecast. Because revenue growth alone does not create
+
+30
+00:01:55,500 --> 00:01:59,875
+value if it requires too much reinvestment. The bridge then
+
+31
+00:01:59,875 --> 00:02:04,250
+adds cash and selected non-operating assets and subtracts debt and
+
+32
+00:02:04,250 --> 00:02:08,625
+non-controlling interest to move from enterprise value to the common
+
+33
+00:02:08,625 --> 00:02:13,000
+equity value used on the per-share result.
+
+34
+00:02:13,000 --> 00:02:17,666
+This is the Value Reset Failure scenario. It combines weaker
+
+35
+00:02:17,666 --> 00:02:22,333
+revenue growth, lower gross margin, higher SG&A, and longer receivable
+
+36
+00:02:22,333 --> 00:02:27,000
+and inventory days.
+
+37
+00:02:27,000 --> 00:02:31,600
+Those pressures reduce operating profit and FCFF, then create funding
+
+38
+00:02:31,600 --> 00:02:36,200
+needs as the cash balance falls. The point is to
+
+39
+00:02:36,200 --> 00:02:40,800
+test how connected operating problems travel through the income statement,
+
+40
+00:02:40,800 --> 00:02:45,400
+cash flow, and valuation. It is a modeled downside case,
+
+41
+00:02:45,400 --> 00:02:50,000
+not a claim that PepsiCo will default.
+
+42
+00:02:50,000 --> 00:02:53,666
+The sensitivity grid changes WACC and terminal growth, two assumptions
+
+43
+00:02:53,666 --> 00:02:57,333
+that matter a great deal because terminal value is 80.1
+
+44
+00:02:57,333 --> 00:03:01,000
+percent of enterprise value in the base case. A high
+
+45
+00:03:01,000 --> 00:03:04,666
+terminal value means long-run assumptions carry substantial weight. The reverse
+
+46
+00:03:04,666 --> 00:03:08,333
+DCF gives a different view of the market price. Holding
+
+47
+00:03:08,333 --> 00:03:12,000
+the other inputs fixed, reaching the recorded price requires about
+
+48
+00:03:12,000 --> 00:03:15,666
+0.85 percentage points more EBIT margin across the forecast years.
+
+49
+00:03:15,666 --> 00:03:19,333
+That is one conditional path, not the market's uniquely identified
+
+50
+00:03:19,333 --> 00:03:23,000
+forecast.
+
+51
+00:03:23,000 --> 00:03:28,857
+I also included peer lenses for Coca-Cola and Mondelez. They
+
+52
+00:03:28,857 --> 00:03:34,714
+are useful reference points but remain qualified because the peer
+
+53
+00:03:34,714 --> 00:03:40,571
+inputs have comparability limits, including accounting conventions, dated balances, and
+
+54
+00:03:40,571 --> 00:03:46,428
+differences in the earnings measures. I do not average the
+
+55
+00:03:46,428 --> 00:03:52,285
+peer outputs with the DCF into one target because the
+
+56
+00:03:52,285 --> 00:03:58,142
+methods answer different questions. Combining them without a consistent policy
+
+57
+00:03:58,142 --> 00:04:04,000
+would create false precision.
+
+58
+00:04:04,000 --> 00:04:08,617
+My committee ask is to defer entry and monitor revenue
+
+59
+00:04:08,617 --> 00:04:13,235
+growth, operating margin, cash conversion, debt, and payout decisions in
+
+60
+00:04:13,235 --> 00:04:17,852
+future releases. I would reconsider after a reviewed current date
+
+61
+00:04:17,852 --> 00:04:22,470
+bridge and verified improvements in margins and cash flow, or
+
+62
+00:04:22,470 --> 00:04:27,087
+if the share price gives a defensible margin of safety
+
+63
+00:04:27,087 --> 00:04:31,705
+relative to the supported value. If margins erode, cash conversion
+
+64
+00:04:31,705 --> 00:04:36,322
+weakens, or downside funding becomes insufficient, I would not initiate.
+
+65
+00:04:36,322 --> 00:04:40,940
+This concludes my live valuation and recommendation.

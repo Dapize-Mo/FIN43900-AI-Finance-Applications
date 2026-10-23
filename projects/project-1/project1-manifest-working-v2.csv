@@ -1,0 +1,13 @@
+item,required,location_or_url,title,duration_or_as_of,timestamp_index,access_checked,frozen_or_commit_id,notes
+Research-Evolution.pdf,yes,docs/Research-Evolution-working-v2.pdf,Working B / Edition A recovery hold,2026-10-06,,Local text/page/layout checked; external access/freeze pending,,Oladapo Olaniyan | WORKING | Edition A unavailable; staff guidance needed
+Repository,yes,,PEP Project1 - Oladapo Olaniyan,,,pending,,Oladapo Olaniyan | WORKING | Local code runs; no hosted URL/access confirmation; original README retained; RUNME supplements
+Visible executed output,yes,outputs/final-working-run/visible-output.html,Executed working FCFF evidence,Market2026-10-05,,pending,,Oladapo Olaniyan | WORKING | Local readable output; not a public deployment
+Decision memo or deck,yes,docs/Decision-Memo-working-v2.pdf,PEP watch/defer - working memo,2 pages,,Local text/page/layout checked; external access/freeze pending,,Oladapo Olaniyan | WORKING | Student judgment pending
+Validation-and-AI-Use.pdf,yes,docs/Validation-and-AI-Use-working-v2.pdf,Working checks / AI record,2026-10-06,,Local text/page/layout checked; external access/freeze pending,,Oladapo Olaniyan | WORKING | Locked record blank; final source equivalence/freeze pending
+Video 1,yes,,Research evolution and AI output check,<=3:00,,pending,,Oladapo Olaniyan | WORKING | Not recorded; URL/title/measured duration/index pending
+Transcript Video 1,yes,,Corrected actual transcript,,,pending,,Oladapo Olaniyan | WORKING | Not created; must follow real recording
+Video 2,yes,,Architecture / finance / clean run,<=5:00,,pending,,Oladapo Olaniyan | WORKING | Not recorded; URL/title/measured duration/index pending
+Transcript Video 2,yes,,Corrected actual transcript,,,pending,,Oladapo Olaniyan | WORKING | Not created; must follow real recording
+Video 3,yes,,Committee decision with live product demo,<=5:00,,pending,,Oladapo Olaniyan | WORKING | Not recorded; URL/title/measured duration/index pending
+Transcript Video 3,yes,,Corrected actual transcript,,,pending,,Oladapo Olaniyan | WORKING | Not created; must follow real recording
+Optional deployed output,no,,,,,pending,,Oladapo Olaniyan | WORKING | Not requested; no deployment

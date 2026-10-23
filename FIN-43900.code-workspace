@@ -1,0 +1,15 @@
+{
+  "folders": [
+    {
+      "path": "C:\\Users\\dolan\\Code\\school\\Fall-2026\\FIN-43900\\workspace",
+      "name": "FIN-43900 code"
+    },
+    {
+      "path": "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications",
+      "name": "FIN-43900 course documents"
+    }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "C:\\Users\\dolan\\Code\\school\\Fall-2026\\FIN-43900\\workspace\\.venv\\Scripts\\python.exe"
+  }
+}

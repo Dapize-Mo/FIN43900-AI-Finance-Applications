@@ -1,0 +1,26 @@
+{
+  "synthetic_cases": [
+    {
+      "case": "positive",
+      "percentile": 0.88,
+      "seconds": 1.12
+    },
+    {
+      "case": "neutral",
+      "percentile": 0.5,
+      "seconds": 0.639
+    },
+    {
+      "case": "negative",
+      "percentile": 0.02,
+      "seconds": 0.644
+    }
+  ],
+  "directional_order_passed": true,
+  "all_cases_under_270_seconds": true,
+  "author": "Oladapo Olaniyan",
+  "date": "2026-10-06",
+  "health_http_status": 200,
+  "unsigned_request_http_status": 401,
+  "passed": true
+}

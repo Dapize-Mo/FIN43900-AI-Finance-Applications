@@ -1,0 +1,7 @@
+# Artifact verification record
+
+Analyst: Oladapo Olaniyan,2026-10-06. Corrected working PDFs inspected page by page after rendering: Decision-Memo-working-v2.pdf2pages; Research-Evolution-working-v2.pdf1page; Validation-and-AI-Use-working-v2.pdf3pages. All pages readable with complete tables/footers and no clipping/overlap. Text extraction confirms student name. Note1 is applicable to research/validation correction; absence of that explicit locator in memo is not a failed check (memo cites register/validation).
+
+Initial Poppler .cmd wrapper returned “The system cannot find the path specified.” Direct bundled Library/bin/pdftoppm.exe succeeded, exit0; font mapping warnings for Symbol/ArialUnicode did not produce visible defects. Rendered QA files are retained under outputs/pdf-review.
+
+Local HTML file was created and contains scenario values, material inputs, full base statement summary, expandable assumptions, WACC/g table, reverse DCF, peers and checks. Attempted localhost preview: browser webview attachment timed out; sandbox socket request raised WinError10013. Test server was stopped; no external service/public deployment. open_in_codex file request returned queued, not proof of a visible browser render. A successful live browser interaction is not claimed. HTML/PDF/Markdown are visible-output artifacts; final browser demonstration still needs real verification before recording Video3.

@@ -1,0 +1,14 @@
+{
+  "analyst": "Oladapo Olaniyan",
+  "test": "Locked changed-input",
+  "input": "terminal_roic",
+  "old_value": 0.15,
+  "new_value": 0.12,
+  "units": "annual rate",
+  "baseline": "..\\frozen-baseline",
+  "precommit_timestamp": "2026-10-15 5:22 p.m. CDT",
+  "instructor_clarification": "Student-reported in-class clarification: no-AI instruction was a typo",
+  "changed_files": [
+    "data/assumptions.json"
+  ]
+}

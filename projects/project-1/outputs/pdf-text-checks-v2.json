@@ -1,0 +1,26 @@
+[
+  {
+    "analyst": "Oladapo Olaniyan",
+    "file": "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\docs\\Decision-Memo-working-v2.pdf",
+    "pages": 2,
+    "name_present": true,
+    "corrected_note1": false,
+    "sha256": "fab6bb89f99e1fb4eb3ad6bb1a0e023f785b51dc4e68cac39a9be0eb1643146a"
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "file": "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\docs\\Research-Evolution-working-v2.pdf",
+    "pages": 1,
+    "name_present": true,
+    "corrected_note1": true,
+    "sha256": "e5635fab69eae9f75b42d0b9cb688cb00a426136ce2ffbfe629170ed955fd8dd"
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "file": "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\docs\\Validation-and-AI-Use-working-v2.pdf",
+    "pages": 3,
+    "name_present": true,
+    "corrected_note1": true,
+    "sha256": "2f79e55ef45e2b5a810ece8b79d67afa4de761abfa6e48c42f4961bbe6a7cf8f"
+  }
+]

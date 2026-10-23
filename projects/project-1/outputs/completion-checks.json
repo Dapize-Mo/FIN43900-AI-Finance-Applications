@@ -1,0 +1,22 @@
+{
+  "analyst": "Oladapo Olaniyan",
+  "original_retained_files": 5,
+  "source_register_rows": 205,
+  "manifest_rows": 12,
+  "required_manifest_rows": 11,
+  "html_files_exist": true,
+  "html_material_inputs_and_values": true,
+  "memo_pages": 2,
+  "ordinary_check_counts": {
+    "PASS": 42,
+    "FAIL": 0,
+    "OPEN": 5,
+    "QUALIFIED": 2
+  },
+  "edition_a_sha256": "f745e7ea27a1445830573029a77d28967a1e4f5e53a9ba9a794079373f35464f",
+  "human_locked_fields": "blank; not authored/designed/executed",
+  "submission_ready": false,
+  "inventory_hashed_files_at_first_capture": 153,
+  "inventory_total_files": 155,
+  "inventory_self_hash": "not applicable: inventory cannot hash itself"
+}

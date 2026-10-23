@@ -1,0 +1,523 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>PEP | Oladapo Olaniyan | Working valuation</title><style>body{font:16px system-ui;max-width:1100px;margin:40px auto;padding:20px;color:#17283b;background:#f5f7fa}h1{color:#004d71}table{border-collapse:collapse;background:white;width:100%}td,th{padding:14px;text-align:right;border-bottom:1px solid #ddd}td:first-child,th:first-child{text-align:left}.status{background:#fff0ca;padding:18px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}details{margin:20px 0}a{color:#005c87}</style><h1>PepsiCo committee decision workspace</h1><p>Oladapo Olaniyan | FIN-43900 Project 1 | Market date 2026-10-05</p><p class="status">Executed working analysis. Draft action: watch/defer until evidence and analyst judgment are complete. Price $125.65. All forecast values are assumptions, not company facts.</p><table><tr><th>Case</th><th>EV $M</th><th>Common equity $M</th><th>$/diluted share</th><th>Terminal share</th></tr><tr><td>low</td><td>144,615.55</td><td>104,125.55</td><td>76.12</td><td>77.7%</td></tr><tr><td>base</td><td>200,935.57</td><td>160,445.57</td><td>117.29</td><td>80.1%</td></tr><tr><td>high</td><td>273,327.43</td><td>232,837.43</td><td>170.22</td><td>82.8%</td></tr><tr><td>value_reset_failure</td><td>111,116.17</td><td>70,626.17</td><td>51.63</td><td>77.2%</td></tr></table><h2>Base five-year statements - USD millions</h2><table><tr><th>Year</th><th>Sales</th><th>EBIT</th><th>Common NI</th><th>CFO</th><th>Capex</th><th>FCFF</th><th>Cash</th></tr><tr><td>2,026.0</td><td>98,621.2</td><td>14,201.5</td><td>8,949.1</td><td>12,845.1</td><td>4,635.2</td><td>10,278.2</td><td>8,409.1</td></tr><tr><td>2,027.0</td><td>102,073.0</td><td>14,902.7</td><td>9,461.6</td><td>13,428.6</td><td>4,797.4</td><td>10,730.5</td><td>7,840.2</td></tr><tr><td>2,028.0</td><td>105,645.5</td><td>15,635.5</td><td>10,006.0</td><td>14,122.0</td><td>4,965.3</td><td>11,279.6</td><td>7,548.9</td></tr><tr><td>2,029.0</td><td>108,814.9</td><td>16,322.2</td><td>10,526.1</td><td>14,749.7</td><td>5,114.3</td><td>11,770.4</td><td>7,481.5</td></tr><tr><td>2,030.0</td><td>112,079.4</td><td>17,036.1</td><td>11,076.4</td><td>15,461.9</td><td>5,267.7</td><td>12,331.9</td><td>7,710.2</td></tr></table><p>Open <a href="forecast-statements.csv">full statements</a>, <a href="sensitivity.csv">WACC/g sensitivity</a>, <a href="checks.csv">check evidence</a>, or <a href="results.json">full results</a>.</p><details open><summary>Finance logic and input assumptions</summary><pre>{
+  &quot;wacc&quot;: {
+    &quot;risk_free&quot;: 0.0531,
+    &quot;beta&quot;: 0.65,
+    &quot;erp&quot;: 0.05,
+    &quot;cost_equity&quot;: 0.08560000000000001,
+    &quot;cost_debt&quot;: 0.0611,
+    &quot;equity_weight&quot;: 0.7631908746800525,
+    &quot;wacc&quot;: 0.07661498816711057
+  },
+  &quot;bridge&quot;: {
+    &quot;cash&quot;: 10251,
+    &quot;sti&quot;: 465,
+    &quot;debt&quot;: 53214,
+    &quot;nci&quot;: 172,
+    &quot;nonoperating_assets&quot;: 2180,
+    &quot;point_shares&quot;: 1364.891558,
+    &quot;diluted_shares&quot;: 1367.891558,
+    &quot;price&quot;: 125.65,
+    &quot;balance_date&quot;: &quot;2026-06-13&quot;,
+    &quot;share_date&quot;: &quot;2026-07-02&quot;
+  },
+  &quot;normalization&quot;: {
+    &quot;reported_ebit&quot;: 11498,
+    &quot;impairment_addback&quot;: 1993,
+    &quot;normalized_ebit&quot;: 13491,
+    &quot;normalized_margin&quot;: 0.143635879691243,
+    &quot;tax_assumption&quot;: 0.22,
+    &quot;cash_capex&quot;: 4415,
+    &quot;bs_delta_nwc&quot;: 410,
+    &quot;cash_flow_delta_nwc&quot;: 1212,
+    &quot;nwc_definition_difference&quot;: 802,
+    &quot;normalized_operating_fcff&quot;: 8346.98,
+    &quot;simple_reported_operating_fcff&quot;: 6792.4400000000005,
+    &quot;reported_cfo_less_capex&quot;: 7672,
+    &quot;other_cfo_adjustments&quot;: 1553,
+    &quot;cfo_to_fcff_reconciliation&quot;: 7672.0,
+    &quot;explanation&quot;: &quot;Normalized FCFF is an operating proxy, not reported cash flow. Other CFO adjustments include impairments, leases, SBC, tax/pension/restructuring timing and other items; not all recur or add economic value. Balance delta excludes cash/debt and uses broad AP line; cash-flow delta excludes acquisition/FX effects. Do not double-count impairment addback with CFO adjustments.&quot;
+  },
+  &quot;assumptions&quot;: {
+    &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+    &quot;status&quot;: &quot;AI-proposed working assumptions; student acceptance pending; never company facts&quot;,
+    &quot;valuation_date&quot;: &quot;2026-10-05&quot;,
+    &quot;fiscal_2026_end&quot;: &quot;2026-12-26&quot;,
+    &quot;tax_rate&quot;: 0.22,
+    &quot;beta&quot;: 0.65,
+    &quot;equity_risk_premium&quot;: 0.05,
+    &quot;debt_spread&quot;: 0.008,
+    &quot;terminal_roic&quot;: 0.15,
+    &quot;min_cash&quot;: 4000,
+    &quot;annual_debt_repayment&quot;: 0,
+    &quot;annual_buybacks&quot;: 1000,
+    &quot;dividends_2026&quot;: 7900,
+    &quot;dividend_growth&quot;: 0.03,
+    &quot;dilution_increment&quot;: 3,
+    &quot;affiliates_book_proxy&quot;: true,
+    &quot;scenarios&quot;: {
+      &quot;low&quot;: {
+        &quot;growth&quot;: [
+          0.04,
+          0.015,
+          0.02,
+          0.02,
+          0.02
+        ],
+        &quot;gross_margin&quot;: [
+          0.535,
+          0.532,
+          0.532,
+          0.535,
+          0.537
+        ],
+        &quot;sga_ratio&quot;: [
+          0.4,
+          0.405,
+          0.402,
+          0.4,
+          0.398
+        ],
+        &quot;capex_ratio&quot;: 0.049,
+        &quot;working_capital_extra_days&quot;: 5,
+        &quot;wacc_shift&quot;: 0.005,
+        &quot;terminal_growth&quot;: 0.015,
+        &quot;causal_story&quot;: &quot;Consumer value reset fails to restore North American volume; pricing/mix and input costs compress gross margins; slower sell-through ties up inventory and receivables; debt funding persists.&quot;
+      },
+      &quot;base&quot;: {
+        &quot;growth&quot;: [
+          0.05,
+          0.035,
+          0.035,
+          0.03,
+          0.03
+        ],
+        &quot;gross_margin&quot;: [
+          0.542,
+          0.544,
+          0.545,
+          0.545,
+          0.545
+        ],
+        &quot;sga_ratio&quot;: [
+          0.398,
+          0.398,
+          0.397,
+          0.395,
+          0.393
+        ],
+        &quot;capex_ratio&quot;: 0.047,
+        &quot;working_capital_extra_days&quot;: 0,
+        &quot;wacc_shift&quot;: 0,
+        &quot;terminal_growth&quot;: 0.025,
+        &quot;causal_story&quot;: &quot;FY2026 reported sales follow midpoint management4-6percent guidance; international strength offsets North American weakness; modest productivity lowers SG&amp;A intensity while reinvestment remains below5percent of sales.&quot;
+      },
+      &quot;high&quot;: {
+        &quot;growth&quot;: [
+          0.06,
+          0.05,
+          0.045,
+          0.04,
+          0.035
+        ],
+        &quot;gross_margin&quot;: [
+          0.55,
+          0.553,
+          0.555,
+          0.555,
+          0.555
+        ],
+        &quot;sga_ratio&quot;: [
+          0.394,
+          0.392,
+          0.39,
+          0.389,
+          0.388
+        ],
+        &quot;capex_ratio&quot;: 0.047,
+        &quot;working_capital_extra_days&quot;: -2,
+        &quot;wacc_shift&quot;: -0.005,
+        &quot;terminal_growth&quot;: 0.03,
+        &quot;causal_story&quot;: &quot;Value offerings rebuild volume; stronger international mix and productivity improve gross profit and fixed-cost absorption; faster collections reduce working capital.&quot;
+      },
+      &quot;value_reset_failure&quot;: {
+        &quot;growth&quot;: [
+          0.04,
+          -0.03,
+          0,
+          0.01,
+          0.02
+        ],
+        &quot;gross_margin&quot;: [
+          0.535,
+          0.515,
+          0.52,
+          0.525,
+          0.53
+        ],
+        &quot;sga_ratio&quot;: [
+          0.4,
+          0.415,
+          0.41,
+          0.405,
+          0.4
+        ],
+        &quot;capex_ratio&quot;: 0.049,
+        &quot;working_capital_extra_days&quot;: 10,
+        &quot;wacc_shift&quot;: 0.01,
+        &quot;terminal_growth&quot;: 0.01,
+        &quot;causal_story&quot;: &quot;Named downside: Value Reset Failure. Demand deterioration and price cuts reduce revenue, commodity/distribution costs compress gross margin, overhead adjusts slowly, collections/inventory worsen. Cash falls, modeled funding rises and value declines. This is a separate AI-assisted scenario, not the locked human changed-input test.&quot;
+      }
+    }
+  }
+}</pre></details><details><summary>WACC / terminal growth sensitivity - USD per diluted share</summary><table><tr><th>WACC</th><th>g</th><th>Value/share</th><th>Terminal share</th></tr><tr><td>6.66%</td><td>1.5%</td><td>$131.24</td><td>81.4%</td></tr><tr><td>6.66%</td><td>2.0%</td><td>$140.60</td><td>82.4%</td></tr><tr><td>6.66%</td><td>2.5%</td><td>$152.15</td><td>83.5%</td></tr><tr><td>6.66%</td><td>3.0%</td><td>$166.79</td><td>84.8%</td></tr><tr><td>7.16%</td><td>1.5%</td><td>$116.98</td><td>79.8%</td></tr><tr><td>7.16%</td><td>2.0%</td><td>$124.17</td><td>80.8%</td></tr><tr><td>7.16%</td><td>2.5%</td><td>$132.85</td><td>81.8%</td></tr><tr><td>7.16%</td><td>3.0%</td><td>$143.57</td><td>82.9%</td></tr><tr><td>7.66%</td><td>1.5%</td><td>$105.04</td><td>78.3%</td></tr><tr><td>7.66%</td><td>2.0%</td><td>$110.65</td><td>79.2%</td></tr><tr><td>7.66%</td><td>2.5%</td><td>$117.29</td><td>80.1%</td></tr><tr><td>7.66%</td><td>3.0%</td><td>$125.32</td><td>81.1%</td></tr><tr><td>8.16%</td><td>1.5%</td><td>$94.89</td><td>76.8%</td></tr><tr><td>8.16%</td><td>2.0%</td><td>$99.32</td><td>77.6%</td></tr><tr><td>8.16%</td><td>2.5%</td><td>$104.48</td><td>78.5%</td></tr><tr><td>8.16%</td><td>3.0%</td><td>$110.59</td><td>79.4%</td></tr><tr><td>8.66%</td><td>1.5%</td><td>$86.17</td><td>75.4%</td></tr><tr><td>8.66%</td><td>2.0%</td><td>$89.68</td><td>76.1%</td></tr><tr><td>8.66%</td><td>2.5%</td><td>$93.74</td><td>76.9%</td></tr><tr><td>8.66%</td><td>3.0%</td><td>$98.47</td><td>77.7%</td></tr></table></details><details><summary>Reverse DCF and peer comparison</summary><pre>{
+  &quot;reverse&quot;: {
+    &quot;status&quot;: &quot;solved&quot;,
+    &quot;uniform_ebit_margin_shift&quot;: 0.00846876991924736,
+    &quot;target_equity&quot;: 171875.5742627,
+    &quot;solved_equity&quot;: 171875.5742627,
+    &quot;residual&quot;: 0.0,
+    &quot;interpretation&quot;: &quot;Uniform reduction in SG&amp;A ratio, holding revenue, gross margin, WACC and g fixed; a conditional price-implied margin path, not a prediction&quot;
+  },
+  &quot;peers&quot;: {
+    &quot;peers&quot;: [
+      {
+        &quot;ticker&quot;: &quot;KO&quot;,
+        &quot;classification&quot;: &quot;beverage lens&quot;,
+        &quot;price_date&quot;: &quot;2026-10-05&quot;,
+        &quot;market_equity&quot;: 372213.53501193004,
+        &quot;debt&quot;: 43543.0,
+        &quot;enterprise_value&quot;: 380768.53501193004,
+        &quot;ebitda&quot;: 14812.0,
+        &quot;common_net_income&quot;: 13107.0,
+        &quot;ev_ebitda&quot;: 25.706760397780855,
+        &quot;pe&quot;: 28.398072404969103,
+        &quot;status&quot;: &quot;qualified book investment/NCI proxies; close differs by0.01 at other provider&quot;
+      },
+      {
+        &quot;ticker&quot;: &quot;MDLZ&quot;,
+        &quot;classification&quot;: &quot;snack lens&quot;,
+        &quot;price_date&quot;: &quot;2026-10-05&quot;,
+        &quot;market_equity&quot;: 74651.25825393,
+        &quot;debt&quot;: 21450.0,
+        &quot;enterprise_value&quot;: 93819.25825393,
+        &quot;ebitda&quot;: 4906.0,
+        &quot;common_net_income&quot;: 2451.0,
+        &quot;ev_ebitda&quot;: 19.123371026076235,
+        &quot;pe&quot;: 30.457469707845778,
+        &quot;status&quot;: &quot;qualified annual earnings hit by1341 derivative mark-to-market losses; no reported separate STI line assumed0&quot;
+      }
+    ],
+    &quot;count&quot;: 2,
+    &quot;median_ev_ebitda&quot;: 22.415065711928545,
+    &quot;median_pe&quot;: 29.42777105640744,
+    &quot;reported_ev_route&quot;: 215.36269860334923,
+    &quot;normalized_ev_route&quot;: 248.02115438707412,
+    &quot;reported_pe_route&quot;: 177.26904745236925,
+    &quot;caution&quot;: &quot;Two qualified sector lenses, book investment/NCI proxies, aged share/debt data and FY2025 denominators. Indicative comparison, not approved target or complete peer validation.&quot;
+  }
+}</pre></details><details open><summary>Checks and unresolved evidence</summary><pre>{
+  &quot;checks&quot;: [
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;FY2023 filing income articulation&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Reported statement lines reconcile exactly in USD millions&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;FY2024 filing income articulation&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Reported statement lines reconcile exactly in USD millions&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;FY2025 filing income articulation&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Reported statement lines reconcile exactly in USD millions&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;FY2024 source balance&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Assets 99467; liabilities 81296; gap 0&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;FY2025 source balance&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Assets 107399; liabilities 86852; gap 0&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;FY2023 source cash-flow articulation&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Cash+restricted ending 9761; net movement 4661&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;FY2024 source cash-flow articulation&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Cash+restricted ending 8553; net movement -1208&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;FY2025 source cash-flow articulation&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Cash+restricted ending 9204; net movement 651&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;FY2025 cash vs restricted definition&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Cash-flow9204 minus balance cash9159 =45 restricted; excluded from bridge&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;low linked statements&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Max balance gap 1.09e-11; cash articulation gap 9.09e-13&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;low PP&amp;E/intangible rollforward&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Depreciation amortization separated; no negative asset balances&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;low FCFF financing reconciliation&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;FCFF=CFO-capex+after-tax financing/nonoperating adjustment under positive pretax income; excludes draws and shareholder payouts&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;low finite five years&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;FY2026-FY2030; all numeric outputs finite&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;base linked statements&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Max balance gap 1.46e-11; cash articulation gap 9.09e-13&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;base PP&amp;E/intangible rollforward&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Depreciation amortization separated; no negative asset balances&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;base FCFF financing reconciliation&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;FCFF=CFO-capex+after-tax financing/nonoperating adjustment under positive pretax income; excludes draws and shareholder payouts&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;base finite five years&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;FY2026-FY2030; all numeric outputs finite&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;high linked statements&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Max balance gap 1.46e-11; cash articulation gap 3.64e-12&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;high PP&amp;E/intangible rollforward&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Depreciation amortization separated; no negative asset balances&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;high FCFF financing reconciliation&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;FCFF=CFO-capex+after-tax financing/nonoperating adjustment under positive pretax income; excludes draws and shareholder payouts&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;high finite five years&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;FY2026-FY2030; all numeric outputs finite&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;value_reset_failure linked statements&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Max balance gap 7.28e-12; cash articulation gap 4.55e-13&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;value_reset_failure PP&amp;E/intangible rollforward&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Depreciation amortization separated; no negative asset balances&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;value_reset_failure FCFF financing reconciliation&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;FCFF=CFO-capex+after-tax financing/nonoperating adjustment under positive pretax income; excludes draws and shareholder payouts&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;value_reset_failure finite five years&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;FY2026-FY2030; all numeric outputs finite&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;low independent bridge&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Decimal EV + cash + STI + affiliate book proxy - debt - NCI; per share difference 0&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;base independent bridge&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Decimal EV + cash + STI + affiliate book proxy - debt - NCI; per share difference 1.42e-14&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;high independent bridge&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Decimal EV + cash + STI + affiliate book proxy - debt - NCI; per share difference 2.84e-14&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;value_reset_failure independent bridge&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Decimal EV + cash + STI + affiliate book proxy - debt - NCI; per share difference 0&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;DCF WACC monotonicity&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Holding ordinary base FCFF fixed: +/-50bp WACC produces correct EV direction; not the locked test&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;DCF g monotonicity&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Holding ordinary base FCFF fixed: +/-50bp g gives correct EV direction&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;DCF invalid boundary rejection&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;g&gt;=WACC, nonfinite WACC and g=-100percent all raise ValueError&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Zero operating value boundary&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;EV0; equity equals bridge adjustments; terminal share undefined rather than division by0&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Market-date first flow&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Only remaining2026 FCFF discounted; no full expired-year flow valued. Uniform accrual assumption is QUALIFIED separately.&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Published known-answer fixture integrity&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Packaged fixtures checked against hashes of audited professor starter; independent of other lab folders&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Lab05 synthetic known-answer 12 metrics&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Max absolute difference 4.7098774e-07; failures []; unchanged distributed fixture packaged under data/&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;CFO-to-operating-FCFF algebra&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Includes after-tax nonoperating effect, tax normalization and separately disclosed CFO adjustments; not a claim those adjustments all recur&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Working-capital source definition&quot;,
+      &quot;status&quot;: &quot;QUALIFIED&quot;,
+      &quot;detail&quot;: &quot;Cash-flow delta 1212 vs balance delta 410; difference 802 preserved. Acquisition/FX/line-scope component breakdown still pending.&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Peer same numerator denominator basis&quot;,
+      &quot;status&quot;: &quot;QUALIFIED&quot;,
+      &quot;detail&quot;: &quot;Common market date; FY2025 GAAP EBIT+D&amp;A and common NI; EV and equity separated. Fair-value and interim rollforward gaps remain.&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Named downside causal propagation&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Year2 FCFF 5936.85 vs base 10730.54; debt draw 21207.58; not a contractual covenant/default test&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Terminal growth funds reinvestment&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Each case funds g/ROIC net reinvestment; terminal ROIC judgment is not validated by this arithmetic&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Reverse DCF numerical solution&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Price-implied SG&amp;A margin shift solves market-equity target; conditional analysis, not a forecast or locked test&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Cash-ledger corruption detected&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Synthetic +100 USDm closing-cash corruption triggers articulation gap; no source or forecast input changed&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;AI output claim: cash-flow capital spending matches segment note&quot;,
+      &quot;status&quot;: &quot;PASS&quot;,
+      &quot;detail&quot;: &quot;Cash-flow p59 capital spending4415 equals Note15 segment capital spending4415; corrected earlier unsupported implication of mismatch. Primary-source numerical reconciliation, not AI agreement.&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Independent valuation source/definition closure&quot;,
+      &quot;status&quot;: &quot;OPEN&quot;,
+      &quot;detail&quot;: &quot;Annual statement arithmetic passes, but post-quarter bridge, dilution, pension/tax claims and affiliate fair values require analyst review.&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Stub seasonality and terminal ROIC judgment&quot;,
+      &quot;status&quot;: &quot;OPEN&quot;,
+      &quot;detail&quot;: &quot;Uniform stub cashflow seasonality and terminal ROIC15percent require evidence/analyst acceptance; reinvestment arithmetic is tested separately.&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Peer policy judgment&quot;,
+      &quot;status&quot;: &quot;OPEN&quot;,
+      &quot;detail&quot;: &quot;AI-drafted updated policy and candidate disposition require analyst acceptance; no historical human-only attestation adopted.&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Human locked changed-input record&quot;,
+      &quot;status&quot;: &quot;OPEN&quot;,
+      &quot;detail&quot;: &quot;All fields remain blank; prediction neither proposed nor authored; test neither designed nor executed.&quot;
+    },
+    {
+      &quot;analyst&quot;: &quot;Oladapo Olaniyan&quot;,
+      &quot;check&quot;: &quot;Edition A recovery&quot;,
+      &quot;status&quot;: &quot;OPEN&quot;,
+      &quot;detail&quot;: &quot;Hash preserved; report content unavailable; staff guidance not requested or invented.&quot;
+    }
+  ],
+  &quot;limitations&quot;: [
+    &quot;Human locked prediction/run blank and unexecuted&quot;,
+    &quot;Edition A recovery unresolved&quot;,
+    &quot;Bridge and point shares dated June/July2026; post-quarter changes unverified&quot;,
+    &quot;AI-proposed beta/ERP/spread, forecasts and action thresholds need student review&quot;,
+    &quot;Stub FCFF seasonality and 15percent terminal ROIC assumption unvalidated&quot;,
+    &quot;Peer fair-value/lease/tax-claim conventions not fully validated&quot;
+  ]
+}</pre></details></html>

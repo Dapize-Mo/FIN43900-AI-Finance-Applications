@@ -1,0 +1,31 @@
+VIDEO 3 — LIVE VALUATION AND COMMITTEE RECOMMENDATION
+Recording: video1988888967(1).mp4 (duplicate upload; original video1988888967.mp4)
+Matching audio: audio1988888967(1).m4a (duplicate upload; original audio1988888967.m4a)
+Duration: 04:41.24 (original recording)
+Timestamps: approximate major-topic positions, inferred from topic order and duration; not independently word-aligned.
+Source: complete speech rendering supplied in user's latest audio message. Minor punctuation added; unusual wording retained rather than silently corrected.
+
+[00:00] Hello, I'm Oladapo Olaniyan. This is my live PepsiCo valuation output and my committee recommendation. My recommendation is to watch the company and defer initiating a position today. The recorded October 5 market price is 125.65 dollars per share, while my base discounted cash flow value is 117 dollars point 29 per share, per diluted proxy share. That gap does not automatically mean the stock is overpriced, but it means the current evidence does not give me a sufficient margin of safety.
+
+[00:31] The three main discounted cash flows scenarios are low, base, and high. They produce values of 76.12 dollars, 117.29 dollars, and 170.22 dollars per share, respectively. These are conditional model outcomes, not probability weighted price targets, as discussed in the previous video. Each outcome changes operating and valuation assumptions together, so I use the range to understand what would have to go right or wrong instead of pretending that one exact number decides the future.
+
+[01:03] This section shows the main inputs, five-year forecasts, free cash flow of the firm, and valuation bridge. The base cap case uses a 7.66 percent WACC and 2.5 percent terminal growth rate. The forecast links revenue, operating margin, taxes, capital spending, and working capital to FCFF. FCFF is the cash available to all capital providers after operating investment, which is why it's discounted using WACC to estimate enterprise value before moving to equity value per share.
+
+[01:36] The operating forecast assumes gradual revenue growth and margin improvements. I treat those as analyst assumptions rather than company facts. The model also carries capital spending and working capital investment throughout the forecast. Because revenue growth alone does not create value if it requires too much reinvestment. The bridge then adds cash and selected non-operating assets and subtracts debt and non-controlling interest to move from enterprise value to the common equity value used on the per-share result.
+
+[02:05] This is the Value Reset Failure scenario. It combines weaker revenue growth, lower gross margin, higher SG&A, and longer receivable and inventory days.
+
+[02:24] Those pressures reduce operating profit and FCFF, then create funding needs as the cash balance falls. The point is to test how connected operating problems travel through the income statement, cash flow, and valuation. It is a modeled downside case, not a claim that PepsiCo will default.
+
+[02:46] The sensitivity grid changes WACC and terminal growth, two assumptions that matter a great deal because terminal value is 80.1 percent of enterprise value in the base case. A high terminal value means long-run assumptions carry substantial weight. The reverse DCF gives a different view of the market price. Holding the other inputs fixed, reaching the recorded price requires about 0.85 percentage points more EBIT margin across the forecast years. That is one conditional path, not the market's uniquely identified forecast.
+
+[03:22] I also included peer lenses for Coca-Cola and Mondelez. They are useful reference points but remain qualified because the peer inputs have comparability limits, including accounting conventions, dated balances, and differences in the earnings measures. I do not average the peer outputs with the DCF into one target because the methods answer different questions. Combining them without a consistent policy would create false precision.
+
+[03:56] My committee ask is to defer entry and monitor revenue growth, operating margin, cash conversion, debt, and payout decisions in future releases. I would reconsider after a reviewed current date bridge and verified improvements in margins and cash flow, or if the share price gives a defensible margin of safety relative to the supported value. If margins erode, cash conversion weakens, or downside funding becomes insufficient, I would not initiate. This concludes my live valuation and recommendation.
+
+FACTUAL / TRANSCRIPTION NOTES (NOT SPOKEN)
+- “base cap case” appears in the supplied speech rendering; intended term is likely “base case.”
+- “Because revenue growth alone ...” is preserved as a sentence fragment.
+- The phrase “117 dollars point 29” is retained from the speech rendering; the intended numeric value is $117.29.
+- The source audio rendering is not a verified word-level transcript. The major-topic timestamps are approximate and must be checked against playback for exact alignment.
+- Financial figures are consistent with the student's stated project reference points; this does not independently verify market or filing data.

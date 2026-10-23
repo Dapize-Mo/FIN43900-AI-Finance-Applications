@@ -1,0 +1,54 @@
+Project 1 Analytic Rubric — 300 points
+Official Brightspace rubric text saved for Oladapo Olaniyan, October 17, 2026.
+Source: https://purdue.brightspace.com/d2l/lms/dropbox/user/folder_submit_files.d2l?db=1581848&grpid=0&isprv=0&bp=0&ou=1636012
+Formatting converted from the displayed rubric table; criteria, level descriptions, and scores retained.
+
+Problem definition and decision usefulness — 45 points
+Decision-ready (45): Intended user, action, horizon, constraints, Edition A/B boundary, and committee ask are explicit; analysis changes a real decision.
+Strong (38.25): Decision is clear; one secondary constraint, boundary, or use case needs clarification.
+Developing (31.5): A recognizable problem exists, but user/action/constraint or A-to-B evidence is materially vague.
+Minimal (18): Topic or tool is described without a usable decision; Edition A evidence is absent or nonresponsive.
+Absent/unusable (0): No coherent decision problem or evaluable submission.
+
+Data integrity and traceability — 45 points
+Decision-ready (45): Material inputs have source, as-of date, definitions, transformations, exclusions, and reproducible lineage; revisions/licensing/privacy are handled.
+Strong (38.25): Traceability is substantially complete with one non-load-bearing gap.
+Developing (31.5): One material input, timing boundary, transformation, or exclusion is weakly supported.
+Minimal (18): Data provenance is largely opaque, mixed-time, or silently cleaned; results cannot be trusted.
+Absent/unusable (0): Data/evidence is absent, inaccessible, or fabricated/unverifiable.
+
+Financial soundness and judgment — 60 points
+Decision-ready (60): Conventions, units, bridges, benchmarks, constraints, and scenarios are correct; recommendation is a defensible range/action with risks and reversal triggers.
+Strong (51): Finance is sound; one secondary convention, sensitivity, or judgment link needs refinement.
+Developing (42): Core method is recognizable, but a material assumption, convention, or recommendation link is weak.
+Minimal (24): Major finance errors or unjustified point precision make the decision unreliable.
+Absent/unusable (0): No evaluable financial logic or recommendation.
+
+Technical execution and usability — 45 points
+Decision-ready (45): Clean user can reproduce the visible result; architecture/data flow are coherent; errors, credentials, dependencies, and output are handled safely.
+Strong (38.25): Runnable and understandable with one noncritical setup/usability defect.
+Developing (31.5): Material manual repair, undocumented step, brittle dependency, or confusing architecture impedes use.
+Minimal (18): Code exists but does not reliably run, expose material output, or demonstrate ownership.
+Absent/unusable (0): Repository/code is missing or inaccessible.
+
+Validation, sensitivity, and reproducibility — 75 points
+Decision-ready (75): Known answers, a complete Locked Changed-Input Record with a human-authored AI-off prediction plus predicted and actual decision effect, robustness/failure tests, AI-output checks, and cold-run evidence target the highest-risk claims; limitations drive action.
+Strong (63.75): Multiple relevant tests pass; one secondary failure mode or reproduction detail is weak.
+Developing (52.5): Some tests exist, but the locked record, highest-risk claim, benchmark, holdout, sensitivity, or failure condition is inadequately challenged.
+Minimal (30): “It runs”/AI agreement/one chart substitutes for validation; reproducibility is largely untested.
+Absent/unusable (0): No material validation or reproducibility evidence.
+
+Professional communication — 30 points
+Decision-ready (30): Memo/deck, README, manifest, transcripts, and three distinct videos are accurate, concise, internally consistent, accessible, and fit their audiences.
+Strong (25.5): Clear and professional with one minor inconsistency or audience-fit defect.
+Developing (21): Understandable, but material duplication, contradiction, organization, or accessibility weakness increases reviewer effort.
+Minimal (12): Evidence is confusing, substantially inconsistent, or inaccessible despite partial content.
+Absent/unusable (0): Required communication surfaces are absent/unusable.
+
+Total: 300 points
+Overall score bands (minimum points):
+Decision-ready: 270
+Strong: 255
+Developing: 210
+Minimal: 120
+Absent/unusable: 0

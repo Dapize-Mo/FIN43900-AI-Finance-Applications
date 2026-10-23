@@ -1,0 +1,2 @@
+# Oladapo Olaniyan - Project 1 runtime
+# Python 3.11+; standard library only. No pip install, credentials or network needed.

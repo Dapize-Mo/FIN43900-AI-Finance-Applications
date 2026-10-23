@@ -1,0 +1,41 @@
+[
+  {
+    "video_number": 1,
+    "audio": {
+      "path": "C:\\Users\\dolan\\OneDrive\\Documents\\Zoom\\2026-10-17 21.29.58 Oladapo Olaniyan's Zoom Meeting\\audio2766839541.m4a",
+      "duration_seconds": 136.405333,
+      "sha256": "b213cc506afa29f5b1bee1c7c733a2ea5d448a4d1bec6b78d6dd496b42c59490"
+    },
+    "video": {
+      "path": "C:\\Users\\dolan\\OneDrive\\Documents\\Zoom\\2026-10-17 21.29.58 Oladapo Olaniyan's Zoom Meeting\\video2766839541.mp4",
+      "duration_seconds": 136.405333,
+      "sha256": "d905d82ffed58fc5152780c4f94aa1e137bed7555fcfaeb2fe77cdf1860ac4ea"
+    }
+  },
+  {
+    "video_number": 2,
+    "audio": {
+      "path": "C:\\Users\\dolan\\OneDrive\\Documents\\Zoom\\2026-10-17 22.07.08 Oladapo Olaniyan's Zoom Meeting\\audio1502154100.m4a",
+      "duration_seconds": 248.768,
+      "sha256": "57c6f5e4ee03dd65cd031d12f62d5ba3e9b96de861f9e1b6bdf32ac2b63bc405"
+    },
+    "video": {
+      "path": "C:\\Users\\dolan\\OneDrive\\Documents\\Zoom\\2026-10-17 22.07.08 Oladapo Olaniyan's Zoom Meeting\\video1502154100.mp4",
+      "duration_seconds": 248.768,
+      "sha256": "a594cda2761b5f481625a3e342d2170cdb0424188b8c5834020824ad9bde311f"
+    }
+  },
+  {
+    "video_number": 3,
+    "audio": {
+      "path": "C:\\Users\\dolan\\OneDrive\\Documents\\Zoom\\2026-10-17 22.18.02 Oladapo Olaniyan's Zoom Meeting\\audio1988888967.m4a",
+      "duration_seconds": 281.237333,
+      "sha256": "7db47118370583a8ee2a50967f8d4b1ff1755b8e072ba0b193c890ddc62f407f"
+    },
+    "video": {
+      "path": "C:\\Users\\dolan\\OneDrive\\Documents\\Zoom\\2026-10-17 22.18.02 Oladapo Olaniyan's Zoom Meeting\\video1988888967.mp4",
+      "duration_seconds": 281.24,
+      "sha256": "25fbbb34beee25dc1fa969876d47a1a026c19f3a9d9b105f0cdab5240db19ccd"
+    }
+  }
+]

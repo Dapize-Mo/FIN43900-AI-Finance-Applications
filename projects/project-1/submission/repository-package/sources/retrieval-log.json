@@ -1,0 +1,50 @@
+[
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://www.sec.gov/Archives/edgar/data/77476/000007747626000007/pep-20251227.htm",
+    "accessed_utc": "2026-10-06T05:07:37.843960+00:00",
+    "file": "pep-2025-10k.html",
+    "status": "failed",
+    "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://www.sec.gov/Archives/edgar/data/77476/000007747626000035/pep-20260613.htm",
+    "accessed_utc": "2026-10-06T05:07:37.917123+00:00",
+    "file": "pep-2026-q2.html",
+    "status": "failed",
+    "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://raw.githubusercontent.com/CinderZhang/FIN43900-Fall2026/main/PROJECT-SUBMISSION-ARCHITECTURE.md",
+    "accessed_utc": "2026-10-06T05:07:37.920119+00:00",
+    "file": "course-architecture.md",
+    "status": "failed",
+    "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://raw.githubusercontent.com/CinderZhang/FIN43900-Fall2026/main/projects/major-project-student-checklist.md",
+    "accessed_utc": "2026-10-06T05:07:37.923624+00:00",
+    "file": "course-checklist.md",
+    "status": "failed",
+    "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://raw.githubusercontent.com/CinderZhang/FIN43900-Fall2026/main/projects/templates/project-submission-manifest-template.csv",
+    "accessed_utc": "2026-10-06T05:07:37.925631+00:00",
+    "file": "course-manifest.csv",
+    "status": "failed",
+    "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://stockanalysis.com/stocks/pep/history/",
+    "accessed_utc": "2026-10-06T05:07:37.926633+00:00",
+    "file": "pep-market.html",
+    "status": "failed",
+    "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+  }
+]

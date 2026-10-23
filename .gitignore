@@ -54,3 +54,19 @@ worktrees/
 brightspace/
 *brightspace_submission.txt
 *brightspace.txt
+
+# Independent lab repository, including its private local .env and Git history
+/labs/explaining-markets-q4-2026/agent/
+
+# Local-only duplicate of the already-published Project 1 repository snapshot
+/projects/project-1/submission/corrected-20261018/repository-package/
+
+# Separately versioned public snapshot repository kept for provenance
+/projects/project-1/tmp/github-publication/
+
+# Regenerable speech-recognition model cache
+/projects/project-1/tmp/audio-check/base.en/
+/projects/project-1/tmp/audio-check/small.en/
+
+# Reproducibility environments can be recreated from their locked requirements
+/projects/project-1/repro/cold-20261006T*/environment/

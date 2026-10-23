@@ -1,0 +1,21 @@
+{
+  "analyst": "Oladapo Olaniyan",
+  "pdf_pages": {
+    "Decision-Memo.pdf": 2,
+    "Research-Evolution.pdf": 3,
+    "Validation-and-AI-Use.pdf": 2
+  },
+  "visual_review": "All seven rendered PDF pages inspected; original error-page annex preserved intentionally",
+  "packaged_model_exit": 0,
+  "principal_output_hash_matches": {
+    "results.json": true,
+    "forecast-statements.csv": true,
+    "sensitivity.csv": true,
+    "checks.csv": true,
+    "peer-multiples.csv": true
+  },
+  "external_access": "Public repository access verified; all three anonymous YouTube watch-page responses returned player status OK and stream formats on 2026-10-18; captions published in Studio. Brightspace submission successful, ID 23393007.",
+  "repository_commit": "5e103313bc37c1928213d0e06881f0f98f3fc1ea",
+  "brightspace_submission_id": "23393677",
+  "corrected_submission": "Seven files confirmed, October 18, 2026 10:24 AM; confirmed Lab 10 peer evidence included"
+}

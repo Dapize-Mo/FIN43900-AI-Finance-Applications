@@ -1,0 +1,199 @@
+- banner:
+  - navigation "Main":
+    - link "skip to main content":
+      - /url: javascript:void(0);
+    - link "My Home":
+      - /url: /d2l/lp/ouHome/defaultHome.d2l
+    - link "Purdue West Lafayette":
+      - /url: /d2l/lp/ouHome/home.d2l?ou=6824
+      - img "Purdue West Lafayette"
+    - link "Fall 2026 FIN 43900-Dr. Z - Merge":
+      - /url: /d2l/home/1636012
+    - button "Select a course...":
+    - button "Message alerts":
+    - button "Subscription alerts":
+    - button "Update alerts":
+    - generic: Update alerts - You have new alerts
+    - button "Dapo Olaniyan, avatar":
+      - generic: DO
+      - generic: Dapo Olaniyan
+    - list:
+      - link "Course Home":
+        - /url: /d2l/home/1636012
+      - link "Syllabus":
+        - /url: /d2l/common/dialogs/quickLink/quickLink.d2l?ou=1636012&type=lti&rcode=354644E0-4CD8-419D-A32F-4E78D8778E5C-12707056&srcou=6824&launchFramed=1&framedName=Syllabus
+      - link "Content":
+        - /url: /d2l/le/content/1636012/Home
+      - link "Classlist":
+        - /url: /d2l/lms/classlist/classlist.d2l?ou=1636012
+      - link "Grades":
+        - /url: /d2l/lms/grades/index.d2l?ou=1636012
+      - link "Class Progress":
+        - /url: /d2l/le/userprogress/388337/1636012/Summary?searchString=&sortField=SortLastName&sortDirection=0
+      - button "Course Tools":
+        - generic: Course Tools
+      - button "Help":
+        - generic: Help
+- main:
+  - heading "Review Assignment Submission" [level=1]
+  - heading "File submission successful" [level=2]
+  - generic: Submission ID
+  - text: "23393007"
+  - generic: Submission(s)
+  - link "Research-Evolution.pdf":
+    - /url: /d2l/common/viewFile.d2lfile/Database/NjIyODc3MTU/Research-Evolution.pdf?ou=1636012
+  - text: (120.68 KB)
+  - link "Decision-Memo.pdf":
+    - /url: /d2l/common/viewFile.d2lfile/Database/NjIyODc3MTY/Decision-Memo.pdf?ou=1636012
+  - text: (6.44 KB)
+  - link "Validation-and-AI-Use.pdf":
+    - /url: /d2l/common/viewFile.d2lfile/Database/NjIyODc3MTc/Validation-and-AI-Use.pdf?ou=1636012
+  - text: (7.52 KB)
+  - link "transcript-video-1.txt":
+    - /url: /d2l/common/viewFile.d2lfile/Database/NjIyODc3MTg/transcript-video-1.txt?ou=1636012
+  - text: (3.18 KB)
+  - link "transcript-video-2.txt":
+    - /url: /d2l/common/viewFile.d2lfile/Database/NjIyODc3MTk/transcript-video-2.txt?ou=1636012
+  - text: (3.14 KB)
+  - link "transcript-video-3.txt":
+    - /url: /d2l/common/viewFile.d2lfile/Database/NjIyODc3MjA/transcript-video-3.txt?ou=1636012
+  - text: (5.12 KB)
+  - link "submission-manifest.csv":
+    - /url: /d2l/common/viewFile.d2lfile/Database/NjIyODc3MjE/submission-manifest.csv?ou=1636012
+  - text: (7.91 KB)
+  - generic: Comments
+  - paragraph: "Oladapo Olaniyan — FIN-43900 Project 1: PepsiCo"
+  - paragraph:
+    - text: "Repository:"
+    - link "https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/codex/project-1-submission/projects/project-1":
+      - /url: https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/codex/project-1-submission/projects/project-1
+    - text: "Video 1 — Research Evolution & AI Use:"
+    - link "https://youtu.be/wvQGeS27rS4":
+      - /url: https://youtu.be/wvQGeS27rS4
+    - text: "Video 2 — Model & Validation:"
+    - link "https://youtu.be/kUG0_Xe46so":
+      - /url: https://youtu.be/kUG0_Xe46so
+    - text: "Video 3 — Committee Recommendation:"
+    - link "https://youtu.be/GFaCDIIHAgg":
+      - /url: https://youtu.be/GFaCDIIHAgg
+  - paragraph: The attached manifest includes the frozen repository snapshot, recording durations, topic timestamps, and access checks. Three PDFs and three transcripts are attached. Qualifications and reported TA clarification are documented in the package.
+  - button "more":
+    - generic: more
+  - generic: Assignment
+  - text: Project 1 — Corporate Finance Application — Single Assignment
+  - generic: Submission Date
+  - text: Oct 18, 2026 12:11 AM
+  - generic: Submitted By
+  - text: Dapo Olaniyan
+  - generic: Total File Size
+  - text: 153.99 KB
+  - generic: Instructions
+  - heading "Project 1 — Corporate Finance Application" [level=1]
+  - heading "Role and committee decision" [level=2]
+  - paragraph:
+    - text: You are the
+    - strong: AI task force member embedded in a buy-side analyst group
+    - text: . The fund holds
+    - strong: no position
+    - text: in your target company. The senior analysts own the sector view; you were brought in to do what your generation of analysts does best — build the evidence-and-model stack with AI acceleration, faster and more transparently than it has ever been built,
+    - strong: without ever letting the machine own the judgment
+    - text: ". The portfolio manager's ask: should the fund"
+    - strong: initiate a position, place the name on watch/defer, or do not initiate
+    - text: — delivered as a defensible valuation range with evidence dates, material conditions, and reversal/monitoring triggers, never a single confident number. Your group will challenge your assumptions before the committee does; the committee sees your memo and your recorded defense. Screening selected the research target; it is not valuation evidence and cannot determine the recommendation.
+  - paragraph:
+    - text: Points and the enforced due date appear in the Brightspace assignment header. The separate
+    - strong: Project 1 — Edition A Checkpoint (AI Closed)
+    - text: page publishes the supervised baseline window; do not use the final-assignment page as the Edition A submission location.
+  - paragraph:
+    - strong: "Planning estimate:"
+    - text: 18–25 hours distributed across Weeks 2–8, including research, modeling, validation, cold run, writing, recording, transcript correction, and access checks.
+  - table "Role and committee decision":
+    - caption: Role and committee decision
+    - rowgroup:
+      - row "Week Project 1 planning band Scope boundary":
+        - columnheader "Week"
+        - columnheader "Project 1 planning band"
+        - columnheader "Scope boundary"
+    - rowgroup:
+      - row "2 3–4 h Edition A, source map, valuation architecture":
+        - cell "2"
+        - cell "3–4 h"
+        - cell "Edition A, source map, valuation architecture"
+      - row "3 3–4 h FCFF/WACC/terminal model and validation":
+        - cell "3"
+        - cell "3–4 h"
+        - cell "FCFF/WACC/terminal model and validation"
+      - row "4 3–4 h peer policy, multiples, transaction qualification":
+        - cell "4"
+        - cell "3–4 h"
+        - cell "peer policy, multiples, transaction qualification"
+      - 'row "5 3–4 h pro-forma build: personalized drivers, five-year statements, articulation checks"':
+        - cell "5"
+        - cell "3–4 h"
+        - 'cell "pro-forma build: personalized drivers, five-year statements, articulation checks"'
+      - row "6 3–4 h assumption research and challenges; sensitivity/what-if incl. a downside case; fresh-eyes revision; decision range":
+        - cell "6"
+        - cell "3–4 h"
+        - cell "assumption research and challenges; sensitivity/what-if incl. a downside case; fresh-eyes revision; decision range"
+      - row "7 2.5–4 h cold run, manifest, memo, three bounded recordings":
+        - cell "7"
+        - cell "2.5–4 h"
+        - cell "cold run, manifest, memo, three bounded recordings"
+      - row "8 0.5–1 h access/integrity check and final receipt; no new analysis":
+        - cell "8"
+        - cell "0.5–1 h"
+        - cell "access/integrity check and final receipt; no new analysis"
+  - heading "Required finance system" [level=2]
+  - paragraph: "Build a locally runnable analysis/application that:"
+  - list:
+    - listitem: identifies the intended investment user, decision horizon, target/security, valuation date, currency, share basis (basic vs. diluted count), and relevant exclusions;
+    - listitem: traces material historical inputs to filings or authoritative sources and distinguishes facts, normalizations, forecasts, and model outputs — including a base year normalized for one-time items and basis changes (the Week 2 contamination catalog);
+    - text: builds a
+    - strong: five-year three-statement pro-forma
+    - text: (income statement, balance sheet, cash flow) with a driver architecture
+    - strong: personalized to the company
+    - text: — pro-forma is a method, not an algorithm; every load-bearing driver carries value · basis · challenge · evidence that would change it — and statements that articulate under checks that can fail loudly (balance sheet balances every year, cash flow ties to balance-sheet cash, base year reconciles to the filing);
+    - text: constructs the five-year FCFF DCF with WACC, terminal convention, and a complete enterprise-to-equity/per-share bridge — built as an engine in Week 3, then
+    - strong: driven by the pro-forma's operating forecast
+    - text: from Week 5 on;
+    - listitem: reports causal low/base/high cases, a WACC–growth sensitivity, terminal-value share, and one reverse-DCF or market-implied expectation;
+    - listitem: defines a comparable-company policy before selecting peers and calculates at least one consistent enterprise-value and one equity-value multiple; use relevant transaction evidence only when its control/synergy/time context can be defended;
+    - listitem: explains disagreement across methods rather than mechanically averaging them;
+    - text: stresses the pro-forma with
+    - strong: named what-if scenarios, including at least one downside case that could alter the recommendation
+    - text: ", and maintains an assumption-challenge record (each load-bearing driver: value · basis · challenge · evidence that would change it); partner fresh-eyes challenges from the Weeks 5–6 labs belong in this record, credited to the challenger; and"
+    - listitem: produces a valuation range and conditional committee action, not false point precision.
+  - paragraph: Because the required architecture is enterprise-value/FCFF, banks, insurers, REITs, and other issuers for which FCFF and an enterprise-to-equity bridge are economically inappropriate are not eligible Project 1 targets. Select another operating company by the Week 2 admission gate. Such issuers may be used later only when an approved project architecture fits the decision.
+  - paragraph: All market facts carry source and as-of date. Provider labels are reconciled to definitions. The repository must show the material inputs and result without requiring a grader to run it.
+  - heading "Edition A boundary" [level=2]
+  - paragraph: Submit the designated Brightspace Edition A checkpoint during Week 2 before valuation-specific generative-AI research or coding. The first successful receipt is the baseline of record; a Git tag may corroborate history but cannot replace the Brightspace checkpoint. Week 1's disclosed AI-assisted screening occurred before this project boundary; Edition A captures the student's valuation judgment before valuation-specific AI assistance.
+  - heading "Required validation" [level=2]
+  - list:
+    - listitem: one synthetic/known-answer reconciliation (against the training-case answers published with the weekly starters);
+    - listitem: one independent source/definition check on a load-bearing input;
+    - listitem: one directional changed-input test written before execution;
+    - text: one
+    - strong: Locked Changed-Input Record
+    - text: with a human-authored, AI-off prediction before the run, precommit timestamp/commit, old/new input and units, expected/actual output direction, decision effect, and failure diagnosis or no-change reason;
+    - listitem: pro-forma articulation checks (balance sheet balances; cash flow ties to cash; base-year reconciliation to the filing), DCF boundary/monotonicity checks (outputs move only in the expected direction as WACC or growth moves), and enterprise-equity bridge checks;
+    - listitem: peer-policy and multiple-definition consistency check;
+    - listitem: highest-risk failure test plus cold-run log (one clean end-to-end run in a fresh environment, recorded); and
+    - listitem: one accepted, corrected, qualified, or rejected AI output with independent evidence.
+  - heading "Submission and scoring" [level=2]
+  - paragraph: "Submit the uniform seven-part bundle and filenames in the shared checklist: unchanged Edition A plus Edition B, repository/visible output,"
+  - list:
+    - emphasis:
+      - strong: research-evolution Video 1,
+    - emphasis:
+      - strong: code/validation Video 2,
+    - emphasis:
+      - strong: memo/deck, and committee Video 3 with corrected transcripts and frozen validation/AI-use record.
+  - paragraph: The 300-point mapping in the major-project analytic rubric applies. No extra points attach to number of commits, visual polish, framework vocabulary, or video existence.
+  - paragraph:
+    - text: Before grading, Brightspace also publishes
+    - strong: Project 1 — Annotated Decision-Evidence Excerpt and Non-Example
+    - text: . It illustrates observable decision-evidence anchors and common failures but is not a complete submission, model answer, or source of project facts.
+  - separator
+  - button "Done"
+  - button "View History"
+  - button "Upload More Files"

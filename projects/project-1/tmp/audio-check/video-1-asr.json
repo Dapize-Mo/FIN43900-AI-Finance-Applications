@@ -1,0 +1,148 @@
+{
+  "analyst": "Oladapo Olaniyan",
+  "audio": "C:\\Users\\dolan\\OneDrive\\Documents\\Zoom\\2026-10-17 21.29.58 Oladapo Olaniyan's Zoom Meeting\\audio2766839541.m4a",
+  "video": "C:\\Users\\dolan\\OneDrive\\Documents\\Zoom\\2026-10-17 21.29.58 Oladapo Olaniyan's Zoom Meeting\\video2766839541.mp4",
+  "measured_video_duration_seconds": 136.405333,
+  "model": "faster-whisper small.en int8",
+  "status": "Machine transcription for comparison; not human-certified verbatim",
+  "segments": [
+    {
+      "start": 2.7,
+      "end": 9.88,
+      "text": " Hi, I'm Aladip Boling. This is my PepsiCo research evaluation review. My current recommendation",
+      "words": []
+    },
+    {
+      "start": 9.88,
+      "end": 15.1,
+      "text": " is watch and defer, rather than buy now. The goal of this work was to rebuild the valuation",
+      "words": []
+    },
+    {
+      "start": 15.1,
+      "end": 19.22,
+      "text": " using more current financial information and then decide whether the evidence supports buying",
+      "words": []
+    },
+    {
+      "start": 19.22,
+      "end": 25.9,
+      "text": " at the market price. For addition B, I used PepsiCo's 2025 fiscal year filing and the",
+      "words": []
+    },
+    {
+      "start": 25.9,
+      "end": 32.66,
+      "text": " latest interim bridge in my model. One important correction involved capital spending. Consolidated",
+      "words": []
+    },
+    {
+      "start": 32.66,
+      "end": 41.66,
+      "text": " CapEx is $4.415 billion and includes $4.192 billion from the segment and $223 million",
+      "words": []
+    },
+    {
+      "start": 41.66,
+      "end": 47.46,
+      "text": " of corporate CapEx. This correction matters because capital spending is cash the company",
+      "words": []
+    },
+    {
+      "start": 47.46,
+      "end": 52.74,
+      "text": " must invest to keep operating and growing. If I used only the segment figure, I would",
+      "words": []
+    },
+    {
+      "start": 52.74,
+      "end": 57.02,
+      "text": " understand PepsiCo's total investment and overstate the cash that is available to investors.",
+      "words": []
+    },
+    {
+      "start": 57.02,
+      "end": 72.95,
+      "text": " That make the valuation look stronger than it should. AI helped organize sources, build",
+      "words": []
+    },
+    {
+      "start": 72.95,
+      "end": 77.79,
+      "text": " a model cold, and prepare documentation. I recorded that use and checked key values",
+      "words": []
+    },
+    {
+      "start": 77.79,
+      "end": 82.27,
+      "text": " in its primary source arithmetic. I also ran validation checks to make sure the forecast",
+      "words": []
+    },
+    {
+      "start": 82.27,
+      "end": 85.99,
+      "text": " statement's cash flow and valuation bridge worked together. Those checks come from the",
+      "words": []
+    },
+    {
+      "start": 85.99,
+      "end": 89.91,
+      "text": " model calculations run as intended. They do not prove that every financial assumption",
+      "words": []
+    },
+    {
+      "start": 89.91,
+      "end": 95.55,
+      "text": " is correct. For the changed input test, I lowered terminal ROIC or return on capital",
+      "words": []
+    },
+    {
+      "start": 95.55,
+      "end": 101.55,
+      "text": " investment from 15 to 12%. I lowered ROIC means more of the company's future profits",
+      "words": []
+    },
+    {
+      "start": 101.55,
+      "end": 106.35,
+      "text": " will be reinstated and reinvested to support the same growth. Testimated value per share",
+      "words": []
+    },
+    {
+      "start": 106.35,
+      "end": 113.83,
+      "text": " fell from 117.29 times 11.41, a $5.88 decline. This match my recorded prediction and shows",
+      "words": []
+    },
+    {
+      "start": 113.83,
+      "end": 119.19,
+      "text": " that the valuation is sensitive to long-term performability assumptions. Overall, I recommend",
+      "words": []
+    },
+    {
+      "start": 119.19,
+      "end": 123.79,
+      "text": " watch and defer. The remaining issues are the current date bridge, peer compatibility,",
+      "words": []
+    },
+    {
+      "start": 123.79,
+      "end": 127.67,
+      "text": " working capital reconciliation, and final student judgment. I monitor revenue growth,",
+      "words": []
+    },
+    {
+      "start": 127.67,
+      "end": 131.67,
+      "text": " operating margins, cash conversion, and debt after future releases. Until those uncertainties",
+      "words": []
+    },
+    {
+      "start": 131.67,
+      "end": 136.07,
+      "text": " are better supported, I monitor PepsiCo rather than recommending an immediate purchase.",
+      "words": []
+    }
+  ]
+}

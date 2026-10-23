@@ -1,0 +1,20 @@
+{
+  "data\\assumptions.json": "75e72c4123952ee8f17774b47b5ae0926bfbb986b8d33dee00dde1933840f1a5",
+  "data\\dcf_case.csv": "af1a941c1a5f946c256be68546fae4e9217e7b8da198dbbd6a4c1cbc445ea432",
+  "data\\dcf_expected_output.csv": "83fd4f3b15dfe924dcb918c67ab7c8193e5c133498d21284aaccf4e9e5464dcc",
+  "data\\filing-inputs.json": "d1d8c8a3feff1988f7e85e354dd8ac98e3347ed50e52c9ce7ec75d077690c16a",
+  "data\\management-outlook-ledger.csv": "71c434a3288e84d71ce641bceaa5992ac62e0217db2f0fb21ed8d2bc986f4704",
+  "data\\peer-inputs.csv": "fef6e4268ba848953f07c790859fe5ed52db6f35b13a03838858587dfe075efd",
+  "src\\build_packet.py": "b140a8d7cbd5253d040a04159961a349219857b19e7739dafac19ff10ff6e21c",
+  "src\\build_reading_guide.py": "8d34349a9db0441729e904d01d8ad3848d1ad370bdcfba5d182e76d23dd560ab",
+  "src\\checks.py": "1d8f131fc4fcb4756c93d0e8b44df99ceb337babf69233a849cf902c64804477",
+  "src\\cold_run.py": "af06e54fdf3250246eac79950ae43c730d369e30ad855cd8f45efe074d06e91c",
+  "src\\fetch_additional.py": "7fc8f32f42f693c338b6301b629c5e5dcccf429b87c5631c0d44095193eccb74",
+  "src\\fetch_sources.py": "52e230cd19994263a8ded524578ea480ae9c3c0dc6f93c105de836b1003d26c1",
+  "src\\finalize_evidence.py": "43eac57e8e1f331a42dc6ab8f2627d2cafd5a40444197f5b63180e73d9dc353f",
+  "src\\model.py": "0c41f2f781266807162773e950d28b8a8bb3db242e4bdd9fe5bd4395fec17fa4",
+  "src\\prepare_submission.py": "546713c3643e86e4c158aa2e4dba9d6bac6646369aa8b622a3e11fead86ce54b",
+  "src\\render_dashboard_review.py": "90d3e123d5e2a0a63d41c6119b4b24a2c1057d439e73e11ab6f1e8241cff0903",
+  "src\\render_review.py": "7611519533937187783f1198049a4379f4326e0cf676b3f1ebd67271dbc5888e",
+  "src\\verify_render_review.py": "def38e3ac85961bdf129e3a2607517946b8784c943696828f0d7deba7968bab7"
+}

@@ -1,0 +1,22 @@
+Oladapo Olaniyan - FIN-43900 Project 1
+SUBMITTED SUCCESSFULLY: Brightspace receipt 23393007, October 18, 2026 at 12:11 AM (America/Indianapolis).
+
+Brightspace attachments:
+1. Research-Evolution.pdf
+2. Decision-Memo.pdf (two-page maximum)
+3. Validation-and-AI-Use.pdf
+4. transcript-video-1.txt
+5. transcript-video-2.txt
+6. transcript-video-3.txt
+7. submission-manifest.csv
+
+Repository payload: repository-package/ or Oladapo-Olaniyan-Project1-Repository.zip.
+Published repository snapshot: https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/502de6a0dd020afe05911652dc7f5a4def5ce316/projects/project-1
+Public README, three PDFs and visible results checked without sign-in on October 18, 2026.
+All three Zoom videos are published as Unlisted with uploaded English captions and topic indices. Share URLs are saved in submission-manifest.csv.
+Anonymous watch-page access checked October 18, 2026: all three player statuses OK with stream formats available. Caption timings are approximate.
+Confirm any assignment filename-prefix and instructor GitHub-access identity before submission.
+Actual partner challenge evidence is missing and has not been invented. Other model qualifications remain disclosed.
+The transcripts reflect an automated audio comparison; separate notes retain minor speech/recognition uncertainties. They do not certify every filler word.
+No recordings need to be redone on the check evidence alone. Original media and historical artifacts remain preserved.
+The three videos have been published as Unlisted on YouTube. The repository package is published publicly. All seven attachments were submitted; see submission-receipt.json and brightspace-submission-23393007.png.

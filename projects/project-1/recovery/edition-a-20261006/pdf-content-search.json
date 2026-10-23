@@ -1,0 +1,26 @@
+{
+  "student": "Oladapo Olaniyan",
+  "scope": "PDFs at most 5 MB in Downloads and original FIN course locations; first two pages only",
+  "pdfs_checked": 386,
+  "matches": [
+    {
+      "path": "C:\\Users\\dolan\\Downloads\\Duplicates\\16020StudyGuide (1).pdf",
+      "pages": 18,
+      "sha256": "ee4e0dd19a6e617c3b2c0d3c25fcf55aa861bc6ac7358342d02b49b92efc2a85",
+      "first_pages_excerpt": "1\nPurdue University \nStudy Guide for MA 16020 Credit Exam \nStudents who pass the credit exam will gain credit in MA16020. The credit exam is a two-hour \nlong exam with 25 multiple choice questions. No books or notes are allowed. A formula sheet \nwill be provided and is shown later in this document. Only one-line display calculators may \nbe used. No exceptions! A calculator with exponential, logarithmic and basic trigonometric \nfunctions will be needed for the exam. No any other electronic devices may be used. \nTo prepare for the exam, you are being provided: \n1. Lesson Plan for MA16020 \n2. Exam Formulas that will be provided with the exam \n3. Practice Problems \nThe lesson plan lists the sections of the text that are covered in MA16020. The practice prob\u00ad\nlems provide some preparation for the exam. \nThe current text used for MA16020 as well as the course web page are listed below (A copy of \nthe MA16020 text is on reserve in the math library.) Most of the material covered on the credit "
+    },
+    {
+      "path": "C:\\Users\\dolan\\Downloads\\Folders\\files\\FIN-43900\\labs\\lab-04\\PepsiCo_FY2024_10K_MDA_Report.pdf",
+      "pages": 4,
+      "sha256": "621efd2716763fc0e33b726b190f2b3627ca007e85425fd313926e8bc83c230b",
+      "first_pages_excerpt": "FIN 43900 \u2022 LAB 04 VALUATION & AUDIT\nPepsiCo, Inc. (PEP) \u2014 FY2024 MD&A\nAudit Report\nSEC Form 10-K Item 7 \u2022 Primary Filing Analysis & Enterprise-to-Equity\nBridge\nAuthor: Oladapo Olaniyan (teammate:\nkogbuef@purdue.edu)\nTarget CIK: 0000077476 | Ticker: PEP\nFiling Date: Feb 4, 2025 | As-of Date: Dec 28,\n2024\n1. Executive Summary & Core Financial Highlights\nPepsiCo, Inc. delivered flat reported top-line revenue ($91,854M, +0.4%) in FY2024 while expanding\noperating margins through disciplined net pricing and enterprise-wide automation under its pep+\nframework. Effective net pricing contributed +4.0%, offsetting a -2.0% organic volume contraction and a\n-1.5% foreign exchange drag.\nCore Operating Efficiency Equations:\nConsolidated\nMetric\nFY2024\nReported\nFY2023\nReported\nYoY\nChange\nCore / Non-\nGAAP Economic Interpretation\nNet Revenue $91,854M $91,471M +0.4% $91,854M\n(+2% org)\nPricing (+4%) absorbed\nvolume drag (-2%) & FX\n(-1.5%).\nGross Profit $50,110M $49,590M +1.0% $50,611M\nCore\n54.55% gross ma"
+    },
+    {
+      "path": "C:\\Users\\dolan\\Downloads\\Folders\\files\\MA-16020\\Study-Guides\\16020StudyGuide.pdf",
+      "pages": 18,
+      "sha256": "ee4e0dd19a6e617c3b2c0d3c25fcf55aa861bc6ac7358342d02b49b92efc2a85",
+      "first_pages_excerpt": "1\nPurdue University \nStudy Guide for MA 16020 Credit Exam \nStudents who pass the credit exam will gain credit in MA16020. The credit exam is a two-hour \nlong exam with 25 multiple choice questions. No books or notes are allowed. A formula sheet \nwill be provided and is shown later in this document. Only one-line display calculators may \nbe used. No exceptions! A calculator with exponential, logarithmic and basic trigonometric \nfunctions will be needed for the exam. No any other electronic devices may be used. \nTo prepare for the exam, you are being provided: \n1. Lesson Plan for MA16020 \n2. Exam Formulas that will be provided with the exam \n3. Practice Problems \nThe lesson plan lists the sections of the text that are covered in MA16020. The practice prob\u00ad\nlems provide some preparation for the exam. \nThe current text used for MA16020 as well as the course web page are listed below (A copy of \nthe MA16020 text is on reserve in the math library.) Most of the material covered on the credit "
+    }
+  ],
+  "errors": []
+}

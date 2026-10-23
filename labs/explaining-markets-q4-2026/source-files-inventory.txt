@@ -1,0 +1,21 @@
+Author: Oladapo Olaniyan
+Official starter commit: 12434cde288e24ec4dfd3e93a31be3b2edacd645
+Downloaded tracked files under agent/:
+.env.example
+.gitignore
+README.md
+docs/advanced.md
+docs/images/submission_flow.png
+modal_app.py
+predict.py
+pyproject.toml
+src/explaining_markets/__init__.py
+src/explaining_markets/client.py
+src/explaining_markets/config.py
+src/explaining_markets/event_utils.py
+src/explaining_markets/webhook_verification.py
+tests/test_modal_app.py
+tests/test_predict.py
+tests/test_vectors.json
+tests/test_webhook_verification.py
+uv.lock

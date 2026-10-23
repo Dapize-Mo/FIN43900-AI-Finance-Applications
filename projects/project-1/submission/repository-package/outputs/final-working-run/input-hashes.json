@@ -1,0 +1,13 @@
+{
+  "data\\assumptions.json": "75e72c4123952ee8f17774b47b5ae0926bfbb986b8d33dee00dde1933840f1a5",
+  "data\\dcf_case.csv": "af1a941c1a5f946c256be68546fae4e9217e7b8da198dbbd6a4c1cbc445ea432",
+  "data\\dcf_expected_output.csv": "83fd4f3b15dfe924dcb918c67ab7c8193e5c133498d21284aaccf4e9e5464dcc",
+  "data\\filing-inputs.json": "d1d8c8a3feff1988f7e85e354dd8ac98e3347ed50e52c9ce7ec75d077690c16a",
+  "data\\peer-inputs.csv": "fef6e4268ba848953f07c790859fe5ed52db6f35b13a03838858587dfe075efd",
+  "src\\build_packet.py": "00e00f358d65f9e87deace0e814b22ce741b676cceeede5f08b515ff1a898fc2",
+  "src\\checks.py": "1d8f131fc4fcb4756c93d0e8b44df99ceb337babf69233a849cf902c64804477",
+  "src\\cold_run.py": "af06e54fdf3250246eac79950ae43c730d369e30ad855cd8f45efe074d06e91c",
+  "src\\fetch_additional.py": "7fc8f32f42f693c338b6301b629c5e5dcccf429b87c5631c0d44095193eccb74",
+  "src\\fetch_sources.py": "52e230cd19994263a8ded524578ea480ae9c3c0dc6f93c105de836b1003d26c1",
+  "src\\model.py": "0c41f2f781266807162773e950d28b8a8bb3db242e4bdd9fe5bd4395fec17fa4"
+}

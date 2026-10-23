@@ -1,0 +1,268 @@
+{
+  "analyst": "Oladapo Olaniyan",
+  "audio": "C:\\Users\\dolan\\OneDrive\\Documents\\Zoom\\2026-10-17 22.18.02 Oladapo Olaniyan's Zoom Meeting\\audio1988888967.m4a",
+  "video": "C:\\Users\\dolan\\OneDrive\\Documents\\Zoom\\2026-10-17 22.18.02 Oladapo Olaniyan's Zoom Meeting\\video1988888967.mp4",
+  "measured_video_duration_seconds": 281.24,
+  "model": "faster-whisper small.en int8",
+  "status": "Machine transcription for comparison; not human-certified verbatim",
+  "segments": [
+    {
+      "start": 3.18,
+      "end": 9.98,
+      "text": " Hello, I'm Oladapo Oleni. This is my live PepsiCo valuation output and my committee",
+      "words": []
+    },
+    {
+      "start": 9.98,
+      "end": 15.5,
+      "text": " recommendation. My recommendation is to watch the company and defer initiating a position",
+      "words": []
+    },
+    {
+      "start": 15.5,
+      "end": 22.62,
+      "text": " today. The recorded October 5 market price is $125.65 per share. While my base, this",
+      "words": []
+    },
+    {
+      "start": 22.62,
+      "end": 29.26,
+      "text": " kind of cash flow value is $117.29 per share per diluted proxy share, that gap does not",
+      "words": []
+    },
+    {
+      "start": 29.26,
+      "end": 33.26,
+      "text": " automatically mean the stock is overpriced, but it means the current evidence is not giving",
+      "words": []
+    },
+    {
+      "start": 33.26,
+      "end": 39.5,
+      "text": " me a sufficient margin of safety. The three main these kind of cash flows scenarios are low,",
+      "words": []
+    },
+    {
+      "start": 39.5,
+      "end": 47.74,
+      "text": " base, and high. They produce values of $76.12, $117.29, and $170.22 per share,",
+      "words": []
+    },
+    {
+      "start": 48.38,
+      "end": 53.74,
+      "text": " respectively. These are conditional model outcomes, not probability weighted price targets,",
+      "words": []
+    },
+    {
+      "start": 53.74,
+      "end": 57.66,
+      "text": " as discussed in the previous video. Each outcome change is operated and valuation of",
+      "words": []
+    },
+    {
+      "start": 57.66,
+      "end": 61.5,
+      "text": " some things together. So I use the range to understand what would have to go right or wrong",
+      "words": []
+    },
+    {
+      "start": 61.5,
+      "end": 67.74,
+      "text": " instead of pretending that one exact number decides the future. This section shows the main",
+      "words": []
+    },
+    {
+      "start": 67.74,
+      "end": 74.54,
+      "text": " inputs five year forecast, free cash flow of the firm and valuation of bridge. The base cap",
+      "words": []
+    },
+    {
+      "start": 75.1,
+      "end": 81.82,
+      "text": " case uses a 7.66% whack and 2.5% terminal growth rate. The forecast licks revenue,",
+      "words": []
+    },
+    {
+      "start": 81.82,
+      "end": 88.94,
+      "text": " operating margin, taxes, capital spending, and working capital to FCFF. FCFF is the cash",
+      "words": []
+    },
+    {
+      "start": 88.94,
+      "end": 93.5,
+      "text": " available to all capital providers after operating investment, which is why it's discounted using whack",
+      "words": []
+    },
+    {
+      "start": 93.5,
+      "end": 100.22,
+      "text": " to estimate enterprise value before moving equity value per share. The operating forecast assumes",
+      "words": []
+    },
+    {
+      "start": 100.22,
+      "end": 106.06,
+      "text": " gradual revenue growth and margin improvements. I treat those as ANOS assumptions rather than",
+      "words": []
+    },
+    {
+      "start": 106.06,
+      "end": 111.1,
+      "text": " company facts. The model also carries capital spending and working capital investment throughout",
+      "words": []
+    },
+    {
+      "start": 111.1,
+      "end": 119.34,
+      "text": " the forecast. Because revenue growth alone does not create value, it is required if it requires too",
+      "words": []
+    },
+    {
+      "start": 119.34,
+      "end": 124.94,
+      "text": " much reinvestment. The bridge then adds cash and selected non-operating assets and subtracts debt",
+      "words": []
+    },
+    {
+      "start": 124.94,
+      "end": 129.5,
+      "text": " and non-controlling interest to move from enterprise value to the common equity value",
+      "words": []
+    },
+    {
+      "start": 129.5,
+      "end": 138.86,
+      "text": " used on the per share result. This is the value reset failure scenario. It combines weaker",
+      "words": []
+    },
+    {
+      "start": 139.1,
+      "end": 146.62,
+      "text": " revenue growth, lower gross margin, higher SG&A, and longer receivable and inventory days.",
+      "words": []
+    },
+    {
+      "start": 147.5,
+      "end": 157.2,
+      "text": " Those pressures reduce operating profit and FCFF then create funding needs as the cash",
+      "words": []
+    },
+    {
+      "start": 157.2,
+      "end": 161.44,
+      "text": " balance falls. The point is to test out connected operating problem travels through the income",
+      "words": []
+    },
+    {
+      "start": 161.44,
+      "end": 168.08,
+      "text": " statement, cash flow, and valuation. It is a modeled downside case, not a claim that",
+      "words": []
+    },
+    {
+      "start": 168.8,
+      "end": 174.72,
+      "text": " Pepsi skill will default. The sensitivity grid changes whack and terminal growth. Two assumptions",
+      "words": []
+    },
+    {
+      "start": 174.72,
+      "end": 180.4,
+      "text": " that matter a great deal because terminal value is 80.1% of enterprise value in the base case.",
+      "words": []
+    },
+    {
+      "start": 180.4,
+      "end": 186.16,
+      "text": " A high terminal value means long-run assumptions to a substantial weight. The reverse DCF gives a",
+      "words": []
+    },
+    {
+      "start": 186.16,
+      "end": 190.72,
+      "text": " different view of the market price. Holding the other inputs fixed, reaching the recorded",
+      "words": []
+    },
+    {
+      "start": 190.72,
+      "end": 197.28,
+      "text": " price requires about 0.85 percentage points more EBIT margin across the forecasting years.",
+      "words": []
+    },
+    {
+      "start": 198.08,
+      "end": 202.0,
+      "text": " That is one conditional path. Now the markets uniquely identify forecast.",
+      "words": []
+    },
+    {
+      "start": 203.28,
+      "end": 213.04,
+      "text": " I also included peer lenses for Coca-Cola and Monzels. They are useful reference points",
+      "words": []
+    },
+    {
+      "start": 213.04,
+      "end": 220.64,
+      "text": " but remain qualified because the peer inputs have comparability limits, including accounting",
+      "words": []
+    },
+    {
+      "start": 220.64,
+      "end": 229.39,
+      "text": " conventions, data balances, and differences in the earnings measures. I do not average",
+      "words": []
+    },
+    {
+      "start": 229.39,
+      "end": 236.59,
+      "text": " the peer output with the DCF into one target because the methods answer different questions.",
+      "words": []
+    },
+    {
+      "start": 237.31,
+      "end": 242.03,
+      "text": " Combining them without a consistent policy will create false precision.",
+      "words": []
+    },
+    {
+      "start": 244.11,
+      "end": 250.67,
+      "text": " My committee asks is to defer entry and monitor revenue growth, operating margin,",
+      "words": []
+    },
+    {
+      "start": 250.67,
+      "end": 259.07,
+      "text": " cash conversion, debt, and payout decisions in future releases. I would reconsider after a reviewed",
+      "words": []
+    },
+    {
+      "start": 259.07,
+      "end": 266.19,
+      "text": " current date bridge and verify improvements in margins and cash flow or if the share price",
+      "words": []
+    },
+    {
+      "start": 266.19,
+      "end": 271.87,
+      "text": " gives a defensible margin of safety relative to the supported value. If margins erode,",
+      "words": []
+    },
+    {
+      "start": 271.87,
+      "end": 276.51,
+      "text": " cash conversion and weekends or downside funding becomes insufficient, I will not initiate.",
+      "words": []
+    },
+    {
+      "start": 276.51,
+      "end": 279.39,
+      "text": " This concludes my live valuation and recommendation.",
+      "words": []
+    }
+  ]
+}

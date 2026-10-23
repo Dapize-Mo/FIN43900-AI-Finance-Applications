@@ -1,0 +1,32 @@
+FIN 43900 PROJECT 1 — RECORDING / TRANSCRIPT MANIFEST
+
+VIDEO 1 — Research evolution and AI use
+Video: video2766839541(1).mp4
+Audio: audio2766839541(1).m4a
+Transcript: fin439_review/Video_1_Transcript_FINAL.txt
+Duration: 02:16.41
+Verdict: Keep; no rerecord indicated.
+
+VIDEO 2 — Model and validation
+Video: video1502154100.mp4
+Audio: audio1502154100.m4a
+Transcript: fin439_review/Video_2_Transcript_FINAL.txt
+Duration: 04:08.77
+Verdict: Keep; no rerecord indicated.
+
+VIDEO 3 — Live valuation and committee recommendation
+Video: video1988888967(1).mp4 (also video1988888967.mp4)
+Audio: audio1988888967(1).m4a (also audio1988888967.m4a)
+Transcript: fin439_review/Video_3_Transcript_FINAL.txt
+Duration: 04:41.24
+Verdict: Keep; no rerecord indicated.
+
+SOURCE DIRECTORY IN THIS SESSION: /mnt/data/
+Transcripts in: /mnt/data/fin439_review/
+These are session paths, NOT automatically the paths on the user's local desktop. Codex should locate the files by exact basename in the project directory or copied download folder.
+
+IMPORTANT TRANSCRIPT QUALITY NOTE
+All topic timestamps are approximate. Video 2 is based on a prior draft rather than fresh audio transcription; Videos 1 and 3 are based on the speech rendered in the conversation. A final playback comparison is needed before certifying verbatim accuracy. No video rerecording is indicated by the observed substantive coverage.
+
+EDITION A
+User reports TA verbally accepted the matching copy; receipt preserved by Codex. Keep the receipt and the documented report of the clarification, without representing it as written TA approval.

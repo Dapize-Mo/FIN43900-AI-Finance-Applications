@@ -1,0 +1,46 @@
+[
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://www.pepsico.com/docs/pepsico-5v9wci20/media/Files/investors/pepsico-2025-annual-report.pdf",
+    "file": "pep-2025-annual-report.pdf",
+    "access_date": "2026-10-06",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026",
+    "file": "treasury-2026.html",
+    "access_date": "2026-10-06",
+    "status": "retrieved",
+    "bytes": 1236252,
+    "sha256": "2dd8ae02b0d6b6d45796299db57143053ce46fc6ebf9b6b9400edd11446c13e1"
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://stockanalysis.com/stocks/ko/history/",
+    "file": "ko-market.html",
+    "access_date": "2026-10-06",
+    "status": "retrieved",
+    "bytes": 112142,
+    "sha256": "af133305f807e008b8c83efb45660354c5f67061b19cfb4b4091f06e637024a8"
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://stockanalysis.com/stocks/mdlz/history/",
+    "file": "mdlz-market.html",
+    "access_date": "2026-10-06",
+    "status": "retrieved",
+    "bytes": 113365,
+    "sha256": "b1c67b26de80ebd78741c3f5da59ca5fddc84956f6c5132fe7ff856b5754534b"
+  },
+  {
+    "analyst": "Oladapo Olaniyan",
+    "url": "https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0001628280-26-050503/0001628280-26-050503.pdf",
+    "file": "ko-2026-q2.pdf",
+    "access_date": "2026-10-06",
+    "status": "retrieved",
+    "bytes": 4808863,
+    "sha256": "eecf03281e3edde8b63a5333e8fe6b0ad58f5166c701ae313be1c7b11af12e04"
+  }
+]

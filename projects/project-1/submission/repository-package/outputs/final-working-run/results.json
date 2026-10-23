@@ -1,0 +1,524 @@
+{
+  "analyst": "Oladapo Olaniyan",
+  "as_of": "2026-10-05",
+  "status": "WORKING / NOT SUBMISSION READY",
+  "assumption_status": "AI-proposed working assumptions; student acceptance pending; never company facts",
+  "finance_action_draft": "watch/defer pending analyst review and source/convention closure",
+  "bridge": {
+    "cash": 10251,
+    "sti": 465,
+    "debt": 53214,
+    "nci": 172,
+    "nonoperating_assets": 2180,
+    "point_shares": 1364.891558,
+    "diluted_shares": 1367.891558,
+    "price": 125.65,
+    "balance_date": "2026-06-13",
+    "share_date": "2026-07-02"
+  },
+  "wacc": {
+    "risk_free": 0.0531,
+    "beta": 0.65,
+    "erp": 0.05,
+    "cost_equity": 0.08560000000000001,
+    "cost_debt": 0.0611,
+    "equity_weight": 0.7631908746800525,
+    "wacc": 0.07661498816711057
+  },
+  "normalization": {
+    "reported_ebit": 11498,
+    "impairment_addback": 1993,
+    "normalized_ebit": 13491,
+    "normalized_margin": 0.143635879691243,
+    "tax_assumption": 0.22,
+    "cash_capex": 4415,
+    "bs_delta_nwc": 410,
+    "cash_flow_delta_nwc": 1212,
+    "nwc_definition_difference": 802,
+    "normalized_operating_fcff": 8346.98,
+    "simple_reported_operating_fcff": 6792.4400000000005,
+    "reported_cfo_less_capex": 7672,
+    "other_cfo_adjustments": 1553,
+    "cfo_to_fcff_reconciliation": 7672.0,
+    "explanation": "Normalized FCFF is an operating proxy, not reported cash flow. Other CFO adjustments include impairments, leases, SBC, tax/pension/restructuring timing and other items; not all recur or add economic value. Balance delta excludes cash/debt and uses broad AP line; cash-flow delta excludes acquisition/FX effects. Do not double-count impairment addback with CFO adjustments."
+  },
+  "scenarios": {
+    "low": {
+      "pv_explicit_fcff": 32315.06922190928,
+      "terminal_value_year_5": 156432.54111787849,
+      "pv_terminal_value": 112300.48324126219,
+      "enterprise_value": 144615.55246317148,
+      "common_equity_value": 104125.55246317148,
+      "value_per_diluted_share": 76.1212040926796,
+      "terminal_value_share": 0.7765449934567805,
+      "wacc": 0.08161498816711057,
+      "terminal_growth": 0.015,
+      "remaining_2026_fraction": 0.22465753424657534,
+      "discount_times": [
+        0.22465753424657534,
+        1.2246575342465753,
+        2.2246575342465755,
+        3.2246575342465755,
+        4.2246575342465755
+      ],
+      "discounted_cashflows": [
+        1619.077099264584,
+        8620.28392498006,
+        9181.750060242724,
+        9884.277493199152,
+        10457.873133103185
+      ],
+      "stub_policy": "uniform annual FCFF pro-rata; seasonality unvalidated",
+      "terminal_roic": 0.15,
+      "terminal_nopat": 11578.61319502057,
+      "terminal_reinvestment": 1157.861319502057,
+      "terminal_fcff": 10420.751875518514,
+      "terminal_policy": "FY2031 NOPAT=FY2030 NOPAT*(1+g); net reinvestment=NOPAT*g/ROIC; FCFF=NOPAT-net reinvestment. ROIC is an unapproved assumption."
+    },
+    "base": {
+      "pv_explicit_fcff": 39950.23259693975,
+      "terminal_value_year_5": 219902.73440007353,
+      "pv_terminal_value": 160985.33960231915,
+      "enterprise_value": 200935.5721992589,
+      "common_equity_value": 160445.5721992589,
+      "value_per_diluted_share": 117.29407295549585,
+      "terminal_value_share": 0.8011788945099135,
+      "wacc": 0.07661498816711057,
+      "terminal_growth": 0.025,
+      "remaining_2026_fraction": 0.22465753424657534,
+      "discount_times": [
+        0.22465753424657534,
+        1.2246575342465753,
+        2.2246575342465755,
+        3.2246575342465755,
+        4.2246575342465755
+      ],
+      "discounted_cashflows": [
+        2309.0706455097356,
+        10730.543429613179,
+        11279.58982586298,
+        11770.385030076786,
+        12331.914315293232
+      ],
+      "stub_policy": "uniform annual FCFF pro-rata; seasonality unvalidated",
+      "terminal_roic": 0.15,
+      "terminal_nopat": 13620.332440770064,
+      "terminal_reinvestment": 2270.0554067950106,
+      "terminal_fcff": 11350.277033975053,
+      "terminal_policy": "FY2031 NOPAT=FY2030 NOPAT*(1+g); net reinvestment=NOPAT*g/ROIC; FCFF=NOPAT-net reinvestment. ROIC is an unapproved assumption."
+    },
+    "high": {
+      "pv_explicit_fcff": 46888.389526274485,
+      "terminal_value_year_5": 303287.7419341224,
+      "pv_terminal_value": 226439.03874359676,
+      "enterprise_value": 273327.4282698712,
+      "common_equity_value": 232837.42826987122,
+      "value_per_diluted_share": 170.21629156795427,
+      "terminal_value_share": 0.8284534054153578,
+      "wacc": 0.07161498816711057,
+      "terminal_growth": 0.03,
+      "remaining_2026_fraction": 0.22465753424657534,
+      "discount_times": [
+        0.22465753424657534,
+        1.2246575342465753,
+        2.2246575342465755,
+        3.2246575342465755,
+        4.2246575342465755
+      ],
+      "discounted_cashflows": [
+        2751.2197397516657,
+        12305.506443630227,
+        13142.704995956252,
+        13699.619826948587,
+        14256.831182597234
+      ],
+      "stub_policy": "uniform annual FCFF pro-rata; seasonality unvalidated",
+      "terminal_roic": 0.15,
+      "terminal_nopat": 15776.644739772733,
+      "terminal_reinvestment": 3155.3289479545465,
+      "terminal_fcff": 12621.315791818186,
+      "terminal_policy": "FY2031 NOPAT=FY2030 NOPAT*(1+g); net reinvestment=NOPAT*g/ROIC; FCFF=NOPAT-net reinvestment. ROIC is an unapproved assumption."
+    },
+    "value_reset_failure": {
+      "pv_explicit_fcff": 25376.31537255829,
+      "terminal_value_year_5": 121783.9873905208,
+      "pv_terminal_value": 85739.85583723924,
+      "enterprise_value": 111116.17120979753,
+      "common_equity_value": 70626.17120979753,
+      "value_per_diluted_share": 51.63141098192049,
+      "terminal_value_share": 0.7716235621127957,
+      "wacc": 0.08661498816711057,
+      "terminal_growth": 0.01,
+      "remaining_2026_fraction": 0.22465753424657534,
+      "discount_times": [
+        0.22465753424657534,
+        1.2246575342465753,
+        2.2246575342465755,
+        3.2246575342465755,
+        4.2246575342465755
+      ],
+      "discounted_cashflows": [
+        1178.674072054976,
+        5936.854511630749,
+        7301.196795675964,
+        8229.884073064837,
+        9220.56318437279
+      ],
+      "stub_policy": "uniform annual FCFF pro-rata; seasonality unvalidated",
+      "terminal_roic": 0.15,
+      "terminal_nopat": 9996.941520930315,
+      "terminal_reinvestment": 666.462768062021,
+      "terminal_fcff": 9330.478752868294,
+      "terminal_policy": "FY2031 NOPAT=FY2030 NOPAT*(1+g); net reinvestment=NOPAT*g/ROIC; FCFF=NOPAT-net reinvestment. ROIC is an unapproved assumption."
+    }
+  },
+  "peer_comparison": {
+    "peers": [
+      {
+        "ticker": "KO",
+        "classification": "beverage lens",
+        "price_date": "2026-10-05",
+        "market_equity": 372213.53501193004,
+        "debt": 43543.0,
+        "enterprise_value": 380768.53501193004,
+        "ebitda": 14812.0,
+        "common_net_income": 13107.0,
+        "ev_ebitda": 25.706760397780855,
+        "pe": 28.398072404969103,
+        "status": "qualified book investment/NCI proxies; close differs by0.01 at other provider"
+      },
+      {
+        "ticker": "MDLZ",
+        "classification": "snack lens",
+        "price_date": "2026-10-05",
+        "market_equity": 74651.25825393,
+        "debt": 21450.0,
+        "enterprise_value": 93819.25825393,
+        "ebitda": 4906.0,
+        "common_net_income": 2451.0,
+        "ev_ebitda": 19.123371026076235,
+        "pe": 30.457469707845778,
+        "status": "qualified annual earnings hit by1341 derivative mark-to-market losses; no reported separate STI line assumed0"
+      }
+    ],
+    "count": 2,
+    "median_ev_ebitda": 22.415065711928545,
+    "median_pe": 29.42777105640744,
+    "reported_ev_route": 215.36269860334923,
+    "normalized_ev_route": 248.02115438707412,
+    "reported_pe_route": 177.26904745236925,
+    "caution": "Two qualified sector lenses, book investment/NCI proxies, aged share/debt data and FY2025 denominators. Indicative comparison, not approved target or complete peer validation."
+  },
+  "reverse_dcf": {
+    "status": "solved",
+    "uniform_ebit_margin_shift": 0.00846876991924736,
+    "target_equity": 171875.5742627,
+    "solved_equity": 171875.5742627,
+    "residual": 0.0,
+    "interpretation": "Uniform reduction in SG&A ratio, holding revenue, gross margin, WACC and g fixed; a conditional price-implied margin path, not a prediction"
+  },
+  "checks": [
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "FY2023 filing income articulation",
+      "status": "PASS",
+      "detail": "Reported statement lines reconcile exactly in USD millions"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "FY2024 filing income articulation",
+      "status": "PASS",
+      "detail": "Reported statement lines reconcile exactly in USD millions"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "FY2025 filing income articulation",
+      "status": "PASS",
+      "detail": "Reported statement lines reconcile exactly in USD millions"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "FY2024 source balance",
+      "status": "PASS",
+      "detail": "Assets 99467; liabilities 81296; gap 0"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "FY2025 source balance",
+      "status": "PASS",
+      "detail": "Assets 107399; liabilities 86852; gap 0"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "FY2023 source cash-flow articulation",
+      "status": "PASS",
+      "detail": "Cash+restricted ending 9761; net movement 4661"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "FY2024 source cash-flow articulation",
+      "status": "PASS",
+      "detail": "Cash+restricted ending 8553; net movement -1208"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "FY2025 source cash-flow articulation",
+      "status": "PASS",
+      "detail": "Cash+restricted ending 9204; net movement 651"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "FY2025 cash vs restricted definition",
+      "status": "PASS",
+      "detail": "Cash-flow9204 minus balance cash9159 =45 restricted; excluded from bridge"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "low linked statements",
+      "status": "PASS",
+      "detail": "Max balance gap 1.09e-11; cash articulation gap 9.09e-13"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "low PP&E/intangible rollforward",
+      "status": "PASS",
+      "detail": "Depreciation amortization separated; no negative asset balances"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "low FCFF financing reconciliation",
+      "status": "PASS",
+      "detail": "FCFF=CFO-capex+after-tax financing/nonoperating adjustment under positive pretax income; excludes draws and shareholder payouts"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "low finite five years",
+      "status": "PASS",
+      "detail": "FY2026-FY2030; all numeric outputs finite"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "base linked statements",
+      "status": "PASS",
+      "detail": "Max balance gap 1.46e-11; cash articulation gap 9.09e-13"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "base PP&E/intangible rollforward",
+      "status": "PASS",
+      "detail": "Depreciation amortization separated; no negative asset balances"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "base FCFF financing reconciliation",
+      "status": "PASS",
+      "detail": "FCFF=CFO-capex+after-tax financing/nonoperating adjustment under positive pretax income; excludes draws and shareholder payouts"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "base finite five years",
+      "status": "PASS",
+      "detail": "FY2026-FY2030; all numeric outputs finite"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "high linked statements",
+      "status": "PASS",
+      "detail": "Max balance gap 1.46e-11; cash articulation gap 3.64e-12"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "high PP&E/intangible rollforward",
+      "status": "PASS",
+      "detail": "Depreciation amortization separated; no negative asset balances"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "high FCFF financing reconciliation",
+      "status": "PASS",
+      "detail": "FCFF=CFO-capex+after-tax financing/nonoperating adjustment under positive pretax income; excludes draws and shareholder payouts"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "high finite five years",
+      "status": "PASS",
+      "detail": "FY2026-FY2030; all numeric outputs finite"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "value_reset_failure linked statements",
+      "status": "PASS",
+      "detail": "Max balance gap 7.28e-12; cash articulation gap 4.55e-13"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "value_reset_failure PP&E/intangible rollforward",
+      "status": "PASS",
+      "detail": "Depreciation amortization separated; no negative asset balances"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "value_reset_failure FCFF financing reconciliation",
+      "status": "PASS",
+      "detail": "FCFF=CFO-capex+after-tax financing/nonoperating adjustment under positive pretax income; excludes draws and shareholder payouts"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "value_reset_failure finite five years",
+      "status": "PASS",
+      "detail": "FY2026-FY2030; all numeric outputs finite"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "low independent bridge",
+      "status": "PASS",
+      "detail": "Decimal EV + cash + STI + affiliate book proxy - debt - NCI; per share difference 0"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "base independent bridge",
+      "status": "PASS",
+      "detail": "Decimal EV + cash + STI + affiliate book proxy - debt - NCI; per share difference 1.42e-14"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "high independent bridge",
+      "status": "PASS",
+      "detail": "Decimal EV + cash + STI + affiliate book proxy - debt - NCI; per share difference 2.84e-14"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "value_reset_failure independent bridge",
+      "status": "PASS",
+      "detail": "Decimal EV + cash + STI + affiliate book proxy - debt - NCI; per share difference 0"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "DCF WACC monotonicity",
+      "status": "PASS",
+      "detail": "Holding ordinary base FCFF fixed: +/-50bp WACC produces correct EV direction; not the locked test"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "DCF g monotonicity",
+      "status": "PASS",
+      "detail": "Holding ordinary base FCFF fixed: +/-50bp g gives correct EV direction"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "DCF invalid boundary rejection",
+      "status": "PASS",
+      "detail": "g>=WACC, nonfinite WACC and g=-100percent all raise ValueError"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Zero operating value boundary",
+      "status": "PASS",
+      "detail": "EV0; equity equals bridge adjustments; terminal share undefined rather than division by0"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Market-date first flow",
+      "status": "PASS",
+      "detail": "Only remaining2026 FCFF discounted; no full expired-year flow valued. Uniform accrual assumption is QUALIFIED separately."
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Published known-answer fixture integrity",
+      "status": "PASS",
+      "detail": "Packaged fixtures checked against hashes of audited professor starter; independent of other lab folders"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Lab05 synthetic known-answer 12 metrics",
+      "status": "PASS",
+      "detail": "Max absolute difference 4.7098774e-07; failures []; unchanged distributed fixture packaged under data/"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "CFO-to-operating-FCFF algebra",
+      "status": "PASS",
+      "detail": "Includes after-tax nonoperating effect, tax normalization and separately disclosed CFO adjustments; not a claim those adjustments all recur"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Working-capital source definition",
+      "status": "QUALIFIED",
+      "detail": "Cash-flow delta 1212 vs balance delta 410; difference 802 preserved. Acquisition/FX/line-scope component breakdown still pending."
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Peer same numerator denominator basis",
+      "status": "QUALIFIED",
+      "detail": "Common market date; FY2025 GAAP EBIT+D&A and common NI; EV and equity separated. Fair-value and interim rollforward gaps remain."
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Named downside causal propagation",
+      "status": "PASS",
+      "detail": "Year2 FCFF 5936.85 vs base 10730.54; debt draw 21207.58; not a contractual covenant/default test"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Terminal growth funds reinvestment",
+      "status": "PASS",
+      "detail": "Each case funds g/ROIC net reinvestment; terminal ROIC judgment is not validated by this arithmetic"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Reverse DCF numerical solution",
+      "status": "PASS",
+      "detail": "Price-implied SG&A margin shift solves market-equity target; conditional analysis, not a forecast or locked test"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Cash-ledger corruption detected",
+      "status": "PASS",
+      "detail": "Synthetic +100 USDm closing-cash corruption triggers articulation gap; no source or forecast input changed"
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Primary capex source reconciliation",
+      "status": "PASS",
+      "detail": "CF capital spending4415 equals Note1 Other Segment Information: segment4192 + corporate223 = total4415. Earlier Note15/segment-total locator corrected, not AI agreement."
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Independent valuation source/definition closure",
+      "status": "OPEN",
+      "detail": "Annual statement arithmetic passes, but post-quarter bridge, dilution, pension/tax claims and affiliate fair values require analyst review."
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Stub seasonality and terminal ROIC judgment",
+      "status": "OPEN",
+      "detail": "Uniform stub cashflow seasonality and terminal ROIC15percent require evidence/analyst acceptance; reinvestment arithmetic is tested separately."
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Peer policy judgment",
+      "status": "OPEN",
+      "detail": "AI-drafted updated policy and candidate disposition require analyst acceptance; no historical human-only attestation adopted."
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Human locked changed-input record",
+      "status": "OPEN",
+      "detail": "All fields remain blank; prediction neither proposed nor authored; test neither designed nor executed."
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "check": "Edition A recovery",
+      "status": "OPEN",
+      "detail": "Hash preserved; report content unavailable; staff guidance not requested or invented."
+    }
+  ],
+  "material_limitations": [
+    "Human locked prediction/run blank and unexecuted",
+    "Edition A recovery unresolved",
+    "Bridge and point shares dated June/July2026; post-quarter changes unverified",
+    "AI-proposed beta/ERP/spread, forecasts and action thresholds need student review",
+    "Stub FCFF seasonality and 15percent terminal ROIC assumption unvalidated",
+    "Peer fair-value/lease/tax-claim conventions not fully validated"
+  ]
+}

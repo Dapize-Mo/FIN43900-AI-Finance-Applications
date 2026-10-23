@@ -1,0 +1,43 @@
+{
+  "analyst": "Oladapo Olaniyan",
+  "timestamp_utc": "2026-10-06T17:10:31.751466+00:00",
+  "files": [
+    {
+      "analyst": "Oladapo Olaniyan",
+      "source": "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\docs\\decision-memo-working-v2.md",
+      "source_sha256": "8f6c725b582d6cb46fc44294c2a3202f76a7349e3e51c2afe39caad7c9c0ba7d",
+      "rendered": "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\presentation\\Decision-Memo-review.pdf",
+      "kind": "Formatting only; source values/blank fields retained",
+      "pages": 2
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "source": "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\docs\\research-evolution-v3.md",
+      "source_sha256": "8d9f8b8808e3b55fcfd9ed1f7fdb6a7a36ebb8140f5c4644bfc068d1d341ff36",
+      "rendered": "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\presentation\\Research-Evolution-review.pdf",
+      "kind": "Formatting only; source values/blank fields retained",
+      "pages": 1
+    },
+    {
+      "analyst": "Oladapo Olaniyan",
+      "source": "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\docs\\validation-and-ai-use-v3.md",
+      "source_sha256": "6b6b970b87118b517d770ce4a731a851d3e15519778e0654036f617066d7aa49",
+      "rendered": "C:\\Users\\dolan\\OneDrive - purdue.edu\\2026-Fall\\FIN-43900 - AI Finance Applications\\labs\\project-1\\presentation\\Validation-and-AI-Use-review.pdf",
+      "kind": "Formatting only; source values/blank fields retained",
+      "pages": 3
+    }
+  ],
+  "supporting_notes_pages": 12,
+  "original_sources_unmodified": true,
+  "model_not_changed_or_rerun": true,
+  "human_locked_fields": "retained blank",
+  "submission_ready": false,
+  "visual_inspection": "pending rendered-page inspection",
+  "supporting_notes_current": "Supporting-Notes-review-v2.pdf",
+  "supporting_hash_text_intact": true,
+  "dashboard_visual": "Main view inspected in browser; case labels and years corrected without financial changes",
+  "formatting_failure": "Initial prose spacing broke one unseparated hash; protected hash regex corrected; initial review copy preserved",
+  "source_hashes_still_match": true,
+  "main_pdf_visual": "All six main-PDF pages inspected; no clipping/overlap; memo two pages",
+  "supporting_pdf_visual": "Initial12 pages inspected; corrected hash version pending final inspection"
+}

@@ -1,0 +1,65 @@
+Project 1 — Corporate Finance Application
+Official Brightspace assignment text saved for Oladapo Olaniyan, October 17, 2026.
+Source: https://purdue.brightspace.com/d2l/lms/dropbox/user/folder_submit_files.d2l?db=1581848&grpid=0&isprv=0&bp=0&ou=1636012
+Due: October 19, 2026, 11:59 PM. Rubric: 300 points.
+
+Role and committee decision
+
+You are the AI task force member embedded in a buy-side analyst group. The fund holds no position in your target company. The senior analysts own the sector view; you were brought in to do what your generation of analysts does best — build the evidence-and-model stack with AI acceleration, faster and more transparently than it has ever been built, without ever letting the machine own the judgment. The portfolio manager's ask: should the fund initiate a position, place the name on watch/defer, or do not initiate — delivered as a defensible valuation range with evidence dates, material conditions, and reversal/monitoring triggers, never a single confident number. Your group will challenge your assumptions before the committee does; the committee sees your memo and your recorded defense. Screening selected the research target; it is not valuation evidence and cannot determine the recommendation.
+
+Points and the enforced due date appear in the Brightspace assignment header. The separate Project 1 — Edition A Checkpoint (AI Closed) page publishes the supervised baseline window; do not use the final-assignment page as the Edition A submission location.
+
+Planning estimate: 18–25 hours distributed across Weeks 2–8, including research, modeling, validation, cold run, writing, recording, transcript correction, and access checks.
+
+Week | Project 1 planning band | Scope boundary
+2 | 3–4 h | Edition A, source map, valuation architecture
+3 | 3–4 h | FCFF/WACC/terminal model and validation
+4 | 3–4 h | peer policy, multiples, transaction qualification
+5 | 3–4 h | pro-forma build: personalized drivers, five-year statements, articulation checks
+6 | 3–4 h | assumption research and challenges; sensitivity/what-if incl. a downside case; fresh-eyes revision; decision range
+7 | 2.5–4 h | cold run, manifest, memo, three bounded recordings
+8 | 0.5–1 h | access/integrity check and final receipt; no new analysis
+
+Required finance system
+
+Build a locally runnable analysis/application that:
+
+1. identifies the intended investment user, decision horizon, target/security, valuation date, currency, share basis (basic vs. diluted count), and relevant exclusions;
+2. traces material historical inputs to filings or authoritative sources and distinguishes facts, normalizations, forecasts, and model outputs — including a base year normalized for one-time items and basis changes (the Week 2 contamination catalog);
+3. builds a five-year three-statement pro-forma (income statement, balance sheet, cash flow) with a driver architecture personalized to the company — pro-forma is a method, not an algorithm; every load-bearing driver carries value · basis · challenge · evidence that would change it — and statements that articulate under checks that can fail loudly (balance sheet balances every year, cash flow ties to balance-sheet cash, base year reconciles to the filing);
+4. constructs the five-year FCFF DCF with WACC, terminal convention, and a complete enterprise-to-equity/per-share bridge — built as an engine in Week 3, then driven by the pro-forma's operating forecast from Week 5 on;
+5. reports causal low/base/high cases, a WACC–growth sensitivity, terminal-value share, and one reverse-DCF or market-implied expectation;
+6. defines a comparable-company policy before selecting peers and calculates at least one consistent enterprise-value and one equity-value multiple; use relevant transaction evidence only when its control/synergy/time context can be defended;
+7. explains disagreement across methods rather than mechanically averaging them;
+8. stresses the pro-forma with named what-if scenarios, including at least one downside case that could alter the recommendation, and maintains an assumption-challenge record (each load-bearing driver: value · basis · challenge · evidence that would change it); partner fresh-eyes challenges from the Weeks 5–6 labs belong in this record, credited to the challenger; and
+9. produces a valuation range and conditional committee action, not false point precision.
+
+Because the required architecture is enterprise-value/FCFF, banks, insurers, REITs, and other issuers for which FCFF and an enterprise-to-equity bridge are economically inappropriate are not eligible Project 1 targets. Select another operating company by the Week 2 admission gate. Such issuers may be used later only when an approved project architecture fits the decision.
+
+All market facts carry source and as-of date. Provider labels are reconciled to definitions. The repository must show the material inputs and result without requiring a grader to run it.
+
+Edition A boundary
+
+Submit the designated Brightspace Edition A checkpoint during Week 2 before valuation-specific generative-AI research or coding. The first successful receipt is the baseline of record; a Git tag may corroborate history but cannot replace the Brightspace checkpoint. Week 1's disclosed AI-assisted screening occurred before this project boundary; Edition A captures the student's valuation judgment before valuation-specific AI assistance.
+
+Required validation
+
+- one synthetic/known-answer reconciliation (against the training-case answers published with the weekly starters);
+- one independent source/definition check on a load-bearing input;
+- one directional changed-input test written before execution;
+- one Locked Changed-Input Record with a human-authored, AI-off prediction before the run, precommit timestamp/commit, old/new input and units, expected/actual output direction, decision effect, and failure diagnosis or no-change reason;
+- pro-forma articulation checks (balance sheet balances; cash flow ties to cash; base-year reconciliation to the filing), DCF boundary/monotonicity checks (outputs move only in the expected direction as WACC or growth moves), and enterprise-equity bridge checks;
+- peer-policy and multiple-definition consistency check;
+- highest-risk failure test plus cold-run log (one clean end-to-end run in a fresh environment, recorded); and
+- one accepted, corrected, qualified, or rejected AI output with independent evidence.
+
+Submission and scoring
+
+Submit the uniform seven-part bundle and filenames in the shared checklist: unchanged Edition A plus Edition B, repository/visible output,
+- research-evolution Video 1,
+- code/validation Video 2,
+- memo/deck, and committee Video 3 with corrected transcripts and frozen validation/AI-use record.
+
+The 300-point mapping in the major-project analytic rubric applies. No extra points attach to number of commits, visual polish, framework vocabulary, or video existence.
+
+Before grading, Brightspace also publishes Project 1 — Annotated Decision-Evidence Excerpt and Non-Example. It illustrates observable decision-evidence anchors and common failures but is not a complete submission, model answer, or source of project facts.
