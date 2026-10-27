@@ -1,0 +1,86 @@
+{
+  "author": "Oladapo Olaniyan",
+  "date": "2026-10-27",
+  "rank_snapshot": {
+    "as_of": "2026-10-26T23:45:00Z",
+    "rank": 65,
+    "submissions": 354,
+    "delta_r_squared": 0.036,
+    "timely_predictions": 270,
+    "common_scored_events": 279
+  },
+  "health_snapshot": {
+    "successful_deliveries_24h": 73,
+    "predictions_24h": 73,
+    "late": 0,
+    "duplicates": 0,
+    "invalid": 0,
+    "delivery_errors": 0
+  },
+  "portal_inventory": {
+    "total_forecasts": 378,
+    "scored": 286,
+    "missing_data": 5,
+    "excluded": 7,
+    "pending": 80,
+    "pending_dates": {
+      "2026-10-26": 19,
+      "2026-10-27": 61
+    },
+    "scored_dates": {
+      "2026-10-23": 34,
+      "2026-10-22": 105,
+      "2026-10-21": 52,
+      "2026-10-20": 40,
+      "2026-10-19": 6,
+      "2026-10-16": 9,
+      "2026-10-15": 14,
+      "2026-10-14": 8,
+      "2026-10-13": 2,
+      "2026-10-09": 2,
+      "2026-10-08": 6,
+      "2026-10-07": 6,
+      "2026-10-06": 2
+    }
+  },
+  "timing": {
+    "latest_archive_event_UTC": "2026-10-23T18:00:00Z",
+    "blend_deployment_verified_by_UTC": "2026-10-23T23:37:35Z",
+    "pre_deployment_portal_last_delivery_UTC": "2026-10-23T23:00:54Z",
+    "finding": "Latest scored event cohort predates blend deployment. October 26 and 27 forecasts are pending. Rank decline does not establish blend underperformance."
+  },
+  "cautions": [
+    "Coverage shortfall of 9 on common leaderboard is not equivalent to 9 infrastructure failures; 7 portal rows are marked Excluded and 5 Missing Data. Reasons require platform event-level metadata.",
+    "All-quarter private R2 of 0.098 is not contest delta R2 of 0.036.",
+    "Current and prior leaderboard scores use different numbers of events and moving quarterly percentile labels."
+  ],
+  "fresh_validation_checks": {
+    "n": 96,
+    "disjoint_from_prior": true,
+    "deployed_outlook_prompt_matches": true,
+    "label_exclusion_check_passed": true
+  },
+  "sources": [
+    {
+      "url": "https://portal.explainingmarkets.ai/leaderboard?period=2026Q4-CONTEST",
+      "access_date": "2026-10-27"
+    },
+    {
+      "url": "https://portal.explainingmarkets.ai/submissions/s_fb8c124cad37?tab=predictions",
+      "access_date": "2026-10-27"
+    },
+    {
+      "url": "https://portal.explainingmarkets.ai/submissions/s_fb8c124cad37?tab=health",
+      "access_date": "2026-10-27"
+    },
+    {
+      "url": "https://api.explainingmarkets.ai/v1/archive",
+      "access_date": "2026-10-27",
+      "download_sha256": "fc8afd51b750b8e8cc8f98ed7d7fccdf06e26a15ca3abd6cbe10a9630122a0a8"
+    },
+    {
+      "url": "https://explainingmarkets.ai/contest-rules",
+      "access_date": "2026-10-27"
+    }
+  ]
+}

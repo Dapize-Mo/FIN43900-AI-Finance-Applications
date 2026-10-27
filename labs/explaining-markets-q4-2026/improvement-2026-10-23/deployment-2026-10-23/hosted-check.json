@@ -1,0 +1,21 @@
+{
+  "synthetic_cases": [
+    {
+      "case": "positive",
+      "percentile": 0.925,
+      "seconds": 1.05
+    },
+    {
+      "case": "neutral",
+      "percentile": 0.5,
+      "seconds": 0.786
+    },
+    {
+      "case": "negative",
+      "percentile": 0.01,
+      "seconds": 0.878
+    }
+  ],
+  "directional_order_passed": true,
+  "all_cases_under_270_seconds": true
+}

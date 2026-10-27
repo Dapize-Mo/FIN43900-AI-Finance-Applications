@@ -1,0 +1,590 @@
+{
+  "author": "Oladapo Olaniyan",
+  "date": "2026-10-23",
+  "model": "gemini-3.5-flash-lite",
+  "development_n": 32,
+  "holdout_n": 64,
+  "seed": 43923,
+  "selection_rule": "Choose candidate or 50/50 blend using development delta R2 only. Holdout is evaluated once after selection.",
+  "deployment_gate": "Holdout delta R2 gain at least 0.01 and paired-bootstrap 90% lower bound greater than zero, with at least 95% inference success.",
+  "records": [
+    {
+      "split": "development",
+      "event_id": "ea_JBHT_Q2_2026",
+      "event_datetime": "2026-07-15T21:00:00+00:00",
+      "knowledge_cutoff": "2026-07-15T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_ISRG_Q2_2026",
+      "event_datetime": "2026-07-16T20:30:00+00:00",
+      "knowledge_cutoff": "2026-07-16T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_HAFC_Q2_2026",
+      "event_datetime": "2026-07-21T21:00:00+00:00",
+      "knowledge_cutoff": "2026-07-21T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_PM_Q2_2026",
+      "event_datetime": "2026-07-22T13:00:00+00:00",
+      "knowledge_cutoff": "2026-07-21T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_HIG_Q2_2026",
+      "event_datetime": "2026-07-24T13:00:00+00:00",
+      "knowledge_cutoff": "2026-07-23T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_NBN_Q4_2026",
+      "event_datetime": "2026-07-27T14:00:00+00:00",
+      "knowledge_cutoff": "2026-07-24T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_SSD_Q2_2026",
+      "event_datetime": "2026-07-27T21:00:00+00:00",
+      "knowledge_cutoff": "2026-07-27T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_SWKS_Q3_2026",
+      "event_datetime": "2026-07-28T20:30:00+00:00",
+      "knowledge_cutoff": "2026-07-28T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_ROG_Q2_2026",
+      "event_datetime": "2026-07-28T21:00:00+00:00",
+      "knowledge_cutoff": "2026-07-28T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_AXGN_Q2_2026",
+      "event_datetime": "2026-07-29T12:00:00+00:00",
+      "knowledge_cutoff": "2026-07-28T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_GNRC_Q2_2026",
+      "event_datetime": "2026-07-29T14:00:00+00:00",
+      "knowledge_cutoff": "2026-07-28T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_MDXG_Q2_2026",
+      "event_datetime": "2026-07-29T20:30:00+00:00",
+      "knowledge_cutoff": "2026-07-29T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_LHX_Q2_2026",
+      "event_datetime": "2026-07-29T21:00:00+00:00",
+      "knowledge_cutoff": "2026-07-29T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_VLO_Q2_2026",
+      "event_datetime": "2026-07-30T14:00:00+00:00",
+      "knowledge_cutoff": "2026-07-29T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_WHD_Q2_2026",
+      "event_datetime": "2026-07-30T14:00:00+00:00",
+      "knowledge_cutoff": "2026-07-29T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_MOD_Q1_2027",
+      "event_datetime": "2026-07-30T15:00:00+00:00",
+      "knowledge_cutoff": "2026-07-29T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_MTH_Q2_2026",
+      "event_datetime": "2026-07-30T15:00:00+00:00",
+      "knowledge_cutoff": "2026-07-29T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_EIG_Q2_2026",
+      "event_datetime": "2026-07-30T15:00:00+00:00",
+      "knowledge_cutoff": "2026-07-29T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_EXPO_Q2_2026",
+      "event_datetime": "2026-07-30T20:30:00+00:00",
+      "knowledge_cutoff": "2026-07-30T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_GDDY_Q2_2026",
+      "event_datetime": "2026-07-30T21:00:00+00:00",
+      "knowledge_cutoff": "2026-07-30T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_JELD_Q2_2026",
+      "event_datetime": "2026-08-04T12:00:00+00:00",
+      "knowledge_cutoff": "2026-08-03T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_BRKR_Q2_2026",
+      "event_datetime": "2026-08-04T13:00:00+00:00",
+      "knowledge_cutoff": "2026-08-03T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_INFU_Q2_2026",
+      "event_datetime": "2026-08-04T13:00:00+00:00",
+      "knowledge_cutoff": "2026-08-03T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_PNW_Q2_2026",
+      "event_datetime": "2026-08-04T16:00:00+00:00",
+      "knowledge_cutoff": "2026-08-03T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_MAT_Q2_2026",
+      "event_datetime": "2026-08-04T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-04T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_EPC_Q3_2026",
+      "event_datetime": "2026-08-05T12:00:00+00:00",
+      "knowledge_cutoff": "2026-08-04T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_PRIM_Q2_2026",
+      "event_datetime": "2026-08-05T14:00:00+00:00",
+      "knowledge_cutoff": "2026-08-04T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_ACT_Q2_2026",
+      "event_datetime": "2026-08-06T12:00:00+00:00",
+      "knowledge_cutoff": "2026-08-05T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_OSCR_Q2_2026",
+      "event_datetime": "2026-08-06T12:00:00+00:00",
+      "knowledge_cutoff": "2026-08-05T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_SDHC_Q2_2026",
+      "event_datetime": "2026-08-06T12:30:00+00:00",
+      "knowledge_cutoff": "2026-08-05T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_EHC_Q2_2026",
+      "event_datetime": "2026-08-06T14:00:00+00:00",
+      "knowledge_cutoff": "2026-08-05T20:00:00+00:00"
+    },
+    {
+      "split": "development",
+      "event_id": "ea_ATNI_Q2_2026",
+      "event_datetime": "2026-08-06T15:00:00+00:00",
+      "knowledge_cutoff": "2026-08-05T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_DCO_Q2_2026",
+      "event_datetime": "2026-08-06T17:00:00+00:00",
+      "knowledge_cutoff": "2026-08-05T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_AORT_Q2_2026",
+      "event_datetime": "2026-08-06T20:30:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_GMED_Q2_2026",
+      "event_datetime": "2026-08-06T20:30:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_CRNC_Q3_2026",
+      "event_datetime": "2026-08-06T20:30:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_QDEL_Q2_2026",
+      "event_datetime": "2026-08-06T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_ALTG_Q2_2026",
+      "event_datetime": "2026-08-06T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_SVCO_Q2_2026",
+      "event_datetime": "2026-08-06T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_LASR_Q2_2026",
+      "event_datetime": "2026-08-06T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_SUIG_Q2_2026",
+      "event_datetime": "2026-08-06T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_NAVI_Q2_2026",
+      "event_datetime": "2026-08-06T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_DBX_Q2_2026",
+      "event_datetime": "2026-08-06T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_GRPN_Q2_2026",
+      "event_datetime": "2026-08-07T12:00:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_ACMR_Q2_2026",
+      "event_datetime": "2026-08-07T12:00:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_OKLO_Q2_2026",
+      "event_datetime": "2026-08-07T12:30:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_CLMT_Q2_2026",
+      "event_datetime": "2026-08-07T13:00:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_VST_Q2_2026",
+      "event_datetime": "2026-08-07T14:00:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_TDS_Q2_2026",
+      "event_datetime": "2026-08-07T14:00:00+00:00",
+      "knowledge_cutoff": "2026-08-06T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_NABL_Q2_2026",
+      "event_datetime": "2026-08-10T12:30:00+00:00",
+      "knowledge_cutoff": "2026-08-07T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_CEVA_Q2_2026",
+      "event_datetime": "2026-08-10T12:30:00+00:00",
+      "knowledge_cutoff": "2026-08-07T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_JRSH_Q1_2027",
+      "event_datetime": "2026-08-10T13:00:00+00:00",
+      "knowledge_cutoff": "2026-08-07T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_PIII_Q2_2026",
+      "event_datetime": "2026-08-10T20:30:00+00:00",
+      "knowledge_cutoff": "2026-08-10T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_MVST_Q2_2026",
+      "event_datetime": "2026-08-10T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-10T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_AAON_Q2_2026",
+      "event_datetime": "2026-08-10T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-10T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_BODI_Q2_2026",
+      "event_datetime": "2026-08-10T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-10T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_NRXS_Q2_2026",
+      "event_datetime": "2026-08-11T13:00:00+00:00",
+      "knowledge_cutoff": "2026-08-10T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_EVLV_Q2_2026",
+      "event_datetime": "2026-08-11T20:30:00+00:00",
+      "knowledge_cutoff": "2026-08-11T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_SNAL_Q2_2026",
+      "event_datetime": "2026-08-11T20:30:00+00:00",
+      "knowledge_cutoff": "2026-08-11T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_TSHA_Q2_2026",
+      "event_datetime": "2026-08-11T20:30:00+00:00",
+      "knowledge_cutoff": "2026-08-11T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_INTZ_Q2_2026",
+      "event_datetime": "2026-08-11T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-11T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_PXLW_Q2_2026",
+      "event_datetime": "2026-08-11T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-11T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_PLX_Q2_2026",
+      "event_datetime": "2026-08-12T12:00:00+00:00",
+      "knowledge_cutoff": "2026-08-11T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_TRMB_Q2_2026",
+      "event_datetime": "2026-08-12T12:00:00+00:00",
+      "knowledge_cutoff": "2026-08-11T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_ATEX_Q1_2027",
+      "event_datetime": "2026-08-12T13:00:00+00:00",
+      "knowledge_cutoff": "2026-08-11T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_LIQT_Q2_2026",
+      "event_datetime": "2026-08-12T13:00:00+00:00",
+      "knowledge_cutoff": "2026-08-11T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_RRGB_Q2_2026",
+      "event_datetime": "2026-08-12T20:30:00+00:00",
+      "knowledge_cutoff": "2026-08-12T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_LESL_Q3_2026",
+      "event_datetime": "2026-08-12T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-12T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_ONDS_Q2_2026",
+      "event_datetime": "2026-08-13T12:30:00+00:00",
+      "knowledge_cutoff": "2026-08-12T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_CREX_Q2_2026",
+      "event_datetime": "2026-08-13T13:00:00+00:00",
+      "knowledge_cutoff": "2026-08-12T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_AMS_Q2_2026",
+      "event_datetime": "2026-08-13T17:00:00+00:00",
+      "knowledge_cutoff": "2026-08-12T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_DARE_Q2_2026",
+      "event_datetime": "2026-08-13T20:30:00+00:00",
+      "knowledge_cutoff": "2026-08-13T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_PETS_Q1_2027",
+      "event_datetime": "2026-08-13T20:30:00+00:00",
+      "knowledge_cutoff": "2026-08-13T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_KLC_Q2_2026",
+      "event_datetime": "2026-08-13T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-13T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_DMRC_Q2_2026",
+      "event_datetime": "2026-08-13T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-13T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_SLE_Q2_2026",
+      "event_datetime": "2026-08-14T12:30:00+00:00",
+      "knowledge_cutoff": "2026-08-13T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_DTST_Q2_2026",
+      "event_datetime": "2026-08-14T15:00:00+00:00",
+      "knowledge_cutoff": "2026-08-13T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_DCGO_Q2_2026",
+      "event_datetime": "2026-08-17T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-17T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_EL_Q4_2026",
+      "event_datetime": "2026-08-19T12:30:00+00:00",
+      "knowledge_cutoff": "2026-08-18T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_JBSS_Q4_2026",
+      "event_datetime": "2026-08-20T14:00:00+00:00",
+      "knowledge_cutoff": "2026-08-19T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_INTU_Q4_2026",
+      "event_datetime": "2026-08-25T20:30:00+00:00",
+      "knowledge_cutoff": "2026-08-25T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_NTNX_Q4_2026",
+      "event_datetime": "2026-08-26T20:30:00+00:00",
+      "knowledge_cutoff": "2026-08-26T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_HPQ_Q3_2026",
+      "event_datetime": "2026-08-26T21:30:00+00:00",
+      "knowledge_cutoff": "2026-08-26T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_LFVN_Q4_2026",
+      "event_datetime": "2026-08-27T20:30:00+00:00",
+      "knowledge_cutoff": "2026-08-27T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_GAP_Q2_2026",
+      "event_datetime": "2026-08-27T21:00:00+00:00",
+      "knowledge_cutoff": "2026-08-27T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_PANW_Q4_2026",
+      "event_datetime": "2026-09-01T20:30:00+00:00",
+      "knowledge_cutoff": "2026-09-01T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_DAKT_Q1_2027",
+      "event_datetime": "2026-09-02T15:00:00+00:00",
+      "knowledge_cutoff": "2026-09-01T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_GOLD_Q4_2026",
+      "event_datetime": "2026-09-02T20:30:00+00:00",
+      "knowledge_cutoff": "2026-09-02T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_NTSK_Q2_2027",
+      "event_datetime": "2026-09-02T21:00:00+00:00",
+      "knowledge_cutoff": "2026-09-02T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_LOVE_Q2_2027",
+      "event_datetime": "2026-09-10T12:30:00+00:00",
+      "knowledge_cutoff": "2026-09-09T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_REF_Q2_2026",
+      "event_datetime": "2026-09-10T21:00:00+00:00",
+      "knowledge_cutoff": "2026-09-10T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_HAIN_Q4_2026",
+      "event_datetime": "2026-09-14T12:00:00+00:00",
+      "knowledge_cutoff": "2026-09-11T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_EPM_Q4_2026",
+      "event_datetime": "2026-09-16T15:00:00+00:00",
+      "knowledge_cutoff": "2026-09-15T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_AZO_Q4_2026",
+      "event_datetime": "2026-09-22T14:00:00+00:00",
+      "knowledge_cutoff": "2026-09-21T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_CBRL_Q4_2026",
+      "event_datetime": "2026-09-23T12:15:00+00:00",
+      "knowledge_cutoff": "2026-09-22T20:00:00+00:00"
+    },
+    {
+      "split": "holdout",
+      "event_id": "ea_AIR_Q1_2027",
+      "event_datetime": "2026-09-29T12:00:00+00:00",
+      "knowledge_cutoff": "2026-09-28T20:00:00+00:00"
+    }
+  ],
+  "candidate_sha256": "eba7e542081ccc320d8a10bdc18ba1ff72e021fa59ca5647419c2e4817b25ca3",
+  "limitations": "Historical LLM training contamination cannot be excluded. Holdout events precede current work. Validation cannot establish live competitiveness."
+}

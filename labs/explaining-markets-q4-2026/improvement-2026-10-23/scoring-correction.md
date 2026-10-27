@@ -1,0 +1,3 @@
+# Scoring correction — Oladapo Olaniyan
+
+Recorded October 23, 2026, during inference collection and before inspecting comparison scores. Outcome and earnings-surprise percentile labels now use the full official Q3 archive before selecting development/holdout rows. Bootstrap replicates preserve these fixed quarterly labels. The initial evaluator incorrectly reranked within each sample. This is a correctness correction; prompts, selected events, random seeds, choice rule and deployment gate remain unchanged. Any metrics produced by the already running process must be regenerated from cached inference results with the corrected evaluator before a deployment decision.

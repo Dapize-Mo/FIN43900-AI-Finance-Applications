@@ -1,0 +1,34 @@
+{
+  "author": "Oladapo Olaniyan",
+  "observed_on": "2026-10-23",
+  "source": "https://portal.explainingmarkets.ai/submissions/s_fb8c124cad37?tab=predictions",
+  "contest_scored_events": 114,
+  "mean_forecast": 0.59631578947,
+  "mean_outcome_percentile": 0.49701754386,
+  "forecasts_above_half": 88,
+  "mean_absolute_error": 0.22192982456,
+  "most_common_forecasts": {
+    "0.58": 26,
+    "0.72": 21,
+    "0.52": 9,
+    "0.65": 7,
+    "0.22": 6,
+    "0.88": 6
+  },
+  "limitations": "Rounded portal values; MAE is not the contest ranking metric. Rank snapshot is dated October 22. Uniform affine recalibration does not improve incremental R squared.",
+  "rank_snapshot": {
+    "period": "2026Q4-CONTEST",
+    "as_of": "2026-10-22",
+    "rank": 35,
+    "participants": 353,
+    "delta_r_squared": 0.089,
+    "tenth_place_delta_r_squared": 0.115
+  },
+  "delivery_health": {
+    "observed_on": "2026-10-23",
+    "last_24_hours_successful_deliveries": 55,
+    "predictions": 55,
+    "delivery_errors": 0,
+    "late_duplicate_or_invalid_predictions": 0
+  }
+}

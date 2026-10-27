@@ -1,0 +1,3 @@
+# Fresh validation decision policy — Oladapo Olaniyan
+
+October 27, 2026, recorded while collection was in progress and before inspecting scores. No prompt/weight tuning on the new 96-event sample. Keep the existing blend if estimated gain >= 0.01 and bootstrap 90% lower bound > 0. If estimated gain <= -0.01 and bootstrap 90% upper bound < 0, recommend rollback to the preserved baseline. Otherwise keep the already deployed strategy and wait for genuinely prospective outcomes rather than treating an inconclusive historical test as proof. No retrospective forecast revisions. Any subsequent strategy deployment requires a concrete reviewable change and applicable production authorization.

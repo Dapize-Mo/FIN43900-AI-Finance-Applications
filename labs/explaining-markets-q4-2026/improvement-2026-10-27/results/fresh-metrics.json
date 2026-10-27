@@ -1,0 +1,49 @@
+{
+  "author": "Oladapo Olaniyan",
+  "current": {
+    "n_obs": 96,
+    "imputed_mean": 0.5759375,
+    "imputed_event_count": 0,
+    "r_squared_surprise": 0.044481875856368314,
+    "r_squared_surprise_imputed": 0.044481875856368314,
+    "r_squared": 0.19895704953073845,
+    "r_squared_imputed": 0.19895704953073845,
+    "delta_r_squared": 0.15447517367437014,
+    "delta_r_squared_imputed": 0.15447517367437014,
+    "beta": 0.6623646915236657,
+    "beta_imputed": 0.6623646915236657,
+    "beta_surprise": 0.13638290893115101,
+    "beta_surprise_imputed": 0.13638290893115101,
+    "alpha": 0.0587036368972116,
+    "alpha_imputed": 0.0587036368972116,
+    "mse": 0.07943064864171537,
+    "mse_imputed": 0.07943064864171537
+  },
+  "blend": {
+    "n_obs": 96,
+    "imputed_mean": 0.5746354166666666,
+    "imputed_event_count": 0,
+    "r_squared_surprise": 0.044481875856368314,
+    "r_squared_surprise_imputed": 0.044481875856368314,
+    "r_squared": 0.1719393054569086,
+    "r_squared_imputed": 0.1719393054569086,
+    "delta_r_squared": 0.1274574296005403,
+    "delta_r_squared_imputed": 0.1274574296005403,
+    "beta": 0.5992875246461227,
+    "beta_imputed": 0.5992875246461227,
+    "beta_surprise": 0.1756920707042388,
+    "beta_surprise_imputed": 0.1756920707042388,
+    "alpha": 0.07410215885505708,
+    "alpha_imputed": 0.07410215885505708,
+    "mse": 0.08210970216233245,
+    "mse_imputed": 0.08210970216233245
+  },
+  "gain": -0.02701774407382984,
+  "paired_bootstrap_90pct": [
+    -0.06149117091773563,
+    0.0008984685368545589
+  ],
+  "inference_success_rate": 1.0,
+  "gate_passed": false,
+  "limitations": "Historical model training contamination possible; not proof of live rank change. Fresh sample was frozen before calls and excludes every prior evaluation event."
+}

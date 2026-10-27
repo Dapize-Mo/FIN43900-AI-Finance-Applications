@@ -1,0 +1,29 @@
+{
+  "author": "Oladapo Olaniyan",
+  "sources": [
+    {
+      "filename": "EARNINGS_RELEASE_2026Q3.jsonl.gz",
+      "source": "Official competition archive",
+      "access_date": "2026-10-23",
+      "sha256": "123ddf0cca379f4e647f4f3b5408437a98e85b049676901cf6913d1918f5712c"
+    },
+    {
+      "filename": "EARNINGS_RELEASE_2026Q4.jsonl.gz",
+      "source": "Official competition archive",
+      "access_date": "2026-10-23",
+      "sha256": "cb90cea95cdc5d6ef465ab907da3095a0a50ef8b00ed0a94fe5659cd56c42221"
+    },
+    {
+      "filename": "scoring_frozen.py",
+      "source": "https://raw.githubusercontent.com/explaining-markets/examples/501bd31/src/examples/scoring.py",
+      "access_date": "2026-10-23",
+      "sha256": "990717aad244cbf79ca7f411c1c7d0b8bb33ccf3f04bc6d6f9ec0f84a2cd4c72"
+    },
+    {
+      "filename": "LICENSE-examples.txt",
+      "source": "https://raw.githubusercontent.com/explaining-markets/examples/501bd31/LICENSE",
+      "access_date": "2026-10-23",
+      "sha256": "1f1bde1a95b22dd0be8572fe4085a2c4bd63237a15e14e5bddd0f2893fc32d61"
+    }
+  ]
+}

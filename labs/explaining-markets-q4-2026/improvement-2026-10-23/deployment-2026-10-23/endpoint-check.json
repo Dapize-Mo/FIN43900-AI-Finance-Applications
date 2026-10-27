@@ -1,0 +1,11 @@
+{
+  "author": "Oladapo Olaniyan",
+  "date": "2026-10-23",
+  "endpoint": "https://d-olaniyan06--explaining-markets.modal.run/",
+  "health": {
+    "ok": true,
+    "service": "explaining-markets-starter",
+    "strategy": "blend-2026-10-23"
+  },
+  "unsigned_webhook_status": 401
+}
