@@ -57,6 +57,7 @@ brightspace/
 
 # Independent lab repository, including its private local .env and Git history
 /labs/explaining-markets-q4-2026/agent/
+/labs/explaining-markets-q4-2026/improvement-*/
 
 # Local-only duplicate of the already-published Project 1 repository snapshot
 /projects/project-1/submission/corrected-20261018/repository-package/
