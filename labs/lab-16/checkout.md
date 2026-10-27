@@ -7,7 +7,7 @@
 **Case:** Fictional Card-Spend Retail Index (Retailers `AAA`, `BBB`, `CCC`)  
 **Lab Date:** October 27, 2026  
 **Brightspace Item:** Lab 16 — Provenance Gate (Tuesday Authenticated Completion Checkout, 25 Points)  
-**Session Token:** `provenance`  
+**Session Token:** `bond`  
 **GitHub Direct Script Link:** [asof.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-16/asof.py)  
 **GitHub Direct README Link:** [README.md on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-16/README.md)  
 **GitHub Direct Checkout Link:** [checkout.md on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-16/checkout.md)  

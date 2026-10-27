@@ -6,7 +6,7 @@
 **Institution:** Mitchell E. Daniels, Jr. School of Business, Purdue University  
 **Case:** Fictional Card-Spend Retail Index (Retailers `AAA`, `BBB`, `CCC`)  
 **Date:** October 27, 2026  
-**Session Token:** `provenance`  
+**Session Token:** `bond`  
 **Category:** Tuesday Authenticated Completion Checkout (25 or 0)
 
 ---
