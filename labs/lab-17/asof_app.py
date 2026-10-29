@@ -213,12 +213,18 @@ for sid in all_series:
             "Revised Values Since (Same Dates)": revised_count,
         })
         
+        # Filter vintage data for the chart from start_date
+        df_vintage_chart = df_vintage[df_vintage["observation_date"] >= start_date_ts].copy()
+
         series_data_cache[sid] = {
             "df_today_chart": df_today_chart,
+            "df_vintage_chart": df_vintage_chart,
             "last_vintage_date": last_vintage_date,
             "last_vintage_val": last_vintage_val,
             "last_today_date": last_today_date,
             "last_today_val": last_today_val,
+            "late_count": late_count,
+            "revised_count": revised_count,
         }
         
     except Exception as e:
@@ -228,64 +234,147 @@ for sid in all_series:
 # Section 1: Charts
 # -----------------------------------------------------------------------------
 
-st.subheader("1. Series Charts (Today's Values from Start Date)")
+st.subheader("1. Series Charts & Point-in-Time Horizons")
 
 if series_data_cache:
     for sid, sdata in series_data_cache.items():
         chart_df = sdata["df_today_chart"].copy()
+        v_chart_df = sdata["df_vintage_chart"].copy()
         friendly_name = DEFAULT_SERIES.get(sid, sid)
         
-        st.markdown(f"### **{sid}** — {friendly_name}")
-        
-        if not chart_df.empty:
-            # 1. KPI summary metrics banner above chart
-            col1, col2, col3, col4, col5 = st.columns(5)
-            with col1:
-                st.metric("Last Date Known Then", sdata["last_vintage_date"].strftime("%Y-%m-%d"))
-            with col2:
-                st.metric("Value Known Then", f"{sdata['last_vintage_val']:,.4f}".rstrip("0").rstrip("."))
-            with col3:
-                st.metric("Value Today", f"{sdata['last_today_val']:,.4f}".rstrip("0").rstrip("."))
-            with col4:
-                st.metric("Late Observations", sdata["late_count"] if "late_count" in sdata else len(chart_df[chart_df["observation_date"] > sdata["last_vintage_date"]]))
-            with col5:
-                rev_cnt = [r["Revised Values Since (Same Dates)"] for r in table_rows if r["Series ID"] == sid]
-                st.metric("Revised Values", rev_cnt[0] if rev_cnt else 0)
+        with st.container(border=True):
+            # Header Row
+            top_left, top_right = st.columns([4, 1])
+            with top_left:
+                st.markdown(f"#### **{sid}** — <span style='font-weight:400; color:#94A3B8;'>{friendly_name}</span>", unsafe_allow_html=True)
+            with top_right:
+                st.markdown(f"<div style='text-align:right;'><a href='https://fred.stlouisfed.org/series/{sid}' target='_blank' style='text-decoration:none;'>🔗 Open on FRED ↗</a></div>", unsafe_allow_html=True)
             
-            # 2. Professional Altair chart (avoids Vega-Lite parentheses parsing bug)
-            base_line = (
-                alt.Chart(chart_df)
-                .mark_line(color="#1E88E5", strokeWidth=2.5)
-                .encode(
-                    x=alt.X("observation_date:T", title="Observation Date", axis=alt.Axis(format="%b %Y", grid=True)),
-                    y=alt.Y("today_value:Q", title=f"{sid} Rate / Value", scale=alt.Scale(zero=False), axis=alt.Axis(grid=True)),
-                    tooltip=[
-                        alt.Tooltip("observation_date:T", title="Observation Date", format="%B %d, %Y"),
-                        alt.Tooltip("today_value:Q", title="Today's Value", format=",.4f")
-                    ]
+            # Executive KPI Cards
+            c1, c2, c3, c4, c5 = st.columns(5)
+            with c1:
+                st.metric("📅 Last Known Then", sdata["last_vintage_date"].strftime("%Y-%m-%d"))
+            with c2:
+                st.metric("🔢 Value Known Then", f"{sdata['last_vintage_val']:,.4f}".rstrip("0").rstrip("."))
+            with c3:
+                st.metric("📈 Value Today", f"{sdata['last_today_val']:,.4f}".rstrip("0").rstrip("."))
+            with c4:
+                st.metric("⏳ Late Obs (Lag)", sdata["late_count"])
+            with c5:
+                rev_label = f"{sdata['revised_count']}" if sdata["revised_count"] == 0 else f"{sdata['revised_count']} ⚠️"
+                st.metric("🔄 Revised Since", rev_label)
+            
+            if not chart_df.empty:
+                # Legend and display mode indicator
+                st.markdown(
+                    f"<div style='font-size:0.85rem; color:#94A3B8; margin-bottom:8px;'>"
+                    f"<span style='color:#38BDF8; font-weight:600;'>━ Today's Values (FRED)</span> &nbsp;&nbsp;|&nbsp;&nbsp; "
+                    f"<span style='color:#F59E0B; font-weight:600;'>┅ Known on {vintage_date_str} (ALFRED)</span> &nbsp;&nbsp;|&nbsp;&nbsp; "
+                    f"<span style='color:#EF4444; font-weight:600;'>┆ Cutoff Horizon ({sdata['last_vintage_date'].strftime('%Y-%m-%d')})</span>"
+                    f"</div>",
+                    unsafe_allow_html=True
                 )
-            )
-            
-            # Vertical rule marking the Point-in-Time Cutoff Date
-            cutoff_date_ts = pd.to_datetime(sdata["last_vintage_date"])
-            rule_df = pd.DataFrame({"cutoff": [cutoff_date_ts], "label": [f"Known Cutoff: {cutoff_date_ts.strftime('%Y-%m-%d')}"]})
-            cutoff_rule = (
-                alt.Chart(rule_df)
-                .mark_rule(color="#E53935", strokeDash=[4, 4], strokeWidth=2)
-                .encode(x="cutoff:T", tooltip=[alt.Tooltip("label:N", title="Cutoff Horizon")])
-            )
-            
-            final_chart = (base_line + cutoff_rule).properties(height=340).interactive()
-            st.altair_chart(final_chart, use_container_width=True)
-            
-            # 3. Subtext as mandated: under it the last date in the data known on the "as known on" date
-            st.caption(
-                f"ℹ️ **Point-in-Time Knowledge Cutoff:** On **{vintage_date_str}**, the latest observation known was "
-                f"**{sdata['last_vintage_date'].strftime('%Y-%m-%d')}** (value: **{sdata['last_vintage_val']}**). "
-                f"Today's series extends to **{sdata['last_today_date'].strftime('%Y-%m-%d')}** (value: **{sdata['last_today_val']}**)."
-            )
-        else:
-            st.info(f"No observations found for {sid} after start date {start_date}.")
+                
+                # 1. Subtle Gradient Area under Today's Series
+                area_chart = (
+                    alt.Chart(chart_df)
+                    .mark_area(
+                        color=alt.Gradient(
+                            gradient="linear",
+                            stops=[
+                                alt.GradientStop(color="rgba(56, 189, 248, 0.22)", offset=0),
+                                alt.GradientStop(color="rgba(56, 189, 248, 0.01)", offset=1),
+                            ],
+                            x1=1, x2=1, y1=1, y2=0
+                        )
+                    )
+                    .encode(x="observation_date:T", y="today_value:Q")
+                )
+                
+                # 2. Main Today's Line
+                today_line = (
+                    alt.Chart(chart_df)
+                    .mark_line(color="#38BDF8", strokeWidth=2.4)
+                    .encode(
+                        x=alt.X(
+                            "observation_date:T",
+                            title="Observation Date",
+                            axis=alt.Axis(format="%b %Y", grid=True, gridColor="rgba(148, 163, 184, 0.12)", labelFontSize=11)
+                        ),
+                        y=alt.Y(
+                            "today_value:Q",
+                            title=f"{sid} Rate / Value",
+                            scale=alt.Scale(zero=False),
+                            axis=alt.Axis(grid=True, gridColor="rgba(148, 163, 184, 0.12)", labelFontSize=11)
+                        ),
+                        tooltip=[
+                            alt.Tooltip("observation_date:T", title="Observation Date", format="%B %d, %Y"),
+                            alt.Tooltip("today_value:Q", title="Value Today", format=",.4f")
+                        ]
+                    )
+                )
+                
+                chart_layers = [area_chart, today_line]
+                
+                # 3. Vintage Overlay Line (if observations exist)
+                if not v_chart_df.empty:
+                    vintage_line = (
+                        alt.Chart(v_chart_df)
+                        .mark_line(color="#F59E0B", strokeDash=[5, 4], strokeWidth=2.2)
+                        .encode(
+                            x="observation_date:T",
+                            y="vintage_value:Q",
+                            tooltip=[
+                                alt.Tooltip("observation_date:T", title="Observation Date", format="%B %d, %Y"),
+                                alt.Tooltip("vintage_value:Q", title=f"Known on {vintage_date_str}", format=",.4f")
+                            ]
+                        )
+                    )
+                    chart_layers.append(vintage_line)
+                
+                # 4. Vertical Rule and Marker Dot at Point-in-Time Cutoff
+                cutoff_ts = pd.to_datetime(sdata["last_vintage_date"])
+                cutoff_data = pd.DataFrame({
+                    "cutoff": [cutoff_ts],
+                    "val": [sdata["last_vintage_val"]],
+                    "label": [f"Known Cutoff: {cutoff_ts.strftime('%Y-%m-%d')} (Val: {sdata['last_vintage_val']})"]
+                })
+                
+                cutoff_rule = (
+                    alt.Chart(cutoff_data)
+                    .mark_rule(color="#EF4444", strokeDash=[4, 3], strokeWidth=2.0)
+                    .encode(x="cutoff:T")
+                )
+                cutoff_dot = (
+                    alt.Chart(cutoff_data)
+                    .mark_circle(size=85, color="#EF4444")
+                    .encode(
+                        x="cutoff:T",
+                        y="val:Q",
+                        tooltip=[
+                            alt.Tooltip("cutoff:T", title="Cutoff Horizon Date", format="%B %d, %Y"),
+                            alt.Tooltip("val:Q", title="Value Known Then", format=",.4f")
+                        ]
+                    )
+                )
+                chart_layers.extend([cutoff_rule, cutoff_dot])
+                
+                # Combine all chart layers
+                composite_chart = (
+                    alt.layer(*chart_layers)
+                    .properties(height=330)
+                    .interactive()
+                )
+                st.altair_chart(composite_chart, use_container_width=True)
+                
+                # 5. Mandated Subtext Caption
+                st.caption(
+                    f"ℹ️ **Point-in-Time Knowledge Cutoff:** On **{vintage_date_str}**, the latest observation known was "
+                    f"**{sdata['last_vintage_date'].strftime('%Y-%m-%d')}** (value: **{sdata['last_vintage_val']}**). "
+                    f"Today's series extends to **{sdata['last_today_date'].strftime('%Y-%m-%d')}** (value: **{sdata['last_today_val']}**)."
+                )
+            else:
+                st.info(f"No observations found for {sid} after start date {start_date}.")
         st.markdown("---")
 
 # -----------------------------------------------------------------------------
