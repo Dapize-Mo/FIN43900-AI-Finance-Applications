@@ -1,0 +1,56 @@
+{
+  "author": "Oladapo Olaniyan",
+  "n": 32,
+  "original": {
+    "n_obs": 32,
+    "imputed_mean": 0.61,
+    "imputed_event_count": 0,
+    "r_squared_surprise": 0.08264676857316944,
+    "r_squared_surprise_imputed": 0.08264676857316944,
+    "r_squared": 0.12702222758710768,
+    "r_squared_imputed": 0.12702222758710768,
+    "delta_r_squared": 0.044375459013938245,
+    "delta_r_squared_imputed": 0.044375459013938245,
+    "beta": -0.3776209592502929,
+    "beta_imputed": -0.3776209592502929,
+    "beta_surprise": 0.3674931686303761,
+    "beta_surprise_imputed": 0.3674931686303761,
+    "alpha": 0.5579232605801627,
+    "alpha_imputed": 0.5579232605801627,
+    "mse": 0.06552577342418314,
+    "mse_imputed": 0.06552577342418314
+  },
+  "evidence": {
+    "n_obs": 32,
+    "imputed_mean": 0.57125,
+    "imputed_event_count": 0,
+    "r_squared_surprise": 0.08264676857316944,
+    "r_squared_surprise_imputed": 0.08264676857316944,
+    "r_squared": 0.08264685040164199,
+    "r_squared_imputed": 0.08264685040164199,
+    "delta_r_squared": 8.182847255344683e-08,
+    "delta_r_squared_imputed": 8.182847255344683e-08,
+    "beta": 0.0006157448427240161,
+    "beta_imputed": 0.0006157448427240161,
+    "beta_surprise": 0.28602070135797214,
+    "beta_surprise_imputed": 0.28602070135797214,
+    "alpha": 0.36541604005356365,
+    "alpha_imputed": 0.36541604005356365,
+    "mse": 0.06885659237851983,
+    "mse_imputed": 0.06885659237851983
+  },
+  "gain": -0.04437537718546569,
+  "paired_bootstrap_90pct": [
+    -0.21415378112302882,
+    0.07109522340493112
+  ],
+  "coverage": 1.0,
+  "gate_passed": false,
+  "inference_errors": 0,
+  "limitations": [
+    "Exploratory Q4 sample comes from the same period used in the live audit; it is not an untouched confirmation set.",
+    "Historical model training contamination cannot be excluded.",
+    "Uniform calibration alone cannot improve OLS delta R squared.",
+    "Retry test uses the same previously examined Q4 sample and cached forecasts; exploratory, not independent confirmation. One bounded SDK retry; no production changes."
+  ]
+}

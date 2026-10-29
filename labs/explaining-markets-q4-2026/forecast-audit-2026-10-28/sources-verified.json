@@ -1,0 +1,20 @@
+[
+  {
+    "author": "Oladapo Olaniyan",
+    "quarter": "2026Q2",
+    "records": 2060,
+    "sha256": "04c3b1af2a900261c608ba1a92662ee76eb94db969f76841e27c2335eb6ae011",
+    "source": "https://api.explainingmarkets.ai/v1/archive",
+    "access_date": "2026-10-28",
+    "built_at": "2026-09-30T23:31:46+00:00"
+  },
+  {
+    "author": "Oladapo Olaniyan",
+    "quarter": "2026Q4",
+    "records": 420,
+    "sha256": "025c93584c5dda3e169a214f535e097a898eee37e64732cf3e7d3432d0078907",
+    "source": "https://api.explainingmarkets.ai/v1/archive",
+    "access_date": "2026-10-28",
+    "built_at": "2026-10-28T23:30:21+00:00"
+  }
+]

@@ -1,0 +1,148 @@
+{
+  "author": "Oladapo Olaniyan",
+  "date": "2026-10-29",
+  "model": "gemini-3.5-flash-lite",
+  "temperature": 0,
+  "n": 32,
+  "seed": 4392911,
+  "quarter": "2026Q4",
+  "candidate_sha256": "1efb4d3effe959087f9058d4af7d5d578f89f3ff80005b4c6f24eff4050fe21f",
+  "script_sha256": "5cec6c961d568f0a638103cd33b1942287ea3503eb6b08b9f9d6ff3f956e4de6",
+  "records": [
+    {
+      "event_id": "ea_STZ_Q2_2027",
+      "event_datetime": "2026-10-07T12:00:00+00:00"
+    },
+    {
+      "event_id": "ea_DAL_Q3_2026",
+      "event_datetime": "2026-10-09T14:00:00+00:00"
+    },
+    {
+      "event_id": "ea_FHN_Q3_2026",
+      "event_datetime": "2026-10-15T13:30:00+00:00"
+    },
+    {
+      "event_id": "ea_CMC_Q4_2026",
+      "event_datetime": "2026-10-15T15:00:00+00:00"
+    },
+    {
+      "event_id": "ea_JBHT_Q3_2026",
+      "event_datetime": "2026-10-15T21:00:00+00:00"
+    },
+    {
+      "event_id": "ea_DX_Q3_2026",
+      "event_datetime": "2026-10-19T14:00:00+00:00"
+    },
+    {
+      "event_id": "ea_SYF_Q3_2026",
+      "event_datetime": "2026-10-20T12:00:00+00:00"
+    },
+    {
+      "event_id": "ea_AGNC_Q3_2026",
+      "event_datetime": "2026-10-20T12:30:00+00:00"
+    },
+    {
+      "event_id": "ea_GM_Q3_2026",
+      "event_datetime": "2026-10-20T12:30:00+00:00"
+    },
+    {
+      "event_id": "ea_MMM_Q3_2026",
+      "event_datetime": "2026-10-20T13:00:00+00:00"
+    },
+    {
+      "event_id": "ea_WTFC_Q3_2026",
+      "event_datetime": "2026-10-20T15:00:00+00:00"
+    },
+    {
+      "event_id": "ea_WAL_Q3_2026",
+      "event_datetime": "2026-10-20T16:00:00+00:00"
+    },
+    {
+      "event_id": "ea_RBB_Q3_2026",
+      "event_datetime": "2026-10-20T18:00:00+00:00"
+    },
+    {
+      "event_id": "ea_NFLX_Q3_2026",
+      "event_datetime": "2026-10-20T20:45:00+00:00"
+    },
+    {
+      "event_id": "ea_NPB_Q3_2026",
+      "event_datetime": "2026-10-21T14:00:00+00:00"
+    },
+    {
+      "event_id": "ea_WGO_Q4_2026",
+      "event_datetime": "2026-10-21T14:00:00+00:00"
+    },
+    {
+      "event_id": "ea_GTY_Q3_2026",
+      "event_datetime": "2026-10-22T12:30:00+00:00"
+    },
+    {
+      "event_id": "ea_TFIN_Q3_2026",
+      "event_datetime": "2026-10-22T14:30:00+00:00"
+    },
+    {
+      "event_id": "ea_HFWA_Q3_2026",
+      "event_datetime": "2026-10-22T16:00:00+00:00"
+    },
+    {
+      "event_id": "ea_CIVB_Q3_2026",
+      "event_datetime": "2026-10-22T17:00:00+00:00"
+    },
+    {
+      "event_id": "ea_SSNC_Q3_2026",
+      "event_datetime": "2026-10-22T21:00:00+00:00"
+    },
+    {
+      "event_id": "ea_ALV_Q3_2026",
+      "event_datetime": "2026-10-23T12:00:00+00:00"
+    },
+    {
+      "event_id": "ea_SIGI_Q3_2026",
+      "event_datetime": "2026-10-23T12:00:00+00:00"
+    },
+    {
+      "event_id": "ea_EBC_Q3_2026",
+      "event_datetime": "2026-10-23T13:00:00+00:00"
+    },
+    {
+      "event_id": "ea_GBCI_Q3_2026",
+      "event_datetime": "2026-10-23T15:00:00+00:00"
+    },
+    {
+      "event_id": "ea_KRC_Q3_2026",
+      "event_datetime": "2026-10-23T17:00:00+00:00"
+    },
+    {
+      "event_id": "ea_ABOS_Q3_2026",
+      "event_datetime": "2026-10-26T12:00:00+00:00"
+    },
+    {
+      "event_id": "ea_VZ_Q3_2026",
+      "event_datetime": "2026-10-26T12:30:00+00:00"
+    },
+    {
+      "event_id": "ea_RGEN_Q3_2026",
+      "event_datetime": "2026-10-27T12:00:00+00:00"
+    },
+    {
+      "event_id": "ea_SPGI_Q3_2026",
+      "event_datetime": "2026-10-27T12:30:00+00:00"
+    },
+    {
+      "event_id": "ea_HIG_Q3_2026",
+      "event_datetime": "2026-10-27T13:00:00+00:00"
+    },
+    {
+      "event_id": "ea_PDM_Q3_2026",
+      "event_datetime": "2026-10-27T13:00:00+00:00"
+    }
+  ],
+  "gate": "Candidate gain >=0.01, paired bootstrap 90% lower bound >0, paired coverage >=95%; otherwise retain original. No tuning or re-selection after evaluation.",
+  "limitations": [
+    "Exploratory Q4 sample comes from the same period used in the live audit; it is not an untouched confirmation set.",
+    "Historical model training contamination cannot be excluded.",
+    "Uniform calibration alone cannot improve OLS delta R squared.",
+    "No live prediction or billing modifications."
+  ]
+}

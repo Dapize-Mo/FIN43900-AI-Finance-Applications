@@ -1,0 +1,181 @@
+{
+  "author": "Oladapo Olaniyan",
+  "completed_at": "2026-10-29T03:10:15.151534+00:00",
+  "n": 24,
+  "candidate": "Gemini 4 Argon, AI Studio UI, medium thinking",
+  "baseline": "Gemini 3.5 Flash-Lite, original prompt, temperature 0, cached October 27",
+  "baseline_metrics": {
+    "n_obs": 24,
+    "imputed_mean": 0.58,
+    "imputed_event_count": 0,
+    "r_squared_surprise": 0.10814101217888883,
+    "r_squared_surprise_imputed": 0.10814101217888883,
+    "r_squared": 0.34692779841210886,
+    "r_squared_imputed": 0.34692779841210886,
+    "delta_r_squared": 0.23878678623322003,
+    "delta_r_squared_imputed": 0.23878678623322003,
+    "beta": 0.8377708927715667,
+    "beta_imputed": 0.8377708927715667,
+    "beta_surprise": 0.21083490577808228,
+    "beta_surprise_imputed": 0.21083490577808228,
+    "alpha": -0.1479712321522329,
+    "alpha_imputed": -0.1479712321522329,
+    "mse": 0.07240059185904278,
+    "mse_imputed": 0.07240059185904278
+  },
+  "candidate_metrics": {
+    "n_obs": 24,
+    "imputed_mean": 0.5729166666666666,
+    "imputed_event_count": 0,
+    "r_squared_surprise": 0.10814101217888883,
+    "r_squared_surprise_imputed": 0.10814101217888883,
+    "r_squared": 0.18521626713414496,
+    "r_squared_imputed": 0.18521626713414496,
+    "delta_r_squared": 0.07707525495525613,
+    "delta_r_squared_imputed": 0.07707525495525613,
+    "beta": 0.5928610523127945,
+    "beta_imputed": 0.5928610523127945,
+    "beta_surprise": 0.2650507676154285,
+    "beta_surprise_imputed": 0.2650507676154285,
+    "alpha": -0.029847775839456164,
+    "alpha_imputed": -0.029847775839456164,
+    "mse": 0.09032818171279806,
+    "mse_imputed": 0.09032818171279806
+  },
+  "gain": -0.1617115312779639,
+  "paired_bootstrap_90pct": [
+    -0.3471575496774107,
+    -0.006053446617844386
+  ],
+  "coverage": 1.0,
+  "api_key_selected": false,
+  "payment_prompt": false,
+  "limitations": [
+    "Small reused sample; screening only, not an untouched confirmation set.",
+    "Candidate 24-event batched UI call differs from baseline independent single-event API calls.",
+    "Search and URL context disabled; remembered historical outcomes cannot be excluded.",
+    "Results do not establish future live rank or production API access."
+  ],
+  "predictions": [
+    {
+      "id": "E01",
+      "event_id": "ea_OM_Q2_2026",
+      "predicted_percentile": 0.72
+    },
+    {
+      "id": "E02",
+      "event_id": "ea_SKIN_Q2_2026",
+      "predicted_percentile": 0.35
+    },
+    {
+      "id": "E03",
+      "event_id": "ea_SPT_Q2_2026",
+      "predicted_percentile": 0.58
+    },
+    {
+      "id": "E04",
+      "event_id": "ea_XRAY_Q2_2026",
+      "predicted_percentile": 0.52
+    },
+    {
+      "id": "E05",
+      "event_id": "ea_NATR_Q2_2026",
+      "predicted_percentile": 0.22
+    },
+    {
+      "id": "E06",
+      "event_id": "ea_NRDY_Q2_2026",
+      "predicted_percentile": 0.38
+    },
+    {
+      "id": "E07",
+      "event_id": "ea_TILE_Q2_2026",
+      "predicted_percentile": 0.56
+    },
+    {
+      "id": "E08",
+      "event_id": "ea_AIG_Q2_2026",
+      "predicted_percentile": 0.58
+    },
+    {
+      "id": "E09",
+      "event_id": "ea_GAME_Q2_2026",
+      "predicted_percentile": 0.45
+    },
+    {
+      "id": "E10",
+      "event_id": "ea_TCMD_Q2_2026",
+      "predicted_percentile": 0.62
+    },
+    {
+      "id": "E11",
+      "event_id": "ea_HBIO_Q2_2026",
+      "predicted_percentile": 0.65
+    },
+    {
+      "id": "E12",
+      "event_id": "ea_ABEO_Q2_2026",
+      "predicted_percentile": 0.32
+    },
+    {
+      "id": "E13",
+      "event_id": "ea_AVAH_Q2_2026",
+      "predicted_percentile": 0.78
+    },
+    {
+      "id": "E14",
+      "event_id": "ea_PAVM_Q2_2026",
+      "predicted_percentile": 0.42
+    },
+    {
+      "id": "E15",
+      "event_id": "ea_OOMA_Q2_2027",
+      "predicted_percentile": 0.78
+    },
+    {
+      "id": "E16",
+      "event_id": "ea_HQY_Q2_2027",
+      "predicted_percentile": 0.64
+    },
+    {
+      "id": "E17",
+      "event_id": "ea_SNOW_Q2_2027",
+      "predicted_percentile": 0.76
+    },
+    {
+      "id": "E18",
+      "event_id": "ea_CIEN_Q3_2026",
+      "predicted_percentile": 0.85
+    },
+    {
+      "id": "E19",
+      "event_id": "ea_VSXY_Q2_2026",
+      "predicted_percentile": 0.75
+    },
+    {
+      "id": "E20",
+      "event_id": "ea_CAL_Q2_2026",
+      "predicted_percentile": 0.62
+    },
+    {
+      "id": "E21",
+      "event_id": "ea_OCC_Q3_2026",
+      "predicted_percentile": 0.55
+    },
+    {
+      "id": "E22",
+      "event_id": "ea_ISPR_Q4_2026",
+      "predicted_percentile": 0.4
+    },
+    {
+      "id": "E23",
+      "event_id": "ea_COST_Q4_2026",
+      "predicted_percentile": 0.55
+    },
+    {
+      "id": "E24",
+      "event_id": "ea_IDT_Q4_2026",
+      "predicted_percentile": 0.7
+    }
+  ]
+}

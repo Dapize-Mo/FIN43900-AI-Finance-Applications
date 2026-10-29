@@ -1,0 +1,56 @@
+{
+  "author": "Oladapo Olaniyan",
+  "n": 64,
+  "original": {
+    "n_obs": 64,
+    "imputed_mean": 0.59296875,
+    "imputed_event_count": 0,
+    "r_squared_surprise": 0.026521434033097813,
+    "r_squared_surprise_imputed": 0.026521434033097813,
+    "r_squared": 0.06737034273620202,
+    "r_squared_imputed": 0.06737034273620202,
+    "delta_r_squared": 0.0408489087031042,
+    "delta_r_squared_imputed": 0.0408489087031042,
+    "beta": 0.3795335369167931,
+    "beta_imputed": 0.3795335369167931,
+    "beta_surprise": 0.16600549864504452,
+    "beta_surprise_imputed": 0.16600549864504452,
+    "alpha": 0.16547741807151853,
+    "alpha_imputed": 0.16547741807151853,
+    "mse": 0.07998194454147388,
+    "mse_imputed": 0.07998194454147388
+  },
+  "evidence": {
+    "n_obs": 64,
+    "imputed_mean": 0.566875,
+    "imputed_event_count": 0,
+    "r_squared_surprise": 0.026521434033097813,
+    "r_squared_surprise_imputed": 0.026521434033097813,
+    "r_squared": 0.07752713072196349,
+    "r_squared_imputed": 0.07752713072196349,
+    "delta_r_squared": 0.051005696688865676,
+    "delta_r_squared_imputed": 0.051005696688865676,
+    "beta": 0.45129046676774687,
+    "beta_imputed": 0.45129046676774687,
+    "beta_surprise": 0.16305912479497456,
+    "beta_surprise_imputed": 0.16305912479497456,
+    "alpha": 0.13637913490357342,
+    "alpha_imputed": 0.13637913490357342,
+    "mse": 0.07911090248628122,
+    "mse_imputed": 0.07911090248628122
+  },
+  "gain": 0.010156787985761473,
+  "paired_bootstrap_90pct": [
+    -0.012668227719710079,
+    0.03161774071860665
+  ],
+  "coverage": 1.0,
+  "gate_passed": false,
+  "inference_errors": 0,
+  "limitations": [
+    "Previously unused Q2 sample, but older period and mostly facts-only inputs; applicability to Q4 previews and option data is uncertain.",
+    "Historical model training contamination cannot be excluded.",
+    "Uniform calibration alone cannot improve OLS delta R squared.",
+    "No live prediction or billing modifications."
+  ]
+}

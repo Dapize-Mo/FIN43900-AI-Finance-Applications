@@ -1,0 +1,13 @@
+# Forecast audit and targeted test — Oladapo Olaniyan
+
+October 28, 2026. Live portal scored as of 7:45:45 PM America/Indianapolis; data provisional.
+
+389 scored forecasts, 184 awaiting outcomes, six missing data, seven excluded. Mean prediction 0.586 versus mean realized 0.500; in 126 forecasts above 0.70, means were 0.781 and 0.569. Values derive from rounded portal table data and include all Q4-scored events, not only contest events. Oct 27 was the latest scored event date; these results predate the original-only deployment. BE, MSM, AGYS, and WELL were large positive forecasts with weak realized outcomes. BE reported cash outflow despite high growth; AGYS warned of weaker near-term margin despite raising annual guidance. These observations support a hypothesis, not a verified causal explanation. Sector causes were not verified.
+
+A fixed random 64-event sample of the previously unused Q2 archive tested the original prompt against a candidate that emphasizes expectations, cash flow and counterevidence. Same model and event inputs; no outcomes in prompts. Original delta R² 0.040849; candidate 0.051006; gain +0.010157, paired 90% bootstrap interval [-0.012668227719710079, 0.03161774071860665]. Coverage 64/64, 128 successful free-tier requests. The preregistered gate was not met because the interval includes zero. Retain current method.
+
+Q2 data contained mostly facts only; it does not validate changes to Q4 previews or options. Historical model contamination and sampling variation are possible. No live-rank improvement can be inferred. The current Q4 archive contains 395 previews; 390 exceed the existing 8,000-character cap. Whether including more would help remains untested, and a future test must use a fresh, separate set with matching inputs and careful latency and quota checks. Simply shifting/scaling all forecasts cannot improve the OLS delta R².
+
+Research files: live-audit.json, validation-plan.json, validate_evidence.py, validation-results.json, inferences.jsonl, sources-verified.json, fetch_archives.py and Q2/Q4 archives. Earlier unsuccessful local CDN download attempts produced sources.json. Inputs were sent to Gemini only; no outcomes, credentials or account details were included. No agent code, live predictions, billing, or budgets were changed. Routine agent test run was interrupted while stalled; no new full-suite pass is claimed.
+
+Sources: https://portal.explainingmarkets.ai/submissions/s_fb8c124cad37?tab=predictions ; https://explainingmarkets.ai/contest-rules ; https://api.explainingmarkets.ai/v1/archive ; pinned organizer scorer at ../improvement-2026-10-23/sources/scoring_frozen.py. Accessed October 28, 2026.

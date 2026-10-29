@@ -1,0 +1,276 @@
+{
+  "author": "Oladapo Olaniyan",
+  "date": "2026-10-28",
+  "model": "gemini-3.5-flash-lite",
+  "temperature": 0,
+  "n": 64,
+  "seed": 4392817,
+  "quarter": "2026Q2",
+  "candidate_sha256": "7d17e48f5e730f81851fda2c6743faf334079c347dddc77de50475da74fe7e9d",
+  "script_sha256": "7bef04cdcaddcfb82466435c624917916ead1b6512eae9a6abaefa978deaf5fd",
+  "records": [
+    {
+      "event_id": "ea_RGP_Q3_2026",
+      "event_datetime": "2026-04-08T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_SLP_Q2_2026",
+      "event_datetime": "2026-04-09T20:06:00+00:00"
+    },
+    {
+      "event_id": "ea_XTIA_Q4_2025",
+      "event_datetime": "2026-04-15T12:50:00+00:00"
+    },
+    {
+      "event_id": "ea_SCHW_Q1_2026",
+      "event_datetime": "2026-04-16T11:30:00+00:00"
+    },
+    {
+      "event_id": "ea_STT_Q1_2026",
+      "event_datetime": "2026-04-17T11:30:00+00:00"
+    },
+    {
+      "event_id": "ea_EFX_Q1_2026",
+      "event_datetime": "2026-04-21T10:30:00+00:00"
+    },
+    {
+      "event_id": "ea_HAFC_Q1_2026",
+      "event_datetime": "2026-04-21T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_MCB_Q1_2026",
+      "event_datetime": "2026-04-21T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_HCSG_Q1_2026",
+      "event_datetime": "2026-04-22T11:00:00+00:00"
+    },
+    {
+      "event_id": "ea_SEIC_Q1_2026",
+      "event_datetime": "2026-04-22T20:01:00+00:00"
+    },
+    {
+      "event_id": "ea_LVS_Q1_2026",
+      "event_datetime": "2026-04-22T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_PKG_Q1_2026",
+      "event_datetime": "2026-04-22T21:00:00+00:00"
+    },
+    {
+      "event_id": "ea_FCNCA_Q1_2026",
+      "event_datetime": "2026-04-23T10:31:00+00:00"
+    },
+    {
+      "event_id": "ea_FCX_Q1_2026",
+      "event_datetime": "2026-04-23T12:00:00+00:00"
+    },
+    {
+      "event_id": "ea_CVLG_Q1_2026",
+      "event_datetime": "2026-04-23T20:00:00+00:00"
+    },
+    {
+      "event_id": "ea_APPF_Q1_2026",
+      "event_datetime": "2026-04-23T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_VRSN_Q1_2026",
+      "event_datetime": "2026-04-23T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_ASB_Q1_2026",
+      "event_datetime": "2026-04-23T20:15:00+00:00"
+    },
+    {
+      "event_id": "ea_PG_Q3_2026",
+      "event_datetime": "2026-04-24T11:00:00+00:00"
+    },
+    {
+      "event_id": "ea_KO_Q1_2026",
+      "event_datetime": "2026-04-28T10:55:00+00:00"
+    },
+    {
+      "event_id": "ea_JBLU_Q1_2026",
+      "event_datetime": "2026-04-28T11:00:00+00:00"
+    },
+    {
+      "event_id": "ea_ATEN_Q1_2026",
+      "event_datetime": "2026-04-28T20:06:00+00:00"
+    },
+    {
+      "event_id": "ea_UNM_Q1_2026",
+      "event_datetime": "2026-04-28T20:15:00+00:00"
+    },
+    {
+      "event_id": "ea_AGIO_Q1_2026",
+      "event_datetime": "2026-04-29T10:31:00+00:00"
+    },
+    {
+      "event_id": "ea_CVI_Q1_2026",
+      "event_datetime": "2026-04-29T20:22:00+00:00"
+    },
+    {
+      "event_id": "ea_VLO_Q1_2026",
+      "event_datetime": "2026-04-30T10:30:00+00:00"
+    },
+    {
+      "event_id": "ea_LLY_Q1_2026",
+      "event_datetime": "2026-04-30T10:45:00+00:00"
+    },
+    {
+      "event_id": "ea_TREE_Q1_2026",
+      "event_datetime": "2026-04-30T20:15:00+00:00"
+    },
+    {
+      "event_id": "ea_IRMD_Q1_2026",
+      "event_datetime": "2026-05-01T11:00:00+00:00"
+    },
+    {
+      "event_id": "ea_TEX_Q1_2026",
+      "event_datetime": "2026-05-01T11:00:00+00:00"
+    },
+    {
+      "event_id": "ea_IART_Q1_2026",
+      "event_datetime": "2026-05-05T10:00:00+00:00"
+    },
+    {
+      "event_id": "ea_MD_Q1_2026",
+      "event_datetime": "2026-05-05T10:00:00+00:00"
+    },
+    {
+      "event_id": "ea_ATKR_Q2_2026",
+      "event_datetime": "2026-05-05T10:05:00+00:00"
+    },
+    {
+      "event_id": "ea_OFIX_Q1_2026",
+      "event_datetime": "2026-05-05T11:00:00+00:00"
+    },
+    {
+      "event_id": "ea_MRCY_Q3_2026",
+      "event_datetime": "2026-05-05T20:01:00+00:00"
+    },
+    {
+      "event_id": "ea_ANDE_Q1_2026",
+      "event_datetime": "2026-05-05T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_MQ_Q1_2026",
+      "event_datetime": "2026-05-05T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_TBI_Q1_2026",
+      "event_datetime": "2026-05-05T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_TMDX_Q1_2026",
+      "event_datetime": "2026-05-05T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_COTY_Q3_2026",
+      "event_datetime": "2026-05-05T20:30:00+00:00"
+    },
+    {
+      "event_id": "ea_GXO_Q1_2026",
+      "event_datetime": "2026-05-05T20:30:00+00:00"
+    },
+    {
+      "event_id": "ea_LZ_Q1_2026",
+      "event_datetime": "2026-05-06T20:01:00+00:00"
+    },
+    {
+      "event_id": "ea_VNDA_Q1_2026",
+      "event_datetime": "2026-05-06T20:01:00+00:00"
+    },
+    {
+      "event_id": "ea_EVTC_Q1_2026",
+      "event_datetime": "2026-05-06T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_EHTH_Q1_2026",
+      "event_datetime": "2026-05-06T20:15:00+00:00"
+    },
+    {
+      "event_id": "ea_VCTR_Q1_2026",
+      "event_datetime": "2026-05-06T20:30:00+00:00"
+    },
+    {
+      "event_id": "ea_PLNT_Q1_2026",
+      "event_datetime": "2026-05-07T10:00:00+00:00"
+    },
+    {
+      "event_id": "ea_AMLX_Q1_2026",
+      "event_datetime": "2026-05-07T11:00:00+00:00"
+    },
+    {
+      "event_id": "ea_MBUU_Q3_2026",
+      "event_datetime": "2026-05-07T20:00:00+00:00"
+    },
+    {
+      "event_id": "ea_ABSI_Q1_2026",
+      "event_datetime": "2026-05-07T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_GH_Q1_2026",
+      "event_datetime": "2026-05-07T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_GRND_Q1_2026",
+      "event_datetime": "2026-05-07T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_HASI_Q1_2026",
+      "event_datetime": "2026-05-07T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_MYO_Q1_2026",
+      "event_datetime": "2026-05-07T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_QSI_Q1_2026",
+      "event_datetime": "2026-05-07T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_TSSI_Q1_2026",
+      "event_datetime": "2026-05-07T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_ZYME_Q1_2026",
+      "event_datetime": "2026-05-07T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_DXC_Q4_2026",
+      "event_datetime": "2026-05-07T20:15:00+00:00"
+    },
+    {
+      "event_id": "ea_TILE_Q1_2026",
+      "event_datetime": "2026-05-08T09:30:00+00:00"
+    },
+    {
+      "event_id": "ea_CSW_Q4_2026",
+      "event_datetime": "2026-05-26T10:40:00+00:00"
+    },
+    {
+      "event_id": "ea_HEI_Q2_2026",
+      "event_datetime": "2026-05-27T20:15:00+00:00"
+    },
+    {
+      "event_id": "ea_HRL_Q2_2026",
+      "event_datetime": "2026-05-28T10:30:00+00:00"
+    },
+    {
+      "event_id": "ea_CRWD_Q1_2027",
+      "event_datetime": "2026-06-03T20:05:00+00:00"
+    },
+    {
+      "event_id": "ea_GWRE_Q3_2026",
+      "event_datetime": "2026-06-04T20:05:00+00:00"
+    }
+  ],
+  "gate": "Candidate gain >=0.01, paired bootstrap 90% lower bound >0, paired coverage >=95%; otherwise retain original. No tuning or re-selection after evaluation.",
+  "limitations": [
+    "Previously unused Q2 sample, but older period and mostly facts-only inputs; applicability to Q4 previews and option data is uncertain.",
+    "Historical model training contamination cannot be excluded.",
+    "Uniform calibration alone cannot improve OLS delta R squared.",
+    "No live prediction or billing modifications."
+  ]
+}

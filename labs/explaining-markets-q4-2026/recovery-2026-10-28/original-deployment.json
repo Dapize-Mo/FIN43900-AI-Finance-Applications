@@ -1,0 +1,20 @@
+{
+  "author": "Oladapo Olaniyan",
+  "date": "2026-10-28",
+  "user_approved_mode": "original",
+  "deployed_default": "original",
+  "health": {
+    "ok": true,
+    "service": "explaining-markets-starter",
+    "strategy": "original-2026-10-28"
+  },
+  "unsigned_status": 401,
+  "full_signed_round_trip": "2026-10-28 19:28:13 America/Indianapolis",
+  "agent_tests_passed": 39,
+  "public_model_card_status": "Published",
+  "files": {
+    "predict.py": "7e325340e0fc52bcd62f63eb7f1b6ae8f7b9ee8cbcaa64512d5d995a737abf4f",
+    "modal_app.py": "c3f1fef54bd431207de19c0ee0c40ef9fcf400168dc6507783dc61c1a6cf9278",
+    "tests/test_strategy_mode.py": "bee0664a583117482a1b2d2a0f70fb72689366dbb825e4f42cbd21f644fd95d7"
+  }
+}

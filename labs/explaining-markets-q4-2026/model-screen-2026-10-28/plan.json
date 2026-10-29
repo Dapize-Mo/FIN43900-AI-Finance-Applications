@@ -1,0 +1,109 @@
+{
+  "author": "Oladapo Olaniyan",
+  "n": 24,
+  "seed": 4392801,
+  "candidate": "gemini-4-argon",
+  "baseline": "cached gemini-3.5-flash-lite original prompt, temperature 0",
+  "selection": "Uniform deterministic random subset of prior frozen 96, without inspecting outcomes",
+  "batching": "One UI request containing 24 independent events; differs from baseline single-event API requests",
+  "purpose": "Screening only; no deployment decision or claim of live improvement",
+  "records": [
+    {
+      "id": "E01",
+      "event_id": "ea_OM_Q2_2026"
+    },
+    {
+      "id": "E02",
+      "event_id": "ea_SKIN_Q2_2026"
+    },
+    {
+      "id": "E03",
+      "event_id": "ea_SPT_Q2_2026"
+    },
+    {
+      "id": "E04",
+      "event_id": "ea_XRAY_Q2_2026"
+    },
+    {
+      "id": "E05",
+      "event_id": "ea_NATR_Q2_2026"
+    },
+    {
+      "id": "E06",
+      "event_id": "ea_NRDY_Q2_2026"
+    },
+    {
+      "id": "E07",
+      "event_id": "ea_TILE_Q2_2026"
+    },
+    {
+      "id": "E08",
+      "event_id": "ea_AIG_Q2_2026"
+    },
+    {
+      "id": "E09",
+      "event_id": "ea_GAME_Q2_2026"
+    },
+    {
+      "id": "E10",
+      "event_id": "ea_TCMD_Q2_2026"
+    },
+    {
+      "id": "E11",
+      "event_id": "ea_HBIO_Q2_2026"
+    },
+    {
+      "id": "E12",
+      "event_id": "ea_ABEO_Q2_2026"
+    },
+    {
+      "id": "E13",
+      "event_id": "ea_AVAH_Q2_2026"
+    },
+    {
+      "id": "E14",
+      "event_id": "ea_PAVM_Q2_2026"
+    },
+    {
+      "id": "E15",
+      "event_id": "ea_OOMA_Q2_2027"
+    },
+    {
+      "id": "E16",
+      "event_id": "ea_HQY_Q2_2027"
+    },
+    {
+      "id": "E17",
+      "event_id": "ea_SNOW_Q2_2027"
+    },
+    {
+      "id": "E18",
+      "event_id": "ea_CIEN_Q3_2026"
+    },
+    {
+      "id": "E19",
+      "event_id": "ea_VSXY_Q2_2026"
+    },
+    {
+      "id": "E20",
+      "event_id": "ea_CAL_Q2_2026"
+    },
+    {
+      "id": "E21",
+      "event_id": "ea_OCC_Q3_2026"
+    },
+    {
+      "id": "E22",
+      "event_id": "ea_ISPR_Q4_2026"
+    },
+    {
+      "id": "E23",
+      "event_id": "ea_COST_Q4_2026"
+    },
+    {
+      "id": "E24",
+      "event_id": "ea_IDT_Q4_2026"
+    }
+  ],
+  "input_sha256": "faba1ff0339e42d68e01deb03a91455fe0c74aa62e57119bc2cbf2baa81d32eb"
+}

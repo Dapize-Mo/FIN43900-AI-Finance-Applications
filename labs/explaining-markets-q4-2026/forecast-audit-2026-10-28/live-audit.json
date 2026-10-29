@@ -1,0 +1,123 @@
+{
+  "author": "Oladapo Olaniyan",
+  "access_date": "2026-10-28",
+  "source": "https://portal.explainingmarkets.ai/submissions/s_fb8c124cad37?tab=predictions",
+  "scoring_timestamp_local": "2026-10-28 19:45:45 America/Indianapolis",
+  "row_count": 586,
+  "status_counts": {
+    "Scored": 389,
+    "Awaiting outcome": 184,
+    "Missing Data": 6,
+    "Excluded": 7
+  },
+  "precision": "Metrics computed from rendered two-decimal table values; diagnostic only, not exact contest scoring.",
+  "overall": {
+    "n": 389,
+    "predicted_mean": 0.5857840616966583,
+    "actual_mean": 0.4999228791773776,
+    "mae": 0.24817480719794355,
+    "raw_mse": 0.091573264781491,
+    "mean_event_median_abs_error": 0.24467866323907453,
+    "events_worse_than_event_median": 174
+  },
+  "forecast_groups": {
+    "below_0.3": {
+      "n": 40,
+      "predicted_mean": 0.225,
+      "actual_mean": 0.34875,
+      "mae": 0.24025
+    },
+    "0.3_to_0.7": {
+      "n": 223,
+      "predicted_mean": 0.5402690582959639,
+      "actual_mean": 0.4878923766816145,
+      "mae": 0.2377578475336323
+    },
+    "above_0.7": {
+      "n": 126,
+      "predicted_mean": 0.7808730158730148,
+      "actual_mean": 0.569206349206349,
+      "mae": 0.26912698412698416
+    }
+  },
+  "recent_cohorts": {
+    "Oct27": {
+      "n": 84,
+      "mae": 0.24476190476190474
+    },
+    "Oct26": {
+      "n": 19,
+      "mae": 0.3363157894736841
+    },
+    "Oct23": {
+      "n": 34,
+      "mae": 0.2176470588235294
+    }
+  },
+  "largest_misses": [
+    {
+      "date": "Oct22",
+      "ticker": "BE",
+      "predicted": 0.85,
+      "actual": 0.05
+    },
+    {
+      "date": "Oct22",
+      "ticker": "MSM",
+      "predicted": 0.82,
+      "actual": 0.03
+    },
+    {
+      "date": "Oct26",
+      "ticker": "AGYS",
+      "predicted": 0.85,
+      "actual": 0.09
+    },
+    {
+      "date": "Oct22",
+      "ticker": "ROL",
+      "predicted": 0.12,
+      "actual": 0.85
+    },
+    {
+      "date": "Oct26",
+      "ticker": "VZ",
+      "predicted": 0.88,
+      "actual": 0.17
+    },
+    {
+      "date": "Oct22",
+      "ticker": "CRS",
+      "predicted": 0.72,
+      "actual": 0.01
+    },
+    {
+      "date": "Oct27",
+      "ticker": "WELL",
+      "predicted": 0.8,
+      "actual": 0.1
+    },
+    {
+      "date": "Oct27",
+      "ticker": "ABG",
+      "predicted": 0.25,
+      "actual": 0.95
+    }
+  ],
+  "input_audit": {
+    "Q4_records": 420,
+    "previews": 395,
+    "preview_cap": 8000,
+    "previews_truncated": 390,
+    "longest_preview_chars": 16562
+  },
+  "interpretation": [
+    "Optimism and imperfect calibration are descriptive; affine recalibration cannot improve OLS contest delta R squared.",
+    "Largest errors include strong positive guidance events, so a blanket invert-beats rule is unsupported.",
+    "BE facts include cash burn; AGYS includes weaker near-term EBITDA margin despite full-year raise. Other misses such as VZ have broadly favorable facts; their cause is not established.",
+    "All currently scored dates precede Oct28 original-only deployment; these results cannot evaluate that deployment.",
+    "Metrics span all scored Q4 forecasts, not only contest-eligible events.",
+    "Sector-specific causation was not established; the portal has no verified sector column.",
+    "Q2 facts-only validation has a material input-distribution difference from Q4 preview-rich live events."
+  ]
+}
