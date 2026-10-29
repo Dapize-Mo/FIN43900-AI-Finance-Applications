@@ -7,6 +7,7 @@
 **Case / Project Universe:** Meridian Foundation Reserve & Project 2 Macro Environment (`BIL`, `IEF`, `LQD`, `VT` | Macro Series: `CPIAUCSL`)  
 **Date:** October 29, 2026  
 **Session Token:** `X+AI`  
+**Live Deployed App:** [FRED/ALFRED Point-in-Time Rates App · Streamlit](https://fin43900-ai-finance-applications-wmi2hv4j245qhhgeuktnpc.streamlit.app/)  
 **Category:** Thursday Merit Checkout (25 Points)
 
 ---
@@ -24,7 +25,8 @@
 ## 🚀 Deliverables & Files
 
 1. **Interactive FRED/ALFRED Streamlit Web Application:** [`asof_app.py`](asof_app.py)  
-   A high-performance Streamlit application downloading live CSV feeds from FRED and ALFRED:
+   - **Live Deployed Cloud URL:** [https://fin43900-ai-finance-applications-wmi2hv4j245qhhgeuktnpc.streamlit.app/](https://fin43900-ai-finance-applications-wmi2hv4j245qhhgeuktnpc.streamlit.app/)
+   - A high-performance Streamlit application downloading live CSV feeds from FRED and ALFRED:
    - Fetches today's values from `https://fred.stlouisfed.org/graph/fredgraph.csv?id=SERIES`.
    - Fetches historical point-in-time vintage values from `https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=SERIES&vintage_date=YYYY-MM-DD`.
    - Caches downloads using `@st.cache_data` and sanitizes missing values (`.`).

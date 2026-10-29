@@ -9,6 +9,7 @@
 **Session:** Session 17 (Week 10, Thursday Merit Checkout — 25 Points)  
 **Brightspace Item:** Lab 17 — Point-in-Time Audit (Thursday Merit Checkout)  
 **Session Token:** `X+AI`  
+**Live Deployed Web Application:** [FRED/ALFRED Point-in-Time Rates App · Streamlit](https://fin43900-ai-finance-applications-wmi2hv4j245qhhgeuktnpc.streamlit.app/)  
 **GitHub Direct Application Link:** [`asof_app.py` on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-17/asof_app.py)  
 **GitHub Direct README Link:** [`README.md` on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-17/README.md)  
 **GitHub Direct Checkout Link:** [`checkout.md` on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/labs/lab-17/checkout.md)  
@@ -89,8 +90,9 @@ The Streamlit web application [`asof_app.py`](asof_app.py) was built from first 
 8. **Fault-Tolerant Error Handling:**
    - If an invalid or unauthenticated series ID is entered, the app catches the `HTTPError 404` or parsing error, displays an isolated warning for that specific series, and renders all remaining valid series uninterrupted.
 
-### B. Execution Command
-To run the web application locally:
+### B. Application Deployment & Execution
+- **Live Streamlit Community Cloud Application:** [FRED/ALFRED Point-in-Time Rates App · Streamlit](https://fin43900-ai-finance-applications-wmi2hv4j245qhhgeuktnpc.streamlit.app/)
+- **Local Run Command:**
 ```powershell
 streamlit run labs/lab-17/asof_app.py
 ```
