@@ -25,6 +25,41 @@ st.set_page_config(
     layout="wide",
 )
 
+# Custom Institutional Dashboard CSS
+st.markdown("""
+<style>
+    /* Metric Card Styling */
+    [data-testid="stMetricValue"] {
+        font-size: 1.55rem !important;
+        font-weight: 700 !important;
+        color: #38BDF8;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    [data-testid="stMetricLabel"] {
+        font-size: 0.80rem !important;
+        font-weight: 600 !important;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #94A3B8 !important;
+    }
+    div[data-testid="stMetric"] {
+        background-color: rgba(30, 41, 59, 0.5);
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        border-radius: 8px;
+        padding: 10px 14px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    /* Card Container Polish */
+    div[data-testid="stVerticalBlockBorderWrapper"] {
+        border-color: rgba(148, 163, 184, 0.2) !important;
+        border-radius: 12px !important;
+        background-color: rgba(15, 23, 42, 0.28);
+        padding: 14px 18px !important;
+        margin-bottom: 1.5rem;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # Title & Mandated Disclaimer
 st.title("Point-in-Time Interest Rates & Macroeconomic Audit")
 st.markdown(
@@ -316,6 +351,17 @@ if series_data_cache:
                 
                 chart_layers = [area_chart, today_line]
                 
+                # Shaded Look-Ahead Leak Area (if subsequent data exists)
+                if sdata["late_count"] > 0:
+                    max_date = chart_df["observation_date"].max()
+                    rect_df = pd.DataFrame({"x1": [cutoff_ts], "x2": [max_date]})
+                    leak_rect = (
+                        alt.Chart(rect_df)
+                        .mark_rect(color="rgba(239, 68, 68, 0.08)")
+                        .encode(x="x1:T", x2="x2:T")
+                    )
+                    chart_layers.insert(0, leak_rect)
+                
                 # 3. Vintage Overlay Line (if observations exist)
                 if not v_chart_df.empty:
                     vintage_line = (
@@ -362,7 +408,7 @@ if series_data_cache:
                 # Combine all chart layers
                 composite_chart = (
                     alt.layer(*chart_layers)
-                    .properties(height=330)
+                    .properties(height=350)
                     .interactive()
                 )
                 st.altair_chart(composite_chart, use_container_width=True)
