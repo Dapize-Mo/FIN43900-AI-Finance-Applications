@@ -6,6 +6,7 @@
 **Target Coverage Security:** PepsiCo, Inc. (`PEP`) | **Known Answer Security:** Costco Wholesale Corp. (`COST`) | **Banking Probe:** JPMorgan Chase & Co. (`JPM`)  
 **Date:** November 3, 2026  
 **Category:** Tuesday Completion Checkout (25 Points)  
+**Session Token:** i skill  
 **Streamlit App:** `labs/lab-18/app.py`  
 
 ---
