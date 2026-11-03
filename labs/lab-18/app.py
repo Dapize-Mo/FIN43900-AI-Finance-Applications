@@ -250,3 +250,4 @@ else:
 with st.expander("Read Warren Buffett Investment Memo", expanded=True):
     # Render with HTML formatting to preserve flag styling
     st.markdown(annotated_memo.replace("\n", "<br>"), unsafe_allow_html=True)
+

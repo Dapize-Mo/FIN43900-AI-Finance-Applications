@@ -77,14 +77,19 @@
 ## 💻 How to Run the Application
 
 Execute from the project workspace:
+
 ```powershell
 streamlit run labs/lab-18/app.py
 ```
+
 Or directly using the virtual environment:
+
 ```powershell
 & "c:\Users\dolan\Code\school\Fall-2026\FIN-43900\workspace\.venv\Scripts\streamlit.exe" run "c:\Users\dolan\Code\school\Fall-2026\FIN-43900\workspace\labs\lab-18\app.py"
 ```
+
 To run the extraction script via CLI:
+
 ```powershell
 & "c:\Users\dolan\Code\school\Fall-2026\FIN-43900\workspace\.venv\Scripts\python.exe" "c:\Users\dolan\Code\school\Fall-2026\FIN-43900\workspace\labs\lab-18\buffett_skill.py" COST
 ```

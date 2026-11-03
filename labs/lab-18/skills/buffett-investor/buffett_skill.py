@@ -333,32 +333,32 @@ def generate_buffett_memo(result: Dict[str, Any]) -> str:
     # Check if financial institution / missing owner earnings
     if checks["owner_earnings_positive_every_year"] == "not known" or first_row["owner_earnings"] == "not found":
         verdict = "PASS / WATCH"
-        lines.append(f"### Verdict: **{verdict}** (Cannot Judge Owner Earnings)\n")
+        lines.append(f"## Verdict: **{verdict}** (Cannot Judge Owner Earnings)\n")
         lines.append(f"Charlie and I have always insisted on one cardinal principle: if we cannot calculate owner earnings, we cannot value or judge the cash generation of the business. ")
         lines.append(f"For {company} ({ticker}), capital spending is reported as **not found** in standard industrial cash flow tags. Consequently, owner earnings are **not found** across all five fiscal years, and our two owner earnings tests remain **not known**.\n")
         lines.append(f"While net income expanded from {first_row['net_income']:,} million in {first_fy} to {last_row['net_income']:,} million in {last_fy}, banking and financial institutions do not report conventional plant-and-equipment reinvestment. ")
         lines.append(f"Without a clear owner earnings trail, we cannot determine how much cash can be siphoned out of the business without harming operations. Therefore, we pass on ownership until a specialized banking capital audit is conducted.\n")
     elif all(v == "pass" for v in checks.values()):
         verdict = "OWN THE BUSINESS"
-        lines.append(f"### Verdict: **{verdict}**\n")
+        lines.append(f"## Verdict: **{verdict}**\n")
         lines.append(f"Charlie and I have spent our entire lives looking for businesses with wide economic moats, predictable earning power, and managers who allocate capital like owners. ")
         lines.append(f"{company} ({ticker}) is the textbook definition of a wonderful business that meets all three of our quantitative hurdles without exception.\n")
         
-        lines.append(f"### 1. Consistent High Return on Capital")
+        lines.append(f"## 1. Consistent High Return on Capital\n")
         roe_vals_str = ", ".join([f"{r['roe']:.1f}%" for r in rows])
         lines.append(f"Over the five fiscal years from {first_fy} to {last_fy}, return on year-end equity was {roe_vals_str}. Every single year comfortably exceeded our 15.0% hurdle rate. In {first_fy}, the company earned {first_row['net_income']:,} million on {first_row['equity']:,} million of equity ({first_row['roe']:.1f}%), and by {last_fy}, net income grew to {last_row['net_income']:,} million on {last_row['equity']:,} million of equity ({last_row['roe']:.1f}%). That tells me the company is earning extraordinary returns on the money retained in the business without taking on dangerous leverage.\n")
         
-        lines.append(f"### 2. Abundant and Growing Owner Earnings")
-        lines.append(f"Accounting earnings can deceive, but owner earnings tell the unvarnished economic truth. When we take operating cash flow and subtract the capital expenditures required to maintain competitive standing, {ticker}'s owner earnings were positive every single year:")
+        lines.append(f"## 2. Abundant and Growing Owner Earnings\n")
+        lines.append(f"Accounting earnings can deceive, but owner earnings tell the unvarnished economic truth. When we take operating cash flow and subtract the capital expenditures required to maintain competitive standing, {ticker}'s owner earnings were positive every single year:\n")
         for r in rows:
             lines.append(f"- **FY {r['fy_end']}:** Operating cash flow of {r['operating_cash_flow']:,} million less capital spending of {r['capital_spending']:,} million produced owner earnings of **{r['owner_earnings']:,} million**.")
         lines.append(f"\nCrucially, owner earnings expanded from {first_row['owner_earnings']:,} million in {first_fy} to {last_row['owner_earnings']:,} million in {last_fy}, compounding strongly alongside revenue growth from {first_row['revenue']:,} million to {last_row['revenue']:,} million. That is the hallmark of a franchise that doesn't just eat capital, but showers cash on its owners.\n")
         
-        lines.append(f"### 3. Business Moat & Fiduciary Conclusion")
+        lines.append(f"## 3. Business Moat & Fiduciary Conclusion\n")
         lines.append(f"The business model demonstrates pricing power, operational discipline, and an entrenched consumer habit that competitors cannot dislodge. Because our three hurdles all passed (ROE >= 15% every year: pass; owner earnings positive: pass; owner earnings grew: pass), this is an enterprise I would happily own for fifty years if the market closed tomorrow.\n")
     else:
         verdict = "WATCH / PASS"
-        lines.append(f"### Verdict: **{verdict}**\n")
+        lines.append(f"## Verdict: **{verdict}**\n")
         lines.append(f"{company} ({ticker}) demonstrates notable strengths, but fails to satisfy all three of our strict hurdle tests without reservation. ")
         lines.append(f"Our audited check results: ROE hurdle is {checks['roe_15_pct_every_year']}; owner earnings positivity is {checks['owner_earnings_positive_every_year']}; owner earnings growth is {checks['owner_earnings_grew_first_to_last']}.\n")
         lines.append(f"Revenue moved from {first_row['revenue']:,} million in {first_fy} to {last_row['revenue']:,} million in {last_fy}, while net income shifted from {first_row['net_income']:,} million to {last_row['net_income']:,} million. Owner earnings registered {first_row['owner_earnings']:,} million in {first_fy} and {last_row['owner_earnings']:,} million in {last_fy}. Until every hurdle passes cleanly, we keep this company on our watch list rather than deploying capital.\n")
@@ -376,3 +376,4 @@ if __name__ == "__main__":
     print("BUFFETT MEMO OUTPUT:")
     print("="*80 + "\n")
     print(generate_buffett_memo(res))
+
