@@ -43,6 +43,7 @@
 ## 🎯 Verification & Known-Answer Summary
 
 ### 1. The 5 October 2026 Official Known Answer
+
 Setting the **"As known on" Date** to **`2026-10-05`** verifies the exact published answers:
 
 | Series ID | FRED Series Name | Last Date Known on 5 Oct 2026 | Value Known Then | Value Measured Today | Late Values (Lag) | Revised Values | Status |
@@ -53,6 +54,7 @@ Setting the **"As known on" Date** to **`2026-10-05`** verifies the exact publis
 | **`MORTGAGE30US`** | 30-Year Mortgage Rate | **2026-10-01** | **7.28** | 7.24 | 4 | 0 | **VERIFIED** |
 
 ### 2. The PAYEMS Revision Probe (15 January 2025)
+
 - **Last Date Known as of 15 Jan 2025:** December 2024 (`2024-12-01`)
 - **Value Known Then:** **`159,536`** thousand jobs
 - **Value Measured Today:** **`158,316`** thousand jobs (down by 1,220,000 jobs)
@@ -60,6 +62,7 @@ Setting the **"As known on" Date** to **`2026-10-05`** verifies the exact publis
 - **Revised Values Count:** **`381`** months (proves distinct historical ALFRED archive retrieval; strictly non-zero)
 
 ### 3. Student Chosen Series: `CPIAUCSL` (Consumer Price Index)
+
 - **Data Card Summary:** Monthly, Index 1982-1984=100, Seasonally Adjusted, BLS source.
 - **Publication Lag:** ~10–15 days post month-end. As of September 30, 2026, September CPI (336.298) was unknowable; latest print was August 2026 (334.131).
 - **Revision History:** Probing vintage January 15, 2024 against today reveals **60 historical monthly prints revised** due to BLS annual 5-year seasonal factor re-estimation.
@@ -70,11 +73,15 @@ Setting the **"As known on" Date** to **`2026-10-05`** verifies the exact publis
 ## 💻 How to Run the Application
 
 Execute the following command from the workspace directory:
+
 ```powershell
 streamlit run labs/lab-17/asof_app.py
 ```
+
 Or directly using the project's Python virtual environment:
+
 ```powershell
 & "c:\Users\dolan\Code\school\Fall-2026\FIN-43900\workspace\.venv\Scripts\streamlit.exe" run "c:\Users\dolan\Code\school\Fall-2026\FIN-43900\workspace\labs\lab-17\asof_app.py"
 ```
+
 The browser will automatically launch with interactive charts, date controls, and the point-in-time audit ledger.

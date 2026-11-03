@@ -25,7 +25,8 @@ In quantitative portfolio management, machine learning models, and rule-based in
 
 In Lab 16, we constructed a standard-library provenance gate on a synthetic 12-row dataset to master the four rules of point-in-time admission (quarantining unauthenticated tickers, eliminating duplicates, filtering post-dated releases, and selecting the latest valid revision). In **Lab 17**, we scale this governance framework to live production data by building [`asof_app.py`](asof_app.py)—an interactive, FRED-style rates application powered by Streamlit that retrieves live observations from both **FRED** (Federal Reserve Economic Data, modern vintage) and **ALFRED** (ArchivaL Federal Reserve Economic Data, point-in-time vintage as of any user-selected historical date).
 
-### Key Empirical Findings:
+### Key Empirical Findings
+
 1. **Known Answer Reproduction:** Evaluated on the official benchmark vintage of **5 October 2026**, our app autonomously reproduces all four official course known answers:
    - `BAA`: Last known = September 2026 | Value = **6.47**
    - `FEDFUNDS`: Last known = September 2026 | Value = **3.75**
@@ -71,6 +72,7 @@ $$\text{Observation} = \mathcal{O}(t_{\text{event}}, t_{\text{pub}}, v)$$
 The Streamlit web application [`asof_app.py`](asof_app.py) was built from first principles to deliver a responsive, production-ready interface matching FRED design conventions.
 
 ### A. Technical Specifications Met
+
 1. **Public CSV Endpoints:** Direct HTTP requests using Python's standard `urllib.request` library without requiring third-party API keys or credentials.
 2. **High-Performance Caching:** Both `download_fred_series` and `download_alfred_series` are decorated with `@st.cache_data(ttl=3600)`, ensuring repeated runs and UI adjustments execute instantly without re-querying the St. Louis Fed servers.
 3. **Missing Value Sanitization:** Replaces string `.` characters (FRED's representation of market holidays or missing data days) with `np.nan`, co-erces data types to numeric floats, and drops invalid rows.
@@ -91,12 +93,16 @@ The Streamlit web application [`asof_app.py`](asof_app.py) was built from first 
    - If an invalid or unauthenticated series ID is entered, the app catches the `HTTPError 404` or parsing error, displays an isolated warning for that specific series, and renders all remaining valid series uninterrupted.
 
 ### B. Application Deployment & Execution
+
 - **Live Streamlit Community Cloud Application:** [FRED/ALFRED Point-in-Time Rates App · Streamlit](https://fin43900-ai-finance-applications-wmi2hv4j245qhhgeuktnpc.streamlit.app/)
 - **Local Run Command:**
+
 ```powershell
 streamlit run labs/lab-17/asof_app.py
 ```
+
 *(Or when operating within the `.venv` virtual environment:)*
+
 ```powershell
 & "c:\Users\dolan\Code\school\Fall-2026\FIN-43900\workspace\.venv\Scripts\streamlit.exe" run labs/lab-17/asof_app.py
 ```
@@ -106,6 +112,7 @@ streamlit run labs/lab-17/asof_app.py
 ## 4. Verification & Known-Answer Proof (V)
 
 ### A. The 5 October 2026 Official Known Answer
+
 Setting the **"As known on" Date** to **`2026-10-05`** in the application yields the following ledger:
 
 | Series ID | FRED Link | Last Date Known on 5 Oct 2026 | Value Known on 5 Oct 2026 | Last Date Measured Today (29 Oct 2026) | Value Measured Today | Late Observations (Lag) | Revised Observations | Reconciled? |
@@ -115,7 +122,8 @@ Setting the **"As known on" Date** to **`2026-10-05`** in the application yields
 | **`DGS10`** | [DGS10](https://fred.stlouisfed.org/series/DGS10) | **2026-10-02** | **5.28** | 2026-10-27 | 4.99 | 16 | 0 | **EXACT MATCH** |
 | **`MORTGAGE30US`** | [MORTGAGE30US](https://fred.stlouisfed.org/series/MORTGAGE30US) | **2026-10-01** | **7.28** | 2026-10-29 | 7.24 | 4 | 0 | **EXACT MATCH** |
 
-#### Analytical Verification:
+#### Analytical Verification
+
 - **`BAA` & `FEDFUNDS`:** On October 5, 2026, September 2026 was complete, and both monthly releases had been published (values: 6.47% and 3.75%). Because October 2026 is still in progress as of October 29, no additional monthly prints exist (`Late = 0`). Neither series has undergone revision (`Revised = 0`).
 - **`DGS10`:** On October 5, 2026, the latest trading day published by the Fed was Friday, October 2, 2026 (yield: 5.28%). By October 29, market trading advanced through October 27, yielding 16 new trading day observations (`Late = 16`). Daily Treasury yields are final and unrevised (`Revised = 0`).
 - **`MORTGAGE30US`:** Freddie Mac publishes weekly mortgage rates on Thursday mornings. October 1, 2026 was the latest Thursday release prior to October 5 (rate: 7.28%). Today's vintage includes four subsequent Thursday releases (October 8, 15, 22, and 29), yielding `Late = 4` and `Revised = 0`.
@@ -123,6 +131,7 @@ Setting the **"As known on" Date** to **`2026-10-05`** in the application yields
 ---
 
 ### B. The PAYEMS Revision Probe (15 January 2025)
+
 To rigorously verify that the application communicates with ALFRED's historical archives and does not simply read modern data twice, we probe the Total Nonfarm Payroll Employment series (`PAYEMS`) as of **15 January 2025**:
 
 | Metric Dimension | Vintage as of 15 January 2025 | Today's Vintage (29 October 2026) | Empirical Discrepancy / Significance |
@@ -132,7 +141,8 @@ To rigorously verify that the application communicates with ALFRED's historical 
 | **Late Observations Count** | — | **21 months** | Identifies the extensive subsequent release history |
 | **Revised Observations Count** | — | **381 months** | Over 31 years of historical employment prints were restated |
 
-#### Probe Conclusion:
+#### Probe Conclusion
+
 The revised count of **381** is dramatically greater than zero. On January 15, 2025, the BLS's preliminary December 2024 print indicated an economy adding robust employment (159.536M). Modern benchmark revisions erased over 1.2 million of those jobs from the historical record. A backtest running on modern data would evaluate market conditions using economic strength metrics that no market participant observed during January 2025.
 
 ---
@@ -140,7 +150,9 @@ The revised count of **381** is dramatically greater than zero. On January 15, 2
 ## 5. Student Chosen Series Deep Dive: CPIAUCSL (E)
 
 ### A. Context & Role in Project 2
+
 For our Project 2 Investment Management universe (`BIL`, `IEF`, `LQD`, `VT`) and target equity `PEP`, inflation is the single most critical macroeconomic state variable:
+
 - **Treasuries (`IEF`):** Rising inflation erodes fixed coupon purchasing power and forces duration repricing.
 - **Credit (`LQD`):** Elevated inflation compresses corporate operating margins and widens credit default spreads.
 - **Cash Reserve (`BIL`):** Inflation drives Federal Reserve monetary policy, dictating the risk-free reserve yield.
@@ -161,7 +173,8 @@ For our Project 2 Investment Management universe (`BIL`, `IEF`, `LQD`, `VT`) and
 | **Revision Policy** | **Subject to significant retroactive revisions.** While raw unadjusted prices (`CPIAUCNS`) are unrevised, seasonally adjusted CPI (`CPIAUCSL`) undergoes annual recalculation of seasonal adjustment factors every February, recalculating the preceding **five full calendar years (60 months)**. |
 | **Download Date** | October 29, 2026 (Live ALFRED/FRED Public CSV pull). |
 
-#### Hand-Verified Observations (Direct from FRED Page):
+#### Hand-Verified Observations (Direct from FRED Page)
+
 1. **2026-09-01:** **`336.298`** (Published October 13, 2026)
 2. **2026-08-01:** **`334.131`** (Published September 11, 2026)
 3. **2026-07-01:** **`332.813`** (Published August 14, 2026)
@@ -171,6 +184,7 @@ For our Project 2 Investment Management universe (`BIL`, `IEF`, `LQD`, `VT`) and
 ### C. Empirical Point-in-Time Audits of `CPIAUCSL`
 
 #### Audit 1: End of Last Month (`vintage_date = 2026-09-30`)
+
 - **Last Observation Date Known:** **`2026-08-01`** (August 2026)
 - **Value Known Then:** **`334.131`**
 - **Last Observation Date Measured Today:** **`2026-09-01`** (September 2026)
@@ -181,6 +195,7 @@ For our Project 2 Investment Management universe (`BIL`, `IEF`, `LQD`, `VT`) and
 *Empirical Finding:* On September 30, 2026, an asset allocation model rebalancing the Meridian Foundation Reserve could **not** know September's inflation figure. The latest knowable print was August 2026. Conditioning a September 30 rebalance on September CPI represents an unadulterated look-ahead leak of **2.167 index points (+0.65%)**.
 
 #### Audit 2: Historical Seasonal Revision Audit (`vintage_date = 2024-01-15`)
+
 - Auditing the January 15, 2024 vintage against today's modern FRED series reveals:
   - Total historical monthly prints revised: **`60`**
   - Observations spanning from 2019 through 2023 were retroactively modified by the BLS in February 2024 and February 2025 during annual seasonal factor updates.
@@ -231,6 +246,7 @@ def download_alfred_series(series_id: str, vintage_date: str) -> pd.DataFrame:
 ```
 
 ### Partner Code Walkthrough Exchange
+
 - **Question Posed by Partner (J. Maffei):** *"Why does the function use `val_col = df.columns[1]` instead of hardcoding `series_id` as the column name?"*
 - **My Answer:** *"Because when ALFRED downloads a vintage CSV, the column header dynamically appends the vintage date (e.g., `CPIAUCSL_20240115` instead of `CPIAUCSL`). Referencing `df.columns[1]` dynamically extracts whatever vintage-suffixed identifier ALFRED provides without brittle string formatting, allowing the function to generalize to any FRED series."*
 
@@ -238,10 +254,12 @@ def download_alfred_series(series_id: str, vintage_date: str) -> pd.DataFrame:
 
 ## 7. Partner Attack & Empirical Defense
 
-### Partner Attack (J. Maffei):
+### Partner Attack (J. Maffei)
+>
 > *"You claim in your data card that `CPIAUCSL` is an acceptable macroeconomic indicator, but you also show that 60 prior months were retroactively altered by the BLS. In an asset allocation mandate like Meridian Foundation, how can you trust a series whose historical numbers shift beneath your feet every February?"*
 
-### Empirical Rebuttal (Two Sentences with Evidence):
+### Empirical Rebuttal (Two Sentences with Evidence)
+>
 > *"While headline `CPIAUCSL` does experience annual seasonal factor revisions spanning five years—as proven by our app revealing 60 revised prints between the January 2024 vintage and today—this revision risk is completely neutralized by enforcing an as-of query architecture that ingests only the specific vintage available on each historical rebalance date. Furthermore, if a strategy cannot tolerate seasonal adjustments, the unadjusted index `CPIAUCNS` can be admitted as a zero-revision alternative that provides identical long-term purchasing power tracking without retroactive modification."*
 
 ---
@@ -250,7 +268,7 @@ def download_alfred_series(series_id: str, vintage_date: str) -> pd.DataFrame:
 
 ### Official Disposition: **QUARANTINE**
 
-```
+```text
 ================================================================================
 PROJECT 2 FIDUCIARY ADMISSION STATUS: QUARANTINE
 Target Series: CPIAUCSL (Consumer Price Index for All Urban Consumers: All Items)
@@ -258,17 +276,21 @@ Mandate: Meridian Foundation Reserve ($100M Reserve Allocation: BIL, IEF, LQD, V
 ================================================================================
 ```
 
-### Fiduciary Rationale:
+### Fiduciary Rationale
+
 1. **Publication Lag:** `CPIAUCSL` is published 10 to 15 days after the calendar month closes. Any backtest rebalancing monthly on the last trading day that feeds the current month's CPI into its risk model is guilty of severe look-ahead bias.
 2. **Seasonal Revisions:** The BLS retroactively re-estimates seasonal factors across 60 historical months each February. Modern downloaded files contain smoothed historical trends that were physically unknowable to a portfolio manager in past years.
 
-### The Explicit Operational As-Of Rule:
+### The Explicit Operational As-Of Rule
+
 To utilize `CPIAUCSL` in Project 2, the pipeline must enforce:
 $$\text{Information Set}(\tau) = \left\{ \mathcal{O}(t_{\text{event}}, t_{\text{pub}}, v) \;\middle|\; t_{\text{pub}} \le \tau \quad \text{and} \quad t_{\text{event}} \le \tau - 14\text{ days} \right\}$$
 Every rebalance execution on date $\tau$ must dynamically request ALFRED vintage `vintage_date = tau`. The feature pipeline must lag inflation observations by at least $t-1$ month (or 15 days). Modern static CSV downloads are strictly prohibited in the backtest harness.
 
-### Condition to Admit:
+### Condition to Admit
+
 Admit to active Project 2 backtesting and live paper trading **only if**:
+
 1. The backtest harness queries point-in-time ALFRED vintages per rebalancing period, OR
 2. The portfolio manager switches the inflation input to **`CPIAUCNS`** (Consumer Price Index for All Urban Consumers: Not Seasonally Adjusted), which is unrevised once published and eliminates revision bias entirely.
 
@@ -277,17 +299,21 @@ Admit to active Project 2 backtesting and live paper trading **only if**:
 ## 9. Data Card — Learn on Your Own & Reflection
 
 ### 1. What is a Data Card?
+
 A data card is a formal, standardized provenance and specification document that defines the operational characteristics of an incoming dataset before it is admitted to an algorithmic model or trading pipeline. Analogous to an engineering specification sheet or a nutrition facts label, it catalogs the asset's origin, collection methodology, reference frequency, publication timestamps, reporting delays, licensing constraints, revision policies, and empirical validation points.
 
 ### 2. How Does It Work — Which Fields Stop a Leak Before It Starts?
+
 - **The Publication Lag Field:** Establishes the exact temporal barrier between economic occurrence and public dissemination. It explicitly prevents look-ahead leaks by forbidding an algorithm from conditioning capital decisions on month $M$'s performance until date $M + \text{Lag}$.
 - **The Revision Policy Field:** Flags whether historical observations are volatile and subject to restatement (such as GDP, nonfarm payrolls, and seasonally adjusted inflation). By documenting the frequency and depth of revisions, it stops modelers from training on finalized modern data and forces the implementation of point-in-time vintage architectures.
 - **The As-Of Vintage Anchor:** Explicitly binds every row to its publication timestamp, ensuring that historical backtests replicate the exact information universe available at the moment of execution.
 
 ### 3. Why "Cleaned the Data" is Not a Data Card
+
 Stating that an analyst "cleaned the data" is an opaque, subjective, and unverifiable claim that conceals critical assumptions. "Cleaning" often acts as a euphemism for deleting inconvenient outliers, silently forward-filling missing rows across non-trading periods, or swallowing post-dated revisions that inject future alpha. A data card is transparent, audit-ready, and reproducible: it does not claim the data was "cleaned"; rather, it defines the mathematical rules of admission, quantifies the exact publication delay, specifies the source URL, and provides hand-verified primary benchmarks that any independent auditor can replicate.
 
 ### 4. Reflection: Publication Lag and Backtest Distortion
+
 - **Publication Lag of `CPIAUCSL`:** The series is published mid-month (10–15 days post month-end). On September 30, 2026, our app demonstrated that the September print of 336.298 did not exist on ALFRED; the latest knowable print was August (334.131).
 - **What a Naive Backtest Would Have Overstated:**
   A naive backtest running on modern FRED data would assume that on September 30, the portfolio manager knew inflation was surging to 336.298. The algorithm would preemptively dump long-duration Treasuries (`IEF`) and credit (`LQD`) to hide in cash (`BIL`), perfectly capturing the yield curve repricing. In real life, on September 30, the manager had no such information, would have held duration through the inflation release, and would have incurred full market drawdowns. Furthermore, using today's smoothed seasonal factors for 2019–2024 erases historical inflation volatility, falsely boosting the strategy's backtested Sharpe ratio and giving the investment committee a dangerously fraudulent impression of portfolio stability.
