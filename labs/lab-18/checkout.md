@@ -8,6 +8,7 @@
 **Banking Probe Security:** JPMorgan Chase & Co. (`JPM`)  
 **Date:** November 3, 2026  
 **Category:** Tuesday Completion Checkout (25 Points)  
+**Live Deployed App (Streamlit Community Cloud):** [Buffett Legend Investor Skill App](https://share.streamlit.io/deploy?repository=Dapize-Mo/FIN43900-AI-Finance-Applications&branch=main&mainModule=labs/lab-18/app.py)  
 **Deliverable Files:** [`buffett_skill.py`](buffett_skill.py) · [`app.py`](app.py) · [`skills/buffett-investor/SKILL.md`](skills/buffett-investor/SKILL.md) · [`COST_buffett_memo.md`](COST_buffett_memo.md) · [`JPM_buffett_memo.md`](JPM_buffett_memo.md) · [`PEP_buffett_memo.md`](PEP_buffett_memo.md)  
 
 ---
