@@ -34,19 +34,19 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Custom Styling (Clean Modern Fintech Aesthetic)
+# Custom Styling (Theme-Adaptive Professional Fintech Aesthetic)
 st.markdown("""
 <style>
     /* Metric Cards */
     div[data-testid="stMetricValue"] {
-        font-size: 1.45rem;
+        font-size: 1.35rem;
         font-weight: 700;
     }
     /* Section Headings */
-    h1, h2, h3 {
-        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    h1, h2, h3, h4 {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
-    /* Badge styling */
+    /* Status Badge Styling */
     .status-badge {
         display: inline-block;
         padding: 4px 10px;
@@ -57,64 +57,94 @@ st.markdown("""
         letter-spacing: 0.5px;
     }
     .badge-pass {
-        background-color: #d1e7dd;
-        color: #0f5132;
-        border: 1px solid #a3cfbb;
+        background-color: rgba(16, 185, 129, 0.18);
+        color: #10b981;
+        border: 1px solid rgba(16, 185, 129, 0.4);
     }
     .badge-fail {
-        background-color: #f8d7da;
-        color: #842029;
-        border: 1px solid #f5c2c7;
+        background-color: rgba(239, 68, 68, 0.18);
+        color: #ef4444;
+        border: 1px solid rgba(239, 68, 68, 0.4);
     }
     .badge-unknown {
-        background-color: #fff3cd;
-        color: #664d03;
-        border: 1px solid #ffecb5;
+        background-color: rgba(245, 158, 11, 0.18);
+        color: #f59e0b;
+        border: 1px solid rgba(245, 158, 11, 0.4);
     }
-    /* Investor Header Cards */
-    .investor-card-buffett {
-        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-        border: 1px solid #86efac;
-        border-radius: 10px;
-        padding: 12px 16px;
+    /* Investor Cards - Theme Adaptive */
+    .investor-card {
+        border-radius: 12px;
+        padding: 14px 16px;
         margin-bottom: 12px;
+        transition: transform 0.15s ease;
     }
-    .investor-card-graham {
-        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-        border: 1px solid #93c5fd;
-        border-radius: 10px;
-        padding: 12px 16px;
-        margin-bottom: 12px;
+    .investor-buffett {
+        background: rgba(16, 185, 129, 0.08);
+        border: 1px solid rgba(16, 185, 129, 0.35);
     }
-    .investor-card-burry {
-        background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-        border: 1px solid #fca5a5;
-        border-radius: 10px;
-        padding: 12px 16px;
-        margin-bottom: 12px;
+    .investor-graham {
+        background: rgba(59, 130, 246, 0.08);
+        border: 1px solid rgba(59, 130, 246, 0.35);
+    }
+    .investor-burry {
+        background: rgba(239, 68, 68, 0.08);
+        border: 1px solid rgba(239, 68, 68, 0.35);
+    }
+    /* Memo container text formatting */
+    .memo-container {
+        font-size: 0.92rem;
+        line-height: 1.55;
+    }
+    .memo-container h3 {
+        font-size: 1.15rem;
+        margin-top: 14px;
+        margin-bottom: 6px;
+    }
+    .memo-container h4 {
+        font-size: 1.05rem;
+        margin-top: 12px;
+        margin-bottom: 4px;
     }
 </style>
 """, unsafe_allow_html=True)
 
-# Mandatory Course Header and Disclaimer
-st.title("⚖️ Legend Panel: Three Investor Skills on 10-K Facts")
-st.caption("Data from SEC EDGAR; built with AI help, a learning demonstration, not investment advice.")
-st.markdown("**Author:** **Oladapo Olaniyan** (`oolaniy@purdue.edu`) | **Course:** FIN 43900 — AI Finance Applications, Daniels School of Business, Purdue University")
-
 # Sidebar Controls
 with st.sidebar:
-    st.header("⚙️ Audit Configuration")
+    st.header("⚙️ Audit Controls")
+
+    # Quick Ticker Selector
+    if "current_ticker" not in st.session_state:
+        st.session_state["current_ticker"] = "COST"
+
+    st.subheader("🎯 Quick Select Security")
+    btn_col1, btn_col2 = st.columns(2)
+    with btn_col1:
+        if st.button("COST (Benchmark)", use_container_width=True):
+            st.session_state["current_ticker"] = "COST"
+        if st.button("AAPL (VT Top)", use_container_width=True):
+            st.session_state["current_ticker"] = "AAPL"
+    with btn_col2:
+        if st.button("PEP (Target)", use_container_width=True):
+            st.session_state["current_ticker"] = "PEP"
+        if st.button("JPM (Bank Probe)", use_container_width=True):
+            st.session_state["current_ticker"] = "JPM"
+
+    ticker_options = ["COST", "PEP", "AAPL", "JPM", "CUSTOM"]
+    current_index = ticker_options.index(st.session_state["current_ticker"]) if st.session_state["current_ticker"] in ticker_options else 4
+
     ticker_choice = st.selectbox(
-        "Select Target Security:",
-        options=["COST", "PEP", "AAPL", "JPM", "CUSTOM"],
-        index=0,
+        "Active Ticker Symbol:",
+        options=ticker_options,
+        index=current_index,
         help="COST: Benchmark known answer | PEP: Target coverage | AAPL: Project 2 fund top holding | JPM: Banking probe",
     )
 
     if ticker_choice == "CUSTOM":
-        ticker_input = st.text_input("Enter Ticker:", value="MSFT").upper().strip()
+        ticker_input = st.text_input("Enter Custom Ticker:", value="MSFT").upper().strip()
+        st.session_state["current_ticker"] = ticker_input
     else:
         ticker_input = ticker_choice
+        st.session_state["current_ticker"] = ticker_choice
 
     st.markdown("---")
     st.subheader("🔬 Graham Threshold Probe")
@@ -222,20 +252,49 @@ def audit_memo_numbers(memo_text: str, allowed_numbers: set):
     return flagged, highlighted_text
 
 
-# Header & Company Information Banner
-with st.container(border=True):
-    col_meta1, col_meta2, col_meta3, col_meta4 = st.columns([3, 1.5, 1.5, 1.5])
-    with col_meta1:
-        st.markdown(f"### {data['company_name']} (`{data['ticker']}`)")
-        st.caption(f"CIK: `{data['cik']}` | User-Agent: `{data['user_agent']}`")
-    with col_meta2:
-        st.metric("Reporting Standard", "10-K Annual Only")
-    with col_meta3:
-        st.metric("Units / Currency", "USD ($ Millions)")
-    with col_meta4:
-        st.metric("Reporting Window", f"{data['rows'][0]['fy_end']} → {data['rows'][-1]['fy_end']}")
+# Header: Clean Responsive Flex Header
+st.markdown("""
+<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 6px;">
+    <h1 style="font-size: 2.15rem; font-weight: 800; margin: 0; letter-spacing: -0.5px;">
+        ⚖️ Legend Panel: Three Investor Skills on 10-K Facts
+    </h1>
+    <span style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; padding: 5px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; border: 1px solid rgba(59, 130, 246, 0.35);">
+        Lab 19 · Thursday Merit Checkout
+    </span>
+</div>
+""", unsafe_allow_html=True)
+st.caption("Data from SEC EDGAR; built with AI help, a learning demonstration, not investment advice.")
+st.markdown("**Author:** **Oladapo Olaniyan** (`oolaniy@purdue.edu`) | **Course:** FIN 43900 — AI Finance Applications, Daniels School of Business, Purdue University")
 
-st.write("")
+# Company Metadata Bar (Clean institutional style)
+first_fy = data['rows'][0]['fy_end']
+last_fy = data['rows'][-1]['fy_end']
+
+st.markdown(f"""
+<div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 14px 18px; margin: 12px 0 16px 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+            <span style="font-size: 1.45rem; font-weight: 800; letter-spacing: -0.3px;">{data['company_name']}</span>
+            <span style="background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 3px 10px; border-radius: 6px; font-weight: 800; font-size: 0.95rem; margin-left: 8px;">{data['ticker']}</span>
+            <div style="font-size: 0.82rem; opacity: 0.75; margin-top: 3px;">CIK: <code>{data['cik']}</code> | User-Agent: <code>{data['user_agent']}</code></div>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <div style="background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); font-size: 0.82rem;">
+                <span style="opacity: 0.6; display: block; font-size: 0.7rem; font-weight: 600;">STANDARD</span>
+                <strong>10-K Annual (Latest Wins)</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); font-size: 0.82rem;">
+                <span style="opacity: 0.6; display: block; font-size: 0.7rem; font-weight: 600;">CURRENCY</span>
+                <strong>USD ($ Millions)</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); font-size: 0.82rem;">
+                <span style="opacity: 0.6; display: block; font-size: 0.7rem; font-weight: 600;">WINDOW</span>
+                <strong>{first_fy} → {last_fy}</strong>
+            </div>
+        </div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 # Top Summary Row: Investor Verdicts
 col_v1, col_v2, col_v3 = st.columns(3)
@@ -247,9 +306,9 @@ m_v = data["burry_checks"]["verdict"]
 with col_v1:
     with st.container(border=True):
         st.markdown("""
-        <div class="investor-card-buffett">
-            <h4 style="margin:0; color:#14532d;">🐂 Warren Buffett</h4>
-            <small style="color:#166534;">Moat & Owner Earnings Philosophy</small>
+        <div class="investor-card investor-buffett">
+            <h4 style="margin:0; font-size: 1.15rem; font-weight: 700;">🐂 Warren Buffett</h4>
+            <small style="opacity: 0.8;">Moat & Owner Earnings Philosophy</small>
         </div>
         """, unsafe_allow_html=True)
         if b_v == "OWN THE BUSINESS":
@@ -262,10 +321,10 @@ with col_v1:
 
 with col_v2:
     with st.container(border=True):
-        st.markdown("""
-        <div class="investor-card-graham">
-            <h4 style="margin:0; color:#1e3a8a;">🛡️ Benjamin Graham</h4>
-            <small style="color:#1e40af;">Margin of Safety & Liquidity Philosophy</small>
+        st.markdown(f"""
+        <div class="investor-card investor-graham">
+            <h4 style="margin:0; font-size: 1.15rem; font-weight: 700;">🛡️ Benjamin Graham</h4>
+            <small style="opacity: 0.8;">Margin of Safety & Liquidity Philosophy</small>
         </div>
         """, unsafe_allow_html=True)
         if g_v == "DEFENSIVE INVESTMENT":
@@ -279,9 +338,9 @@ with col_v2:
 with col_v3:
     with st.container(border=True):
         st.markdown("""
-        <div class="investor-card-burry">
-            <h4 style="margin:0; color:#7f1d1d;">🔍 Michael Burry</h4>
-            <small style="color:#991b1b;">Forensic Accounting & Cash Flow Skepticism</small>
+        <div class="investor-card investor-burry">
+            <h4 style="margin:0; font-size: 1.15rem; font-weight: 700;">🔍 Michael Burry</h4>
+            <small style="opacity: 0.8;">Forensic Accounting & Cash Flow Skepticism</small>
         </div>
         """, unsafe_allow_html=True)
         if m_v == "PASS FORENSIC SCREEN":
@@ -312,11 +371,11 @@ with tab_panel:
 
     def color_status(val):
         if val == "pass":
-            return "background-color: #d1e7dd; color: #0f5132; font-weight: 700;"
+            return "background-color: rgba(16, 185, 129, 0.18); color: #10b981; font-weight: 700;"
         elif val == "fail":
-            return "background-color: #f8d7da; color: #842029; font-weight: 700;"
+            return "background-color: rgba(239, 68, 68, 0.18); color: #ef4444; font-weight: 700;"
         else:
-            return "background-color: #fff3cd; color: #664d03; font-weight: 700;"
+            return "background-color: rgba(245, 158, 11, 0.18); color: #f59e0b; font-weight: 700;"
 
     styled_panel = panel_df.style.map(color_status, subset=["status"])
     st.dataframe(styled_panel, use_container_width=True, hide_index=True)
@@ -325,48 +384,57 @@ with tab_panel:
     st.subheader("📝 Audited Investor Memos (Side-by-Side)")
     st.caption("All numbers printed by code. The automated Hallucination Detection Gate scans all three memos simultaneously.")
 
-    buffett_memo_text = generate_buffett_memo(data)
-    graham_memo_text = generate_graham_memo(data, current_ratio_threshold=graham_threshold)
-    burry_memo_text = generate_burry_memo(data)
+    # Helper function to resize memo headers for clean 3-column layout
+    def format_memo_for_column(raw_memo: str, company_name: str, ticker: str) -> str:
+        # Replace top # heading with clean subheader
+        memo = re.sub(r"^# .+$", "", raw_memo, flags=re.MULTILINE).strip()
+        # Scale down ## and ### to fit column nicely
+        memo = re.sub(r"^## ", "#### ", memo, flags=re.MULTILINE)
+        memo = re.sub(r"^### ", "##### ", memo, flags=re.MULTILINE)
+        return memo
+
+    buffett_raw = generate_buffett_memo(data)
+    graham_raw = generate_graham_memo(data, current_ratio_threshold=graham_threshold)
+    burry_raw = generate_burry_memo(data)
 
     if inject_hand_probe:
-        graham_memo_text += "\n\n*Probe Injection:* Unprinted speculation claims 40.0% return and $99,999 in hidden off-balance sheet liabilities."
-        burry_memo_text += "\n\n*Probe Injection:* Speculative whisper number estimates revenue of 888,888 million."
+        graham_raw += "\n\n*Probe Injection:* Unprinted speculation claims 40.0% return and $99,999 in hidden off-balance sheet liabilities."
+        burry_raw += "\n\n*Probe Injection:* Speculative whisper number estimates revenue of 888,888 million."
 
     allowed_nums = extract_printed_numbers(data)
 
-    b_flags, b_html = audit_memo_numbers(buffett_memo_text, allowed_nums)
-    g_flags, g_html = audit_memo_numbers(graham_memo_text, allowed_nums)
-    m_flags, m_html = audit_memo_numbers(burry_memo_text, allowed_nums)
+    b_flags, b_html = audit_memo_numbers(format_memo_for_column(buffett_raw, data['company_name'], data['ticker']), allowed_nums)
+    g_flags, g_html = audit_memo_numbers(format_memo_for_column(graham_raw, data['company_name'], data['ticker']), allowed_nums)
+    m_flags, m_html = audit_memo_numbers(format_memo_for_column(burry_raw, data['company_name'], data['ticker']), allowed_nums)
 
     col_m1, col_m2, col_m3 = st.columns(3)
 
     with col_m1:
         with st.container(border=True):
-            st.markdown("#### 🐂 Warren Buffett Memo")
+            st.markdown(f"#### 🐂 Warren Buffett Memo\n*{data['company_name']} ({data['ticker']})*")
             if not b_flags:
                 st.success("✅ **Zero Hallucinations:** 100% verified.")
             else:
                 st.error(f"⚠️ **Flagger Alert:** {b_flags}")
-            st.markdown(b_html, unsafe_allow_html=True)
+            st.markdown(f"<div class='memo-container'>{b_html}</div>", unsafe_allow_html=True)
 
     with col_m2:
         with st.container(border=True):
-            st.markdown("#### 🛡️ Benjamin Graham Memo")
+            st.markdown(f"#### 🛡️ Benjamin Graham Memo\n*{data['company_name']} ({data['ticker']})*")
             if not g_flags:
                 st.success("✅ **Zero Hallucinations:** 100% verified.")
             else:
                 st.error(f"⚠️ **Flagger Alert:** {g_flags}")
-            st.markdown(g_html, unsafe_allow_html=True)
+            st.markdown(f"<div class='memo-container'>{g_html}</div>", unsafe_allow_html=True)
 
     with col_m3:
         with st.container(border=True):
-            st.markdown("#### 🔍 Michael Burry Memo")
+            st.markdown(f"#### 🔍 Michael Burry Memo\n*{data['company_name']} ({data['ticker']})*")
             if not m_flags:
                 st.success("✅ **Zero Hallucinations:** 100% verified.")
             else:
                 st.error(f"⚠️ **Flagger Alert:** {m_flags}")
-            st.markdown(m_html, unsafe_allow_html=True)
+            st.markdown(f"<div class='memo-container'>{m_html}</div>", unsafe_allow_html=True)
 
 # =============================================================================
 # TAB 2: AUDITED 10-K FINANCIALS & CHARTS
@@ -445,7 +513,7 @@ with tab_financials:
                         "Metric:N",
                         scale=alt.Scale(
                             domain=["Net Income", "Operating Cash Flow", "Owner Earnings"],
-                            range=["#2563eb", "#16a34a", "#d97706"],
+                            range=["#2563eb", "#10b981", "#f59e0b"],
                         ),
                     ),
                     xOffset="Metric:N",
@@ -458,12 +526,12 @@ with tab_financials:
         st.markdown(f"**Working Capital Safety: Current Ratio vs. Graham Hurdle ({graham_threshold:.1f})**")
         if not chart_df.empty and chart_df["Current Ratio"].notna().any():
             cr_clean = chart_df.dropna(subset=["Current Ratio"])
-            c2_base = alt.Chart(cr_clean).mark_line(point=True, color="#dc2626", strokeWidth=3).encode(
+            c2_base = alt.Chart(cr_clean).mark_line(point=True, color="#ef4444", strokeWidth=3).encode(
                 x=alt.X("FY End:N", title="Fiscal Year End"),
                 y=alt.Y("Current Ratio:Q", title="Current Ratio", scale=alt.Scale(zero=False)),
             )
             rule = alt.Chart(pd.DataFrame({"Hurdle": [graham_threshold]})).mark_rule(
-                color="#1f2937", strokeDash=[6, 4], strokeWidth=2
+                color="#64748b", strokeDash=[6, 4], strokeWidth=2
             ).encode(y="Hurdle:Q")
             st.altair_chart((c2_base + rule).properties(height=320), use_container_width=True)
 
