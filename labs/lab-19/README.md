@@ -9,6 +9,7 @@
 **Financial Institution Probe:** JPMorgan Chase & Co. (`JPM`)  
 **Date:** November 5, 2026  
 **Category:** Thursday Merit Checkout (0–25 Points)  
+**Session Token:** `wood`  
 **Streamlit App File:** `labs/lab-19/app.py`  
 **Deploy to Streamlit Community Cloud:** [Publish / Deploy Legend Panel App](https://share.streamlit.io/deploy?repository=Dapize-Mo/FIN43900-AI-Finance-Applications&branch=main&mainModule=labs/lab-19/app.py)  
 

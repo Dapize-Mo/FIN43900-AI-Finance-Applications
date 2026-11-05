@@ -5,7 +5,7 @@
 **Course:** FIN 43900 — AI Finance Applications, Mitchell E. Daniels, Jr. School of Business, Purdue University  
 **Session:** Session 19 (Week 11, Thursday Merit Checkout — 25 Points)  
 **Lab Date:** 11/05/2026 (November 5, 2026)  
-**Session Token:** Announced in room (entered upon Brightspace submission)  
+**Session Token:** `wood`  
 **Target Coverage Security:** PepsiCo, Inc. (`PEP`)  
 **Project 2 Fund Largest Holding:** Apple Inc. (`AAPL`) (from Vanguard Total World Stock ETF `VT`)  
 **Benchmark Known-Answer Security:** Costco Wholesale Corp. (`COST`)  
