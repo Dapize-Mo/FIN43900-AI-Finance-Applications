@@ -373,3 +373,4 @@ with col_s2:
     > 2. Financial institutions (e.g. `JPM`) must be quarantined from industrial CapEx hurdles and evaluated under capital-ratio rules (`CET1`).
     > 3. Disagreements between personas must be treated as valuable diagnostic signals highlighting trade-offs between franchise quality (Buffett), balance sheet liquidity (Graham), and forensic solvency (Burry).
     """)
+

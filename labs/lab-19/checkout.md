@@ -11,6 +11,7 @@
 **Benchmark Known-Answer Security:** Costco Wholesale Corp. (`COST`)  
 **Financial Institution Probe:** JPMorgan Chase & Co. (`JPM`)  
 **Interactive Streamlit App:** [`labs/lab-19/app.py`](app.py)  
+**Publish / Deploy Link (Streamlit Community Cloud):** [Deploy Legend Panel App](https://share.streamlit.io/deploy?repository=Dapize-Mo/FIN43900-AI-Finance-Applications&branch=main&mainModule=labs/lab-19/app.py)  
 
 ---
 
@@ -289,3 +290,4 @@ else:
 - **In-Person Attendance Declaration:** I hereby declare that I attended the live in-class laboratory session in LILY G420 / RAWL 2070 on Thursday, November 5, 2026.
 - **Truth Attestation:** I attest that all code, empirical calculations, and analytical findings recorded in this checkout package represent my own authentic work, conducted in collaboration with my designated learning partner and utilizing AI tools strictly in accordance with course policy.
 - **Verification Receipt:** Authenticated Brightspace checkout submission recorded under Purdue student ID for Oladapo Olaniyan (`oolaniy@purdue.edu`).
+
