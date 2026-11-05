@@ -11,7 +11,8 @@
 **Category:** Thursday Merit Checkout (0–25 Points)  
 **Session Token:** `wood`  
 **Streamlit App File:** `labs/lab-19/app.py`  
-**Deploy to Streamlit Community Cloud:** [Publish / Deploy Legend Panel App](https://share.streamlit.io/deploy?repository=Dapize-Mo/FIN43900-AI-Finance-Applications&branch=main&mainModule=labs/lab-19/app.py)  
+**Live Deployed App (Streamlit Community Cloud):** [Legend Panel (Buffett · Graham · Burry) · Lab 19 · Streamlit](https://dapize-mo-fin43900-ai-finance-applications-labslab-19app-gk16xc.streamlit.app/)  
+**Deploy Link:** [Streamlit Community Cloud Deployer](https://share.streamlit.io/deploy?repository=Dapize-Mo/FIN43900-AI-Finance-Applications&branch=main&mainModule=labs/lab-19/app.py)  
 
 ---
 

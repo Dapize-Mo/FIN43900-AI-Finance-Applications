@@ -11,7 +11,8 @@
 **Benchmark Known-Answer Security:** Costco Wholesale Corp. (`COST`)  
 **Financial Institution Probe:** JPMorgan Chase & Co. (`JPM`)  
 **Interactive Streamlit App:** [`labs/lab-19/app.py`](app.py)  
-**Publish / Deploy Link (Streamlit Community Cloud):** [Deploy Legend Panel App](https://share.streamlit.io/deploy?repository=Dapize-Mo/FIN43900-AI-Finance-Applications&branch=main&mainModule=labs/lab-19/app.py)  
+**Live Deployed App (Streamlit Community Cloud):** [Legend Panel (Buffett · Graham · Burry) · Lab 19 · Streamlit](https://dapize-mo-fin43900-ai-finance-applications-labslab-19app-gk16xc.streamlit.app/)  
+**Publish / Deploy Link:** [Deploy Legend Panel App](https://share.streamlit.io/deploy?repository=Dapize-Mo/FIN43900-AI-Finance-Applications&branch=main&mainModule=labs/lab-19/app.py)  
 
 ---
 
