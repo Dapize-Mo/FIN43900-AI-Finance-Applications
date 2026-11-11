@@ -188,6 +188,118 @@ st.markdown("""
         font-weight: 600;
         font-size: 0.92rem;
     }
+
+    /* More breathing room and a clearer institutional dashboard hierarchy */
+    [data-testid="stAppViewContainer"] .main .block-container {
+        max-width: 1480px;
+        padding-top: 2rem;
+        padding-bottom: 3.5rem;
+    }
+    [data-testid="stHeader"] {
+        background: transparent;
+    }
+    h1, h2, h3, h4 {
+        letter-spacing: -0.025em;
+    }
+    h1 {
+        margin-top: 0.35rem;
+        margin-bottom: 0.55rem;
+    }
+    [data-testid="stMarkdownContainer"] p {
+        line-height: 1.62;
+    }
+
+    /* Keep custom panels legible in either Streamlit theme */
+    .kpi-card {
+        min-height: 108px;
+        background: linear-gradient(145deg, #17283b 0%, #20364d 100%);
+        border: 1px solid rgba(148, 163, 184, 0.24);
+        border-radius: 14px;
+        padding: 17px 18px;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12);
+    }
+    .kpi-label {
+        color: #b7c5d5;
+        letter-spacing: 0.065em;
+    }
+    .kpi-value {
+        color: #ffffff;
+        font-size: clamp(1.25rem, 1.55vw, 1.65rem);
+        line-height: 1.25;
+        font-variant-numeric: tabular-nums;
+    }
+    .kpi-subtext {
+        color: #c1cede;
+        line-height: 1.45;
+    }
+    .fiduciary-banner {
+        border-radius: 14px;
+        padding: 19px 22px;
+        box-shadow: 0 10px 26px rgba(15, 23, 42, 0.14);
+    }
+    .pill-tag {
+        padding: 5px 12px;
+        color: #075985;
+        background: #eaf6fc;
+        border-color: #b7e3f5;
+        line-height: 1.4;
+    }
+    .pill-green {
+        color: #067647;
+        background: #eaf8f0;
+        border-color: #a9e4c2;
+    }
+    .pill-gold {
+        color: #8a4b08;
+        background: #fff6e5;
+        border-color: #f2d39a;
+    }
+    .strategy-box {
+        background: linear-gradient(145deg, #14263a 0%, #1b3a43 100%);
+        border-radius: 14px;
+        padding: 20px 22px;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.1);
+    }
+    .badge-pass, .badge-fail {
+        padding: 6px 11px;
+        border-radius: 999px;
+    }
+    [data-testid="stDataFrame"], [data-testid="stTable"] {
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    [data-testid="stTabs"] [role="tablist"] {
+        padding: 5px;
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 12px;
+        background: rgba(148, 163, 184, 0.08);
+    }
+    [data-testid="stTabs"] button[role="tab"] {
+        transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    [data-testid="stTabs"] button[role="tab"][aria-selected="true"] {
+        border-radius: 8px;
+    }
+    @media (max-width: 900px) {
+        [data-testid="stAppViewContainer"] .main .block-container {
+            padding: 1.25rem 1.2rem 2.5rem;
+        }
+        .fiduciary-banner {
+            padding: 15px 16px;
+        }
+        .fiduciary-banner-title {
+            font-size: 0.82rem;
+            line-height: 1.45;
+        }
+        .fiduciary-banner-body {
+            font-size: 0.82rem;
+        }
+        .stTabs [data-baseweb="tab"] {
+            padding: 8px 11px;
+            font-size: 0.84rem;
+        }
+    }
 </style>
 """, unsafe_allow_html=True)
 
