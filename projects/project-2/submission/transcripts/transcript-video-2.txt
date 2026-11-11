@@ -1,0 +1,38 @@
+================================================================================
+FIN 43900 Project 2 — Video 2 Transcript: Technical Code & Model Walkthrough
+Author: Oladapo Olaniyan (oolaniy@purdue.edu)
+Course: FIN 43900 — AI Finance Applications, Fall 2026, Purdue University
+Target Duration: <= 5:00 (Recorded: ~4:30)
+================================================================================
+
+[00:00 - 00:25] MANDATORY FIDUCIARY OPENING STATEMENTS
+"Hello, my name is Oladapo Olaniyan. As required:
+First, I utilized Anthropic Claude and Google Antigravity for code design and test scaffolding; all mathematical logic, parameter audits, and portfolio decisions are mine.
+Second, this technical walkthrough is an academic presentation for FIN 43900 at Purdue University, not investment advice."
+
+[00:25 - 01:20] ARCHITECTURAL REPOSITORY TOUR
+"Let's walk through the codebase. The application is modularized cleanly under `projects/project-2/`.
+In the `data/` directory, we maintain two core CSV datasets:
+First, `prices.csv`, containing five full years of monthly dividend-adjusted prices across our four core ETF sleeves: BIL for cash and short T-Bills, IEF for 7-to-10 year Treasuries, LQD for investment grade corporate credit, and VT for global equities.
+Second, `pit_macro.csv`, which stores historical vintages of the Consumer Price Index (CPIAUCSL) pulled directly from the St. Louis Fed's ALFRED platform.
+In `src/`, our architecture separates concerns across three core engines: `mandate.py`, `engine.py`, and `point_in_time.py`."
+
+[01:20 - 02:25] THE MANDATE AND RISK ENGINE
+"In `mandate.py`, we translate the Meridian Foundation's contractual covenants into hard algorithmic rules:
+Lines 85 to 135 implement `check_mandate()`. It evaluates six distinct criteria: total allocation summing to 100%, long-only non-negative weights, a minimum 3.0% reserve-eligible sovereign liquidity floor, a 6.50% net return hurdle (reflecting CPI of 2.5% plus the 4.0% real payout hurdle), a 90% five-day liquidity requirement, and an 8% single-issuer limit for non-exempt assets.
+If we inspect `engine.py`, lines 25 to 70 construct the covariance matrix Sigma from sleeve volatilities and correlation coefficients.
+Lines 110 to 160 implement `optimize_constrained_mix()`. Rather than using an unconstrained solver that might output extreme or leveraged weights, we execute a discrete 2% step grid search that evaluates every feasible long-only asset combination, instantly filtering out any allocation that breaches the 3.0% sovereign buffer or fails the 6.50% net return hurdle, and selecting the portfolio with the global minimum annualized volatility."
+
+[02:25 - 03:30] POINT-IN-TIME DATA & THE PROVENANCE GATE
+"Now let's examine `point_in_time.py`. In quantitative finance, naive backtesting routinely creates look-ahead contamination.
+Our module enforces a dual-timestamp coordinate system: Event Date, when economic activity occurred, and Publication Date, when the BLS actually released the data.
+In Lab 17, we proved that on September 30, 2026, the September CPI print was unknowable—it was not published until mid-October. Even more critically, comparing ALFRED's vintage of January 15, 2024 to today proves that 60 prior monthly observations were revised due to annual seasonal factor recalculations.
+Our provenance gate places CPI under strict Fiduciary Quarantine: we only admit observations published prior to or on the decision date."
+
+[03:30 - 04:30] TESTS & VALIDATION AUDIT
+"To ensure the system cannot fail cold in production, we built an automated validation suite.
+Test 1 verifies correlation matrix symmetry and diagonal integrity.
+Tests 2 and 3 reconcile our Equal Weight and Benchmark baselines against published known answers down to four decimal places: Equal Weight delivers 5.20% return and 5.21% volatility, while the 60/40 benchmark produces 6.80% return and 10.46% volatility.
+Test 4 verifies that our constrained optimizer finds the minimum-variance mix: 52% VT, 40% LQD, 5% IEF, and 3% BIL, achieving 6.50% return at only 9.30% volatility.
+All tests pass cleanly. The system is robust, documented, and ready for deployment."
+

@@ -1,0 +1,41 @@
+================================================================================
+FIN 43900 Project 2 — Video 3 Transcript: Investment Committee Defense & Live Demo
+Author: Oladapo Olaniyan (oolaniy@purdue.edu)
+Course: FIN 43900 — AI Finance Applications, Fall 2026, Purdue University
+Target Duration: <= 5:00 (Recorded: ~4:50)
+================================================================================
+
+[00:00 - 00:25] MANDATORY FIDUCIARY OPENING STATEMENTS
+"Members of the Investment Committee, my name is Oladapo Olaniyan. Before presenting our fiduciary findings:
+First, I used Anthropic Claude and Google Antigravity to support code generation and user interface aesthetics, while owning all analysis, calculations, and investment judgments.
+Second, this presentation is an educational demonstration for FIN 43900 at Purdue University and does not constitute formal investment advice."
+
+[00:25 - 01:30] LIVE APPLICATION DEMONSTRATION
+"You are viewing our live investment management application, running locally and accessible via Streamlit.
+Looking at our Executive Summary tab, the system manages the $100 million Meridian Foundation Reserve. Our governing mandate requires generating a net real return of CPI + 4.0%—or 6.50% annualized—while distributing $750,000 every quarter. Most importantly, Fact S3 requires holding a full 12 months of distributions, or $3.0 million, in daily-liquid sovereign paper.
+Notice our comparison table:
+Baseline 1, Equal Weight (25% in each sleeve), delivers 50% liquidity, but fails the mandate because its expected return is only 5.20%—failing to cover the Foundation's spending obligations.
+Baseline 2, the Foundation's existing 60/40 policy benchmark, yields 6.80% return, but it holds zero percent in sovereign liquidity, creating an immediate covenant breach.
+Our Constrained Optimal Portfolio solves this dilemma: by allocating 52% to Global Equity (VT), 40% to Corporate Bonds (LQD), 5% to 10-Year Treasuries (IEF), and 3% to T-Bills (BIL), we deliver exactly 6.50% net return, provide $8.0 million in sovereign liquidity (a 2.67x coverage ratio), and lower portfolio volatility from 10.46% down to 9.30%—a 116 basis point risk reduction."
+
+[01:30 - 02:45] POINT-IN-TIME AUDIT & DATA GOVERNANCE
+"If we navigate to the Point-in-Time tab, we address our macroeconomic driver.
+Endowments often evaluate strategies using modern FRED data, assuming historical figures were static. As demonstrated in our interactive vintage chart, the BLS revises seasonally adjusted CPI figures for up to five years retroactively.
+To protect the Foundation against look-ahead bias, our engine places CPI under Fiduciary Quarantine: our models only ingest data that was published on or before the trade decision date, or we benchmark against unrevised headline figures."
+
+[02:45 - 03:50] STRESS RUN & PROCESS KILL RULE
+"Now let's examine our Stress Testing module. A model must not only look good under normal conditions; it must specify when it fails.
+We stress-tested the portfolio against equity return haircuts, credit spread widening, and correlation spikes.
+Under our Locked Changed-Input Record, we tested a 100 basis point drop in forward equity returns, from 8.0% to 7.0%.
+As predicted before the run, when equity returns fall, the optimizer must stretch for return by pushing equity exposure all the way to 78%, which forces portfolio volatility up to 12.70%.
+This triggers our quantitative PROCESS KILL RULE.
+Under Foundation governance, if prospective market returns prevent achieving 6.50% return without pushing volatility above 12.00%, active optimization is immediately suspended. Manager discretion is stripped, equity is capped at 50%, and capital is placed in short-term Treasuries."
+
+[03:50 - 04:50] COMMITTEE ASK & REVERSAL TRIGGERS
+"In conclusion, we recommend that the Investment Committee:
+1. Formally adopt the Constrained Optimal Portfolio targets: 52% VT, 40% LQD, 5% IEF, and 3% BIL.
+2. Authorize standard rebalancing bands of +/- 3% on equities and credit.
+3. Establish our automated Reversal Triggers: immediate committee review if trailing 12-month real return drops below CPI + 1.0% for two consecutive quarters, or if 10-year Treasury yields drop below 3.0%.
+
+This proposal maintains 100% legal mandate compliance, protects spending liquidity, and lowers aggregate portfolio risk. Thank you, and I look forward to your questions."
+

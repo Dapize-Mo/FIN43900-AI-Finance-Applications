@@ -1,0 +1,25 @@
+================================================================================
+FIN 43900 Project 2 — Video 1 Transcript: Research Evolution & AI Verification
+Author: Oladapo Olaniyan (oolaniy@purdue.edu)
+Course: FIN 43900 — AI Finance Applications, Fall 2026, Purdue University
+Target Duration: <= 3:00 (Recorded: ~2:45)
+================================================================================
+
+[00:00 - 00:25] MANDATORY FIDUCIARY OPENING STATEMENTS
+"Hello, my name is Oladapo Olaniyan. Before presenting, I make two mandatory course disclosures:
+First, for this project, I used Anthropic Claude and Google Antigravity to support code structuring, test design, and visual dashboard formatting. All financial models, calculations, input choices, and fiduciary recommendations were directed, independently checked, and owned by me.
+Second, this analysis and committee decision are entirely my own work for academic demonstration in FIN 43900 at Purdue University; this is an educational simulation, not personalized investment advice."
+
+[00:25 - 01:15] HOW MY THINKING CHANGED SINCE LAB 13
+"When we first opened Lab 13 and looked at the Meridian Foundation Reserve case, my instinct—like many analysts—was simply to chase the highest Sharpe ratio or take the client's 60/40 policy benchmark as an acceptable starting point.
+However, building the algorithmic mandate checker forced a fundamental shift in my thinking. When we codified Fact S3—the non-negotiable legal requirement to maintain 12 months of quarterly spending payouts, or $3.0 million, in daily-liquid sovereign paper—we uncovered that the Foundation's own 60/40 benchmark fails the mandate. Holding 40% in corporate bonds leaves zero percent in sovereign Treasuries, which creates an immediate covenant breach.
+I realized that fiduciary portfolio management is not an unconstrained mathematical search for return; it is a constraint-satisfaction problem where legal liquidity, solvency, and drawdowns strictly govern the feasible solution set."
+
+[01:15 - 02:15] THE AI OUTPUT I INDEPENDENTLY CHECKED
+"A critical requirement of our model risk framework under Federal Reserve SR 26-2 is independent challenge. When generating our multi-asset covariance matrix and grid search optimizer, I prompted Claude to generate the portfolio variance calculation and covariance builder.
+The model provided a standard nested loop, but did not automatically validate whether the input correlation matrix was symmetric or whether diagonal elements were bounded to exactly 1.0. If an AI generates a covariance matrix where correlation between equities and bonds is asymmetric, the resulting quadratic surface can produce non-convex artifacts and false global minima.
+I independently intervened, wrote a mathematical input validation contract in `mandate.py` that verifies symmetry within ten to the minus ninth tolerance, confirmed that every diagonal entry equals exactly 1.0, and checked the resulting portfolio volatility against our hand-calculated Lab 14 known answers. Only after the code reconciled to the exact basis point did I permit its admission into the project engine."
+
+[02:15 - 02:45] CONCLUSION & SYSTEM MATURITY
+"Today, our system has evolved from disparate weekly lab scripts into a unified, institutional-grade Streamlit application that links macroeconomic point-in-time data from ALFRED directly into portfolio optimization and stress testing. Thank you."
+
