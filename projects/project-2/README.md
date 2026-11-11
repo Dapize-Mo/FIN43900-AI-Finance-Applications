@@ -17,6 +17,8 @@
 
 ## 🚀 Quickstart: Single-Command Cold Run (Base Requirement 1)
 
+- **Live Deployed App (Streamlit Community Cloud):** [Meridian Reserve Portfolio App](https://dapize-mo-fin43900-ai-finance-appli-projectsproject-2app-kxfhnr.streamlit.app/)
+
 A reviewer or stranger can clone this repository, install requirements, and launch the web app with no prior setup or coaching:
 
 ```bash

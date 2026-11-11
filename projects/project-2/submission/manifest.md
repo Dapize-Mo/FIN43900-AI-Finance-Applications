@@ -7,7 +7,7 @@
 **Client / Case:** Meridian Foundation Reserve ($100 Million Reserve Fund)  
 **Submission As-Of Date:** November 10, 2026  
 **GitHub Repository:** [Dapize-Mo/FIN43900-AI-Finance-Applications](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications)  
-**Streamlit Live Application:** [Project 2 Investment Management System](https://dapize-mo-fin43900-ai-finance-applications-labslab-19app-gk16xc.streamlit.app/) *(or local run via `streamlit run app.py`)*
+**Streamlit Live Application:** [Project 2 Investment Management System](https://dapize-mo-fin43900-ai-finance-appli-projectsproject-2app-kxfhnr.streamlit.app/) *(or local run via `streamlit run app.py`)*
 
 ---
 
