@@ -75,6 +75,23 @@ BASE_CORRELATION = [
 ]
 
 
+def validate_correlation(corr: List[List[float]], tol: float = 1e-9) -> bool:
+    """Input contract for any correlation matrix: square, symmetric within tol,
+    unit diagonal, and every entry in [-1, 1]. Raises ValueError on failure."""
+    n = len(corr)
+    for i in range(n):
+        if len(corr[i]) != n:
+            raise ValueError("Correlation matrix must be square")
+        if abs(corr[i][i] - 1.0) > tol:
+            raise ValueError(f"Diagonal entry [{i}][{i}] must equal 1.0")
+        for j in range(n):
+            if abs(corr[i][j] - corr[j][i]) > tol:
+                raise ValueError(f"Asymmetric correlation at [{i}][{j}]")
+            if corr[i][j] < -1.0 - tol or corr[i][j] > 1.0 + tol:
+                raise ValueError(f"Correlation [{i}][{j}] outside [-1, 1]")
+    return True
+
+
 def check_mandate(
     weights: List[float],
     expected_return: float,

@@ -40,8 +40,8 @@ To satisfy the real return objective while strictly honoring all liquidity, conc
 | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
 | **Global Equity** | `VT` | Real return engine | **52.0%** | 48.0% | 55.0% | $52,000,000 |
 | **U.S. IG Corporate Bonds** | `LQD` | Income & yield generation | **40.0%** | 36.0% | 44.0% | $40,000,000 |
-| **U.S. 10-Year Treasury Notes** | `IEF` | Duration & reserve buffer | **5.0%** | 3.0% | 8.0% | $5,000,000 |
-| **U.S. Treasury Bills / Cash** | `BIL` | Immediate payout reserve | **3.0%** | 3.0% | 5.0% | $3,000,000 |
+| **U.S. 10-Year Treasury Notes** | `IEF` | Duration & reserve buffer | **8.0%** | 3.0% | 10.0% | $8,000,000 |
+| **U.S. Treasury Bills / Cash** | `BIL` | Immediate payout reserve | **0.0%** | 0.0% | 3.0% | $0 |
 | **Total Portfolio** | — | — | **100.0%** | — | — | **$100,000,000** |
 
 *Note: Total sovereign reserve-eligible paper is 8.0% ($8.0M), providing an immediate 2.67x coverage ratio over the required 12-month spending buffer ($3.0M).*
@@ -74,7 +74,7 @@ Macroeconomic signals governing the inflation hurdle (`CPIAUCSL`) were audited u
 
 We request that the Investment Committee approve:
 1. **Immediate Execution:** Rebalance the $100M reserve to the Constrained Optimal Portfolio targets.
-2. **Quarterly Liquidity Review:** Sweep excess cash flow into `BIL` to maintain the 12-month $3.0M spending buffer.
+2. **Quarterly Liquidity Review:** Sweep excess cash flow into `BIL`/`IEF` to maintain the 12-month $3.0M spending buffer.
 3. **Reversal Triggers:** Mandatory committee convening if:
    - Rolling 12-month net real return falls below CPI + 1.0% (3.5% total return) for two consecutive quarters.
    - 10-year Treasury yield drops below 3.0%, impairing sovereign reserve income.

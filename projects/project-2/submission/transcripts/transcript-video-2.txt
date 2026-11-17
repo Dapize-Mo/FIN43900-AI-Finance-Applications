@@ -19,9 +19,9 @@ In `src/`, our architecture separates concerns across three core engines: `manda
 
 [01:20 - 02:25] THE MANDATE AND RISK ENGINE
 "In `mandate.py`, we translate the Meridian Foundation's contractual covenants into hard algorithmic rules:
-Lines 85 to 135 implement `check_mandate()`. It evaluates six distinct criteria: total allocation summing to 100%, long-only non-negative weights, a minimum 3.0% reserve-eligible sovereign liquidity floor, a 6.50% net return hurdle (reflecting CPI of 2.5% plus the 4.0% real payout hurdle), a 90% five-day liquidity requirement, and an 8% single-issuer limit for non-exempt assets.
-If we inspect `engine.py`, lines 25 to 70 construct the covariance matrix Sigma from sleeve volatilities and correlation coefficients.
-Lines 110 to 160 implement `optimize_constrained_mix()`. Rather than using an unconstrained solver that might output extreme or leveraged weights, we execute a discrete 2% step grid search that evaluates every feasible long-only asset combination, instantly filtering out any allocation that breaches the 3.0% sovereign buffer or fails the 6.50% net return hurdle, and selecting the portfolio with the global minimum annualized volatility."
+The function `check_mandate()` implements this. It evaluates six distinct criteria: total allocation summing to 100%, long-only non-negative weights, a minimum 3.0% reserve-eligible sovereign liquidity floor, a 6.50% net return hurdle (reflecting CPI of 2.5% plus the 4.0% real payout hurdle), a 90% five-day liquidity requirement, and an 8% single-issuer limit for non-exempt assets.
+If we inspect `engine.py`, `build_covariance()` constructs the covariance matrix Sigma from sleeve volatilities and correlation coefficients.
+`optimize_constrained_mix()` is the optimizer. Rather than using an unconstrained solver that might output extreme or leveraged weights, we execute a discrete 2% step grid search that evaluates every feasible long-only asset combination, instantly filtering out any allocation that breaches the 3.0% sovereign buffer or fails the 6.50% net return hurdle, and selecting the portfolio with the global minimum annualized volatility."
 
 [02:25 - 03:30] POINT-IN-TIME DATA & THE PROVENANCE GATE
 "Now let's examine `point_in_time.py`. In quantitative finance, naive backtesting routinely creates look-ahead contamination.
@@ -31,8 +31,8 @@ Our provenance gate places CPI under strict Fiduciary Quarantine: we only admit 
 
 [03:30 - 04:30] TESTS & VALIDATION AUDIT
 "To ensure the system cannot fail cold in production, we built an automated validation suite.
-Test 1 verifies correlation matrix symmetry and diagonal integrity.
+Test 1 verifies correlation matrix symmetry and diagonal integrity using `validate_correlation()` in `mandate.py`.
 Tests 2 and 3 reconcile our Equal Weight and Benchmark baselines against published known answers down to four decimal places: Equal Weight delivers 5.20% return and 5.21% volatility, while the 60/40 benchmark produces 6.80% return and 10.46% volatility.
-Test 4 verifies that our constrained optimizer finds the minimum-variance mix: 52% VT, 40% LQD, 5% IEF, and 3% BIL, achieving 6.50% return at only 9.30% volatility.
+Test 4 verifies that our constrained optimizer finds the minimum-variance mix: 52% VT, 40% LQD, and 8% IEF, with no BIL, achieving 6.50% return at only 9.30% volatility.
 All tests pass cleanly. The system is robust, documented, and ready for deployment."
 
