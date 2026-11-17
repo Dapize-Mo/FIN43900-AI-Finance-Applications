@@ -22,13 +22,20 @@
 A reviewer or stranger can clone this repository, install requirements, and launch the web app with no prior setup or coaching:
 
 ```bash
-# 1. Navigate to Project 2 directory
+# 0. Clone the repository and enter its root folder
+git clone https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications.git
+cd FIN43900-AI-Finance-Applications
+
+# 1. Navigate to Project 2 directory (run all later commands from here)
 cd projects/project-2
 
 # 2. Install dependencies (standard Python environment)
 pip install -r requirements.txt
 
-# 3. Launch the Streamlit application
+# 3. (Optional) Run the known-answer tests: expect "All tests passed"
+python tests/test_known_answers.py
+
+# 4. Launch the Streamlit application
 streamlit run app.py
 ```
 

@@ -68,8 +68,8 @@ In accordance with official course rulings, our repository satisfies every crite
 2. **Elapsed Time to Visible Result:**
    - **3 minutes 30 seconds** from initial terminal `git clone` to browser dashboard rendering live with all KPI metrics and mandate verdicts.
 3. **First Failure / Clarification Encountered:**
-   - *Observation:* When initially running `python -m pytest tests/` from the repository root instead of changing into `projects/project-2/`, pytest looked for root packages.
-   - *Resolution / Guidance:* README already specified `cd projects/project-2` as Step 1. To guarantee bulletproof execution regardless of execution directory, `tests/test_known_answers.py` contains `sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))`. When following the README's explicit `cd projects/project-2`, the cold run executed with **zero errors**.
+   - *Observation:* The partner's run completed with no errors. Reviewing the README against the cold-run commands afterward, I found two gaps that a stranger could hit: the Quickstart did not show the `git clone` / repo-root step, and it did not mention the test command at all, so a reviewer who tried `python -m pytest` or ran from the repo root had no documented guidance.
+   - *Resolution / Guidance:* Added Steps 0 (clone) and 3 (`python tests/test_known_answers.py`, expect "All tests passed") to the README Quickstart. `tests/test_known_answers.py` also contains `sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))` so the tests import correctly from any directory.
 4. **Where the Result Is:**
    - Terminal test output printed `All tests passed` (5/5 PASSED).
    - Streamlit browser displayed the interactive dashboard:
@@ -179,11 +179,11 @@ def optimize_constrained_mix(
 ## 🛠️ Fix One Thing (E)
 
 - **Cold-Run Finding:**  
-  Partner noticed that while the instructions in `projects/project-2/README.md` clearly specify running from within `projects/project-2`, running test commands or audit scripts from the repository root workspace can encounter module import ambiguity if `sys.path` does not include the project subdirectory.
+  The partner's cold run succeeded without errors. On review, I found the README Quickstart did not document the clone step or the test command, leaving a stranger without guidance on where to run tests or what a passing result looks like.
 - **Action Taken & Pushed:**  
-  1. Verified that [`src/engine.py`](../../projects/project-2/src/engine.py), [`src/point_in_time.py`](../../projects/project-2/src/point_in_time.py), and [`tests/test_known_answers.py`](../../projects/project-2/tests/test_known_answers.py) utilize explicit relative imports and dynamic `sys.path.insert(0, ...)` anchors.
+  1. Added the clone step and the test command to the Project 2 README Quickstart, and verified that [`src/engine.py`](../../projects/project-2/src/engine.py), [`src/point_in_time.py`](../../projects/project-2/src/point_in_time.py), and [`tests/test_known_answers.py`](../../projects/project-2/tests/test_known_answers.py) utilize explicit relative imports and dynamic `sys.path.insert(0, ...)` anchors.
   2. Built and added [`labs/lab-20/audit_project2_readiness.py`](audit_project2_readiness.py) to provide a single, automated, multi-level verification harness validating all 15 required manifest files, re-running all baseline calculations, verifying the Process Kill Condition, and cross-checking data cards with zero manual overhead.
-  3. Partner executed the audit script; cold run completed cleanly with zero warnings or errors.
+  3. Re-ran the audit script and the test suite after the README change; both pass with zero errors.
 
 ---
 
