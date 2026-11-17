@@ -50,315 +50,124 @@ from src.point_in_time import (
 )
 
 # ------------------------------------------------------------------------------
-# 1. PAGE SETUP & MODERN FINTECH STYLING
+# 1. PAGE SETUP & THEME-ADAPTIVE MODERN FINTECH STYLING
 # ------------------------------------------------------------------------------
 st.set_page_config(
     page_title="Meridian Reserve Portfolio App | FIN 43900 Project 2",
-    page_icon="🏛️",
+    page_icon=":material/account_balance:",
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
 st.markdown("""
 <style>
-    /* Global Typography & Font Family */
-    html, body, [class*="css"] {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* Global Container Sizing & Clean Padding */
+    [data-testid="stAppViewContainer"] .main .block-container {
+        max-width: 1440px;
+        padding-top: 1.5rem;
+        padding-bottom: 3.5rem;
     }
-
-    /* Top Fiduciary Banner */
-    .fiduciary-banner {
-        background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
-        border-left: 5px solid #38BDF8;
-        border-radius: 8px;
-        padding: 16px 20px;
-        margin-bottom: 22px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-    .fiduciary-banner-title {
-        color: #38BDF8;
-        font-size: 0.95rem;
+    
+    /* Clean, Theme-Adaptive Typography */
+    h1, h2, h3, h4, h5 {
+        letter-spacing: -0.025em;
         font-weight: 700;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        margin-bottom: 6px;
     }
-    .fiduciary-banner-body {
-        color: #E2E8F0;
-        font-size: 0.86rem;
-        line-height: 1.5;
+    
+    /* Modern Pill Badges */
+    .meta-pill-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 6px;
+        margin-bottom: 18px;
     }
-
-    /* Pill Metadata Tags */
-    .pill-tag {
-        display: inline-block;
-        background: rgba(56, 189, 248, 0.12);
-        color: #38BDF8;
-        border: 1px solid rgba(56, 189, 248, 0.3);
-        border-radius: 20px;
-        padding: 3px 12px;
-        font-size: 0.78rem;
+    .meta-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 12px;
+        border-radius: 9999px;
+        font-size: 0.82rem;
         font-weight: 600;
-        margin-right: 6px;
-        margin-bottom: 8px;
+        background: rgba(14, 165, 233, 0.10);
+        color: #0284C7;
+        border: 1px solid rgba(14, 165, 233, 0.28);
     }
-    .pill-green {
-        background: rgba(16, 185, 129, 0.12);
-        color: #10B981;
-        border-color: rgba(16, 185, 129, 0.35);
+    .meta-pill-gold {
+        background: rgba(245, 158, 11, 0.10);
+        color: #D97706;
+        border-color: rgba(245, 158, 11, 0.30);
     }
-    .pill-gold {
-        background: rgba(245, 158, 11, 0.12);
-        color: #F59E0B;
-        border-color: rgba(245, 158, 11, 0.35);
+    .meta-pill-green {
+        background: rgba(16, 185, 129, 0.10);
+        color: #059669;
+        border-color: rgba(16, 185, 129, 0.30);
     }
 
-    /* Fiduciary Metric Cards */
-    .kpi-card {
-        background: rgba(30, 41, 59, 0.55);
-        border: 1px solid rgba(148, 163, 184, 0.18);
-        border-radius: 10px;
+    /* Fiduciary & Governance Callout Banner */
+    .fiduciary-banner-box {
+        border-radius: 12px;
         padding: 14px 18px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-        margin-bottom: 14px;
-        transition: transform 0.15s ease, border-color 0.15s ease;
+        margin-bottom: 20px;
+        border-left: 4px solid #0284C7;
+        background: rgba(14, 165, 233, 0.05);
+        border: 1px solid rgba(14, 165, 233, 0.20);
+        border-left-width: 4px;
     }
-    .kpi-card:hover {
-        border-color: rgba(56, 189, 248, 0.4);
-        transform: translateY(-1px);
-    }
-    .kpi-label {
-        color: #94A3B8;
-        font-size: 0.78rem;
-        font-weight: 600;
+    .fiduciary-banner-header {
+        font-weight: 700;
+        font-size: 0.88rem;
         text-transform: uppercase;
         letter-spacing: 0.04em;
-        margin-bottom: 4px;
+        color: #0284C7;
+        margin-bottom: 6px;
     }
-    .kpi-value {
-        color: #F8FAFC;
-        font-size: 1.55rem;
-        font-weight: 700;
-    }
-    .kpi-subtext {
-        color: #64748B;
-        font-size: 0.76rem;
-        margin-top: 4px;
+    .fiduciary-banner-text {
+        font-size: 0.84rem;
+        line-height: 1.5;
+        opacity: 0.92;
     }
 
     /* Verdict Badges */
     .badge-pass {
-        color: #10B981;
-        background: rgba(16, 185, 129, 0.15);
-        border: 1px solid rgba(16, 185, 129, 0.4);
+        color: #059669;
+        background: rgba(16, 185, 129, 0.12);
+        border: 1px solid rgba(16, 185, 129, 0.35);
         font-weight: 700;
         padding: 4px 10px;
-        border-radius: 6px;
-        font-size: 0.85rem;
+        border-radius: 9999px;
+        font-size: 0.80rem;
         display: inline-block;
     }
     .badge-fail {
-        color: #EF4444;
-        background: rgba(239, 68, 68, 0.15);
-        border: 1px solid rgba(239, 68, 68, 0.4);
+        color: #DC2626;
+        background: rgba(239, 68, 68, 0.12);
+        border: 1px solid rgba(239, 68, 68, 0.35);
         font-weight: 700;
         padding: 4px 10px;
-        border-radius: 6px;
-        font-size: 0.85rem;
+        border-radius: 9999px;
+        font-size: 0.80rem;
         display: inline-block;
     }
 
-    /* Strategy Recommendation Highlight */
-    .strategy-box {
-        background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(30, 41, 59, 0.4) 100%);
-        border: 1px solid rgba(16, 185, 129, 0.35);
-        border-radius: 10px;
-        padding: 16px 20px;
-        margin-top: 10px;
-        margin-bottom: 18px;
-    }
-
-    /* Streamlit Tab Enhancement */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 8px;
-    }
-    .stTabs [data-baseweb="tab"] {
-        padding: 10px 18px;
-        border-radius: 6px 6px 0 0;
-        font-weight: 600;
-        font-size: 0.92rem;
-    }
-
-    /* More breathing room and a clearer institutional dashboard hierarchy */
-    [data-testid="stAppViewContainer"] .main .block-container {
-        max-width: 1480px;
-        padding-top: 2rem;
-        padding-bottom: 3.5rem;
-    }
-    [data-testid="stHeader"] {
-        background: transparent;
-    }
-    h1, h2, h3, h4 {
-        letter-spacing: -0.025em;
-    }
-    h1 {
-        margin-top: 0.35rem;
-        margin-bottom: 0.55rem;
-    }
-    [data-testid="stMarkdownContainer"] p {
-        line-height: 1.62;
-    }
-
-    /* Keep custom panels legible in either Streamlit theme */
-    .kpi-card {
-        min-height: 108px;
-        background: linear-gradient(145deg, #17283b 0%, #20364d 100%);
-        border: 1px solid rgba(148, 163, 184, 0.24);
-        border-radius: 14px;
-        padding: 17px 18px;
-        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12);
-    }
-    .kpi-label {
-        color: #b7c5d5;
-        letter-spacing: 0.065em;
-    }
-    .kpi-value {
-        color: #ffffff;
-        font-size: clamp(1.25rem, 1.55vw, 1.65rem);
-        line-height: 1.25;
-        font-variant-numeric: tabular-nums;
-    }
-    .kpi-subtext {
-        color: #c1cede;
-        line-height: 1.45;
-    }
-    .fiduciary-banner {
-        border-radius: 14px;
-        padding: 19px 22px;
-        box-shadow: 0 10px 26px rgba(15, 23, 42, 0.14);
-    }
-    .pill-tag {
-        padding: 5px 12px;
-        color: #075985;
-        background: #eaf6fc;
-        border-color: #b7e3f5;
-        line-height: 1.4;
-    }
-    .pill-green {
-        color: #067647;
-        background: #eaf8f0;
-        border-color: #a9e4c2;
-    }
-    .pill-gold {
-        color: #8a4b08;
-        background: #fff6e5;
-        border-color: #f2d39a;
-    }
-    .strategy-box {
-        background: linear-gradient(145deg, #14263a 0%, #1b3a43 100%);
-        border-radius: 14px;
-        padding: 20px 22px;
-        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.1);
-    }
-    .badge-pass, .badge-fail {
-        padding: 6px 11px;
-        border-radius: 999px;
-    }
-    [data-testid="stDataFrame"], [data-testid="stTable"] {
-        border: 1px solid rgba(148, 163, 184, 0.22);
-        border-radius: 12px;
-        overflow: hidden;
-    }
+    /* Polished Tab Styling */
     [data-testid="stTabs"] [role="tablist"] {
-        padding: 5px;
-        border: 1px solid rgba(148, 163, 184, 0.2);
-        border-radius: 12px;
-        background: rgba(148, 163, 184, 0.08);
+        gap: 6px;
+        padding: 4px 0;
     }
     [data-testid="stTabs"] button[role="tab"] {
-        transition: background-color 0.15s ease, color 0.15s ease;
-    }
-    [data-testid="stTabs"] button[role="tab"][aria-selected="true"] {
-        border-radius: 8px;
-    }
-    @media (max-width: 900px) {
-        [data-testid="stAppViewContainer"] .main .block-container {
-            padding: 1.25rem 1.2rem 2.5rem;
-        }
-        .fiduciary-banner {
-            padding: 15px 16px;
-        }
-        .fiduciary-banner-title {
-            font-size: 0.82rem;
-            line-height: 1.45;
-        }
-        .fiduciary-banner-body {
-            font-size: 0.82rem;
-        }
-        .stTabs [data-baseweb="tab"] {
-            padding: 8px 11px;
-            font-size: 0.84rem;
-        }
+        border-radius: 8px 8px 0 0;
+        font-weight: 600;
+        font-size: 0.90rem;
+        padding: 8px 14px;
+        transition: all 0.15s ease;
     }
 </style>
 """, unsafe_allow_html=True)
 
 # ------------------------------------------------------------------------------
-# 2. MANDATORY FIDUCIARY & AI DISCLOSURES (Base Requirement 8)
-# ------------------------------------------------------------------------------
-st.markdown("""
-<div class="fiduciary-banner">
-    <div class="fiduciary-banner-title">
-        🏛️ FIN 43900 PROJECT 2: MANDATORY FIDUCIARY & AI GOVERNANCE DISCLOSURES
-    </div>
-    <div class="fiduciary-banner-body">
-        <strong>1. AI Tool Disclosure:</strong> Anthropic Claude (Claude 3.5 Sonnet / Claude Opus 5.5) and Google Antigravity were utilized in designing analytical scripts, unit testing architecture, visualization ergonomics, and formatting optimization. All mathematical derivations, input validations, fiduciary constraints, and investment decisions were directed, verified, and finalized independently by the student analyst.<br>
-        <strong>2. Ownership & Academic Notice:</strong> The analysis, models, interpretations, and committee recommendations presented herein are solely the author's work; this application is an educational simulation developed for academic demonstration in FIN 43900 at Purdue University, not personalized investment advice.
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-# Main Title & Interactive Pills
-st.title("Meridian Foundation Reserve — Fiduciary Portfolio System")
-st.markdown("""
-<div>
-    <span class="pill-tag">👤 Analyst: <strong>Oladapo Olaniyan</strong></span>
-    <span class="pill-tag">🏫 Purdue Daniels School of Business</span>
-    <span class="pill-tag pill-gold">💼 Reserve Fund: $100,000,000</span>
-    <span class="pill-tag pill-green">🟢 Status: 100% Mandate Compliant</span>
-    <span class="pill-tag">📅 As-Of: November 10, 2026</span>
-</div>
-""", unsafe_allow_html=True)
-
-# ------------------------------------------------------------------------------
-# 3. SIDEBAR: GOVERNANCE METRICS & INTERACTIVE OVERRIDES
-# ------------------------------------------------------------------------------
-with st.sidebar:
-    st.header("🏛️ Institutional Mandate")
-    st.markdown("Governing constraints from **Lab 13**:")
-    
-    st.markdown(f"• **Reserve Capital:** `${PORTFOLIO_SIZE/1e6:.0f}M`")
-    st.markdown(f"• **Quarterly Payout:** `${QUARTERLY_PAYOUT/1e6:.2f}M`")
-    st.markdown(f"• **12-Mo Reserve Floor:** `{RESERVE_BUFFER_FLOOR*100:.1f}%` (`${ANNUAL_PAYOUT/1e6:.1f}M`)")
-    st.markdown(f"• **Net Real Hurdle:** `{TARGET_RETURN*100:.2f}%` (CPI + 4.0%)")
-    st.markdown(f"• **5-Day Liquidity Floor:** `≥ 90.0%`")
-    st.markdown(f"• **Single Issuer Limit:** `≤ 8.0%`")
-
-    st.markdown("---")
-    st.subheader("🌐 Cloud & Deployment")
-    st.markdown("• **Live Web App:** [Streamlit Community Cloud](https://dapize-mo-fin43900-ai-finance-appli-projectsproject-2app-kxfhnr.streamlit.app/)")
-    st.markdown("• **GitHub Repo:** [Dapize-Mo/FIN43900](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/main/projects/project-2)")
-
-    st.markdown("---")
-    st.subheader("🛡️ Model Governance (SR 26-2)")
-    st.caption(
-        "Adheres to Federal Reserve SR 26-2 model risk guidelines: "
-        "enforces mathematical input symmetry, discrete known-answer reconciliation, "
-        "and strict point-in-time provenance isolation."
-    )
-
-# ------------------------------------------------------------------------------
-# 4. CORE COMPUTATIONAL ENGINE
+# 2. COMPUTATIONAL ENGINE INITIALIZATION
 # ------------------------------------------------------------------------------
 cov_base = build_covariance(SLEEVES, BASE_CORRELATION)
 
@@ -373,21 +182,83 @@ res_bm = evaluate_portfolio("Baseline 2: Policy Benchmark (60/40)", w_bm, SLEEVE
 # Constrained Optimal Portfolio (Minimum Variance meeting all covenants)
 res_opt = optimize_constrained_mix(SLEEVES, cov_base, target_return=TARGET_RETURN, reserve_min=RESERVE_BUFFER_FLOOR)
 
-# Load Point-in-Time Dataset
+# Historical Prices & Normalization Data
+prices_path = os.path.join(_PROJECT_DIR, "data", "prices.csv")
+prices_df = None
+norm_prices = None
+if os.path.exists(prices_path):
+    try:
+        prices_df = pd.read_csv(prices_path)
+        prices_df["Date"] = pd.to_datetime(prices_df["Date"])
+        norm_prices = prices_df.copy().set_index("Date")
+        norm_prices = norm_prices.div(norm_prices.iloc[0])
+    except Exception:
+        prices_df = None
+        norm_prices = None
+
+# Point-in-Time Data
 pit_df = None
 try:
     pit_df = load_point_in_time_data(os.path.join(_PROJECT_DIR, "data", "pit_macro.csv"))
 except Exception:
     pit_df = None
 
-# Load Historical Prices
-prices_path = os.path.join(_PROJECT_DIR, "data", "prices.csv")
-prices_df = None
-if os.path.exists(prices_path):
-    try:
-        prices_df = pd.read_csv(prices_path)
-    except Exception:
-        prices_df = None
+# ------------------------------------------------------------------------------
+# 3. HEADER & MANDATORY FIDUCIARY DISCLOSURES (Base Requirement 8)
+# ------------------------------------------------------------------------------
+st.markdown("""
+# :material/account_balance: Meridian Foundation Reserve
+**Standalone Institutional Fiduciary Portfolio Management & Stress Testing System**
+""")
+
+st.markdown("""
+<div class="meta-pill-container">
+    <span class="meta-pill">👤 Analyst: <strong>Oladapo Olaniyan</strong></span>
+    <span class="meta-pill">🏫 Purdue Daniels School of Business</span>
+    <span class="meta-pill meta-pill-gold">💼 Reserve Fund: $100,000,000</span>
+    <span class="meta-pill meta-pill-green">🟢 Mandate Status: 100% Compliant</span>
+    <span class="meta-pill">📅 As-Of Boundary: November 10, 2026</span>
+</div>
+""", unsafe_allow_html=True)
+
+with st.container(border=True):
+    st.markdown("""
+    <div style="font-weight: 700; font-size: 0.88rem; color: #0284C7; margin-bottom: 4px;">
+        🏛️ MANDATORY FIDUCIARY & AI GOVERNANCE DISCLOSURES (SR 26-2 & BASE REQUIREMENT 8)
+    </div>
+    <div style="font-size: 0.84rem; line-height: 1.5; opacity: 0.9;">
+        <strong>1. AI Tool Disclosure:</strong> Anthropic Claude (Claude 3.5 Sonnet / Claude Opus) and Google Antigravity were utilized in designing analytical scripts, unit test architecture, visualization ergonomics, and formatting optimization. All mathematical derivations, input validations, fiduciary constraints, and investment decisions were directed, verified, and finalized independently by the student analyst.<br>
+        <strong>2. Ownership & Academic Notice:</strong> The analysis, models, interpretations, and committee recommendations presented herein are solely the author's work; this application is an educational simulation developed for academic demonstration in FIN 43900 at Purdue University, not personalized investment advice.
+    </div>
+    """, unsafe_allow_html=True)
+
+"" # Generous breathing room
+
+# ------------------------------------------------------------------------------
+# 4. SIDEBAR: GOVERNANCE & MANDATE OVERVIEW
+# ------------------------------------------------------------------------------
+with st.sidebar:
+    st.markdown("### :material/policy: Institutional Mandate")
+    with st.container(border=True):
+        st.markdown(f"**Reserve Capital:** `${PORTFOLIO_SIZE/1e6:.0f}M`")
+        st.markdown(f"**Quarterly Payout:** `${QUARTERLY_PAYOUT/1e6:.2f}M`")
+        st.markdown(f"**12-Mo Reserve Floor:** `{RESERVE_BUFFER_FLOOR*100:.1f}%` (`${ANNUAL_PAYOUT/1e6:.1f}M`)")
+        st.markdown(f"**Net Real Hurdle:** `{TARGET_RETURN*100:.2f}%` (CPI + 4.0%)")
+        st.markdown(f"**5-Day Liquidity:** `≥ 90.0%`")
+        st.markdown(f"**Single Issuer Cap:** `≤ 8.0%`")
+
+    st.markdown("### :material/cloud_done: Cloud & Deployment")
+    with st.container(border=True):
+        st.markdown("• **Live Web App:** [Streamlit Community Cloud](https://dapize-mo-fin43900-ai-finance-appli-projectsproject-2app-kxfhnr.streamlit.app/)")
+        st.markdown("• **GitHub Repo:** [Dapize-Mo/FIN43900](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/main/projects/project-2)")
+
+    st.markdown("### :material/verified_user: Model Governance")
+    with st.container(border=True):
+        st.caption(
+            "Adheres to Federal Reserve SR 26-2 model risk guidelines: "
+            "enforces mathematical input symmetry, discrete known-answer reconciliation, "
+            "and strict point-in-time provenance isolation."
+        )
 
 # ------------------------------------------------------------------------------
 # 5. TABBED INTERFACE NAVIGATION
@@ -403,252 +274,452 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
 ])
 
 # ==============================================================================
-# TAB 1: EXECUTIVE DASHBOARD & ALLOCATIONS
+# TAB 1: EXECUTIVE DASHBOARD & ALLOCATIONS (demo-stockpeers style)
 # ==============================================================================
 with tab1:
-    st.subheader("Executive Allocation Matrix: Constrained Mix vs. Simple Baselines")
-    st.markdown(
-        "Demonstrates compliance with **Base Requirement 3**: Evaluating Equal Weight and the 60/40 "
-        "Benchmark beside the Constrained Optimal Portfolio, displaying mandate verdicts and specific rule breach notes."
-    )
+    st.markdown("### :material/dashboard: Executive Allocation Matrix: Constrained Mix vs. Simple Baselines")
+    st.caption("Demonstrates compliance with Base Requirement 3: Evaluating Equal Weight and 60/40 Benchmark beside Constrained Optimal Portfolio.")
 
-    # Top KPI Metrics Cards
-    k1, k2, k3, k4, k5 = st.columns(5)
-    with k1:
-        st.markdown("""
-        <div class="kpi-card">
-            <div class="kpi-label">Total Reserve Fund</div>
-            <div class="kpi-value">$100.0M</div>
-            <div class="kpi-subtext">Meridian capital base</div>
-        </div>
-        """, unsafe_allow_html=True)
-    with k2:
-        st.markdown("""
-        <div class="kpi-card">
-            <div class="kpi-label">Annual Payout Floor</div>
-            <div class="kpi-value">$3.0M</div>
-            <div class="kpi-subtext">3.0% reserve-eligible floor</div>
-        </div>
-        """, unsafe_allow_html=True)
-    with k3:
-        st.markdown("""
-        <div class="kpi-card">
-            <div class="kpi-label">Net Return Hurdle</div>
-            <div class="kpi-value">6.50%</div>
-            <div class="kpi-subtext">CPI (2.5%) + 4.0% real</div>
-        </div>
-        """, unsafe_allow_html=True)
-    with k4:
-        st.markdown("""
-        <div class="kpi-card">
-            <div class="kpi-label">Optimal Volatility</div>
-            <div class="kpi-value">9.30%</div>
-            <div class="kpi-subtext">-116 bps vs 60/40 benchmark</div>
-        </div>
-        """, unsafe_allow_html=True)
-    with k5:
-        st.markdown("""
-        <div class="kpi-card">
-            <div class="kpi-label">Reserve Coverage</div>
-            <div class="kpi-value">2.67x</div>
-            <div class="kpi-subtext">$8.0M held vs $3.0M floor</div>
-        </div>
-        """, unsafe_allow_html=True)
+    # Horizon map for filtering historical returns
+    horizon_map = {
+        "1 Year": 12,
+        "2 Years": 24,
+        "3 Years": 36,
+        "5 Years": 60,
+    }
 
-    # Comparative Table
-    st.markdown("#### Fiduciary Performance & Covenant Comparison Table")
-    comp_df = pd.DataFrame([
-        {
-            "Portfolio Name": "Baseline 1: Equal Weight (1/N)",
-            "T-Bills (BIL)": f"{res_eq['weights'][0]*100:.1f}%",
-            "10-Yr (IEF)": f"{res_eq['weights'][1]*100:.1f}%",
-            "IG Bonds (LQD)": f"{res_eq['weights'][2]*100:.1f}%",
-            "Global Eq (VT)": f"{res_eq['weights'][3]*100:.1f}%",
-            "Net Return": f"{res_eq['net_return']*100:.2f}%",
-            "Volatility": f"{res_eq['volatility']*100:.2f}%",
-            "Sharpe": f"{res_eq['sharpe']:.2f}",
-            "Reserve Buffer": f"{res_eq['reserve_weight']*100:.1f}%",
-            "Verdict": "FAIL ❌",
-            "Fiduciary Breach Diagnosis": "Violates Return Hurdle (5.20% < 6.50%): severe -130 bps purchasing power drag.",
-        },
-        {
-            "Portfolio Name": "Baseline 2: Policy Benchmark (60/40)",
-            "T-Bills (BIL)": f"{res_bm['weights'][0]*100:.1f}%",
-            "10-Yr (IEF)": f"{res_bm['weights'][1]*100:.1f}%",
-            "IG Bonds (LQD)": f"{res_bm['weights'][2]*100:.1f}%",
-            "Global Eq (VT)": f"{res_bm['weights'][3]*100:.1f}%",
-            "Net Return": f"{res_bm['net_return']*100:.2f}%",
-            "Volatility": f"{res_bm['volatility']*100:.2f}%",
-            "Sharpe": f"{res_bm['sharpe']:.2f}",
-            "Reserve Buffer": f"{res_bm['reserve_weight']*100:.1f}%",
-            "Verdict": "FAIL ❌",
-            "Fiduciary Breach Diagnosis": "Violates Reserve Buffer (0.0% < 3.0%): zero sovereign liquidity creates immediate covenant breach.",
-        },
-        {
-            "Portfolio Name": "Constrained Optimal Portfolio",
-            "T-Bills (BIL)": f"{res_opt['weights'][0]*100:.1f}%",
-            "10-Yr (IEF)": f"{res_opt['weights'][1]*100:.1f}%",
-            "IG Bonds (LQD)": f"{res_opt['weights'][2]*100:.1f}%",
-            "Global Eq (VT)": f"{res_opt['weights'][3]*100:.1f}%",
-            "Net Return": f"{res_opt['net_return']*100:.2f}%",
-            "Volatility": f"{res_opt['volatility']*100:.2f}%",
-            "Sharpe": f"{res_opt['sharpe']:.2f}",
-            "Reserve Buffer": f"{res_opt['reserve_weight']*100:.1f}%",
-            "Verdict": "PASS ✅",
-            "Fiduciary Breach Diagnosis": "Fully Compliant across all 6 covenants; dominates 60/40 benchmark with -116 bps risk reduction.",
-        },
-    ])
-    st.dataframe(comp_df, use_container_width=True, hide_index=True)
+    # Top Split Section: Controls & Metrics (Left) vs Interactive Visualizer (Right)
+    top_cols = st.columns([1, 2.5])
 
-    # Sleeve Allocation Chart
-    st.markdown("#### Asset Allocation Distribution Across Portfolios")
-    chart_data = []
-    asset_names = ["1. T-Bills (BIL)", "2. 10-Yr Treasury (IEF)", "3. IG Corporate Bonds (LQD)", "4. Global Equity (VT)"]
-    for p_name, res in [("Equal Weight (1/N)", res_eq), ("Policy Benchmark (60/40)", res_bm), ("Constrained Optimal", res_opt)]:
-        for idx, w in enumerate(res["weights"]):
-            chart_data.append({
-                "Portfolio": p_name,
-                "Asset Sleeve": asset_names[idx],
-                "Weight (%)": round(w * 100.0, 1),
-            })
-    alloc_df = pd.DataFrame(chart_data)
+    top_left_cell = top_cols[0].container(border=True)
+    with top_left_cell:
+        st.markdown("#### :material/tune: Portfolio Selector")
+        port_choice = st.pills(
+            "Target Strategy Allocation",
+            options=["Constrained Optimal", "Policy Benchmark (60/40)", "Equal Weight (1/N)"],
+            default="Constrained Optimal",
+        )
 
-    chart_alloc = alt.Chart(alloc_df).mark_bar(cornerRadiusTopLeft=3, cornerRadiusTopRight=3).encode(
-        x=alt.X("Portfolio:N", title=None, axis=alt.Axis(labelAngle=0)),
-        y=alt.Y("Weight (%):Q", title="Portfolio Allocation (%)", scale=alt.Scale(domain=[0, 100])),
-        color=alt.Color("Asset Sleeve:N", scale=alt.Scale(
-            domain=asset_names,
-            range=["#0EA5E9", "#3B82F6", "#8B5CF6", "#10B981"]
-        )),
-        tooltip=["Portfolio", "Asset Sleeve", "Weight (%)"],
-    ).properties(height=340)
-    st.altair_chart(chart_alloc, use_container_width=True)
+        horizon_choice = st.pills(
+            "Historical Performance Window",
+            options=list(horizon_map.keys()),
+            default="5 Years",
+        )
 
-    # Recommended Capital Deployment Breakdown
-    st.markdown("""
-    <div class="strategy-box">
-        <h4 style="color: #10B981; margin-top: 0; margin-bottom: 8px;">🏛️ Committee Recommendation: Allocate to Constrained Optimal Portfolio</h4>
-        <div style="font-size: 0.88rem; color: #E2E8F0; line-height: 1.55;">
-            Deploying the $100M reserve to the <strong>Constrained Optimal Portfolio</strong> achieves exact fiduciary compliance:
-            <ul>
-                <li><strong>$52.0M in Global Equity (VT):</strong> Delivers the necessary growth engine to overcome inflation.</li>
-                <li><strong>$40.0M in IG Corporate Bonds (LQD):</strong> Generates high-quality recurring cash yield.</li>
-                <li><strong>$5.0M in 10-Year Treasuries (IEF):</strong> Provides interest rate duration and sovereign reserve backing.</li>
-                <li><strong>$3.0M in T-Bills / Cash (BIL):</strong> Permanently funds 100% of the next 12 months' non-negotiable quarterly distributions.</li>
-            </ul>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    # Active portfolio resolution
+    if port_choice == "Constrained Optimal":
+        active_res = res_opt
+    elif port_choice == "Policy Benchmark (60/40)":
+        active_res = res_bm
+    else:
+        active_res = res_eq
+
+    a_audit = active_res["audit"]
+
+    bottom_left_cell = top_cols[0].container(border=True)
+    with bottom_left_cell:
+        st.markdown("#### :material/speed: Fiduciary Metrics")
+        m_c1, m_c2 = st.columns(2)
+        m_c1.metric(
+            label="Net Return",
+            value=f"{active_res['net_return']*100:.2f}%",
+            delta=f"{(active_res['net_return'] - TARGET_RETURN)*100:+.2f}% vs Hurdle",
+            border=True,
+        )
+        m_c2.metric(
+            label="Volatility",
+            value=f"{active_res['volatility']*100:.2f}%",
+            delta=f"{(active_res['volatility'] - res_bm['volatility'])*100:+.2f}% vs 60/40",
+            delta_color="inverse",
+            border=True,
+        )
+        m_c3, m_c4 = st.columns(2)
+        m_c3.metric(
+            label="Reserve Buffer",
+            value=f"{active_res['reserve_weight']*100:.1f}%",
+            delta=f"${active_res['reserve_weight']*PORTFOLIO_SIZE/1e6:.1f}M Sovereign",
+            border=True,
+        )
+        verdict_str = "PASS ✅" if a_audit["overall_pass"] else "FAIL ❌"
+        verdict_delta = "All 6 Covenants Met" if a_audit["overall_pass"] else "Breach Detected"
+        m_c4.metric(
+            label="Mandate Verdict",
+            value=verdict_str,
+            delta=verdict_delta,
+            delta_color="normal" if a_audit["overall_pass"] else "inverse",
+            border=True,
+        )
+
+    # Right cell: Visualizer
+    right_cell = top_cols[1].container(border=True)
+    with right_cell:
+        vis_mode = st.pills(
+            "Visualization Mode",
+            options=["Asset Allocation Mix", "Historical Normalized Sleeve Performance", "Cumulative Growth ($100M Capital)"],
+            default="Asset Allocation Mix",
+        )
+
+        if vis_mode == "Asset Allocation Mix":
+            st.markdown("##### Asset Allocation Weight Comparison (%)")
+            chart_data = []
+            asset_names = ["1. T-Bills (BIL)", "2. 10-Yr Treasury (IEF)", "3. IG Bonds (LQD)", "4. Global Equity (VT)"]
+            for p_name, res in [("Equal Weight (1/N)", res_eq), ("Policy Benchmark (60/40)", res_bm), ("Constrained Optimal", res_opt)]:
+                for idx, w in enumerate(res["weights"]):
+                    chart_data.append({
+                        "Portfolio": p_name,
+                        "Asset Sleeve": asset_names[idx],
+                        "Weight (%)": round(w * 100.0, 1),
+                        "Capital ($M)": round(w * (PORTFOLIO_SIZE / 1e6), 2),
+                    })
+            alloc_df = pd.DataFrame(chart_data)
+
+            chart_alloc = alt.Chart(alloc_df).mark_bar(
+                cornerRadiusTopLeft=4,
+                cornerRadiusTopRight=4
+            ).encode(
+                x=alt.X("Portfolio:N", title=None, axis=alt.Axis(labelAngle=0)),
+                y=alt.Y("Weight (%):Q", title="Portfolio Allocation (%)", scale=alt.Scale(domain=[0, 100])),
+                color=alt.Color("Asset Sleeve:N", scale=alt.Scale(
+                    domain=asset_names,
+                    range=["#0284C7", "#3B82F6", "#8B5CF6", "#10B981"]
+                ), legend=alt.Legend(orient="bottom", title=None)),
+                tooltip=["Portfolio:N", "Asset Sleeve:N", "Weight (%):Q", "Capital ($M):Q"],
+            ).properties(height=340)
+            st.altair_chart(chart_alloc, use_container_width=True)
+
+        elif vis_mode == "Historical Normalized Sleeve Performance":
+            if prices_df is not None:
+                n_months = horizon_map[horizon_choice]
+                window_df = prices_df.tail(n_months).copy()
+                norm_window = window_df.set_index("Date").div(window_df.set_index("Date").iloc[0])
+
+                latest_norm = {norm_window[ticker].iat[-1]: ticker for ticker in ["BIL", "IEF", "LQD", "VT"]}
+                best_sleeve = max(latest_norm.items())
+                worst_sleeve = min(latest_norm.items())
+
+                k_col1, k_col2 = st.columns(2)
+                k_col1.metric("Top Performing Sleeve", best_sleeve[1], delta=f"{(best_sleeve[0] - 1.0)*100:+.1f}% Total Return", border=True)
+                k_col2.metric("Lagging Sleeve", worst_sleeve[1], delta=f"{(worst_sleeve[0] - 1.0)*100:+.1f}% Total Return", delta_color="inverse", border=True)
+
+                melted_prices = norm_window.reset_index().melt(id_vars=["Date"], var_name="Sleeve", value_name="Normalized Price")
+                chart_norm = alt.Chart(melted_prices).mark_line(strokeWidth=2.2).encode(
+                    x=alt.X("Date:T", title="Observation Month"),
+                    y=alt.Y("Normalized Price:Q", title="Normalized Return (Start = 1.00)").scale(zero=False),
+                    color=alt.Color("Sleeve:N", scale=alt.Scale(
+                        domain=["BIL", "IEF", "LQD", "VT"],
+                        range=["#0284C7", "#3B82F6", "#8B5CF6", "#10B981"]
+                    ), legend=alt.Legend(orient="bottom", title=None)),
+                    tooltip=[alt.Tooltip("Date:T", format="%B %Y"), "Sleeve:N", alt.Tooltip("Normalized Price:Q", format=".3f")],
+                ).properties(height=300).interactive()
+                st.altair_chart(chart_norm, use_container_width=True)
+            else:
+                st.info("Historical prices dataset not loaded.")
+
+        else: # Cumulative Growth ($100M Capital)
+            if prices_df is not None:
+                n_months = horizon_map[horizon_choice]
+                window_df = prices_df.tail(n_months).copy().reset_index(drop=True)
+                norm_w = window_df.set_index("Date").div(window_df.set_index("Date").iloc[0])
+
+                # Calculate trajectory of $100M invested
+                growth_records = []
+                for dt, row in norm_w.iterrows():
+                    val_opt = sum(w * row[ticker] for w, ticker in zip(res_opt["weights"], ["BIL", "IEF", "LQD", "VT"])) * (PORTFOLIO_SIZE / 1e6)
+                    val_bm = sum(w * row[ticker] for w, ticker in zip(res_bm["weights"], ["BIL", "IEF", "LQD", "VT"])) * (PORTFOLIO_SIZE / 1e6)
+                    val_eq = sum(w * row[ticker] for w, ticker in zip(res_eq["weights"], ["BIL", "IEF", "LQD", "VT"])) * (PORTFOLIO_SIZE / 1e6)
+                    growth_records.append({"Date": dt, "Portfolio": "Constrained Optimal", "Fund Value ($M)": round(val_opt, 2)})
+                    growth_records.append({"Date": dt, "Portfolio": "Policy Benchmark (60/40)", "Fund Value ($M)": round(val_bm, 2)})
+                    growth_records.append({"Date": dt, "Portfolio": "Equal Weight (1/N)", "Fund Value ($M)": round(val_eq, 2)})
+
+                growth_df = pd.DataFrame(growth_records)
+                chart_growth = alt.Chart(growth_df).mark_line(strokeWidth=2.2).encode(
+                    x=alt.X("Date:T", title="Observation Month"),
+                    y=alt.Y("Fund Value ($M):Q", title="Portfolio Valuation ($ Millions)").scale(zero=False),
+                    color=alt.Color("Portfolio:N", scale=alt.Scale(
+                        domain=["Constrained Optimal", "Policy Benchmark (60/40)", "Equal Weight (1/N)"],
+                        range=["#10B981", "#3B82F6", "#94A3B8"]
+                    ), legend=alt.Legend(orient="bottom", title=None)),
+                    tooltip=[alt.Tooltip("Date:T", format="%B %Y"), "Portfolio:N", alt.Tooltip("Fund Value ($M):Q", format="$.2f")],
+                ).properties(height=340).interactive()
+                st.altair_chart(chart_growth, use_container_width=True)
+
+    "" # Breathing room
+
+    # Comparative Performance Table in a clean bordered container
+    with st.container(border=True):
+        st.markdown("#### :material/table_chart: Fiduciary Performance & Legal Covenant Matrix")
+        comp_df = pd.DataFrame([
+            {
+                "Portfolio Strategy": "Baseline 1: Equal Weight (1/N)",
+                "BIL (T-Bills)": f"{res_eq['weights'][0]*100:.1f}%",
+                "IEF (10-Yr)": f"{res_eq['weights'][1]*100:.1f}%",
+                "LQD (IG Corp)": f"{res_eq['weights'][2]*100:.1f}%",
+                "VT (Global Eq)": f"{res_eq['weights'][3]*100:.1f}%",
+                "Expected Net Return": f"{res_eq['net_return']*100:.2f}%",
+                "Annual Volatility": f"{res_eq['volatility']*100:.2f}%",
+                "Sharpe": f"{res_eq['sharpe']:.2f}",
+                "Reserve Buffer": f"{res_eq['reserve_weight']*100:.1f}%",
+                "Verdict": "FAIL ❌",
+                "Fiduciary Breach Diagnosis": "Violates Return Hurdle (5.20% < 6.50%): severe -130 bps purchasing power drag.",
+            },
+            {
+                "Portfolio Strategy": "Baseline 2: Policy Benchmark (60/40)",
+                "BIL (T-Bills)": f"{res_bm['weights'][0]*100:.1f}%",
+                "IEF (10-Yr)": f"{res_bm['weights'][1]*100:.1f}%",
+                "LQD (IG Corp)": f"{res_bm['weights'][2]*100:.1f}%",
+                "VT (Global Eq)": f"{res_bm['weights'][3]*100:.1f}%",
+                "Expected Net Return": f"{res_bm['net_return']*100:.2f}%",
+                "Annual Volatility": f"{res_bm['volatility']*100:.2f}%",
+                "Sharpe": f"{res_bm['sharpe']:.2f}",
+                "Reserve Buffer": f"{res_bm['reserve_weight']*100:.1f}%",
+                "Verdict": "FAIL ❌",
+                "Fiduciary Breach Diagnosis": "Violates Reserve Buffer (0.0% < 3.0%): holds zero sovereign liquidity, causing immediate breach.",
+            },
+            {
+                "Portfolio Strategy": "Constrained Optimal Portfolio",
+                "BIL (T-Bills)": f"{res_opt['weights'][0]*100:.1f}%",
+                "IEF (10-Yr)": f"{res_opt['weights'][1]*100:.1f}%",
+                "LQD (IG Corp)": f"{res_opt['weights'][2]*100:.1f}%",
+                "VT (Global Eq)": f"{res_opt['weights'][3]*100:.1f}%",
+                "Expected Net Return": f"{res_opt['net_return']*100:.2f}%",
+                "Annual Volatility": f"{res_opt['volatility']*100:.2f}%",
+                "Sharpe": f"{res_opt['sharpe']:.2f}",
+                "Reserve Buffer": f"{res_opt['reserve_weight']*100:.1f}%",
+                "Verdict": "PASS ✅",
+                "Fiduciary Breach Diagnosis": "100% Compliant across all 6 covenants; dominates benchmark with -116 bps risk reduction.",
+            },
+        ])
+        st.dataframe(comp_df, use_container_width=True, hide_index=True)
+
+    ""
+
+    # Asset Sleeve Cards Grid
+    st.markdown("#### :material/pie_chart: Constrained Optimal Capital Deployment Breakdown ($100.0M Reserve)")
+    sleeve_cols = st.columns(4)
+
+    sleeve_details = [
+        {"ticker": "BIL", "name": "SPDR 1-3M T-Bills", "weight": res_opt['weights'][0], "cap": res_opt['weights'][0]*100, "role": "Immediate Payout Liquidity", "liq": "1 Business Day", "res": "Yes (Sovereign)"},
+        {"ticker": "IEF", "name": "iShares 7-10Y Treasury", "weight": res_opt['weights'][1], "cap": res_opt['weights'][1]*100, "role": "Duration & Reserve Buffer", "liq": "1 Business Day", "res": "Yes (Sovereign)"},
+        {"ticker": "LQD", "name": "iShares $ IG Corp Bond", "weight": res_opt['weights'][2], "cap": res_opt['weights'][2]*100, "role": "Income & High Yield Anchor", "liq": "3 Business Days", "res": "No (Credit Risk)"},
+        {"ticker": "VT", "name": "Vanguard Total World Stock", "weight": res_opt['weights'][3], "cap": res_opt['weights'][3]*100, "role": "Real Purchasing Power Engine", "liq": "3 Business Days", "res": "No (Equity Risk)"},
+    ]
+
+    for idx, s in enumerate(sleeve_details):
+        with sleeve_cols[idx].container(border=True):
+            st.markdown(f"**{s['ticker']} — {s['name']}**")
+            st.metric(label="Target Weight", value=f"{s['weight']*100:.1f}%", delta=f"${s['cap']:.1f}M Capital", border=True)
+            st.caption(f"• **Role:** {s['role']}")
+            st.caption(f"• **Liquidity:** {s['liq']}")
+            st.caption(f"• **Reserve Buffer Eligible:** {s['res']}")
+
+    ""
+
+    # Individual Sleeves vs Peer Group Average (Exact demo-stockpeers implementation)
+    with st.expander("📈 Individual Asset Sleeves vs Peer Group Average (Streamlit Gallery Showcase Feature)", expanded=True):
+        st.markdown(
+            "For the analysis below, the **peer average** when analyzing asset sleeve X always "
+            "excludes X itself, showing whether each sleeve contributed excess returns or defensive drag relative to the peer universe."
+        )
+
+        if prices_df is not None:
+            n_months = horizon_map[horizon_choice]
+            window_df = prices_df.tail(n_months).copy()
+            norm_window = window_df.set_index("Date").div(window_df.set_index("Date").iloc[0])
+
+            p_cols = st.columns(4)
+            tickers_list = ["BIL", "IEF", "LQD", "VT"]
+
+            for i, ticker in enumerate(tickers_list):
+                peers = norm_window.drop(columns=[ticker])
+                peer_avg = peers.mean(axis=1)
+
+                # Line chart of Ticker vs Peer Average
+                plot_data = pd.DataFrame({
+                    "Date": norm_window.index,
+                    ticker: norm_window[ticker],
+                    "Peer Average": peer_avg,
+                }).melt(id_vars=["Date"], var_name="Series", value_name="Price")
+
+                chart_line = (
+                    alt.Chart(plot_data)
+                    .mark_line(strokeWidth=2.0)
+                    .encode(
+                        alt.X("Date:T", title=None),
+                        alt.Y("Price:Q", title="Normalized").scale(zero=False),
+                        alt.Color(
+                            "Series:N",
+                            scale=alt.Scale(domain=[ticker, "Peer Average"], range=["#0284C7", "#94A3B8"]),
+                            legend=alt.Legend(orient="bottom", title=None),
+                        ),
+                        alt.Tooltip(["Date:T", "Series:N", alt.Tooltip("Price:Q", format=".3f")]),
+                    )
+                    .properties(title=f"{ticker} vs Peer Average", height=220)
+                )
+
+                # Delta area chart
+                delta_data = pd.DataFrame({
+                    "Date": norm_window.index,
+                    "Delta": norm_window[ticker] - peer_avg,
+                })
+
+                chart_area = (
+                    alt.Chart(delta_data)
+                    .mark_area(opacity=0.4, color="#0284C7")
+                    .encode(
+                        alt.X("Date:T", title=None),
+                        alt.Y("Delta:Q", title="Delta vs Peers").scale(zero=False),
+                        alt.Tooltip(["Date:T", alt.Tooltip("Delta:Q", format="+.3f")]),
+                    )
+                    .properties(title=f"{ticker} minus Peer Average", height=140)
+                )
+
+                cell = p_cols[i].container(border=True)
+                cell.altair_chart(chart_line, use_container_width=True)
+                cell.altair_chart(chart_area, use_container_width=True)
 
 # ==============================================================================
 # TAB 2: DETAILED MANDATE COVENANT AUDIT
 # ==============================================================================
 with tab2:
-    st.subheader("Algorithmic Mandate Audit Ledger (Meridian Facts S1–S10)")
-    st.markdown(
-        "Under Federal Reserve SR 26-2 model governance, an attractive output cannot be used "
-        "unless every underlying legal covenant is verified by a strict mathematical gate."
-    )
+    st.markdown("### :material/verified: Algorithmic Mandate Audit Ledger (Meridian Facts S1–S10)")
+    st.caption("Under Federal Reserve SR 26-2 model governance, an attractive output cannot be used unless every legal covenant is verified by a strict mathematical gate.")
 
-    port_inspect = st.selectbox(
+    port_inspect = st.pills(
         "Select Portfolio for Covenant Verification:",
-        ["Constrained Optimal Portfolio", "Baseline 1: Equal Weight (1/N)", "Baseline 2: Policy Benchmark (60/40)"],
+        options=["Constrained Optimal Portfolio", "Baseline 1: Equal Weight (1/N)", "Baseline 2: Policy Benchmark (60/40)"],
+        default="Constrained Optimal Portfolio",
     )
-    active_res = res_opt if "Optimal" in port_inspect else (res_eq if "Equal" in port_inspect else res_bm)
-    a = active_res["audit"]
+    active_audit_res = res_opt if "Optimal" in port_inspect else (res_eq if "Equal" in port_inspect else res_bm)
+    a = active_audit_res["audit"]
 
-    status_badge = "<span class='badge-pass'>MANDATE VERDICT: PASS ✅</span>" if a["overall_pass"] else "<span class='badge-fail'>MANDATE VERDICT: FAIL ❌</span>"
-    st.markdown(f"### {port_inspect} — {status_badge}", unsafe_allow_html=True)
+    with st.container(border=True):
+        st.markdown(
+            f"#### Audit Ledger: {port_inspect} — "
+            f"{'<span class=\"badge-pass\">MANDATE VERDICT: PASS ✅</span>' if a['overall_pass'] else '<span class=\"badge-fail\">MANDATE VERDICT: FAIL ❌</span>'}",
+            unsafe_allow_html=True,
+        )
 
-    col_a, col_b, col_c = st.columns(3)
-    with col_a:
-        st.markdown("**1. Allocation Total (100%):**")
-        st.markdown("✅ **PASS** (Sum = 100.0%)" if a["sum_pass"] else f"❌ **FAIL** (Sum = {sum(active_res['weights'])*100:.1f}%)")
-        st.caption("Contractual completeness covenant.")
+        cov_col1, cov_col2, cov_col3 = st.columns(3)
+        with cov_col1:
+            with st.container(border=True):
+                st.markdown("**1. Allocation Completeness**")
+                st.metric("Total Weight", f"{sum(active_audit_res['weights'])*100:.1f}%", delta="100.0% Required", border=False)
+                st.caption("✅ PASS: Contractual completeness covenant" if a["sum_pass"] else "❌ FAIL: Does not equal 100%")
 
-        st.markdown(r"**2. Long-Only Rule ($w_i \ge 0$):**")
-        st.markdown("✅ **PASS** (No short positions)" if a["long_only_pass"] else "❌ **FAIL** (Negative weight present)")
-        st.caption("Prohibits leverage, borrowing, and shorts.")
+            with st.container(border=True):
+                st.markdown("**2. Long-Only Prohibition**")
+                st.metric("Minimum Weight", f"{min(active_audit_res['weights'])*100:.1f}%", delta="wi ≥ 0.0%", border=False)
+                st.caption("✅ PASS: Prohibits borrowing, shorting, and leverage" if a["long_only_pass"] else "❌ FAIL: Negative weight present")
 
-    with col_b:
-        st.markdown(r"**3. Reserve Buffer Floor ($\ge 3.0\%$):**")
-        res_tag = f"✅ **PASS** ({a['reserve_weight']*100:.1f}% held)" if a["reserve_pass"] else f"❌ **FAIL** ({a['reserve_weight']*100:.1f}% held < 3.0%)"
-        st.markdown(res_tag)
-        st.caption("Fact S3: 12 months payout in sovereign paper.")
+        with cov_col2:
+            with st.container(border=True):
+                st.markdown("**3. Sovereign Reserve Floor**")
+                st.metric("Reserve Buffer", f"{a['reserve_weight']*100:.1f}%", delta="≥ 3.0% ($3.0M)", border=False)
+                st.caption("✅ PASS: 12 months payout in sovereign paper (Fact S3)" if a["reserve_pass"] else "❌ FAIL: Violates $3.0M sovereign floor")
 
-        st.markdown(r"**4. Return Hurdle ($\ge 6.50\%$):**")
-        ret_tag = f"✅ **PASS** ({a['expected_return']*100:.2f}% net)" if a["return_pass"] else f"❌ **FAIL** ({a['expected_return']*100:.2f}% net < 6.50%)"
-        st.markdown(ret_tag)
-        st.caption("Fact S2: CPI (2.5%) + 4.0% rolling real return.")
+            with cov_col2.container(border=True):
+                st.markdown("**4. Net Return Hurdle**")
+                st.metric("Expected Net Return", f"{a['expected_return']*100:.2f}%", delta="≥ 6.50% (CPI + 4.0%)", border=False)
+                st.caption("✅ PASS: Protects endowment purchasing power (Fact S2)" if a["return_pass"] else "❌ FAIL: Below 6.50% net hurdle")
 
-    with col_c:
-        st.markdown(r"**5. 5-Day Liquidity ($\ge 90.0\%$):**")
-        st.markdown("✅ **PASS** (100.0% liquid in ≤ 3 days)" if a["liquidity_pass"] else "❌ **FAIL** (< 90.0% liquid)")
-        st.caption("Fact S8: Max 5-business-day redemption.")
+        with cov_col3:
+            with st.container(border=True):
+                st.markdown("**5. 5-Day Liquidity Redemption**")
+                st.metric("Liquid in ≤ 5 Days", "100.0%", delta="≥ 90.0% Required", border=False)
+                st.caption("✅ PASS: 100% redeemable in ≤ 3 business days (Fact S8)" if a["liquidity_pass"] else "❌ FAIL: < 90% liquid")
 
-        st.markdown(r"**6. Single Issuer Cap ($\le 8.0\%$):**")
-        st.markdown("✅ **PASS** (Exempt broad ETFs & Treasuries)" if a["issuer_pass"] else "❌ **FAIL** (> 8.0% single company)")
-        st.caption("Fact S6: Concentration cap on single firms.")
+            with st.container(border=True):
+                st.markdown("**6. Single Issuer Concentration**")
+                st.metric("Max Single Firm", "0.0%", delta="≤ 8.0% Cap", border=False)
+                st.caption("✅ PASS: Broad funds & Treasuries exempt (Fact S6)" if a["issuer_pass"] else "❌ FAIL: > 8% in single firm")
 
     if a["breaches"]:
-        st.error(f"**Identified Covenant Breaches:**\n• " + "\n• ".join(a["breaches"]))
+        st.error(f"**Identified Fiduciary Covenant Breaches:**\n• " + "\n• ".join(a["breaches"]))
     else:
-        st.success("All 6 hard legal covenants satisfied without exception.")
+        st.success("All 6 hard legal covenants are fully satisfied with zero exceptions.")
 
 # ==============================================================================
 # TAB 3: POINT-IN-TIME SIGNAL & DATA CARD
 # ==============================================================================
 with tab3:
-    st.subheader("Point-in-Time Signal & Fiduciary Data Card (Base Requirement 4)")
-    st.markdown(
-        "Quantitative strategies routinely suffer from **look-ahead contamination** when historical data "
-        "silently embeds future revisions. In Lab 17, we audited the macroeconomic inflation driver (`CPIAUCSL`) "
-        "under a dual-timestamp coordinate system ($t_{\\text{event}}, t_{\\text{pub}}$) on the St. Louis Fed ALFRED platform."
-    )
+    st.markdown("### :material/history_toggle_off: Point-in-Time Signal & Fiduciary Data Card (Base Requirement 4)")
+    st.caption("Auditing the macroeconomic inflation driver (CPIAUCSL) under a dual-timestamp coordinate system on ALFRED to eliminate look-ahead bias.")
 
-    col_pit1, col_pit2 = st.columns([1.1, 0.9])
-    with col_pit1:
+    pit_cols = st.columns([1.2, 0.8])
+    with pit_cols[0].container(border=True):
         st.markdown("#### Historical Seasonal Revision Curve (Lab 17 Empirical Proof)")
         st.caption("Comparing vintage **15 January 2024** against today reveals **60 historical months** restated by BLS seasonal adjustments.")
-        
+
         if pit_df is not None:
             clean_pit = pit_df.dropna(subset=["today_vintage", "vintage_2024_01_15"]).copy()
             clean_pit["Revision Delta"] = clean_pit["today_vintage"] - clean_pit["vintage_2024_01_15"]
 
-            c_pit = alt.Chart(clean_pit).mark_line(point=True, color="#38BDF8").encode(
+            c_pit = alt.Chart(clean_pit).mark_line(point=True, color="#0284C7").encode(
                 x=alt.X("observation_date:T", title="Observation Month (Event Date)"),
                 y=alt.Y("today_vintage:Q", title="Consumer Price Index (CPIAUCSL)", scale=alt.Scale(zero=False)),
                 tooltip=["observation_date:T", "today_vintage:Q", "vintage_2024_01_15:Q", "Revision Delta:Q"],
-            ).properties(height=320)
+            ).properties(height=260)
             st.altair_chart(c_pit, use_container_width=True)
 
-    with col_pit2:
-        st.markdown("#### Official Point-in-Time Data Card")
-        st.json(PIT_DATA_CARD)
+            c_delta = alt.Chart(clean_pit).mark_area(opacity=0.35, color="#D97706").encode(
+                x=alt.X("observation_date:T", title="Observation Month"),
+                y=alt.Y("Revision Delta:Q", title="Revision Delta (Index Points)"),
+                tooltip=["observation_date:T", "Revision Delta:Q"],
+            ).properties(height=140)
+            st.altair_chart(c_delta, use_container_width=True)
 
-    st.warning(
-        "⚠️ **Fiduciary Quarantine Imposed:** Because BLS seasonal adjustments recalculate the preceding 5 years "
-        "every January, raw `CPIAUCSL` is quarantined for historical backtesting. The portfolio engine admits CPI "
-        "strictly under point-in-time vintage queries (`vintage_date <= decision_date`) or substitutes unrevised headline CPI (`CPIAUCNS`)."
-    )
+    with pit_cols[1].container(border=True):
+        st.markdown("#### Official Point-in-Time Data Card")
+        st.markdown(f"• **Signal Name:** `{PIT_DATA_CARD['signal_name']}`")
+        st.markdown(f"• **Series ID:** `{PIT_DATA_CARD['series_id']}`")
+        st.markdown(f"• **Provider:** `{PIT_DATA_CARD['provider']}`")
+        st.markdown(f"• **Frequency:** `{PIT_DATA_CARD['frequency']}`")
+        st.markdown(f"• **Publication Lag:** `{PIT_DATA_CARD['publication_lag']}`")
+        st.markdown(f"• **Fiduciary Disposition:** `{PIT_DATA_CARD['fiduciary_disposition']}`")
+
+        with st.expander("View Full JSON Provenance Schema", expanded=False):
+            st.json(PIT_DATA_CARD)
+
+    with st.container(border=True):
+        st.warning(
+            "⚠️ **Fiduciary Quarantine Imposed:** Because BLS seasonal adjustments recalculate the preceding 5 years "
+            "every January, raw `CPIAUCSL` is quarantined for historical backtesting. The portfolio engine admits CPI "
+            "strictly under point-in-time vintage queries (`vintage_date <= decision_date`) or substitutes unrevised headline CPI (`CPIAUCNS`)."
+        )
 
 # ==============================================================================
 # TAB 4: STRESS TESTING & KILL RULE
 # ==============================================================================
 with tab4:
-    st.subheader("Stress Run & Quantitative Process Kill Condition (Base Requirement 5)")
-    st.markdown(
-        "A fiduciary model must establish clear boundaries where it ceases to be reliable. "
-        "Adjust parameter shocks below to observe portfolio response and trigger the **Automated Process Kill Rule**."
+    st.markdown("### :material/crisis_alert: Stress Testing & Quantitative Process Kill Condition (Base Requirement 5)")
+    st.caption("A fiduciary model must establish clear boundaries where it ceases to be reliable, halting execution when macroeconomic shocks violate risk tolerances.")
+
+    preset_choice = st.pills(
+        "Pre-configured Stress Scenarios",
+        options=["Baseline (No Shock)", "Equity Return Haircut (-100 bps)", "Stagflation Crisis", "Severe Correlation Breakdown", "Custom Shock"],
+        default="Baseline (No Shock)",
     )
 
-    s_col1, s_col2 = st.columns(2)
-    with s_col1:
-        eq_shock = st.slider("Equity Expected Return Haircut (bps)", 0, 250, 100, step=25, help="Reduces forward expected return of Global Equity")
-        corr_spike = st.slider("Stock-Bond Correlation Spike", 0.0, 0.8, 0.3, step=0.05, help="Simulates breakdown of fixed income diversification")
-    with s_col2:
-        credit_shock = st.slider("Credit Spread Shock (bps)", 0, 150, 50, step=25, help="Haircuts expected return on IG corporate bonds")
-        cost_bps = st.slider("Transaction Cost Drag (bps)", 0, 60, 20, step=5, help="Turnover, management fees, and execution slippage")
+    # Preset parameter resolution
+    if preset_choice == "Baseline (No Shock)":
+        p_eq, p_cred, p_corr, p_cost = 0, 0, 0.0, 0
+    elif preset_choice == "Equity Return Haircut (-100 bps)":
+        p_eq, p_cred, p_corr, p_cost = 100, 0, 0.0, 20
+    elif preset_choice == "Stagflation Crisis":
+        p_eq, p_cred, p_corr, p_cost = 150, 75, 0.40, 25
+    elif preset_choice == "Severe Correlation Breakdown":
+        p_eq, p_cred, p_corr, p_cost = 50, 50, 0.60, 20
+    else:
+        p_eq, p_cred, p_corr, p_cost = 100, 50, 0.30, 20
+
+    stress_cols = st.columns([1, 1.2])
+
+    with stress_cols[0].container(border=True):
+        st.markdown("#### :material/tune: Stress Parameter Overrides")
+        eq_shock = st.slider("Equity Expected Return Haircut (bps)", 0, 250, p_eq, step=25, help="Reduces forward expected return of Global Equity")
+        corr_spike = st.slider("Stock-Bond Correlation Spike", 0.0, 0.8, float(p_corr), step=0.05, help="Simulates breakdown of fixed income diversification")
+        credit_shock = st.slider("Credit Spread Shock (bps)", 0, 150, p_cred, step=25, help="Haircuts expected return on IG corporate bonds")
+        cost_bps = st.slider("Transaction Cost Drag (bps)", 0, 60, p_cost, step=5, help="Turnover, management fees, and execution slippage")
 
     stress_result = run_stress_test(
         sleeves=SLEEVES,
@@ -659,39 +730,39 @@ with tab4:
         transaction_cost_bps=cost_bps,
     )
 
-    st.markdown("---")
-    st.markdown("#### Stress Assessment & Stop Rule Status")
+    with stress_cols[1].container(border=True):
+        st.markdown("#### :material/health_and_safety: Process Feasibility & Kill Rule Verdict")
+        if stress_result["is_killed"]:
+            st.error(f"🛑 **PROCESS STOPPED — KILL RULE TRIGGERED**\n\n{stress_result['kill_reason']}")
+        else:
+            st.success(f"🟢 **PROCESS FEASIBLE WITHIN TOLERANCES**\n\n{stress_result['kill_reason']}")
 
-    if stress_result["is_killed"]:
-        st.error(f"🛑 **PROCESS STOPPED — KILL RULE TRIGGERED**\n\n{stress_result['kill_reason']}")
-    else:
-        st.success(f"🟢 **PROCESS FEASIBLE WITHIN TOLERANCES**\n\n{stress_result['kill_reason']}")
+        if stress_result["result"] is not None:
+            sr = stress_result["result"]
+            sc1, sc2 = st.columns(2)
+            sc1.metric("Stressed Net Return", f"{sr['net_return']*100:.2f}%", delta=f"{sr['net_return']*100 - TARGET_RETURN*100:+.2f}% vs Hurdle", border=True)
+            sc2.metric("Stressed Volatility", f"{sr['volatility']*100:.2f}%", delta=f"{sr['volatility']*100 - res_opt['volatility']*100:+.2f}% vs Base", delta_color="inverse", border=True)
+            sc3, sc4 = st.columns(2)
+            sc3.metric("Stressed Sharpe", f"{sr['sharpe']:.2f}", border=True)
+            sc4.metric("Stressed Reserve Buffer", f"{sr['reserve_weight']*100:.1f}%", border=True)
 
-    if stress_result["result"] is not None:
-        sr = stress_result["result"]
-        sc1, sc2, sc3, sc4 = st.columns(4)
-        sc1.metric("Stressed Net Return", f"{sr['net_return']*100:.2f}%", delta=f"{sr['net_return']*100 - TARGET_RETURN*100:.2f}% vs Hurdle")
-        sc2.metric("Stressed Volatility", f"{sr['volatility']*100:.2f}%", delta=f"{sr['volatility']*100 - res_opt['volatility']*100:.2f}% vs Base")
-        sc3.metric("Stressed Sharpe", f"{sr['sharpe']:.2f}")
-        sc4.metric("Stressed Reserve Buffer", f"{sr['reserve_weight']*100:.1f}%")
+    ""
 
-    st.markdown("""
-    #### 🛡️ Institutional Kill Condition Specification
-    The Meridian Foundation governance rules establish an automatic **DE-RISKING / KILL RULE** under three conditions:
-    1. **Infeasible Optimization:** If macroeconomic shocks prevent achieving 6.50% net return at the 3.0% reserve buffer, optimization halts.
-    2. **Risk Ceiling Breach:** If portfolio volatility exceeds **12.00%**, manager discretion is stripped and equity weight is capped at 50%.
-    3. **Performance Drawdown:** If trailing 12-month real return falls below CPI + 1.0% for two consecutive quarters, capital is locked into short Treasuries.
-    """)
+    with st.container(border=True):
+        st.markdown("""
+        #### 🛡️ Institutional Kill Condition Specification (SR 26-2)
+        The Meridian Foundation governance rules establish an automatic **DE-RISKING / KILL RULE** under three conditions:
+        1. **Infeasible Optimization:** If macroeconomic shocks prevent achieving 6.50% net return at the 3.0% reserve buffer, optimization halts.
+        2. **Risk Ceiling Breach:** If portfolio volatility exceeds **12.00%**, manager discretion is stripped and equity weight is capped at 50%.
+        3. **Performance Drawdown:** If trailing 12-month real return falls below CPI + 1.0% for two consecutive quarters, capital is locked into short Treasuries.
+        """)
 
 # ==============================================================================
 # TAB 5: LOCKED CHANGED-INPUT RECORD
 # ==============================================================================
 with tab5:
-    st.subheader("Locked Changed-Input Record (Base Requirement 6)")
-    st.markdown(
-        "Adhering to the Week 6 verification pattern, the human analyst recorded an **AI-off prediction** "
-        "committed to Git *before* running the stress test, followed by post-run reconciliation."
-    )
+    st.markdown("### :material/lock: Locked Changed-Input Record (Base Requirement 6)")
+    st.caption("Adhering to the Week 6 verification pattern: human analyst recorded an AI-off prediction committed to Git before running the test, followed by post-run reconciliation.")
 
     lcir_table = pd.DataFrame({
         "Audit Dimension": [
@@ -721,72 +792,76 @@ with tab5:
             "Divergence was minimal; confirmed that an automated Kill Rule is vital to prevent reckless risk-seeking behavior during equity drawdowns.",
         ]
     })
-    st.table(lcir_table)
-    st.info("🔒 **Integrity Hash:** This record is committed to Git in `docs/validation-and-ai-use.md`.")
+    with st.container(border=True):
+        st.dataframe(lcir_table, use_container_width=True, hide_index=True)
+        st.info("🔒 **Integrity Hash:** This record is committed to Git in `docs/validation-and-ai-use.md`.")
 
 # ==============================================================================
 # TAB 6: COMMITTEE DECISION MEMO
 # ==============================================================================
 with tab6:
-    st.subheader("Investment Committee Decision Memorandum")
+    st.markdown("### :material/description: Investment Committee Decision Memorandum")
     st.caption("Official Fiduciary Deliverable (`docs/decision-memo.md`)")
 
     memo_file = os.path.join(_PROJECT_DIR, "docs", "decision-memo.md")
-    if os.path.exists(memo_file):
-        with open(memo_file, "r", encoding="utf-8") as f:
-            st.markdown(f.read())
-    else:
-        st.write("Decision memorandum file not found.")
+    with st.container(border=True):
+        if os.path.exists(memo_file):
+            with open(memo_file, "r", encoding="utf-8") as f:
+                st.markdown(f.read())
+        else:
+            st.write("Decision memorandum file not found.")
 
 # ==============================================================================
 # TAB 7: SUBMISSION MANIFEST & TRANSCRIPTS
 # ==============================================================================
 with tab7:
-    st.subheader("Project 2 Submission Manifest & Video Transcripts")
-    
-    st.markdown("#### Primary GitHub Deliverables Index")
-    st.markdown("""
-    | Deliverable | Repository Path | Direct Link |
-    | :--- | :--- | :--- |
-    | **Project 2 Readme** | `projects/project-2/README.md` | [README.md on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/README.md) |
-    | **Decision Memo** | `projects/project-2/docs/decision-memo.md` | [decision-memo.md on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/docs/decision-memo.md) |
-    | **Validation & AI Record** | `projects/project-2/docs/validation-and-ai-use.md` | [validation-and-ai-use.md on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/docs/validation-and-ai-use.md) |
-    | **Submission Manifest** | `projects/project-2/submission/manifest.md` | [manifest.md on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/submission/manifest.md) |
-    | **Streamlit Web App** | `projects/project-2/app.py` | [app.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/app.py) |
-    """)
+    st.markdown("### :material/inventory_2: Project 2 Submission Manifest & Transcripts")
 
-    st.markdown("---")
-    st.markdown("#### Video Submission Scripts & Transcripts")
-    
-    v_tab1, v_tab2, v_tab3 = st.tabs([
-        "📹 Video 1: Research Evolution (≤ 3:00)",
-        "📹 Video 2: Technical Walkthrough (≤ 5:00)",
-        "📹 Video 3: Committee Defense (≤ 5:00)",
-    ])
-    
-    trans_dir = os.path.join(_PROJECT_DIR, "submission", "transcripts")
-    with v_tab1:
-        f1 = os.path.join(trans_dir, "transcript-video-1.txt")
-        if os.path.exists(f1):
-            with open(f1, "r", encoding="utf-8") as f:
-                st.text(f.read())
-    with v_tab2:
-        f2 = os.path.join(trans_dir, "transcript-video-2.txt")
-        if os.path.exists(f2):
-            with open(f2, "r", encoding="utf-8") as f:
-                st.text(f.read())
-    with v_tab3:
-        f3 = os.path.join(trans_dir, "transcript-video-3.txt")
-        if os.path.exists(f3):
-            with open(f3, "r", encoding="utf-8") as f:
-                st.text(f.read())
+    with st.container(border=True):
+        st.markdown("#### Primary GitHub Deliverables Index")
+        st.markdown("""
+        | Deliverable | Repository Path | Direct Link |
+        | :--- | :--- | :--- |
+        | **Project 2 Readme** | `projects/project-2/README.md` | [README.md on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/README.md) |
+        | **Decision Memo** | `projects/project-2/docs/decision-memo.md` | [decision-memo.md on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/docs/decision-memo.md) |
+        | **Validation & AI Record** | `projects/project-2/docs/validation-and-ai-use.md` | [validation-and-ai-use.md on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/docs/validation-and-ai-use.md) |
+        | **Submission Manifest** | `projects/project-2/submission/manifest.md` | [manifest.md on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/submission/manifest.md) |
+        | **Streamlit Web App** | `projects/project-2/app.py` | [app.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/app.py) |
+        """)
+
+    ""
+
+    with st.container(border=True):
+        st.markdown("#### Video Submission Scripts & Transcripts")
+        v_tab1, v_tab2, v_tab3 = st.tabs([
+            "📹 Video 1: Research Evolution (≤ 3:00)",
+            "📹 Video 2: Technical Walkthrough (≤ 5:00)",
+            "📹 Video 3: Committee Defense (≤ 5:00)",
+        ])
+
+        trans_dir = os.path.join(_PROJECT_DIR, "submission", "transcripts")
+        with v_tab1:
+            f1 = os.path.join(trans_dir, "transcript-video-1.txt")
+            if os.path.exists(f1):
+                with open(f1, "r", encoding="utf-8") as f:
+                    st.text(f.read())
+        with v_tab2:
+            f2 = os.path.join(trans_dir, "transcript-video-2.txt")
+            if os.path.exists(f2):
+                with open(f2, "r", encoding="utf-8") as f:
+                    st.text(f.read())
+        with v_tab3:
+            f3 = os.path.join(trans_dir, "transcript-video-3.txt")
+            if os.path.exists(f3):
+                with open(f3, "r", encoding="utf-8") as f:
+                    st.text(f.read())
 
 # ------------------------------------------------------------------------------
-# FOOTER
+# 6. FOOTER
 # ------------------------------------------------------------------------------
 st.markdown("---")
 st.markdown(
-    "<div style='text-align: center; color: #64748B; font-size: 0.82rem;'>"
+    "<div style='text-align: center; opacity: 0.75; font-size: 0.82rem;'>"
     "FIN 43900 — AI Finance Applications | Project 2: Investment Management Application | "
     "Author: <strong>Oladapo Olaniyan</strong> (<code>oolaniy@purdue.edu</code>) | "
     "Mitchell E. Daniels, Jr. School of Business, Purdue University"
