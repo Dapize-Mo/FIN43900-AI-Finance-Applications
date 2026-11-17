@@ -8,7 +8,7 @@
 **Top Fund Holding Security:** Apple Inc. (`AAPL`) / Vanguard Total World Stock ETF (`VT`)  
 **Date:** November 17, 2026  
 **Category:** Tuesday Completion Checkout (25 Points) — *The 20th and Final Lab Checkout of FIN 43900*  
-**Session Token:** `readiness` *(or live in-class verification word)*  
+**Session Token:** `PRJ2Ready`  
 **Live Deployed App (Streamlit Community Cloud):** [Meridian Reserve Portfolio App · Streamlit](https://dapize-mo-fin43900-ai-finance-appli-projectsproject-2app-kxfhnr.streamlit.app/)  
 **GitHub Repository:** [Dapize-Mo/FIN43900-AI-Finance-Applications](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications)  
 **Project 2 Directory:** [`projects/project-2/`](../../projects/project-2/)  
