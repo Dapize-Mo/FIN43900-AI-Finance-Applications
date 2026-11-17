@@ -60,7 +60,7 @@ In accordance with official course rulings, our repository satisfies every crite
 1. **Exact Commands Executed:**
    ```bash
    git clone https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications.git
-   cd FIN43900-AI-Finance-Applications/workspace/projects/project-2
+   cd FIN43900-AI-Finance-Applications/projects/project-2
    pip install -r requirements.txt
    python tests/test_known_answers.py
    streamlit run app.py
@@ -73,7 +73,7 @@ In accordance with official course rulings, our repository satisfies every crite
 4. **Where the Result Is:**
    - Terminal test output printed `All tests passed` (5/5 PASSED).
    - Streamlit browser displayed the interactive dashboard:
-     * Executive Overview: 4 KPI summary cards (Net Return 6.50%, Volatility 9.30%, Sovereign Reserve $8.0M / 8.0%, Status: 100% PASS).
+     * Executive Overview: 5 KPI cards (Total Reserve Fund, Annual Payout Floor, Net Return Hurdle, Optimal Volatility 9.30%, Reserve Coverage).
      * Tab 1: Three-way comparison table proving Equal Weight and Benchmark covenant failures.
      * Tab 2: Granular mandate audit verifying all Fact S1–S10 constraints.
      * Tab 4: Interactive stress test slider confirming Process Kill Rule activation.
