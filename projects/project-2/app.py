@@ -552,7 +552,7 @@ with tab1:
                             scale=alt.Scale(domain=[ticker, "Peer Average"], range=["#0284C7", "#94A3B8"]),
                             legend=alt.Legend(orient="bottom", title=None),
                         ),
-                        alt.Tooltip(["Date:T", "Series:N", alt.Tooltip("Price:Q", format=".3f")]),
+                        tooltip=["Date:T", "Series:N", alt.Tooltip("Price:Q", format=".3f")],
                     )
                     .properties(title=f"{ticker} vs Peer Average", height=220)
                 )
@@ -569,7 +569,7 @@ with tab1:
                     .encode(
                         alt.X("Date:T", title=None),
                         alt.Y("Delta:Q", title="Delta vs Peers").scale(zero=False),
-                        alt.Tooltip(["Date:T", alt.Tooltip("Delta:Q", format="+.3f")]),
+                        tooltip=["Date:T", alt.Tooltip("Delta:Q", format="+.3f")],
                     )
                     .properties(title=f"{ticker} minus Peer Average", height=140)
                 )
