@@ -39,11 +39,11 @@ Every written deliverable is maintained in GitHub-versioned Markdown in complian
 
 ## 2. Video Submissions (YouTube Links & Transcripts)
 
-All three videos are Unlisted YouTube links with captions enabled. **Status: PENDING recording** - link, duration and timestamps below are filled in after upload; none is claimed until then.
+All three videos are Unlisted YouTube links with captions enabled. **Status: Video 1 uploaded (unlisted); Videos 2 and 3 PENDING recording** - link, duration and timestamps below are filled in after upload; none is claimed until then.
 
 | Video | Limit | YouTube link | Actual duration | Transcript |
 | :--- | :---: | :--- | :---: | :--- |
-| 1 - Research evolution & thinking changes | 3:00 | PENDING | PENDING | [transcript-video-1.txt](transcripts/transcript-video-1.txt) |
+| 1 - Research evolution & thinking changes | 3:00 | [https://youtu.be/C-fHpIHxUow](https://youtu.be/C-fHpIHxUow) (unlisted) | 2:42 (per YouTube) | [transcript-video-1.txt](transcripts/transcript-video-1.txt) |
 | 2 - Technical code & model walkthrough | 5:00 | PENDING | PENDING | [transcript-video-2.txt](transcripts/transcript-video-2.txt) |
 | 3 - Committee defense & live demo (opens with live app) | 5:00 | PENDING | PENDING | [transcript-video-3.txt](transcripts/transcript-video-3.txt) |
 
