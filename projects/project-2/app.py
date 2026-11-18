@@ -10,12 +10,14 @@ Live Deployed URL: https://dapize-mo-fin43900-ai-finance-appli-projectsproject-2
 """
 
 import os
+import re
 import sys
 import math
 import pandas as pd
 import numpy as np
 import altair as alt
 import streamlit as st
+import streamlit.components.v1 as components
 
 # Ensure project root is in sys.path
 _PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -268,6 +270,46 @@ with st.sidebar:
             "enforces mathematical input symmetry, discrete known-answer reconciliation, "
             "and strict point-in-time provenance isolation."
         )
+
+# ------------------------------------------------------------------------------
+# PRESENTER CONTROLS (Video 3): numbered buttons that open a tab and scroll to a section.
+# Hide with ?nav=0 on the app address.
+# ------------------------------------------------------------------------------
+if st.query_params.get("nav", "1") != "0":
+    with st.sidebar:
+        st.markdown("##### 🎬 Presenter Controls")
+        components.html("""
+<style>
+ body{margin:0;font-family:"Source Sans",sans-serif}
+ button{display:block;width:100%;text-align:left;margin:0 0 5px 0;padding:7px 10px;border:1px solid #c9d4cd;
+        border-radius:8px;background:#f5f8f6;color:#14452f;font-size:13px;cursor:pointer}
+ button:hover{background:#e3efe8}
+ b{display:inline-block;min-width:16px}
+</style>
+<button onclick="nav(1)"><b>1</b> Disclosures (top)</button>
+<button onclick="nav(2)"><b>2</b> Three portfolios (bar charts)</button>
+<button onclick="nav(3)"><b>3</b> Point-in-time data</button>
+<button onclick="nav(4)"><b>4</b> Stress: run -100 bps</button>
+<button onclick="nav(5)"><b>5</b> Locked records</button>
+<button onclick="nav(6)"><b>6</b> Committee ask</button>
+<button onclick="nav(0)"><b>R</b> Reset stress drivers</button>
+<script>
+var P = window.parent.document;
+function vis(e){return e && e.getClientRects().length>0;}
+function tab(t){var b=[].slice.call(P.querySelectorAll('button[role="tab"]')).filter(function(x){return x.textContent.indexOf(t)>-1 && vis(x);})[0]; if(b) b.click();}
+function btn(t){var b=[].slice.call(P.querySelectorAll('button')).filter(function(x){return x.textContent.indexOf(t)>-1 && vis(x);})[0]; if(b) b.click();}
+function go(t,d){setTimeout(function(){var e=[].slice.call(P.querySelectorAll('h1,h2,h3,h4,h5,p')).filter(function(x){return vis(x) && x.textContent.indexOf(t)>-1;})[0]; if(e) e.scrollIntoView({behavior:"smooth",block:"start"});},d);}
+function top(d){setTimeout(function(){var m=P.querySelector('[data-testid="stMain"]')||P.querySelector('section.main'); if(m) m.scrollTo({top:0,behavior:"smooth"});},d);}
+function nav(n){
+ if(n==1){tab("Executive Allocations"); top(500);}
+ if(n==2){tab("Executive Allocations"); go("Portfolio Selector",600);}
+ if(n==3){tab("Point-in-Time"); go("Point-in-Time Signal",600);}
+ if(n==4){tab("Stress Testing"); setTimeout(function(){btn("(-100 bps)");},500); go("Pre-configured Stress Scenarios",2200);}
+ if(n==5){tab("Locked Changed-Input"); go("Locked Changed-Input Record (Base",600);}
+ if(n==6){tab("Committee Decision Memo"); go("4. Committee Ask",600);}
+ if(n==0){tab("Stress Testing"); setTimeout(function(){btn("Reset all drivers");},500); go("Pre-configured Stress Scenarios",1800);}
+}
+</script>""", height=300)
 
 # ------------------------------------------------------------------------------
 # 5. TABBED INTERFACE NAVIGATION
@@ -851,7 +893,10 @@ with tab6:
     with st.container(border=True):
         if os.path.exists(memo_file):
             with open(memo_file, "r", encoding="utf-8") as f:
-                st.markdown(f.read())
+                _memo_text = f.read()
+            # Streamlit treats paired dollar signs as LaTeX; escape currency amounts ($8.0M) only.
+            _memo_text = re.sub(r"\$(?=\d)", r"\\$", _memo_text)
+            st.markdown(_memo_text)
         else:
             st.write("Decision memorandum file not found.")
 
