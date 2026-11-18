@@ -246,32 +246,6 @@ with st.container(border=True):
 "" # Generous breathing room
 
 # ------------------------------------------------------------------------------
-# 4. SIDEBAR: GOVERNANCE & MANDATE OVERVIEW
-# ------------------------------------------------------------------------------
-with st.sidebar:
-    st.markdown("### :material/policy: Institutional Mandate")
-    with st.container(border=True):
-        st.markdown(f"**Reserve Capital:** `${PORTFOLIO_SIZE/1e6:.0f}M`")
-        st.markdown(f"**Quarterly Payout:** `${QUARTERLY_PAYOUT/1e6:.2f}M`")
-        st.markdown(f"**12-Mo Reserve Floor:** `{RESERVE_BUFFER_FLOOR*100:.1f}%` (`${ANNUAL_PAYOUT/1e6:.1f}M`)")
-        st.markdown(f"**Net Real Hurdle:** `{TARGET_RETURN*100:.2f}%` (CPI + 4.0%)")
-        st.markdown(f"**5-Day Liquidity:** `≥ 90.0%`")
-        st.markdown(f"**Single Issuer Cap:** `≤ 8.0%`")
-
-    st.markdown("### :material/cloud_done: Cloud & Deployment")
-    with st.container(border=True):
-        st.markdown("• **Live Web App:** [Streamlit Community Cloud](https://dapize-mo-fin43900-ai-finance-appli-projectsproject-2app-kxfhnr.streamlit.app/)")
-        st.markdown("• **GitHub Repo:** [Dapize-Mo/FIN43900](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/main/projects/project-2)")
-
-    st.markdown("### :material/verified_user: Model Governance")
-    with st.container(border=True):
-        st.caption(
-            "Adheres to Federal Reserve SR 26-2 model risk guidelines: "
-            "enforces mathematical input symmetry, discrete known-answer reconciliation, "
-            "and strict point-in-time provenance isolation."
-        )
-
-# ------------------------------------------------------------------------------
 # PRESENTER CONTROLS (Video 3): numbered buttons that open a tab and scroll to a section.
 # Hide with ?nav=0 on the app address.
 # ------------------------------------------------------------------------------
@@ -312,6 +286,32 @@ function nav(n){
 </script>""", height=300)
 
 # ------------------------------------------------------------------------------
+# 4. SIDEBAR: GOVERNANCE & MANDATE OVERVIEW
+# ------------------------------------------------------------------------------
+with st.sidebar:
+    st.markdown("### :material/policy: Institutional Mandate")
+    with st.container(border=True):
+        st.markdown(f"**Reserve Capital:** `${PORTFOLIO_SIZE/1e6:.0f}M`")
+        st.markdown(f"**Quarterly Payout:** `${QUARTERLY_PAYOUT/1e6:.2f}M`")
+        st.markdown(f"**12-Mo Reserve Floor:** `{RESERVE_BUFFER_FLOOR*100:.1f}%` (`${ANNUAL_PAYOUT/1e6:.1f}M`)")
+        st.markdown(f"**Net Real Hurdle:** `{TARGET_RETURN*100:.2f}%` (CPI + 4.0%)")
+        st.markdown(f"**5-Day Liquidity:** `≥ 90.0%`")
+        st.markdown(f"**Single Issuer Cap:** `≤ 8.0%`")
+
+    st.markdown("### :material/cloud_done: Cloud & Deployment")
+    with st.container(border=True):
+        st.markdown("• **Live Web App:** [Streamlit Community Cloud](https://dapize-mo-fin43900-ai-finance-appli-projectsproject-2app-kxfhnr.streamlit.app/)")
+        st.markdown("• **GitHub Repo:** [Dapize-Mo/FIN43900](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/tree/main/projects/project-2)")
+
+    st.markdown("### :material/verified_user: Model Governance")
+    with st.container(border=True):
+        st.caption(
+            "Adheres to Federal Reserve SR 26-2 model risk guidelines: "
+            "enforces mathematical input symmetry, discrete known-answer reconciliation, "
+            "and strict point-in-time provenance isolation."
+        )
+
+# ------------------------------------------------------------------------------
 # 5. TABBED INTERFACE NAVIGATION
 # ------------------------------------------------------------------------------
 tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
@@ -340,7 +340,7 @@ with tab1:
     }
 
     # Top Split Section: Controls & Metrics (Left) vs Interactive Visualizer (Right)
-    top_cols = st.columns([1, 2.5])
+    top_cols = st.columns([1.2, 2.5])
 
     top_left_cell = top_cols[0].container(border=True)
     with top_left_cell:
@@ -370,7 +370,7 @@ with tab1:
     bottom_left_cell = top_cols[0].container(border=True)
     with bottom_left_cell:
         st.markdown("#### :material/speed: Fiduciary Metrics")
-        m_c1, m_c2 = st.columns(2)
+        m_c1 = m_c2 = st.container()
         m_c1.metric(
             label="Net Return",
             value=f"{active_res['net_return']*100:.2f}%",
@@ -384,7 +384,7 @@ with tab1:
             delta_color="inverse",
             border=True,
         )
-        m_c3, m_c4 = st.columns(2)
+        m_c3 = m_c4 = st.container()
         m_c3.metric(
             label="Reserve Buffer",
             value=f"{active_res['reserve_weight']*100:.1f}%",
