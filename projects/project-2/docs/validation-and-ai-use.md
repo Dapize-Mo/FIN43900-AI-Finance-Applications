@@ -116,7 +116,7 @@ This entry is committed to Git **before** the engine is run on the changed input
 
 ```yaml
 record_id: "LCIR-FIN43900-P2-002"
-status: "PREDICTION LOCKED - RESULT NOT YET RUN"
+status: "RESULT RECORDED (prediction locked earlier in commit fd80e67, pushed before this run)"
 changed_input:
   name: "IG credit spread shock (reduces LQD expected return)"
   old_value: "0 bps"
@@ -133,8 +133,21 @@ ai_off_prediction:
   expected_kill_rule: "The kill rule will trigger"
   expected_decision_effect: "Recommended weights stay 52 / 40 / 8 / 0"
   analyst_note_to_reviewer: "Prediction recorded verbatim. As written, the three parts may not be mutually consistent (the kill rule fires only above 12.00% volatility, and a 9.80% volatility would not breach it). That tension is left in place so the actual result can be compared with the prediction as stated."
-actual_result: "NOT YET RUN"
-failure_diagnosis: "To be completed after the run"
+actual_result:
+  run_date: "2026-11-17, after the prediction commit fd80e67 was pushed to origin/main"
+  command: "run_stress_test(SLEEVES, BASE_CORRELATION, credit_spread_shock_bps=50)"
+  weights: "BIL 2 / IEF 38 / LQD 0 / VT 60"
+  net_return: "6.50% (6.504%)"
+  volatility: "9.70% (+40 bps vs 9.30% baseline)"
+  reserve_buffer: "40.0% sovereign (mandate verdict PASS, all S1-S10 checks pass)"
+  kill_rule: "NOT triggered (9.70% is below the 12.00% ceiling); engine status: PROCESS STABLE"
+  comparison_to_prediction:
+    direction_and_size: "Correct direction. Predicted about +50 bps (about 9.80%); actual +40 bps (9.70%)."
+    kill_rule: "WRONG. Predicted trigger; no trigger."
+    decision_effect: "WRONG. Predicted weights unchanged at 52/40/8/0; the optimizer moves all of LQD into IEF and VT (BIL 2 / IEF 38 / LQD 0 / VT 60)."
+failure_diagnosis: |
+  Two of the three predicted outcomes were wrong. A +50 bps spread shock cuts LQD's expected return from its base level, so the 6.50% return hurdle can no longer be met with a 40% LQD sleeve at the base weights. The minimum-variance optimizer re-solves and drops LQD entirely, replacing it with IEF (38%) and more VT (60%, up from 52%). That keeps volatility low (9.70%) and far below the 12.00% kill ceiling, so the kill rule does not fire. The analyst's prediction treated the shock as a volatility event that would trip the stop condition, but a credit-spread shock is a return shock to one sleeve, which the optimizer can re-route around. The kill rule is driven by the equity-return hurdle (LCIR-001), not by credit spreads.
+  decision_effect_for_committee: "A +50 bps IG spread widening would not stop the process, but it would change the recommended mix: exit LQD, hold about 38% IEF and 60% VT. This is a reversal-trigger candidate for the monitoring list."
 ```
 
 ---
