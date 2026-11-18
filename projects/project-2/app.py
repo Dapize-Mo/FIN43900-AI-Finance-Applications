@@ -299,9 +299,9 @@ function vis(e){return e && e.getClientRects().length>0;}
 function tab(t){var b=[].slice.call(P.querySelectorAll('button[role="tab"]')).filter(function(x){return x.textContent.indexOf(t)>-1 && vis(x);})[0]; if(b) b.click();}
 function btn(t){var b=[].slice.call(P.querySelectorAll('button')).filter(function(x){return x.textContent.indexOf(t)>-1 && vis(x);})[0]; if(b) b.click();}
 function go(t,d){setTimeout(function(){var e=[].slice.call(P.querySelectorAll('h1,h2,h3,h4,h5,p')).filter(function(x){return vis(x) && x.textContent.indexOf(t)>-1;})[0]; if(e) e.scrollIntoView({behavior:"smooth",block:"start"});},d);}
-function top(d){setTimeout(function(){var m=P.querySelector('[data-testid="stMain"]')||P.querySelector('section.main'); if(m) m.scrollTo({top:0,behavior:"smooth"});},d);}
+function toTop(d){setTimeout(function(){var m=P.querySelector('[data-testid="stMain"]')||P.querySelector('section.main'); if(m) m.scrollTo({top:0,behavior:"smooth"});},d);}
 function nav(n){
- if(n==1){tab("Executive Allocations"); top(500);}
+ if(n==1){tab("Executive Allocations"); toTop(500);}
  if(n==2){tab("Executive Allocations"); go("Portfolio Selector",600);}
  if(n==3){tab("Point-in-Time"); go("Point-in-Time Signal",600);}
  if(n==4){tab("Stress Testing"); setTimeout(function(){btn("(-100 bps)");},500); go("Pre-configured Stress Scenarios",2200);}
