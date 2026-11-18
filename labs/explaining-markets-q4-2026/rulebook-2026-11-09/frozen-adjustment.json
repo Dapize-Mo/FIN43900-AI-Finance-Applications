@@ -1,0 +1,15 @@
+{
+  "author": "Oladapo Olaniyan",
+  "frozen": "2026-11-09",
+  "formula": "adjusted = const + b_pred*pred + b_ytd*ytd + b_pnet*p_net (clipped to [0,1])",
+  "coef": {
+    "const": 0.18028213267556564,
+    "pred": 0.591091043963511,
+    "ytd": -0.08047410252821063,
+    "p_net": -0.057879243143545506
+  },
+  "fit_rows": 1599,
+  "fit_window": "events Oct 28-Nov 6 2026",
+  "features": "ytd and p_net as defined in no-llm-candidate-2026-11-05/em_features.py",
+  "prospective_test": "events on/after Nov 9 2026, to be scored with official scorer; compare with raw pred"
+}

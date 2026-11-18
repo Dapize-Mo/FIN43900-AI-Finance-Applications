@@ -1,0 +1,132 @@
+--- a/predict.py	2026-10-29 17:01:18.875832000 +0000
++++ b/predict.py	2026-11-06 05:18:49.766259046 +0000
+@@ -15,6 +15,8 @@
+ from concurrent.futures import ThreadPoolExecutor
+ from outlook_strategy import SYSTEM as OUTLOOK_SYSTEM, EvidencePrediction
+ import os
++import time
++from datetime import datetime, timezone
+ 
+ import httpx
+ from openai import OpenAI
+@@ -32,6 +34,68 @@
+ LLM_TIMEOUT_SECONDS = 60.0
+ LLM_MAX_RETRIES = 1
+ 
++# Deadline-aware transient retry (Oladapo Olaniyan, Nov 2026). Modal logs showed
++# 32 delivered events lost to Gemini 503 "high demand" and request timeouts with
++# most of the 5-minute budget unused. Attempts alternate primary/fallback with
++# short backoff, each bounded by the time left before the event deadline.
++FALLBACK_MODEL = "gemini-3.1-flash-lite"
++TRANSIENT_STATUS = {429, 500, 502, 503, 504}
++TRANSIENT_NAMES = {"APITimeoutError", "APIConnectionError", "TimeoutException",
++                   "ReadTimeout", "ConnectTimeout", "InternalServerError", "RateLimitError"}
++SAFETY_SECONDS = 25.0        # reserved for submission after the model returns
++MIN_ATTEMPT_SECONDS = 10.0   # do not start a request with less time than this
++ATTEMPT_TIMEOUT_SECONDS = 45.0
++BACKOFF_SECONDS = (0.0, 5.0, 10.0, 20.0, 30.0)
++DEFAULT_SECONDS_LEFT = 240.0  # used only when an event carries no deadline
++_clock = time.monotonic
++_sleep = time.sleep
++
++
++def _seconds_left(deadline: object) -> float:
++    if not isinstance(deadline, str) or not deadline:
++        return DEFAULT_SECONDS_LEFT
++    try:
++        dt = datetime.fromisoformat(deadline.replace("Z", "+00:00"))
++    except ValueError:
++        return DEFAULT_SECONDS_LEFT
++    return (dt - datetime.now(timezone.utc)).total_seconds()
++
++
++def _is_transient(exc: BaseException) -> bool:
++    return getattr(exc, "status_code", None) in TRANSIENT_STATUS or type(exc).__name__ in TRANSIENT_NAMES
++
++
++def _parse_with_budget(primary: str, kwargs: dict, seconds_left: float):
++    """Alternate primary/fallback on transient errors until the deadline budget runs out."""
++    end = _clock() + seconds_left - SAFETY_SECONDS
++    models = [primary] if primary == FALLBACK_MODEL else [primary, FALLBACK_MODEL]
++    attempt, last = 0, None
++    while True:
++        remaining = end - _clock()
++        if remaining < MIN_ATTEMPT_SECONDS:
++            break
++        model = models[attempt % len(models)]
++        client = _openai
++        if hasattr(client, "with_options"):
++            client = client.with_options(timeout=min(ATTEMPT_TIMEOUT_SECONDS, remaining), max_retries=0)
++        try:
++            return client.chat.completions.parse(model=model, **kwargs)
++        except Exception as exc:
++            if not _is_transient(exc):
++                raise
++            last = exc
++            print(f"[WARN] transient {type(exc).__name__} status={getattr(exc, 'status_code', None)} "
++                  f"model={model} attempt={attempt + 1} left={end - _clock():.0f}s", flush=True)
++        pause = BACKOFF_SECONDS[min(attempt, len(BACKOFF_SECONDS) - 1)]
++        attempt += 1
++        if end - _clock() - pause < MIN_ATTEMPT_SECONDS:
++            break
++        if pause:
++            _sleep(pause)
++    if last is not None:
++        raise last
++    raise RuntimeError("no time left for a model request before the prediction deadline")
++
+ 
+ def predict(event: dict) -> list[dict]:
+     """Return predictions for one Explaining Markets event.
+@@ -67,6 +131,7 @@
+                 summary=summary_json,
+                 ticker=asset["identifier_value"],
+                 event_type=event["event_type"],
++                seconds_left=_seconds_left(event.get("prediction_deadline")),
+             ),
+         }
+         for asset in event["focal_assets"]
+@@ -228,7 +293,7 @@
+ """
+ 
+ 
+-def _ask_current(*, summary: dict, ticker: str, event_type: str) -> float:
++def _ask_current(*, summary: dict, ticker: str, event_type: str, seconds_left: float | None = None) -> float:
+     """Ask the configured model for a calibrated percentile via structured outputs.
+ 
+     Returns the model's `predicted_percentile`. Missing keys and refusals raise
+@@ -275,16 +340,7 @@
+     kwargs = dict(messages=[{"role": "system", "content": SYSTEM_PROMPT},
+                             {"role": "user", "content": user_prompt}],
+                   response_format=Prediction, temperature=0)
+-    try:
+-        resp = _openai.chat.completions.parse(model=primary, **kwargs)
+-    except Exception as exc:
+-        if getattr(exc, "status_code", None) != 503:
+-            raise
+-        fallback = "gemini-3.1-flash-lite"
+-        if primary == fallback:
+-            raise
+-        print(f"[WARN] primary model unavailable; trying {fallback}", flush=True)
+-        resp = _openai.chat.completions.parse(model=fallback, **kwargs)
++    resp = _parse_with_budget(primary, kwargs, DEFAULT_SECONDS_LEFT if seconds_left is None else seconds_left)
+     parsed = resp.choices[0].message.parsed
+     if parsed is None:
+         raise RuntimeError("Gemini did not return a structured prediction")
+@@ -336,14 +392,14 @@
+     return percentile
+ 
+ 
+-def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
++def _ask_llm(*, summary: dict, ticker: str, event_type: str, seconds_left: float | None = None) -> float:
+     """Explicit strategy selection — Oladapo Olaniyan; blend remains default."""
+     mode=os.environ.get("EM_STRATEGY","blend")
+     if mode not in ("blend","original"):
+         raise ValueError("EM_STRATEGY must be blend or original")
+     if mode=="blend":
+         return _ask_blend(summary=summary,ticker=ticker,event_type=event_type)
+-    value=_ask_current(summary=summary,ticker=ticker,event_type=event_type)
++    value=_ask_current(summary=summary,ticker=ticker,event_type=event_type,seconds_left=seconds_left)
+     print("[FORECAST_AUDIT] "+json.dumps({"author":"Oladapo Olaniyan",
+           "strategy":"original-2026-10-28","ticker":ticker,"event_type":event_type,
+           "components":{"current":value,"outlook":None},"percentile":value}),flush=True)

@@ -1,0 +1,154 @@
+{
+  "author": "Oladapo Olaniyan",
+  "stage": "frozen after development",
+  "dev_window": "Q3 events < 2026-08-16",
+  "chosen": {
+    "features": "facts",
+    "spec": {
+      "kind": "ridge",
+      "alpha": 3000
+    },
+    "dev_dr2": 0.03312380899287504,
+    "n": 2010
+  },
+  "dev_grid": [
+    {
+      "features": "all",
+      "spec": {
+        "kind": "ridge",
+        "alpha": 30
+      },
+      "dev_dr2": 0.00921739264355892,
+      "n": 2010
+    },
+    {
+      "features": "all",
+      "spec": {
+        "kind": "ridge",
+        "alpha": 300
+      },
+      "dev_dr2": 0.012410402047794644,
+      "n": 2010
+    },
+    {
+      "features": "all",
+      "spec": {
+        "kind": "ridge",
+        "alpha": 3000
+      },
+      "dev_dr2": 0.022304726164913635,
+      "n": 2010
+    },
+    {
+      "features": "all",
+      "spec": {
+        "kind": "gbm",
+        "depth": 2,
+        "iters": 150
+      },
+      "dev_dr2": 0.027511507806705082,
+      "n": 2010
+    },
+    {
+      "features": "options+preview",
+      "spec": {
+        "kind": "ridge",
+        "alpha": 30
+      },
+      "dev_dr2": 0.0007534203994896682,
+      "n": 2010
+    },
+    {
+      "features": "options+preview",
+      "spec": {
+        "kind": "ridge",
+        "alpha": 300
+      },
+      "dev_dr2": 0.0006558038325713555,
+      "n": 2010
+    },
+    {
+      "features": "options+preview",
+      "spec": {
+        "kind": "ridge",
+        "alpha": 3000
+      },
+      "dev_dr2": 4.846413714354458e-05,
+      "n": 2010
+    },
+    {
+      "features": "options+preview",
+      "spec": {
+        "kind": "gbm",
+        "depth": 2,
+        "iters": 150
+      },
+      "dev_dr2": 0.0003256804122436785,
+      "n": 2010
+    },
+    {
+      "features": "facts",
+      "spec": {
+        "kind": "ridge",
+        "alpha": 30
+      },
+      "dev_dr2": 0.026375389290210993,
+      "n": 2010
+    },
+    {
+      "features": "facts",
+      "spec": {
+        "kind": "ridge",
+        "alpha": 300
+      },
+      "dev_dr2": 0.02773630328808807,
+      "n": 2010
+    },
+    {
+      "features": "facts",
+      "spec": {
+        "kind": "ridge",
+        "alpha": 3000
+      },
+      "dev_dr2": 0.03312380899287504,
+      "n": 2010
+    },
+    {
+      "features": "facts",
+      "spec": {
+        "kind": "gbm",
+        "depth": 2,
+        "iters": 150
+      },
+      "dev_dr2": 0.031774222599666,
+      "n": 2010
+    }
+  ],
+  "organizer_gemini25_dev_dr2": 0.09273393880502467,
+  "label_rule": "training target = within-training-window percentile rank of car1; lag 2 days; weekly refit",
+  "test_A": "Q3 events >= 2026-08-16 (walk-forward)",
+  "test_B": "Q4 events through 2026-10-27 (walk-forward)",
+  "code_sha256": {
+    "em_features.py": "99b8b9108c7b74f1936958586a0c3207d2e09bf5161c192b6fb4898cf561a2b7",
+    "common.py": "8df1ca43b4e8e3ef537f496498a1986bf51b93c0bc374caa734c4569d5ab658d",
+    "run_dev.py": "f314982f102aed5615c5763a774edfc6d802feef70262b6507b97a03b5264598"
+  },
+  "feature_columns": [
+    "n_facts",
+    "log_len_facts",
+    "f_pos",
+    "f_neg",
+    "f_net",
+    "g_pos",
+    "g_neg",
+    "g_net",
+    "g_reaff",
+    "g_n",
+    "vs_up",
+    "vs_dn",
+    "vs_net",
+    "rev_growth_avail",
+    "rev_growth",
+    "h_net"
+  ]
+}
