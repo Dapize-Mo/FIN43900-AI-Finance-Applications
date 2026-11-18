@@ -78,6 +78,19 @@ def test_08_doc_engine_concordance():
     assert "12.00%" in lcir and "12.00%" in memo
 
 
+def test_09_window_and_constraint_stress():
+    """Stress drivers for estimation window and reserve-floor constraint change the answer sensibly."""
+    import pandas as pd
+    df = pd.read_csv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "prices.csv"))
+    base = e.run_stress_test(S, BASE_CORRELATION)["result"]
+    w12 = e.run_stress_test(S, BASE_CORRELATION, estimation_window_months=12, prices_df=df)["result"]
+    assert abs(w12["volatility"] - base["volatility"]) > 1e-3          # window really re-estimates risk
+    assert w12["net_return"] >= 0.065 - 1e-6 and w12["mandate_verdict"] == "PASS"
+    hi = e.run_stress_test(S, BASE_CORRELATION, reserve_floor_override=0.10)["result"]
+    assert hi["reserve_weight"] >= 0.10 and hi["volatility"] >= base["volatility"] - 1e-9
+    assert hi["mandate_verdict"] == "PASS"
+
+
 if __name__ == "__main__":
     for n, f in sorted(globals().items()):
         if n.startswith("test_"):

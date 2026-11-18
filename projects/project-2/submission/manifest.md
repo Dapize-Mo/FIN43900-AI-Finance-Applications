@@ -39,25 +39,35 @@ Every written deliverable is maintained in GitHub-versioned Markdown in complian
 
 ## 2. Video Submissions (YouTube Links & Transcripts)
 
-All three videos are hosted as Unlisted YouTube links with English transcripts/captions enabled:
+All three videos are Unlisted YouTube links with captions enabled. **Status: PENDING recording** - link, duration and timestamps below are filled in after upload; none is claimed until then.
 
-### Video 1 — Research Evolution & Thinking Changes (≤ 3:00)
-- **YouTube Link:** `https://www.youtube.com/watch?v=EXAMPLE_VIDEO_1` *(To be populated upon final recording)*
-- **Duration:** 2:45
-- **Transcripts:** [`submission/transcripts/transcript-video-1.txt`](transcripts/transcript-video-1.txt)
-- **Key Questions Answered:** What changed in the investment system and student thinking between Lab 13 and Project 2? How was the AI output for correlation matrix symmetry and grid optimization independently checked and verified?
+| Video | Limit | YouTube link | Actual duration | Transcript |
+| :--- | :---: | :--- | :---: | :--- |
+| 1 - Research evolution & thinking changes | 3:00 | PENDING | PENDING | [transcript-video-1.txt](transcripts/transcript-video-1.txt) |
+| 2 - Technical code & model walkthrough | 5:00 | PENDING | PENDING | [transcript-video-2.txt](transcripts/transcript-video-2.txt) |
+| 3 - Committee defense & live demo (opens with live app) | 5:00 | PENDING | PENDING | [transcript-video-3.txt](transcripts/transcript-video-3.txt) |
 
-### Video 2 — Technical Code & Model Walkthrough (≤ 5:00)
-- **YouTube Link:** `https://www.youtube.com/watch?v=EXAMPLE_VIDEO_2` *(To be populated upon final recording)*
-- **Duration:** 4:30
-- **Transcripts:** [`submission/transcripts/transcript-video-2.txt`](transcripts/transcript-video-2.txt)
-- **Key Questions Answered:** How does `engine.py` turn raw price histories and course-authored parameters into optimal weights? How does `mandate.py` detect the covenant failure in the 60/40 benchmark? Which tests passed in the verification suite?
+### Timestamp index (to be confirmed against final recordings)
 
-### Video 3 — Investment Committee Defense & Live Demo (≤ 5:00)
-- **YouTube Link:** `https://www.youtube.com/watch?v=EXAMPLE_VIDEO_3` *(To be populated upon final recording)*
-- **Duration:** 4:50
-- **Transcripts:** [`submission/transcripts/transcript-video-3.txt`](transcripts/transcript-video-3.txt)
-- **Key Questions Answered:** Live operation of `app.py`. Why should the committee allocate to the Constrained Optimal Portfolio? Under what macroeconomic conditions does the Process Kill Rule stop the strategy? What are the reversal triggers?
+| Video | Time | Content |
+| :--- | :---: | :--- |
+| 1 | 0:00 | Two required statements (AI use; ownership) |
+| 1 | PENDING | What changed from Lab 13 to Project 2 |
+| 1 | PENDING | How AI output was independently checked |
+| 2 | 0:00 | Two required statements |
+| 2 | PENDING | `engine.py`: covariance, optimizer, stress drivers |
+| 2 | PENDING | `mandate.py`: 60/40 covenant failure |
+| 2 | PENDING | Tests (9/9) and LCIR |
+| 3 | 0:00 | Live app shown first; two required statements |
+| 3 | PENDING | Three-portfolio comparison and recommendation |
+| 3 | PENDING | Stress tab and -100 bps kill rule (12.70% vol) |
+| 3 | PENDING | Reversal triggers and committee ask |
+
+### Access confirmation
+
+- [x] GitHub repository is public (verified).
+- [ ] Each video opened logged out / incognito with transcript visible (do after upload).
+- [ ] Same `.md` files attached to Brightspace.
 
 ---
 
@@ -66,7 +76,7 @@ All three videos are hosted as Unlisted YouTube links with English transcripts/c
 - [x] A stranger can clone the repo and execute `streamlit run app.py` from the README without error.
 - [x] Mandatory AI and Educational disclaimers open README, Decision Memo, and all video scripts.
 - [x] Decision Memo, Validation Record, and Live App report identical numbers (Return: 6.50%, Vol: 9.30%, Res: 8.0%).
-- [x] Locked Changed-Input Record includes pre-run prediction, parameter shift, and failure sensitivity analysis.
+- [ ] Locked Changed-Input Record with AI-off prediction committed to Git before the run (LCIR-002 pending the analyst's own prediction).
 - [x] Point-in-time data card documents dual timestamps, publication lags, and revision risk.
 - [x] No private API keys, passwords, or personal credentials committed to Git.
 

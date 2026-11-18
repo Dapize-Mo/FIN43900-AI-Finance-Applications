@@ -62,9 +62,9 @@ locked_changed_input_record:
   git_evidence:
     first_commit_of_record: "44ed6cf (2026-11-11 08:41 -0500)"   # git log -- docs/validation-and-ai-use.md
     code_frozen_before_run:
-      src/engine.py:  "sha256 80921e5850f64d2da0702c73a8ec5a62cd8d1c19191dcceaa22b0bee1f1e8834"
+      src/engine.py:  "sha256 55cd0596b04457d891056abe3ed636e0feb86906326a6faffcd8549ae093351e"
       src/mandate.py: "sha256 900890443b7235766ee7e6031af24baf6040d18f7e59950dc8d7d70517e10c5f"
-    verify_with: "sha256sum src/engine.py src/mandate.py  (hashes recorded at the 2026-11-17 revision; re-record if either file changes)"
+    verify_with: "sha256sum src/engine.py src/mandate.py  (hashes recorded at the 2026-11-17 revision after adding estimation-window and reserve-floor stress drivers; note LCIR-001 numbers were produced with the pre-edit engine and are unchanged because the new drivers default to off; re-record if either file changes)"
   human_analyst: "Oladapo Olaniyan"
   input_under_test: "Global Equity Expected Return Estimate (Sleeve: VT / Global Equity Index Fund)"
   parameter_units: "Percentage points / basis points per annum"
@@ -140,6 +140,7 @@ Automated programmatic unit checks verified the analytical engine before deploym
 | **TEST-05** | Mandate Covenant Checker | Test Benchmark allocation | FAIL (Reserve buffer 0% < 3%) | FAIL with specific rule breach | **PASS** |
 | **TEST-07** | Mandate consistency / flip test | Optimal vs benchmark vs equal weight; 0 vs 100 bps shock | Optimal PASS; benchmark and equal FAIL; kill flips only under shock | Matches | **PASS** |
 | **TEST-08** | Memo/LCIR vs engine concordance | 9.30% and 12.70% quoted in docs | Docs equal engine output | Matches | **PASS** |
+| **TEST-09** | Window and constraint stress drivers | 12-60 month window; reserve floor 3-12% | Runs; defaults reproduce base case; floor raises sovereign weight | Matches | **PASS** |
 | **TEST-06** | ALFRED Provenance Gate | Test Sept 2026 CPI on 2026-09-30 | Unknowable / Post-dated | Quarantined; not released until mid-Oct | **PASS** |
 
 ---

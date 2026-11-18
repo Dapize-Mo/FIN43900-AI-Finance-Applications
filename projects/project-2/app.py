@@ -737,8 +737,17 @@ with tab4:
         corr_spike = st.slider("Stock-Bond Correlation Spike", 0.0, 0.8, float(p_corr), step=0.05, help="Simulates breakdown of fixed income diversification", key=f"sl_stock-bond_{_k}_{preset_choice}")
         credit_shock = st.slider("Credit Spread Shock (bps)", 0, 150, p_cred, step=25, help="Haircuts expected return on IG corporate bonds", key=f"sl_credit_{_k}_{preset_choice}")
         cost_bps = st.slider("Transaction Cost Drag (bps)", 0, 60, p_cost, step=5, help="Turnover, management fees, and execution slippage", key=f"sl_transaction_{_k}_{preset_choice}")
+        window_choice = st.select_slider(
+            "Estimation Window (volatility & correlation)",
+            options=["Course-authored (base)", "Last 12 months", "Last 24 months", "Last 36 months", "Full 60 months"],
+            value="Course-authored (base)",
+            help="Re-estimates sleeve volatilities and correlations from the ETF price history; expected returns stay course-authored",
+            key=f"sl_window_{_k}_{preset_choice}",
+        )
+        reserve_floor_pct = st.slider("Reserve Floor Constraint (% of capital)", 3.0, 12.0, 3.0, step=1.0, help="Raises the sovereign reserve minimum above the 3.0% legal floor (constraint stress)", key=f"sl_reserve_{_k}_{preset_choice}")
+        _window_months = {"Last 12 months": 12, "Last 24 months": 24, "Last 36 months": 36, "Full 60 months": 60}.get(window_choice)
 
-    st.caption("Input bounds: equity haircut 0–250 bps · correlation spike 0.00–0.80 · credit shock 0–150 bps · cost drag 0–60 bps. Out-of-range values are rejected by the sliders; the engine re-validates the correlation matrix on every run.")
+    st.caption("Input bounds: equity haircut 0–250 bps · correlation spike 0.00–0.80 · credit shock 0–150 bps · cost drag 0–60 bps · reserve floor 3–12% · window 12–60 months. Out-of-range values are rejected by the sliders; the engine re-validates the correlation matrix on every run.")
     try:
         validate_correlation(BASE_CORRELATION)
     except ValueError as _err:
@@ -752,6 +761,9 @@ with tab4:
         credit_spread_shock_bps=credit_shock,
         equity_bond_corr_shock=corr_spike,
         transaction_cost_bps=cost_bps,
+        estimation_window_months=_window_months,
+        prices_df=prices_df,
+        reserve_floor_override=reserve_floor_pct / 100.0,
     )
 
     with stress_cols[1].container(border=True):

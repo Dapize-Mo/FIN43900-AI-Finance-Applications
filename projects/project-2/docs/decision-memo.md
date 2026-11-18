@@ -11,72 +11,45 @@
 ### Mandatory Fiduciary & AI Disclosures
 
 > **1. AI Tool Disclosure:** Anthropic Claude (Claude 3.5 Sonnet / Claude Opus) and Google Antigravity were utilized in designing analytical scripts, visualization ergonomics, and formatting optimization. All mathematical derivations, input validations, fiduciary constraints, and investment decisions were directed, verified, and finalized independently by the student analyst.  
-> **2. Ownership & Academic Notice:** The analysis, models, interpretations, and committee recommendations presented herein are solely the author's work; this memorandum is an educational simulation developed for academic demonstration in FIN 43900 at Purdue University, not personalized investment advice.
 
 ---
 
-## 1. Executive Decision & Recommendation
+## 1. Decision
 
-We recommend that the Investment Committee **ALLOCATE TO THE CONSTRAINED OPTIMAL PORTFOLIO** under a governed transition structure, rather than adopting the unconstrained policy benchmark.
+**Recommendation: ALLOCATE** to the Constrained Optimal Portfolio, under the monitoring triggers in Section 4. The 60/40 policy benchmark is not adoptable as written.
 
-| Portfolio Option | Net Expected Return | Annualized Volatility | Sharpe Ratio | Reserve Buffer ($\ge 3.0\%$) | Mandate Verdict | Primary Fiduciary Finding |
+| Portfolio | Net return | Volatility | Sharpe | Reserve buffer (min 3.0%) | Mandate verdict | Finding |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **Baseline 1: Equal Weight ($1/N$)** | 5.20% | 5.21% | 0.33 | 50.0% | **FAIL** | Violates 6.50% net return hurdle (drags -130 bps) |
-| **Baseline 2: Policy Benchmark (60/40)** | 6.80% | 10.46% | 0.32 | 0.0% | **FAIL** | Violates 3.0% reserve buffer floor (holds $0 in Treasuries) |
-| **Constrained Optimal Portfolio** | **6.50%** | **9.30%** | **0.32** | **8.0%** | **PASS** | Fully compliant; dominates benchmark on risk (-116 bps vol) |
+| Equal Weight (1/N) | 5.20% | 5.21% | 0.33 | 50.0% | **FAIL** | Misses the 6.50% hurdle (-130 bps) |
+| 60/40 Benchmark | 6.80% | 10.46% | 0.32 | 0.0% | **FAIL** | Holds $0 in Treasuries; breaks Fact S3 |
+| **Constrained Optimal** | **6.50%** | **9.30%** | **0.32** | **8.0%** | **PASS** | Meets all six covenants; -116 bps vol vs. benchmark |
 
-### The Core Problem with the Status Quo
-The Foundation's current policy benchmark (60% Global Equity / 40% Investment Grade Corporate Bonds) suffers from a critical contractual flaw: **it holds zero reserve-eligible sovereign liquidity**. Under Fact S3 of the Meridian Mandate, the Foundation is legally obligated to maintain at least 12 months of quarterly spending payouts ($3.0M / 3.0%) in cash or daily-liquid sovereign securities (U.S. Treasury bills or notes). Corporate bond funds (`LQD`) carry credit spread risk and settlement lags, disqualifying them from the reserve buffer. Adopting the benchmark as written creates an immediate covenant breach.
+Fact S3 requires 12 months of payouts ($3.0M, 3.0%) in cash or daily-liquid Treasuries. `LQD` credit funds do not qualify, so the benchmark breaches the mandate on day one. Equal weight is liquid but earns only 5.20% against the CPI + 4.0% (6.50%) hurdle.
 
-Conversely, a naive equal-weight allocation ($25\%$ in each sleeve) provides abundant liquidity ($50\%$), but severely penalizes the endowment, delivering only **5.20% net return** against the CPI + 4.0% (**6.50%**) hurdle, guaranteeing long-term purchasing power erosion.
+## 2. Allocation Range
 
----
+| Sleeve | Ticker | Target | Band | Capital |
+| :--- | :--- | :---: | :---: | :---: |
+| Global Equity | `VT` | **52.0%** | 48.0-55.0% | $52,000,000 |
+| IG Corporate Bonds | `LQD` | **40.0%** | 36.0-44.0% | $40,000,000 |
+| 10-Year Treasuries | `IEF` | **8.0%** | 3.0-10.0% | $8,000,000 |
+| T-Bills / Cash | `BIL` | **0.0%** | 0.0-3.0% | $0 |
 
-## 2. Recommended Asset Allocation & Rebalancing Bands
+Sovereign reserve paper is 8.0% ($8.0M), 2.67x the required $3.0M buffer.
 
-To satisfy the real return objective while strictly honoring all liquidity, concentration, and long-only mandates, we recommend deploying capital across the following target weights and tolerance bands:
+## 3. Stress Test and Stop Condition
 
-| Asset Sleeve | Target Ticker | Fiduciary Role | Target Weight | Minimum Band | Maximum Band | Target Capital ($100M) |
-| :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| **Global Equity** | `VT` | Real return engine | **52.0%** | 48.0% | 55.0% | $52,000,000 |
-| **U.S. IG Corporate Bonds** | `LQD` | Income & yield generation | **40.0%** | 36.0% | 44.0% | $40,000,000 |
-| **U.S. 10-Year Treasury Notes** | `IEF` | Duration & reserve buffer | **8.0%** | 3.0% | 10.0% | $8,000,000 |
-| **U.S. Treasury Bills / Cash** | `BIL` | Immediate payout reserve | **0.0%** | 0.0% | 3.0% | $0 |
-| **Total Portfolio** | — | — | **100.0%** | — | — | **$100,000,000** |
+The engine was stressed on estimates (equity haircut 0-250 bps, credit spread 0-150 bps), correlations (stock-bond spike up to +0.80), costs (0-60 bps), the estimation window (12-60 months of prices) and constraints (reserve floor 3-12%).
 
-*Note: Total sovereign reserve-eligible paper is 8.0% ($8.0M), providing an immediate 2.67x coverage ratio over the required 12-month spending buffer ($3.0M).*
+**Process kill condition:** if forward equity return falls below **7.00%** (-100 bps), the 6.50% hurdle forces equity to 78% and volatility to 12.70%, above the **12.00%** committee ceiling. Optimization stops, equity is capped at 50% with the rest in Treasuries (`BIL`/`IEF`), and the committee must vote to lower the payout rate or the real-return hurdle. The Locked Changed-Input Record in `docs/validation-and-ai-use.md` tests this input.
 
----
+## 4. Committee Ask and Reversal Triggers
 
-## 3. Stress Testing & Quantitative Stop / Kill Condition
+The Committee is asked to (1) approve rebalancing the $100M to the targets above, (2) sweep excess cash quarterly into `BIL`/`IEF` to keep the $3.0M buffer, and (3) reconvene if any of these occurs:
+- Rolling 12-month net real return is below CPI + 1.0% for two consecutive quarters.
+- The 10-year Treasury yield falls below 3.0%.
+- Annual tracking error versus the 60/40 benchmark exceeds 250 bps.
 
-In compliance with SR 26-2 outcome analysis, the portfolio engine was subjected to multi-factor macro stress shocks:
-1. **Equity Return Haircut:** Evaluated from 8.0% down to 6.50%.
-2. **Correlation Breakdown:** Shocked stock-bond correlation from -0.10 to +0.40.
-3. **Execution Friction:** Factored 20 bps annual turnover and management drag.
+## 5. Data Governance
 
-### The Stop / Kill Condition
-The process establishes an explicit, quantitative **PROCESS KILL CONDITION**:
-> **Trigger Rule:** If forward equity return expectations fall below **7.00%** (a 100 bps haircut from base estimates), the portfolio optimization engine becomes unstable: attempting to satisfy the 6.50% net hurdle requires equity concentration to rise above 75%, forcing portfolio volatility past **12.00%** (violating the Foundation's maximum volatility tolerance).
-
-**Mandatory Action Upon Trigger:**
-If the Kill Condition is triggered, active optimization is immediately suspended. Discretion is revoked from the manager, equity exposure is capped at 50%, and the remaining 50% is locked into sovereign Treasuries (`BIL` / `IEF`) until the Investment Committee formally votes to either lower the quarterly spending distribution rate or accept a lower real return hurdle.
-
----
-
-## 4. Point-in-Time Data Governance (ALFRED Audit)
-
-Macroeconomic signals governing the inflation hurdle (`CPIAUCSL`) were audited using Federal Reserve Bank of St. Louis ALFRED vintages. Modern FRED series reflect retroactive annual 5-year seasonal factor revisions (altering 60 historical monthly prints). Naive backtests using modern series introduce severe look-ahead bias. Under our governance framework, `CPIAUCSL` is placed under **Fiduciary Quarantine**: monthly inflation is verified strictly on point-in-time publication dates ($t_{\text{pub}} \le t_{\text{decision}}$) or benchmarked against unrevised headline figures (`CPIAUCNS`).
-
----
-
-## 5. Ongoing Monitoring Triggers & Committee Action
-
-We request that the Investment Committee approve:
-1. **Immediate Execution:** Rebalance the $100M reserve to the Constrained Optimal Portfolio targets.
-2. **Quarterly Liquidity Review:** Sweep excess cash flow into `BIL`/`IEF` to maintain the 12-month $3.0M spending buffer.
-3. **Reversal Triggers:** Mandatory committee convening if:
-   - Rolling 12-month net real return falls below CPI + 1.0% (3.5% total return) for two consecutive quarters.
-   - 10-year Treasury yield drops below 3.0%, impairing sovereign reserve income.
-   - Annual tracking error relative to the 60/40 benchmark exceeds 250 bps.
-
+Inflation (`CPIAUCSL`) is audited with ALFRED vintages: modern series carry retroactive seasonal revisions, so decisions use only values published by the decision date ($t_{\text{pub}} \le t_{\text{decision}}$). Method and limits are in `docs/validation-and-ai-use.md`.

@@ -192,9 +192,13 @@ def run_stress_test(
     equity_bond_corr_shock: float = 0.0,
     reserve_floor_override: Optional[float] = None,
     transaction_cost_bps: float = 0.0,
+    estimation_window_months: Optional[int] = None,
+    prices_df: Optional[pd.DataFrame] = None,
 ) -> Dict[str, Any]:
     """
     Conducts comprehensive stress testing across:
+      0. Estimation window: re-estimate volatilities and correlations from the last N
+         months of prices_df (expected returns stay course-authored)
       1. Expected return estimates haircut
       2. Credit & Equity correlation spikes (regime breakdown)
       3. Transaction cost slippage
@@ -202,6 +206,16 @@ def run_stress_test(
     And evaluates whether the process triggers the STOP / KILL rule.
     """
     stressed_sleeves = [dict(s) for s in sleeves]
+    base_corr = [row[:] for row in base_corr]
+    if estimation_window_months and prices_df is not None:
+        est = estimate_from_historical_prices(prices_df.tail(int(estimation_window_months) + 1))
+        vols = est["annualized_volatilities"]
+        cols = est["columns"]
+        for sl in stressed_sleeves:
+            if sl["ticker"] in vols:
+                sl["volatility"] = float(vols[sl["ticker"]])
+        order = [cols.index(sl["ticker"]) for sl in stressed_sleeves]
+        base_corr = [[est["sample_correlation"][i][j] for j in order] for i in order]
     # Apply return haircuts
     stressed_sleeves[3]["return"] -= (equity_return_haircut_bps / 10_000.0)  # Equity (VT)
     stressed_sleeves[2]["return"] -= (credit_spread_shock_bps / 10_000.0)   # IG Bonds (LQD)
