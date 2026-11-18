@@ -39,15 +39,15 @@ Every written deliverable is maintained in GitHub-versioned Markdown in complian
 
 ## 2. Video Submissions (YouTube Links & Transcripts)
 
-All three videos are Unlisted YouTube links with captions enabled. **Status: Video 1 uploaded (unlisted); Videos 2 and 3 PENDING recording** - link, duration and timestamps below are filled in after upload; none is claimed until then.
+All three videos are Unlisted YouTube links with captions enabled. **Status: All three videos uploaded (unlisted)** - link, duration and timestamps below are filled in after upload; none is claimed until then.
 
 | Video | Limit | YouTube link | Actual duration | Transcript |
 | :--- | :---: | :--- | :---: | :--- |
 | 1 - Research evolution & thinking changes | 3:00 | [https://youtu.be/C-fHpIHxUow](https://youtu.be/C-fHpIHxUow) (unlisted) | 2:42 (per YouTube) | [transcript-video-1.txt](transcripts/transcript-video-1.txt) |
-| 2 - Technical code & model walkthrough | 5:00 | PENDING | PENDING | [transcript-video-2.txt](transcripts/transcript-video-2.txt) |
-| 3 - Committee defense & live demo (opens with live app) | 5:00 | PENDING | PENDING | [transcript-video-3.txt](transcripts/transcript-video-3.txt) |
+| 2 - Technical code & model walkthrough | 5:00 | [https://youtu.be/Fm9Eh4odHSA](https://youtu.be/Fm9Eh4odHSA) (unlisted) | 3:39 (per YouTube) | [transcript-video-2.txt](transcripts/transcript-video-2.txt) |
+| 3 - Committee defense & live demo (opens with live app) | 5:00 | [https://youtu.be/qsCibfoSNPY](https://youtu.be/qsCibfoSNPY) (unlisted) | 3:52 (per YouTube) | [transcript-video-3.txt](transcripts/transcript-video-3.txt) |
 
-### Timestamp index (to be confirmed against final recordings)
+### Timestamp index (approximate, read from the final recordings; Video 1 entries still to be filled)
 
 | Video | Time | Content |
 | :--- | :---: | :--- |
@@ -55,13 +55,16 @@ All three videos are Unlisted YouTube links with captions enabled. **Status: Vid
 | 1 | PENDING | What changed from Lab 13 to Project 2 |
 | 1 | PENDING | How AI output was independently checked |
 | 2 | 0:00 | Two required statements |
-| 2 | PENDING | `engine.py`: covariance, optimizer, stress drivers |
-| 2 | PENDING | `mandate.py`: 60/40 covenant failure |
-| 2 | PENDING | Tests (9/9) and LCIR |
+| 2 | ~0:10 | `mandate.py`: mandate constants and 60/40 covenant failure |
+| 2 | ~1:15 | `engine.py`: covariance, optimizer, stress drivers |
+| 2 | ~2:15 | `point_in_time.py`: ALFRED point-in-time data card |
+| 2 | ~3:00 | Tests (9/9) |
 | 3 | 0:00 | Live app shown first; two required statements |
-| 3 | PENDING | Three-portfolio comparison and recommendation |
-| 3 | PENDING | Stress tab and -100 bps kill rule (12.70% vol) |
-| 3 | PENDING | Reversal triggers and committee ask |
+| 3 | ~0:25 | Three-portfolio comparison and recommendation |
+| 3 | ~1:10 | Point-in-time data card |
+| 3 | ~1:35 | Stress tab and -100 bps kill rule (12.70% vol) |
+| 3 | ~2:10 | Locked Changed-Input Record |
+| 3 | ~2:45 | Reversal triggers and committee ask |
 
 ### Access confirmation
 
@@ -76,7 +79,7 @@ All three videos are Unlisted YouTube links with captions enabled. **Status: Vid
 - [x] A stranger can clone the repo and execute `streamlit run app.py` from the README without error.
 - [x] Mandatory AI and Educational disclaimers open README, Decision Memo, and all video scripts.
 - [x] Decision Memo, Validation Record, and Live App report identical numbers (Return: 6.50%, Vol: 9.30%, Res: 8.0%).
-- [ ] Locked Changed-Input Record with AI-off prediction committed to Git before the run (LCIR-002 pending the analyst's own prediction).
+- [ ] Locked Changed-Input Record with AI-off prediction committed to Git before the run (LCIR-001 and LCIR-002; LCIR-002 prediction committed before the run).
 - [x] Point-in-time data card documents dual timestamps, publication lags, and revision risk.
 - [x] No private API keys, passwords, or personal credentials committed to Git.
 
