@@ -2,37 +2,27 @@
 FIN 43900 Project 2 — Video 2 Transcript: Technical Code & Model Walkthrough
 Author: Oladapo Olaniyan (oolaniy@purdue.edu)
 Course: FIN 43900 — AI Finance Applications, Fall 2026, Purdue University
-Target Duration: <= 5:00 (Recorded: ~4:30)
+Target Duration: <= 5:00 (actual duration: see submission/manifest.md after recording)
 ================================================================================
 
-[00:00 - 00:25] MANDATORY FIDUCIARY OPENING STATEMENTS
+[00:00 - 00:25] MANDATORY OPENING STATEMENTS
 "Hello, my name is Oladapo Olaniyan. As required:
-First, I utilized Anthropic Claude and Google Antigravity for code design and test scaffolding; all mathematical logic, parameter audits, and portfolio decisions are mine.
+First, I used Anthropic Claude and Google Antigravity for code design and test scaffolding; all mathematical logic, parameter audits, and portfolio decisions are mine.
 Second, this technical walkthrough is an academic presentation for FIN 43900 at Purdue University, not investment advice."
 
-[00:25 - 01:20] ARCHITECTURAL REPOSITORY TOUR
-"Let's walk through the codebase. The application is modularized cleanly under `projects/project-2/`.
-In the `data/` directory, we maintain two core CSV datasets:
-First, `prices.csv`, containing five full years of monthly dividend-adjusted prices across our four core ETF sleeves: BIL for cash and short T-Bills, IEF for 7-to-10 year Treasuries, LQD for investment grade corporate credit, and VT for global equities.
-Second, `pit_macro.csv`, which stores historical vintages of the Consumer Price Index (CPIAUCSL) pulled directly from the St. Louis Fed's ALFRED platform.
-In `src/`, our architecture separates concerns across three core engines: `mandate.py`, `engine.py`, and `point_in_time.py`."
+[00:25 - 01:00] REPOSITORY TOUR
+"The project lives under projects/project-2. The data folder has two files: prices.csv, five years of monthly adjusted prices for four ETF sleeves, BIL, IEF, LQD and VT; and pit_macro.csv, historical vintages of CPI from the St. Louis Fed's ALFRED database. The src folder has three modules: mandate.py, engine.py and point_in_time.py."
 
-[01:20 - 02:25] THE MANDATE AND RISK ENGINE
-"In `mandate.py`, we translate the Meridian Foundation's contractual covenants into hard algorithmic rules:
-The function `check_mandate()` implements this. It evaluates six distinct criteria: total allocation summing to 100%, long-only non-negative weights, a minimum 3.0% reserve-eligible sovereign liquidity floor, a 6.50% net return hurdle (reflecting CPI of 2.5% plus the 4.0% real payout hurdle), a 90% five-day liquidity requirement, and an 8% single-issuer limit for non-exempt assets.
-If we inspect `engine.py`, `build_covariance()` constructs the covariance matrix Sigma from sleeve volatilities and correlation coefficients.
-`optimize_constrained_mix()` is the optimizer. Rather than using an unconstrained solver that might output extreme or leveraged weights, we execute a discrete 2% step grid search that evaluates every feasible long-only asset combination, instantly filtering out any allocation that breaches the 3.0% sovereign buffer or fails the 6.50% net return hurdle, and selecting the portfolio with the global minimum annualized volatility."
+[01:00 - 02:10] MANDATE AND OPTIMIZER
+"mandate.py turns the Foundation's covenants into hard rules. The check covers total weight of 100 percent, long-only, a 3.0 percent sovereign reserve floor, the 6.50 percent return hurdle, five-day liquidity, and an 8 percent single-issuer cap.
+In engine.py, build_covariance builds the covariance matrix from sleeve volatilities and correlations. optimize_constrained_mix runs a 2 percent step grid search over every long-only allocation, throws out any that break the reserve floor or miss the 6.50 percent hurdle, and keeps the one with the lowest volatility. The answer is 52 percent VT, 40 percent LQD, 8 percent IEF, no BIL: 6.50 percent return at 9.30 percent volatility."
 
-[02:25 - 03:30] POINT-IN-TIME DATA & THE PROVENANCE GATE
-"Now let's examine `point_in_time.py`. In quantitative finance, naive backtesting routinely creates look-ahead contamination.
-Our module enforces a dual-timestamp coordinate system: Event Date, when economic activity occurred, and Publication Date, when the BLS actually released the data.
-In Lab 17, we proved that on September 30, 2026, the September CPI print was unknowable—it was not published until mid-October. Even more critically, comparing ALFRED's vintage of January 15, 2024 to today proves that 60 prior monthly observations were revised due to annual seasonal factor recalculations.
-Our provenance gate places CPI under strict Fiduciary Quarantine: we only admit observations published prior to or on the decision date."
+[02:10 - 03:00] STRESS ENGINE
+"run_stress_test lets the committee change estimates, costs, correlations, the estimation window and the constraints. Return haircuts, a credit spread shock, an equity-bond correlation spike and transaction costs all feed through. I added two more drivers: an estimation window of 12 to 60 months, which re-estimates volatilities and correlations from the price file, and a reserve floor from 3 to 12 percent. If volatility goes above 12.00 percent, the optimization is infeasible, or return falls below 6.50 percent, the kill rule stops the process."
 
-[03:30 - 04:30] TESTS & VALIDATION AUDIT
-"To ensure the system cannot fail cold in production, we built an automated validation suite.
-Test 1 verifies correlation matrix symmetry and diagonal integrity using `validate_correlation()` in `mandate.py`.
-Tests 2 and 3 reconcile our Equal Weight and Benchmark baselines against published known answers down to four decimal places: Equal Weight delivers 5.20% return and 5.21% volatility, while the 60/40 benchmark produces 6.80% return and 10.46% volatility.
-Test 4 verifies that our constrained optimizer finds the minimum-variance mix: 52% VT, 40% LQD, and 8% IEF, with no BIL, achieving 6.50% return at only 9.30% volatility.
-All tests pass cleanly. The system is robust, documented, and ready for deployment."
+[03:00 - 03:35] POINT-IN-TIME DATA
+"point_in_time.py stores two dates for every observation: when the event happened and when it was published. Only data published on or before the decision date is allowed in. ALFRED shows that about 60 months of CPI were revised by seasonal-factor updates, so CPI is under quarantine."
 
+[03:35 - 04:35] TESTS
+"The suite has nine tests, and all pass.
+Test 1 checks correlation symmetry and diagonal equal to 1. Tests 2 and 3 match equal weight, 5.20 percent return and 5.21 percent volatility, and the 60/40 benchmark, 6.80 percent and 10.46 percent, to four decimals. Test 4 checks the optimizer's answer. Test 5 checks the kill rule at a 100 basis point equity shock. Test 6 checks that the mandate checker passes the optimal portfolio and fails the other two. Test 7 flips the shock to confirm the kill rule turns on and off. Test 8 confirms the numbers in the memo and validation record equal engine output. Test 9 checks the new window and reserve-floor drivers."

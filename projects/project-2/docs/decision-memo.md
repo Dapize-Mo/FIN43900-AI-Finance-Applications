@@ -41,7 +41,7 @@ Sovereign reserve paper is 8.0% ($8.0M), 2.67x the required $3.0M buffer.
 
 The engine was stressed on estimates (equity haircut 0-250 bps, credit spread 0-150 bps), correlations (stock-bond spike up to +0.80), costs (0-60 bps), the estimation window (12-60 months of prices) and constraints (reserve floor 3-12%).
 
-**Process kill condition:** if forward equity return falls below **7.00%** (-100 bps), the 6.50% hurdle forces equity to 78% and volatility to 12.70%, above the **12.00%** committee ceiling. Optimization stops, equity is capped at 50% with the rest in Treasuries (`BIL`/`IEF`), and the committee must vote to lower the payout rate or the real-return hurdle. The Locked Changed-Input Record in `docs/validation-and-ai-use.md` tests this input.
+**Process kill condition:** if forward equity return falls below **7.00%** (-100 bps), the 6.50% hurdle forces equity to 78% and volatility to 12.70%, above the **12.00%** committee ceiling. Optimization stops, equity is capped at 50% with the rest in Treasuries (`BIL`/`IEF`), and the committee must vote to lower the payout rate or the real-return hurdle. Locked Changed-Input Records in `docs/validation-and-ai-use.md` test this input (LCIR-001) and a +50 bps credit spread shock (LCIR-002: volatility 9.70%, no kill, optimizer exits `LQD` for 38% `IEF` / 60% `VT`, so the analyst's prediction was partly wrong).
 
 ## 4. Committee Ask and Reversal Triggers
 
