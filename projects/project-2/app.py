@@ -22,6 +22,14 @@ _PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 if _PROJECT_DIR not in sys.path:
     sys.path.insert(0, _PROJECT_DIR)
 
+# Streamlit Cloud can keep an older copy of the src modules in memory after a redeploy,
+# which makes new engine arguments fail with a TypeError. Reload them on every run so the
+# app always uses the engine that was deployed with it.
+import importlib
+for _m in ("src.mandate", "src.engine", "src.point_in_time"):
+    if _m in sys.modules:
+        importlib.reload(sys.modules[_m])
+
 from src.mandate import (
     validate_correlation,
     PORTFOLIO_SIZE,
