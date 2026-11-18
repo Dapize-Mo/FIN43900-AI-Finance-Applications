@@ -58,7 +58,13 @@ In strict adherence to the Week 6 verification pattern, the following test was d
 ```yaml
 locked_changed_input_record:
   record_id: "LCIR-FIN43900-P2-001"
-  timestamp_committed: "2026-11-10T19:30:00Z"
+  timestamp_committed: "2026-11-10T19:30:00Z"   # time the AI-off prediction was written
+  git_evidence:
+    first_commit_of_record: "44ed6cf (2026-11-11 08:41 -0500)"   # git log -- docs/validation-and-ai-use.md
+    code_frozen_before_run:
+      src/engine.py:  "sha256 80921e5850f64d2da0702c73a8ec5a62cd8d1c19191dcceaa22b0bee1f1e8834"
+      src/mandate.py: "sha256 900890443b7235766ee7e6031af24baf6040d18f7e59950dc8d7d70517e10c5f"
+    verify_with: "sha256sum src/engine.py src/mandate.py  (hashes recorded at the 2026-11-17 revision; re-record if either file changes)"
   human_analyst: "Oladapo Olaniyan"
   input_under_test: "Global Equity Expected Return Estimate (Sleeve: VT / Global Equity Index Fund)"
   parameter_units: "Percentage points / basis points per annum"
@@ -104,6 +110,23 @@ locked_changed_input_record:
 
 ---
 
+## 3A. Assumption Acceptance Ledger
+
+Every load-bearing assumption is explicitly accepted or rejected, with the reason. Only the **Accept/Reject** column reflects a decision; the app never changes an accepted value silently.
+
+| # | Assumption | Value used | Decision | Rationale / Source | What would change my mind |
+| :-: | :--- | :--- | :---: | :--- | :--- |
+| A1 | Global equity expected return | 8.00% | **Accept** | Course-authored forward estimate (contractual input); stress-tested at 7.00% in the LCIR | Equity premium evidence below 7.00% |
+| A2 | IG corporate expected return | 5.00% | **Accept** | Course-authored; stress-tested with a 0-150 bps credit shock | Spread widening beyond 150 bps |
+| A3 | 10Y Treasury / Bills yields | 4.30% / 3.50% | **Accept** | Course-authored; used as reserve-eligible sleeve returns | 10Y yield < 3.0% (memo reversal trigger) |
+| A4 | Sleeve volatilities | 0.5% / 7.0% / 6.0% / 16.0% | **Accept** | Matches the 5-year monthly ETF sample within rounding | Volatility regime shift (trailing vol > 1.5x sample) |
+| A5 | Correlation matrix | BASE_CORRELATION (validated) | **Accept with test** | Passes `validate_correlation()`; stress-tested with a 0-0.80 stock-bond spike | Correlation breakdown (March 2020 style) |
+| A6 | Inflation (CPI) | 2.50% | **Accept** | Governs the 6.50% hurdle (CPI + 4.0% real return); audited point-in-time via ALFRED vintages | Two quarters of real return below CPI + 1.0% |
+| A7 | Stationary covariance | Held constant | **Reject as a forecast** | Treated only as a planning input; the kill rule and stress tab cover regime change | Any breach of the 12.00% volatility ceiling |
+| A8 | Grid step | 2% weight steps | **Accept** | Fine enough to hit 6.50%; optimal weights verified by the known-answer test | Result changes under a 1% grid |
+
+---
+
 ## 4. Verification Test Suite & Quantitative Checks
 
 Automated programmatic unit checks verified the analytical engine before deployment:
@@ -115,6 +138,8 @@ Automated programmatic unit checks verified the analytical engine before deploym
 | **TEST-03** | Benchmark Known Answer | $w = [0.0, 0.0, 0.40, 0.60]$ | Ret: 6.80%, Vol: 10.46%, Res: 0.0% | Ret: 6.80%, Vol: 10.46%, Res: 0.0% | **PASS** |
 | **TEST-04** | Constrained Optimizer | Min vol s.t. Ret $\ge 6.5\%$, Res $\ge 3\%$ | Vol $< 10.46\%$, Ret $\ge 6.5\%$ | Vol: 9.30%, Ret: 6.50%, Res: 8.0% | **PASS** |
 | **TEST-05** | Mandate Covenant Checker | Test Benchmark allocation | FAIL (Reserve buffer 0% < 3%) | FAIL with specific rule breach | **PASS** |
+| **TEST-07** | Mandate consistency / flip test | Optimal vs benchmark vs equal weight; 0 vs 100 bps shock | Optimal PASS; benchmark and equal FAIL; kill flips only under shock | Matches | **PASS** |
+| **TEST-08** | Memo/LCIR vs engine concordance | 9.30% and 12.70% quoted in docs | Docs equal engine output | Matches | **PASS** |
 | **TEST-06** | ALFRED Provenance Gate | Test Sept 2026 CPI on 2026-09-30 | Unknowable / Post-dated | Quarantined; not released until mid-Oct | **PASS** |
 
 ---

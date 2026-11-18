@@ -23,6 +23,7 @@ if _PROJECT_DIR not in sys.path:
     sys.path.insert(0, _PROJECT_DIR)
 
 from src.mandate import (
+    validate_correlation,
     PORTFOLIO_SIZE,
     ANNUAL_PAYOUT,
     QUARTERLY_PAYOUT,
@@ -712,14 +713,28 @@ with tab4:
     else:
         p_eq, p_cred, p_corr, p_cost = 100, 50, 0.30, 20
 
+    if "stress_nonce" not in st.session_state:
+        st.session_state["stress_nonce"] = 0
+    if st.button(":material/restart_alt: Reset all drivers to base", help="Restores every stress slider to its base value (0 shock)"):
+        st.session_state["stress_nonce"] += 1
+        st.rerun()
+    _k = st.session_state["stress_nonce"]
+
     stress_cols = st.columns([1, 1.2])
 
     with stress_cols[0].container(border=True):
         st.markdown("#### :material/tune: Stress Parameter Overrides")
-        eq_shock = st.slider("Equity Expected Return Haircut (bps)", 0, 250, p_eq, step=25, help="Reduces forward expected return of Global Equity")
-        corr_spike = st.slider("Stock-Bond Correlation Spike", 0.0, 0.8, float(p_corr), step=0.05, help="Simulates breakdown of fixed income diversification")
-        credit_shock = st.slider("Credit Spread Shock (bps)", 0, 150, p_cred, step=25, help="Haircuts expected return on IG corporate bonds")
-        cost_bps = st.slider("Transaction Cost Drag (bps)", 0, 60, p_cost, step=5, help="Turnover, management fees, and execution slippage")
+        eq_shock = st.slider("Equity Expected Return Haircut (bps)", 0, 250, p_eq, step=25, help="Reduces forward expected return of Global Equity", key=f"sl_equity_{_k}_{preset_choice}")
+        corr_spike = st.slider("Stock-Bond Correlation Spike", 0.0, 0.8, float(p_corr), step=0.05, help="Simulates breakdown of fixed income diversification", key=f"sl_stock-bond_{_k}_{preset_choice}")
+        credit_shock = st.slider("Credit Spread Shock (bps)", 0, 150, p_cred, step=25, help="Haircuts expected return on IG corporate bonds", key=f"sl_credit_{_k}_{preset_choice}")
+        cost_bps = st.slider("Transaction Cost Drag (bps)", 0, 60, p_cost, step=5, help="Turnover, management fees, and execution slippage", key=f"sl_transaction_{_k}_{preset_choice}")
+
+    st.caption("Input bounds: equity haircut 0–250 bps · correlation spike 0.00–0.80 · credit shock 0–150 bps · cost drag 0–60 bps. Out-of-range values are rejected by the sliders; the engine re-validates the correlation matrix on every run.")
+    try:
+        validate_correlation(BASE_CORRELATION)
+    except ValueError as _err:
+        st.error(f"🛑 Invalid correlation matrix: {_err}")
+        st.stop()
 
     stress_result = run_stress_test(
         sleeves=SLEEVES,
@@ -794,7 +809,7 @@ with tab5:
     })
     with st.container(border=True):
         st.dataframe(lcir_table, use_container_width=True, hide_index=True)
-        st.info("🔒 **Integrity Hash:** This record is committed to Git in `docs/validation-and-ai-use.md`.")
+        st.info("🔒 **Integrity Evidence:** Record lives in `docs/validation-and-ai-use.md` (first commit `44ed6cf`). Frozen code hashes: `engine.py` sha256 `80921e58…e8834`, `mandate.py` sha256 `90089044…10c5f`. Verify with `sha256sum src/engine.py src/mandate.py`.")
 
 # ==============================================================================
 # TAB 6: COMMITTEE DECISION MEMO

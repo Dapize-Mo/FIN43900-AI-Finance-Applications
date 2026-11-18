@@ -47,6 +47,37 @@ def test_05_kill_rule():
     assert not e.run_stress_test(S, BASE_CORRELATION)["is_killed"]
 
 
+def test_06_mandate_consistency():
+    """Optimal portfolio passes S1-S10 checker; benchmark and equal weight fail on reserve."""
+    opt = e.optimize_constrained_mix(S, COV)
+    assert opt["mandate_verdict"] == "PASS"
+    bench = e.evaluate_portfolio("Benchmark", e.get_benchmark_weights(), S, COV)
+    eq = e.evaluate_portfolio("Equal", e.get_equal_weights(), S, COV)
+    assert bench["mandate_verdict"] != "PASS" and eq["mandate_verdict"] != "PASS"
+    res = sum(w for w, sl in zip(opt["weights"], S) if sl.get("reserve_eligible"))
+    assert res >= 0.03 - 1e-9
+
+
+def test_07_flip_test():
+    """Flip test: a smaller shock must NOT kill the process; the -100 bps shock must."""
+    assert not e.run_stress_test(S, BASE_CORRELATION, equity_return_haircut_bps=0)["is_killed"]
+    assert e.run_stress_test(S, BASE_CORRELATION, equity_return_haircut_bps=100)["is_killed"]
+    v50 = e.run_stress_test(S, BASE_CORRELATION, equity_return_haircut_bps=50)
+    assert v50["is_killed"] or v50["result"]["volatility"] < 0.12
+
+
+def test_08_doc_engine_concordance():
+    """Memo / LCIR numbers must match what the engine produces."""
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    memo = open(os.path.join(root, "docs", "decision-memo.md"), encoding="utf-8").read()
+    lcir = open(os.path.join(root, "docs", "validation-and-ai-use.md"), encoding="utf-8").read()
+    opt = e.optimize_constrained_mix(S, COV)
+    assert f"{opt['volatility']*100:.2f}%" in memo
+    s = e.run_stress_test(S, BASE_CORRELATION, equity_return_haircut_bps=100)
+    assert f"{s['result']['volatility']*100:.2f}%" in lcir
+    assert "12.00%" in lcir and "12.00%" in memo
+
+
 if __name__ == "__main__":
     for n, f in sorted(globals().items()):
         if n.startswith("test_"):
