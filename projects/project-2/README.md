@@ -52,7 +52,7 @@ streamlit run app.py
 | **3. Two Baselines & Portfolio** | `app.py` (Tab 1 & 2) & [`src/engine.py`](src/engine.py) | **Equal Weight** (Fails Return), **Benchmark** (Fails Buffer), **Constrained Optimal** (PASSES ALL) |
 | **4. Point-in-Time Signal** | [`src/point_in_time.py`](src/point_in_time.py) & `data/pit_macro.csv` | ALFRED CPI vintage audit proving 60-month historical revisions + Data Card |
 | **5. Stress Run & Kill Condition** | `app.py` (Tab 4) & [`src/engine.py`](src/engine.py) | Return shocks, credit spread widening, and volatility stop rule (> 12.00%) |
-| **6. Locked Changed-Input Record** | [`docs/validation-and-ai-use.md`](docs/validation-and-ai-use.md) | Pre-run AI-off prediction on equity return haircut (-100 bps) committed to Git |
+| **6. Locked Changed-Input Record** | [`docs/validation-and-ai-use.md`](docs/validation-and-ai-use.md) | Pre-run AI-off prediction on equity return haircut (-100 bps) recorded in Git history (first commit `44ed6cf`) |
 | **7. Final Recommendation** | [`docs/decision-memo.md`](docs/decision-memo.md) | Fiduciary recommendation to allocate to Constrained Optimal Portfolio |
 | **8. Two Opening Statements** | README, Memo, and all 3 video transcripts | Disclosures prominent at the head of every deliverable |
 

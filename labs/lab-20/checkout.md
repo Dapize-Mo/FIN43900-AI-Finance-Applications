@@ -82,7 +82,7 @@ In accordance with official course rulings, our repository satisfies every crite
 
 ## 🔬 One Changed Input — Predicted First (V)
 
-In compliance with Base Requirement 6 and the Week 6 verification pattern, the following test was designed, predicted without AI assistance, committed to Git prior to execution, and rerun:
+In compliance with Base Requirement 6 and the Week 6 verification pattern, the following test was designed, predicted without AI assistance, recorded in Git history (first commit `44ed6cf`, 2026-11-11), and rerun:
 
 ### Locked Changed-Input Record (`LCIR-FIN43900-P2-001`)
 

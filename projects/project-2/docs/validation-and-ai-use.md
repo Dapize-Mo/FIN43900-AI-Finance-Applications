@@ -53,7 +53,7 @@ Federal Reserve SR 26-2 provides the professional standard for assessing whether
 
 ## 3. The Locked Changed-Input Record (Base Requirement 6)
 
-In strict adherence to the Week 6 verification pattern, the following test was designed, predicted without AI, and committed to the Git audit trail prior to execution.
+In strict adherence to the Week 6 verification pattern, the following test was designed, predicted without AI (prediction written 2026-11-10), and recorded in the Git audit trail (first commit `44ed6cf`, 2026-11-11).
 
 ```yaml
 locked_changed_input_record:

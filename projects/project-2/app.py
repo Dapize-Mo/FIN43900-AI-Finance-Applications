@@ -593,10 +593,15 @@ with tab2:
     active_audit_res = res_opt if "Optimal" in port_inspect else (res_eq if "Equal" in port_inspect else res_bm)
     a = active_audit_res["audit"]
 
+    verdict_badge = (
+        '<span class="badge-pass">MANDATE VERDICT: PASS ✅</span>'
+        if a["overall_pass"]
+        else '<span class="badge-fail">MANDATE VERDICT: FAIL ❌</span>'
+    )
+
     with st.container(border=True):
         st.markdown(
-            f"#### Audit Ledger: {port_inspect} — "
-            f"{'<span class=\"badge-pass\">MANDATE VERDICT: PASS ✅</span>' if a['overall_pass'] else '<span class=\"badge-fail\">MANDATE VERDICT: FAIL ❌</span>'}",
+            f"#### Audit Ledger: {port_inspect} — {verdict_badge}",
             unsafe_allow_html=True,
         )
 
@@ -695,17 +700,19 @@ with tab4:
     st.markdown("### :material/crisis_alert: Stress Testing & Quantitative Process Kill Condition (Base Requirement 5)")
     st.caption("A fiduciary model must establish clear boundaries where it ceases to be reliable, halting execution when macroeconomic shocks violate risk tolerances.")
 
+    if "stress_preset" not in st.session_state:
+        st.session_state["stress_preset"] = "Baseline (No Shock)"
     preset_choice = st.pills(
         "Pre-configured Stress Scenarios",
         options=["Baseline (No Shock)", "Equity Return Haircut (-100 bps)", "Stagflation Crisis", "Severe Correlation Breakdown", "Custom Shock"],
-        default="Baseline (No Shock)",
+        key="stress_preset",
     )
 
     # Preset parameter resolution
     if preset_choice == "Baseline (No Shock)":
         p_eq, p_cred, p_corr, p_cost = 0, 0, 0.0, 0
     elif preset_choice == "Equity Return Haircut (-100 bps)":
-        p_eq, p_cred, p_corr, p_cost = 100, 0, 0.0, 20
+        p_eq, p_cred, p_corr, p_cost = 100, 0, 0.0, 0  # isolates the LCIR input change (12.70% vol)
     elif preset_choice == "Stagflation Crisis":
         p_eq, p_cred, p_corr, p_cost = 150, 75, 0.40, 25
     elif preset_choice == "Severe Correlation Breakdown":
@@ -715,9 +722,11 @@ with tab4:
 
     if "stress_nonce" not in st.session_state:
         st.session_state["stress_nonce"] = 0
-    if st.button(":material/restart_alt: Reset all drivers to base", help="Restores every stress slider to its base value (0 shock)"):
+    def _reset_drivers():
         st.session_state["stress_nonce"] += 1
-        st.rerun()
+        st.session_state["stress_preset"] = "Baseline (No Shock)"
+
+    st.button(":material/restart_alt: Reset all drivers to base", help="Selects the Baseline preset and restores every stress slider to 0 shock", on_click=_reset_drivers)
     _k = st.session_state["stress_nonce"]
 
     stress_cols = st.columns([1, 1.2])
@@ -777,7 +786,7 @@ with tab4:
 # ==============================================================================
 with tab5:
     st.markdown("### :material/lock: Locked Changed-Input Record (Base Requirement 6)")
-    st.caption("Adhering to the Week 6 verification pattern: human analyst recorded an AI-off prediction committed to Git before running the test, followed by post-run reconciliation.")
+    st.caption("Adhering to the Week 6 verification pattern: human analyst wrote an AI-off prediction (dated Nov 10; first Git commit of the record 44ed6cf, Nov 11), followed by post-run reconciliation.")
 
     lcir_table = pd.DataFrame({
         "Audit Dimension": [
