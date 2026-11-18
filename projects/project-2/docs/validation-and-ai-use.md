@@ -110,9 +110,9 @@ locked_changed_input_record:
 
 ---
 
-## 3B. Locked Changed-Input Record 002 (LCIR-002) - PREDICTION ONLY (written before the run)
+## 3B. Locked Changed-Input Record 002 (LCIR-002) - prediction locked before the run, result recorded after
 
-This entry is committed to Git **before** the engine is run on the changed input. The result is added in a later, separate commit.
+The prediction was committed to Git (fd80e67) and pushed before the engine was run on the changed input. The actual result was added in a later, separate commit.
 
 ```yaml
 record_id: "LCIR-FIN43900-P2-002"
