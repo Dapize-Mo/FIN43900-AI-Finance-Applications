@@ -110,6 +110,35 @@ locked_changed_input_record:
 
 ---
 
+## 3B. Locked Changed-Input Record 002 (LCIR-002) - PREDICTION ONLY (written before the run)
+
+This entry is committed to Git **before** the engine is run on the changed input. The result is added in a later, separate commit.
+
+```yaml
+record_id: "LCIR-FIN43900-P2-002"
+status: "PREDICTION LOCKED - RESULT NOT YET RUN"
+changed_input:
+  name: "IG credit spread shock (reduces LQD expected return)"
+  old_value: "0 bps"
+  new_value: "+50 bps"
+  other_inputs: "unchanged from base case (equity haircut 0, correlation shock 0, costs 0, window = course-authored, reserve floor 3.0%)"
+baseline_for_comparison:
+  weights: "BIL 0 / IEF 8 / LQD 40 / VT 52"
+  net_return: "6.50%"
+  volatility: "9.30%"
+  reserve_buffer: "8.0%"
+ai_off_prediction:
+  author: "Oladapo Olaniyan, stated in his own words in chat on 2026-11-17 without running the engine; no AI estimate was used"
+  expected_direction: "Portfolio volatility goes up by about 50 bps (to roughly 9.80%)"
+  expected_kill_rule: "The kill rule will trigger"
+  expected_decision_effect: "Recommended weights stay 52 / 40 / 8 / 0"
+  analyst_note_to_reviewer: "Prediction recorded verbatim. As written, the three parts may not be mutually consistent (the kill rule fires only above 12.00% volatility, and a 9.80% volatility would not breach it). That tension is left in place so the actual result can be compared with the prediction as stated."
+actual_result: "NOT YET RUN"
+failure_diagnosis: "To be completed after the run"
+```
+
+---
+
 ## 3A. Assumption Acceptance Ledger
 
 Every load-bearing assumption is explicitly accepted or rejected, with the reason. Only the **Accept/Reject** column reflects a decision; the app never changes an accepted value silently.
