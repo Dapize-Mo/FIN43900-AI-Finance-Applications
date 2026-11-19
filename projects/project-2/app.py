@@ -704,7 +704,7 @@ with tab3:
     pit_cols = st.columns([1.2, 0.8])
     with pit_cols[0].container(border=True):
         st.markdown("#### Historical Seasonal Revision Curve (Lab 17 Empirical Proof)")
-        st.caption("Comparing vintage **15 January 2024** against today reveals **60 historical months** restated by BLS seasonal adjustments.")
+        st.caption("BLS seasonal adjustment can restate up to **60 historical months** (the potential revision window). Comparing the vintage columns in this dataset detects **13 revisions across 31 rows**.")
 
         if pit_df is not None:
             clean_pit = pit_df.dropna(subset=["today_vintage", "vintage_2024_01_15"]).copy()
@@ -739,8 +739,8 @@ with tab3:
     with st.container(border=True):
         st.warning(
             "⚠️ **Fiduciary Quarantine Imposed:** Because BLS seasonal adjustments recalculate the preceding 5 years "
-            "every January, raw `CPIAUCSL` is quarantined for historical backtesting. The portfolio engine admits CPI "
-            "strictly under point-in-time vintage queries (`vintage_date <= decision_date`) or substitutes unrevised headline CPI (`CPIAUCNS`)."
+            "every January, raw `CPIAUCSL` is quarantined for historical backtesting. This app demonstrates the as-of gate on one snapshot "
+            "(decision date 2026-09-30); backtests should use point-in-time vintages or unrevised headline CPI (`CPIAUCNS`). CPI does not feed the optimizer, which uses a fixed 2.50% inflation input."
         )
 
 # ==============================================================================
@@ -880,7 +880,15 @@ with tab5:
     })
     with st.container(border=True):
         st.dataframe(lcir_table, use_container_width=True, hide_index=True)
-        st.info("🔒 **Integrity Evidence:** Record lives in `docs/validation-and-ai-use.md` (first commit `44ed6cf`). Frozen code hashes: `engine.py` sha256 `80921e58…e8834`, `mandate.py` sha256 `90089044…10c5f`. Verify with `sha256sum src/engine.py src/mandate.py`.")
+        st.info("🔒 **Integrity Evidence:** Record lives in `docs/validation-and-ai-use.md` (first commit `44ed6cf`). At the LCIR-001 run, `engine.py` sha256 was `80921e58…e8834`; the current `engine.py` is `55cd0596…351e` (estimation-window and reserve-floor drivers were added later and default to off, so the LCIR-001 numbers are unchanged). `mandate.py` sha256 `90089044…10c5f`. Verify with `sha256sum src/engine.py src/mandate.py`.")
+
+    st.markdown("#### LCIR-002 (summary; full record in `docs/validation-and-ai-use.md` Section 3B)")
+    with st.container(border=True):
+        st.markdown(
+            "**Input:** IG credit spread shock, implemented as a **+50 bps haircut to LQD expected return** (prediction committed in `fd80e67`, result in a later commit).  \n"
+            "**Result:** volatility **9.70%**, kill rule **not** triggered; weights BIL 2% / IEF 38% / LQD 0% / VT 60%; return 6.504%.  \n"
+            "**Prediction vs. result:** direction correct (about +50 bps predicted, +40 bps actual); kill rule **wrong** (predicted trigger); decision effect **wrong** (predicted unchanged 52/40/8/0)."
+        )
 
 # ==============================================================================
 # TAB 6: COMMITTEE DECISION MEMO

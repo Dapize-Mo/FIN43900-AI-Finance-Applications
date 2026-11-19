@@ -2,7 +2,7 @@
 FIN 43900 Project 2 — Video 1 Transcript: Research Evolution & AI Verification
 Author: Oladapo Olaniyan (oolaniy@purdue.edu)
 Course: FIN 43900 — AI Finance Applications, Fall 2026, Purdue University
-Target Duration: <= 3:00 (Recorded: ~2:45)
+Actual duration (per YouTube): 2:42. This is the prepared script; section times are planned positions, and YouTube's captions are the verbatim record. See docs/validation-and-ai-use.md Section 7.
 ================================================================================
 
 [00:00 - 00:25] MANDATORY FIDUCIARY OPENING STATEMENTS

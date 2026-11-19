@@ -10,7 +10,8 @@
 
 ### Mandatory Fiduciary & AI Disclosures
 
-> **1. AI Tool Disclosure:** Anthropic Claude (Claude 3.5 Sonnet / Claude Opus) and Google Antigravity were utilized in designing analytical scripts, visualization ergonomics, and formatting optimization. All mathematical derivations, input validations, fiduciary constraints, and investment decisions were directed, verified, and finalized independently by the student analyst.  
+> **1. AI Tool Disclosure:** Anthropic Claude and Google Antigravity supported code structure, tests, and formatting. Oladapo Olaniyan directed, independently checked, and owns all models, inputs, and recommendations.  
+> **2. Ownership & Academic Notice:** This is the author's own work, an educational simulation for FIN 43900 at Purdue University. It is not personalized investment advice.  
 
 ---
 
@@ -22,7 +23,7 @@
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
 | Equal Weight (1/N) | 5.20% | 5.21% | 0.33 | 50.0% | **FAIL** | Misses the 6.50% hurdle (-130 bps) |
 | 60/40 Benchmark | 6.80% | 10.46% | 0.32 | 0.0% | **FAIL** | Holds $0 in Treasuries; breaks Fact S3 |
-| **Constrained Optimal** | **6.50%** | **9.30%** | **0.32** | **8.0%** | **PASS** | Meets all six covenants; -116 bps vol vs. benchmark |
+| **Constrained Optimal** | **6.50%** | **9.30%** | **0.32** | **8.0%** | **PASS** | Passes the six implemented mandate checks; -116 bps vol vs. benchmark |
 
 Fact S3 requires 12 months of payouts ($3.0M, 3.0%) in cash or daily-liquid Treasuries. `LQD` credit funds do not qualify, so the benchmark breaches the mandate on day one. Equal weight is liquid but earns only 5.20% against the CPI + 4.0% (6.50%) hurdle.
 
@@ -35,13 +36,13 @@ Fact S3 requires 12 months of payouts ($3.0M, 3.0%) in cash or daily-liquid Trea
 | 10-Year Treasuries | `IEF` | **8.0%** | 3.0-10.0% | $8,000,000 |
 | T-Bills / Cash | `BIL` | **0.0%** | 0.0-3.0% | $0 |
 
-Sovereign reserve paper is 8.0% ($8.0M), 2.67x the required $3.0M buffer.
+Sovereign reserve paper is 8.0% ($8.0M), 2.67x the required $3.0M buffer. Bands are tolerances, not approvals: each mix needs a fresh mandate check (48% VT / 39% LQD / 10% IEF / 3% BIL earns 6.325% and misses the hurdle). Returns assume zero trading costs; headroom at target is 0.4 bp.
 
 ## 3. Stress Test and Stop Condition
 
-The engine was stressed on estimates (equity haircut 0-250 bps, credit spread 0-150 bps), correlations (stock-bond spike up to +0.80), costs (0-60 bps), the estimation window (12-60 months of prices) and constraints (reserve floor 3-12%).
+The engine stresses returns, credit spreads, correlations, costs, the estimation window and the reserve floor (ranges in the app).
 
-**Process kill condition:** if forward equity return falls below **7.00%** (-100 bps), the 6.50% hurdle forces equity to 78% and volatility to 12.70%, above the **12.00%** committee ceiling. Optimization stops, equity is capped at 50% with the rest in Treasuries (`BIL`/`IEF`), and the committee must vote to lower the payout rate or the real-return hurdle. Locked Changed-Input Records in `docs/validation-and-ai-use.md` test this input (LCIR-001) and a +50 bps credit spread shock (LCIR-002: volatility 9.70%, no kill, optimizer exits `LQD` for 38% `IEF` / 60% `VT`, so the analyst's prediction was partly wrong).
+**Stop condition:** at the tested input of 7.00% forward equity return (-100 bps), the 6.50% hurdle forces equity to 78% and volatility to 12.70%, above the modeled 12.00% committee ceiling, so the engine flags a stop (LCIR-001; 7.00% is a tested input, not an exact boundary). **Proposed committee action** (not enforced by the engine): cap equity at 50%, hold the rest in Treasuries (`BIL`/`IEF`), and vote on lowering the payout rate or the real-return hurdle. LCIR-002 (a 50 bp haircut to `LQD` expected return) gave volatility 9.70% and no stop; the optimizer exits `LQD` for 38% `IEF` / 60% `VT`, so the analyst's prediction was partly wrong. The 12.00% ceiling is a modeled limit; the mandate's 10% calendar-year loss statement (S9) is unverifiable as written and stays open for the committee.
 
 ## 4. Committee Ask and Reversal Triggers
 
@@ -50,6 +51,8 @@ The Committee is asked to (1) approve rebalancing the $100M to the targets above
 - The 10-year Treasury yield falls below 3.0%.
 - Annual tracking error versus the 60/40 benchmark exceeds 250 bps.
 
+Governing facts (Lab 13): seven-year horizon with annual rebalancing (S1), a CPI + 4.0% objective over rolling five years, and committee approval for turnover above 25% a year (S7).
+
 ## 5. Data Governance
 
-Inflation (`CPIAUCSL`) is audited with ALFRED vintages: modern series carry retroactive seasonal revisions, so decisions use only values published by the decision date ($t_{\text{pub}} \le t_{\text{decision}}$). Method and limits are in `docs/validation-and-ai-use.md`.
+Inflation (`CPIAUCSL`) is audited against ALFRED vintages: values not yet published by the decision date are excluded ($t_{\text{pub}} \le t_{\text{decision}}$). The app shows this for one snapshot (decision date 2026-09-30: September CPI excluded, August 334.131 returned); the data file has fixed vintage columns, not per-observation publication dates. CPI does not feed the optimizer, which uses a fixed 2.50% inflation input. Details: `docs/validation-and-ai-use.md`.

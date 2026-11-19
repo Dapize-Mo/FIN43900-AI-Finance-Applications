@@ -11,7 +11,7 @@
 
 ### Mandatory Fiduciary & AI Disclosures
 
-> **1. AI Tool Disclosure:** Anthropic Claude (Claude 3.5 Sonnet / Claude Opus 5.5) and Google Antigravity were utilized in designing analytical scripts, unit testing architecture, visualization ergonomics, and formatting optimization. All mathematical derivations, input validations, fiduciary constraints, and investment decisions were directed, verified, and finalized independently by the student analyst.  
+> **1. AI Tool Disclosure:** Anthropic Claude and Google Antigravity were utilized in designing analytical scripts, unit testing architecture, visualization ergonomics, and formatting optimization. All mathematical derivations, input validations, fiduciary constraints, and investment decisions were directed, verified, and finalized independently by the student analyst.  
 > **2. Ownership & Academic Notice:** The analysis, models, interpretations, and committee recommendations presented herein are solely the author's work; this document is an educational simulation developed for academic demonstration in FIN 43900 at Purdue University, not personalized investment advice.
 
 ---
@@ -46,8 +46,8 @@ Federal Reserve SR 26-2 provides the professional standard for assessing whether
 - **Efficiency Dominance:** The Constrained Optimal Portfolio achieves lower volatility (9.30%) than the Policy Benchmark (10.46%) while unlocking $8.0M in legal liquidity.
 
 ### C. Ongoing Monitoring & Point-in-Time Data Governance
-- **Vintage Audit of CPI (`CPIAUCSL`):** Provenance gate testing revealed that `CPIAUCSL` underwent seasonal revisions across 60 historical months when comparing vintage 2024-01-15 to modern releases.
-- **Fiduciary Quarantine:** The engine strictly quarantines unadjusted macro feeds for backtesting, requiring exact publication-lag matching or substitution with unrevised headline CPI (`CPIAUCNS`).
+- **Vintage Audit of CPI (`CPIAUCSL`):** The audit compares vintage columns in `data/pit_macro.csv` over a 60-month window and detects **13 revisions across 31 rows**; 60 months is the potential revision window, not the observed count. The data file holds fixed vintage columns, not per-observation publication timestamps, so the as-of gate is demonstrated for one snapshot (decision date 2026-09-30: September CPI excluded, August 334.131 returned), not generalized to every date. CPI does not feed the optimizer, which uses a fixed 2.50% inflation input.
+- **Fiduciary Quarantine (recommended practice):** Backtests should use exact publication-lag matching or unrevised headline CPI (`CPIAUCNS`); the app flags not-yet-published values for the snapshot above but does not implement a general release-and-vintage gate.
 
 ---
 
@@ -58,7 +58,7 @@ In strict adherence to the Week 6 verification pattern, the following test was d
 ```yaml
 locked_changed_input_record:
   record_id: "LCIR-FIN43900-P2-001"
-  timestamp_committed: "2026-11-10T19:30:00Z"   # time the AI-off prediction was written
+  prediction_written_at: "2026-11-10T19:30:00Z"   # time the AI-off prediction was written
   git_evidence:
     first_commit_of_record: "44ed6cf (2026-11-11 08:41 -0500)"   # git log -- docs/validation-and-ai-use.md
     code_frozen_before_run:
@@ -97,8 +97,9 @@ locked_changed_input_record:
 
   decision_effect: |
     Proves that the investment management process is brittle under equity return compression.
-    If long-term equity returns fall below 7.00%, the Foundation CANNOT meet its 6.50% net
-    hurdle without violating committee volatility limits. The committee must lower its spending
+    At a 7.00% expected equity return (the tested input; milder haircuts can also trigger the rule, so
+    7.00% is not an exact boundary), the Foundation cannot meet its 6.50% net
+    hurdle without violating the modeled 12.00% volatility limit. The committee must lower its spending
     payout rate rather than chasing equity beta.
 
   failure_diagnosis_and_sensitivity: |
@@ -118,7 +119,7 @@ The prediction was committed to Git (fd80e67) and pushed before the engine was r
 record_id: "LCIR-FIN43900-P2-002"
 status: "RESULT RECORDED (prediction locked earlier in commit fd80e67, pushed before this run)"
 changed_input:
-  name: "IG credit spread shock (reduces LQD expected return)"
+  name: "IG credit spread shock, implemented as a 50 bp haircut to LQD expected return"
   old_value: "0 bps"
   new_value: "+50 bps"
   other_inputs: "unchanged from base case (equity haircut 0, correlation shock 0, costs 0, window = course-authored, reserve floor 3.0%)"
@@ -139,14 +140,14 @@ actual_result:
   weights: "BIL 2 / IEF 38 / LQD 0 / VT 60"
   net_return: "6.50% (6.504%)"
   volatility: "9.70% (+40 bps vs 9.30% baseline)"
-  reserve_buffer: "40.0% sovereign (mandate verdict PASS, all S1-S10 checks pass)"
+  reserve_buffer: "40.0% sovereign (mandate verdict PASS on the six implemented mandate checks)"
   kill_rule: "NOT triggered (9.70% is below the 12.00% ceiling); engine status: PROCESS STABLE"
   comparison_to_prediction:
     direction_and_size: "Correct direction. Predicted about +50 bps (about 9.80%); actual +40 bps (9.70%)."
     kill_rule: "WRONG. Predicted trigger; no trigger."
     decision_effect: "WRONG. Predicted weights unchanged at 52/40/8/0; the optimizer moves all of LQD into IEF and VT (BIL 2 / IEF 38 / LQD 0 / VT 60)."
 failure_diagnosis: |
-  Two of the three predicted outcomes were wrong. A +50 bps spread shock cuts LQD's expected return from its base level, so the 6.50% return hurdle can no longer be met with a 40% LQD sleeve at the base weights. The minimum-variance optimizer re-solves and drops LQD entirely, replacing it with IEF (38%) and more VT (60%, up from 52%). That keeps volatility low (9.70%) and far below the 12.00% kill ceiling, so the kill rule does not fire. The analyst's prediction treated the shock as a volatility event that would trip the stop condition, but a credit-spread shock is a return shock to one sleeve, which the optimizer can re-route around. The kill rule is driven by the equity-return hurdle (LCIR-001), not by credit spreads.
+  Two of the three predicted outcomes were wrong. A +50 bps spread shock cuts LQD's expected return from its base level, so the 6.50% return hurdle can no longer be met with a 40% LQD sleeve at the base weights. The minimum-variance optimizer re-solves and drops LQD entirely, replacing it with IEF (38%) and more VT (60%, up from 52%). That keeps volatility low (9.70%) and far below the 12.00% kill ceiling, so the kill rule does not fire. The analyst's prediction treated the shock as a volatility event that would trip the stop condition, but a credit-spread shock is a return shock to one sleeve, which the optimizer can re-route around. This single run does not show that credit shocks in general avoid the kill rule; it shows that this 50 bp haircut was absorbed by re-routing.
   decision_effect_for_committee: "A +50 bps IG spread widening would not stop the process, but it would change the recommended mix: exit LQD, hold about 38% IEF and 60% VT. This is a reversal-trigger candidate for the monitoring list."
 ```
 
@@ -161,9 +162,9 @@ Every load-bearing assumption is explicitly accepted or rejected, with the reaso
 | A1 | Global equity expected return | 8.00% | **Accept** | Course-authored forward estimate (contractual input); stress-tested at 7.00% in the LCIR | Equity premium evidence below 7.00% |
 | A2 | IG corporate expected return | 5.00% | **Accept** | Course-authored; stress-tested with a 0-150 bps credit shock | Spread widening beyond 150 bps |
 | A3 | 10Y Treasury / Bills yields | 4.30% / 3.50% | **Accept** | Course-authored; used as reserve-eligible sleeve returns | 10Y yield < 3.0% (memo reversal trigger) |
-| A4 | Sleeve volatilities | 0.5% / 7.0% / 6.0% / 16.0% | **Accept** | Matches the 5-year monthly ETF sample within rounding | Volatility regime shift (trailing vol > 1.5x sample) |
+| A4 | Sleeve volatilities | 0.5% / 7.0% / 6.0% / 16.0% | **Accept (as planning input)** | Course-authored inputs. The 5-year monthly sample gives 0.47% / 7.73% / 9.89% / 14.84% (LQD and VT differ materially), so these are accepted as contractual inputs, not as sample estimates | Volatility regime shift (trailing vol > 1.5x sample) |
 | A5 | Correlation matrix | BASE_CORRELATION (validated) | **Accept with test** | Passes `validate_correlation()`; stress-tested with a 0-0.80 stock-bond spike | Correlation breakdown (March 2020 style) |
-| A6 | Inflation (CPI) | 2.50% | **Accept** | Governs the 6.50% hurdle (CPI + 4.0% real return); audited point-in-time via ALFRED vintages | Two quarters of real return below CPI + 1.0% |
+| A6 | Inflation (CPI) | 2.50% | **Accept** | Governs the 6.50% hurdle (CPI + 4.0% real return); snapshot-audited against ALFRED vintages (CPI does not feed the optimizer) | Two quarters of real return below CPI + 1.0% |
 | A7 | Stationary covariance | Held constant | **Reject as a forecast** | Treated only as a planning input; the kill rule and stress tab cover regime change | Any breach of the 12.00% volatility ceiling |
 | A8 | Grid step | 2% weight steps | **Accept** | Fine enough to hit 6.50%; optimal weights verified by the known-answer test | Result changes under a 1% grid |
 
@@ -173,17 +174,19 @@ Every load-bearing assumption is explicitly accepted or rejected, with the reaso
 
 Automated programmatic unit checks verified the analytical engine before deployment:
 
-| Test ID | Test Description | Input / Condition | Expected Result | Actual Result | Status |
+| Test ID | Code test | Input / Condition | Expected Result | Actual Result | Status |
 | :--- | :--- | :--- | :--- | :--- | :---: |
-| **TEST-01** | Correlation Matrix Symmetry | $\rho_{ij} == \rho_{ji}$ across $4 \times 4$ | Symmetric, unit diagonals | Symmetric, max error $< 10^{-12}$ | **PASS** |
-| **TEST-02** | Equal Weight Known Answer | $w = [0.25, 0.25, 0.25, 0.25]$ | Ret: 5.20%, Vol: 5.21%, Res: 50.0% | Ret: 5.20%, Vol: 5.21%, Res: 50.0% | **PASS** |
-| **TEST-03** | Benchmark Known Answer | $w = [0.0, 0.0, 0.40, 0.60]$ | Ret: 6.80%, Vol: 10.46%, Res: 0.0% | Ret: 6.80%, Vol: 10.46%, Res: 0.0% | **PASS** |
-| **TEST-04** | Constrained Optimizer | Min vol s.t. Ret $\ge 6.5\%$, Res $\ge 3\%$ | Vol $< 10.46\%$, Ret $\ge 6.5\%$ | Vol: 9.30%, Ret: 6.50%, Res: 8.0% | **PASS** |
-| **TEST-05** | Mandate Covenant Checker | Test Benchmark allocation | FAIL (Reserve buffer 0% < 3%) | FAIL with specific rule breach | **PASS** |
-| **TEST-07** | Mandate consistency / flip test | Optimal vs benchmark vs equal weight; 0 vs 100 bps shock | Optimal PASS; benchmark and equal FAIL; kill flips only under shock | Matches | **PASS** |
-| **TEST-08** | Memo/LCIR vs engine concordance | 9.30% and 12.70% quoted in docs | Docs equal engine output | Matches | **PASS** |
-| **TEST-09** | Window and constraint stress drivers | 12-60 month window; reserve floor 3-12% | Runs; defaults reproduce base case; floor raises sovereign weight | Matches | **PASS** |
-| **TEST-06** | ALFRED Provenance Gate | Test Sept 2026 CPI on 2026-09-30 | Unknowable / Post-dated | Quarantined; not released until mid-Oct | **PASS** |
+| **TEST-01** | `test_01_correlation_valid` | Base correlation matrix | Valid, symmetric, unit diagonal | Matches | **PASS** |
+| **TEST-02** | `test_02_equal_weight` | 25/25/25/25 | Ret 5.20%, Vol 5.21%, Res 50.0% | Matches | **PASS** |
+| **TEST-03** | `test_03_benchmark` | 0/0/40/60 | Ret 6.80%, Vol 10.46%, Res 0.0% | Matches | **PASS** |
+| **TEST-04** | `test_04_optimizer` | Min vol s.t. Ret >= 6.5%, Res >= 3% | Vol < 10.46%, Ret >= 6.5% | Vol 9.30%, Ret 6.50%, Res 8.0% | **PASS** |
+| **TEST-05** | `test_05_kill_rule` | -100 bps equity shock; base case | Kill at 12.70%; no kill at base | Matches | **PASS** |
+| **TEST-06** | `test_06_mandate_consistency` | Optimal, benchmark, equal weight | Optimal PASS; the other two fail on reserve | Matches | **PASS** |
+| **TEST-07** | `test_07_flip_test` | 0, 50 and 100 bps shocks | Kill off at 0 bps, on at 100 bps | Matches | **PASS** |
+| **TEST-08** | `test_08_doc_engine_concordance` | Engine volatilities vs. text of the memo and this record | Engine's 9.30% and 12.70%, and "12.00%", appear in the docs (string presence check only) | Matches | **PASS** |
+| **TEST-09** | `test_09_window_and_constraint_stress` | 12-60 month window; reserve floor 3-12% | Runs; floor raises sovereign weight | Matches | **PASS** |
+
+The ALFRED as-of demonstration (decision date 2026-09-30) is shown in the app's Point-in-Time tab; it is not part of this suite. Run the suite with `python tests/test_known_answers.py` (prints `PASS` per test, then `All tests passed`).
 
 ---
 
@@ -204,3 +207,13 @@ Automated programmatic unit checks verified the analytical engine before deploym
 2. **Discrete Grid Step Granularity:** The weight search operates at a 2.0% step grid. Exact continuous quadratic programming might locate a marginally more optimal mix (within 2–5 bps of volatility), but the 2% grid provides practical trading granularity that respects realistic minimum ticket sizes.
 3. **Execution Drag & Liquidity Haircuts:** While 5-day liquidity exceeds 90%, large-scale block liquidation of $40M in `LQD` during market dislocations could incur bid-ask slippage exceeding the baseline 20 bps model buffer.
 
+---
+
+## 7. Clarifications to the Recorded Videos
+
+The transcripts in `submission/transcripts/` are the prepared scripts; YouTube's captions are the verbatim record. Where a spoken line is broader than the evidence, this record governs:
+
+1. **CPI revisions (V1-V3):** "about 60 months revised" means a 60-month potential revision window. The vintage comparison detects 13 revisions across 31 rows (Section 2C).
+2. **Test 8 (V2):** it checks that key engine figures (9.30%, 12.70%, 12.00%) appear in the memo and this record; it does not compare every number.
+3. **LCIR-002 (V3):** the app's Locked tab carries a compact LCIR-002 summary; the full record is Section 3B.
+4. **Mandate checks:** "all checks pass" means the six implemented mandate checks, not every S1-S10 fact (S9 is unverifiable as written).

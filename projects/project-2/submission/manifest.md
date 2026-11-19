@@ -13,7 +13,7 @@
 
 ### Mandatory Fiduciary Disclosures
 
-> **1. AI Tool Disclosure:** Anthropic Claude (Claude 3.5 Sonnet / Claude Opus 5.5) and Google Antigravity were utilized in designing analytical scripts, unit testing architecture, visualization ergonomics, and formatting optimization. All mathematical derivations, input validations, fiduciary constraints, and investment decisions were directed, verified, and finalized independently by the student analyst.  
+> **1. AI Tool Disclosure:** Anthropic Claude and Google Antigravity were utilized in designing analytical scripts, unit testing architecture, visualization ergonomics, and formatting optimization. All mathematical derivations, input validations, fiduciary constraints, and investment decisions were directed, verified, and finalized independently by the student analyst.  
 > **2. Ownership & Academic Notice:** The analysis, models, interpretations, and committee recommendations presented herein are solely the author's work; this package is an educational simulation developed for academic demonstration in FIN 43900 at Purdue University, not personalized investment advice.
 
 ---
@@ -32,22 +32,22 @@ Every written deliverable is maintained in GitHub-versioned Markdown in complian
 | **Mandate Verification** | `projects/project-2/src/mandate.py` | Algorithmic covenant checks across all Meridian S1–S10 constraints | [mandate.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/src/mandate.py) |
 | **Point-in-Time Signal** | `projects/project-2/src/point_in_time.py` | Dual timestamp engine ($t_{\text{event}}, t_{\text{pub}}$) and official Data Card | [point_in_time.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/src/point_in_time.py) |
 | **Historical Price Dataset** | `projects/project-2/data/prices.csv` | 5-Year monthly adjusted close prices across ETF universe (BIL, IEF, LQD, VT) | [prices.csv on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/data/prices.csv) |
-| **Point-in-Time Vintage Dataset** | `projects/project-2/data/pit_macro.csv` | Historical CPI vintages proving 60-month seasonal factor restatements | [pit_macro.csv on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/data/pit_macro.csv) |
+| **Point-in-Time Vintage Dataset** | `projects/project-2/data/pit_macro.csv` | CPI vintage snapshot (60-month revision window; 13 revisions detected across 31 rows) | [pit_macro.csv on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/data/pit_macro.csv) |
 | **Dependency Specification** | `projects/project-2/requirements.txt` | Complete execution dependencies for local and cloud environments | [requirements.txt on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/requirements.txt) |
 
 ---
 
 ## 2. Video Submissions (YouTube Links & Transcripts)
 
-All three videos are Unlisted YouTube links with captions enabled. **Status: All three videos uploaded (unlisted)** - link, duration and timestamps below are filled in after upload; none is claimed until then.
+All three videos are Unlisted YouTube links with captions enabled. **Status: All three videos uploaded (unlisted)** - Links and durations below are as shown by YouTube.
 
 | Video | Limit | YouTube link | Actual duration | Transcript |
 | :--- | :---: | :--- | :---: | :--- |
-| 1 - Research evolution & thinking changes | 3:00 | [https://youtu.be/C-fHpIHxUow](https://youtu.be/C-fHpIHxUow) (unlisted) | 2:42 (per YouTube) | [transcript-video-1.txt](transcripts/transcript-video-1.txt) |
-| 2 - Technical code & model walkthrough | 5:00 | [https://youtu.be/Fm9Eh4odHSA](https://youtu.be/Fm9Eh4odHSA) (unlisted) | 3:39 (per YouTube) | [transcript-video-2.txt](transcripts/transcript-video-2.txt) |
-| 3 - Committee defense & live demo (opens with live app) | 5:00 | [https://youtu.be/qsCibfoSNPY](https://youtu.be/qsCibfoSNPY) (unlisted) | 3:52 (per YouTube) | [transcript-video-3.txt](transcripts/transcript-video-3.txt) |
+| 1 - Research evolution & thinking changes | 3:00 | [https://youtu.be/C-fHpIHxUow](https://youtu.be/C-fHpIHxUow) (unlisted) | 2:42 (per YouTube) | [transcript-video-1.txt](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/submission/transcripts/transcript-video-1.txt) |
+| 2 - Technical code & model walkthrough | 5:00 | [https://youtu.be/Fm9Eh4odHSA](https://youtu.be/Fm9Eh4odHSA) (unlisted) | 3:39 (per YouTube) | [transcript-video-2.txt](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/submission/transcripts/transcript-video-2.txt) |
+| 3 - Committee defense & live demo (opens with live app) | 5:00 | [https://youtu.be/qsCibfoSNPY](https://youtu.be/qsCibfoSNPY) (unlisted) | 3:52 (per YouTube) | [transcript-video-3.txt](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/submission/transcripts/transcript-video-3.txt) |
 
-### Timestamp index (approximate, read from the final recordings)
+### Timestamp index (approximate, taken from the prepared scripts; use YouTube captions for exact positions)
 
 | Video | Time | Content |
 | :--- | :---: | :--- |
@@ -69,7 +69,7 @@ All three videos are Unlisted YouTube links with captions enabled. **Status: All
 ### Access confirmation
 
 - [x] GitHub repository is public (verified).
-- [x] Each video opened logged out / incognito with transcript visible (do after upload).
+- [x] Each video opened logged out / incognito and played (checked Nov 19, 2026).
 - [ ] Same `.md` files attached to Brightspace.
 
 ---

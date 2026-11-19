@@ -45,7 +45,7 @@ PIT_DATA_CARD: Dict[str, Any] = {
         "test_vintage": "2026-09-30",
         "tested_observation": "2026-09",
         "result": "September 2026 print (336.298) did NOT exist on Sept 30; only August 2026 (334.131) was knowable.",
-        "seasonal_revision_test": "Comparing vintage 2024-01-15 against today reveals 60 historical months revised.",
+        "seasonal_revision_test": "Seasonal revisions can restate up to 60 historical months; comparing the vintage columns in this dataset detects 13 revisions across 31 rows.",
     },
 }
 

@@ -10,7 +10,7 @@
 
 ## 🏛️ Mandatory Fiduciary & AI Disclosures (Base Requirement 8)
 
-> **1. AI Tool Disclosure:** Anthropic Claude (Claude 3.5 Sonnet / Claude Opus 5.5) and Google Antigravity were utilized in designing analytical scripts, unit testing architecture, visualization ergonomics, and formatting optimization. All mathematical derivations, input validations, fiduciary constraints, and investment decisions were directed, verified, and finalized independently by the student analyst.  
+> **1. AI Tool Disclosure:** Anthropic Claude and Google Antigravity were utilized in designing analytical scripts, unit testing architecture, visualization ergonomics, and formatting optimization. All mathematical derivations, input validations, fiduciary constraints, and investment decisions were directed, verified, and finalized independently by the student analyst.  
 > **2. Ownership & Academic Notice:** The analysis, models, interpretations, and committee recommendations presented herein are solely the author's work; this application is an educational simulation developed for academic demonstration in FIN 43900 at Purdue University, not personalized investment advice.
 
 ---
@@ -29,7 +29,7 @@ cd FIN43900-AI-Finance-Applications
 # 1. Navigate to Project 2 directory (run all later commands from here)
 cd projects/project-2
 
-# 2. Install dependencies (standard Python environment)
+# 2. Install dependencies (Python 3.10+; the app needs Streamlit 1.40+ because it uses st.pills)
 pip install -r requirements.txt
 
 # 3. (Optional) Run the known-answer tests: expect "All tests passed"
@@ -50,9 +50,9 @@ streamlit run app.py
 | **1. The App Runs** | [`app.py`](app.py) via Streamlit | Standalone multi-tab institutional dashboard runnable cold |
 | **2. Mandate** | [`src/mandate.py`](src/mandate.py) | $100M reserve, 3.0% reserve-eligible buffer floor, 6.50% net hurdle |
 | **3. Two Baselines & Portfolio** | `app.py` (Tab 1 & 2) & [`src/engine.py`](src/engine.py) | **Equal Weight** (Fails Return), **Benchmark** (Fails Buffer), **Constrained Optimal** (PASSES ALL) |
-| **4. Point-in-Time Signal** | [`src/point_in_time.py`](src/point_in_time.py) & `data/pit_macro.csv` | ALFRED CPI vintage audit proving 60-month historical revisions + Data Card |
+| **4. Point-in-Time Signal** | [`src/point_in_time.py`](src/point_in_time.py) & `data/pit_macro.csv` | ALFRED CPI vintage snapshot audit (13 revisions detected across 31 rows; 60 months is the potential window) + Data Card |
 | **5. Stress Run & Kill Condition** | `app.py` (Tab 4) & [`src/engine.py`](src/engine.py) | Return shocks, credit spread widening, and volatility stop rule (> 12.00%) |
-| **6. Locked Changed-Input Record** | [`docs/validation-and-ai-use.md`](docs/validation-and-ai-use.md) | Pre-run AI-off prediction on equity return haircut (-100 bps) recorded in Git history (first commit `44ed6cf`) |
+| **6. Locked Changed-Input Record** | [`docs/validation-and-ai-use.md`](docs/validation-and-ai-use.md) | Pre-run AI-off predictions: LCIR-001 (equity -100 bps, first commit `44ed6cf`) and LCIR-002 (+50 bps credit haircut, prediction commit `fd80e67`) |
 | **7. Final Recommendation** | [`docs/decision-memo.md`](docs/decision-memo.md) | Fiduciary recommendation to allocate to Constrained Optimal Portfolio |
 | **8. Two Opening Statements** | README, Memo, and all 3 video transcripts | Disclosures prominent at the head of every deliverable |
 
