@@ -47,13 +47,13 @@ All three videos are Unlisted YouTube links with captions enabled. **Status: All
 | 2 - Technical code & model walkthrough | 5:00 | [https://youtu.be/Fm9Eh4odHSA](https://youtu.be/Fm9Eh4odHSA) (unlisted) | 3:39 (per YouTube) | [transcript-video-2.txt](transcripts/transcript-video-2.txt) |
 | 3 - Committee defense & live demo (opens with live app) | 5:00 | [https://youtu.be/qsCibfoSNPY](https://youtu.be/qsCibfoSNPY) (unlisted) | 3:52 (per YouTube) | [transcript-video-3.txt](transcripts/transcript-video-3.txt) |
 
-### Timestamp index (approximate, read from the final recordings; Video 1 entries still to be filled)
+### Timestamp index (approximate, read from the final recordings)
 
 | Video | Time | Content |
 | :--- | :---: | :--- |
 | 1 | 0:00 | Two required statements (AI use; ownership) |
-| 1 | PENDING | What changed from Lab 13 to Project 2 |
-| 1 | PENDING | How AI output was independently checked |
+| 1 | ~0:25 | What changed from Lab 13 to Project 2 |
+| 1 | ~1:15 | How AI output was independently checked |
 | 2 | 0:00 | Two required statements |
 | 2 | ~0:10 | `mandate.py`: mandate constants and 60/40 covenant failure |
 | 2 | ~1:15 | `engine.py`: covariance, optimizer, stress drivers |
@@ -69,7 +69,7 @@ All three videos are Unlisted YouTube links with captions enabled. **Status: All
 ### Access confirmation
 
 - [x] GitHub repository is public (verified).
-- [ ] Each video opened logged out / incognito with transcript visible (do after upload).
+- [x] Each video opened logged out / incognito with transcript visible (do after upload).
 - [ ] Same `.md` files attached to Brightspace.
 
 ---
