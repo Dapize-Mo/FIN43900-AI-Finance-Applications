@@ -69,7 +69,7 @@ projects/project-2/
 │   ├── __init__.py
 │   ├── engine.py                  # Covariance math, grid search optimization, stress testing
 │   ├── mandate.py                 # Algorithmic compliance checks across Meridian covenants
-│   └── point_in_time.py           # Dual-timestamp ALFRED signal engine & Data Card
+│   └── point_in_time.py           # September 30, 2026 ALFRED snapshot (observation dates and fixed vintage columns) & Data Card
 ├── data/
 │   ├── prices.csv                 # 5-Year historical monthly prices for BIL, IEF, LQD, VT
 │   └── pit_macro.csv              # ALFRED vintage audit data proving seasonal restatements

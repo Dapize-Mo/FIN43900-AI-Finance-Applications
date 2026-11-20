@@ -24,7 +24,7 @@ All modeling, optimization, and validation operations respect a strict temporal 
 | :--- | :--- | :--- | :--- | :--- |
 | **ETF Sleeve Historical Prices** | Monthly (Nov 2021 – Oct 2026) | Yahoo Finance / S&P Dow Jones | Sample covariance, return & volatility benchmark | 5-Year historical sample; split- and dividend-adjusted |
 | **Course-Authored Expected Values** | Parameterized | FIN 43900 Instructional Team | Governing forward-looking inputs for portfolio optimization | Fixed contractual values (Bills: 3.5%, 10Y: 4.3%, IG: 5.0%, Equity: 8.0%) |
-| **ALFRED Macroeconomic Series** | Monthly (2020 – 2026) | Federal Reserve Bank of St. Louis / BLS | Point-in-time inflation audit (`CPIAUCSL`) | Dual timestamp ($t_{\text{event}}, t_{\text{pub}}$); evaluated across historical vintages |
+| **ALFRED Macroeconomic Series** | Monthly (2020 – 2026) | Federal Reserve Bank of St. Louis / BLS | Point-in-time inflation audit (`CPIAUCSL`) | Observation dates and fixed vintage columns from one September 30, 2026 snapshot; publication dates discussed as recommended practice |
 | **Meridian Foundation Mandate** | Fact Set S1–S10 | Meridian Foundation Case (Lab 13) | Contractual governance & hard constraints | Governing institutional law |
 
 ---
@@ -43,7 +43,7 @@ Federal Reserve SR 26-2 provides the professional standard for assessing whether
   - *Baseline 1 (Equal Weight):* Expected return 5.20%, Volatility 5.21%, Reserve Buffer 50.0% -> **FAILS return hurdle**.
   - *Baseline 2 (Policy Benchmark):* Expected return 6.80%, Volatility 10.46%, Reserve Buffer 0.0% -> **FAILS reserve buffer**.
   - *Constrained Optimal Portfolio:* Expected return 6.50%, Volatility 9.30%, Reserve Buffer 8.0% -> **passes the six implemented mandate checks**.
-- **Efficiency Dominance:** The Constrained Optimal Portfolio achieves lower volatility (9.30%) than the Policy Benchmark (10.46%) while unlocking $8.0M in legal liquidity.
+- **Benchmark trade-off:** The Constrained Optimal Portfolio has lower volatility (9.30% vs 10.46%, 116 bps lower) than the Policy Benchmark but also a lower expected return (6.50% vs 6.80%), while holding $8.0M in legal liquidity.
 
 ### C. Ongoing Monitoring & Point-in-Time Data Governance
 - **Vintage Audit of CPI (`CPIAUCSL`):** The audit compares vintage columns in `data/pit_macro.csv` over a 60-month window and detects **13 revisions across 31 rows**; 60 months is the potential revision window, not the observed count. The data file holds fixed vintage columns, not per-observation publication timestamps, so the as-of gate is demonstrated for one snapshot (decision date 2026-09-30: September CPI excluded, August 334.131 returned), not generalized to every date. CPI does not feed the optimizer, which uses a fixed 2.50% inflation input.
