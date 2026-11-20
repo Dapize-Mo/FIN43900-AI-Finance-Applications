@@ -81,7 +81,7 @@ Videos 1 and 3 were not re-recorded. Where a spoken line is broader than the evi
 - [x] GitHub repository is public (verified).
 - [x] Videos 1 and 3 opened logged out / incognito and played (checked Nov 19, 2026).
 - [x] Replacement Video 2 (https://youtu.be/mBZEseHDXXk) opened logged out / incognito and played, with captions showing (checked Nov 19, 2026).
-- [ ] Same `.md` files attached to Brightspace.
+- [x] Same `.md` files attached to Brightspace (submitted Nov 20, 2026 8:56 AM, submission ID 23949472, with repo and video links in Comments).
 
 ---
 
