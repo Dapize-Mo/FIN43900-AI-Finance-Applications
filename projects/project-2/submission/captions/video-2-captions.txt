@@ -1,0 +1,19 @@
+Hello, my name is Oladapo Olaniyan. As required:
+
+First, I used Anthropic Claude and Google Antigravity to support code structure, tests and formatting. I directed, independently checked, and own all models, inputs and recommendations.
+
+Second, this technical walkthrough is my own work, an educational simulation for FIN 43900 at Purdue University, not investment advice.
+
+The project lives under projects/project-2. The data folder has two files: prices.csv, five years of monthly adjusted prices for four ETF sleeves, BIL, IEF, LQD and VT; and pit_macro.csv, CPI vintages from the St. Louis Fed's ALFRED database. The src folder has three modules: mandate.py, engine.py and point_in_time.py.
+
+mandate.py turns the Foundation's covenants into hard rules. The check covers total weight of 100 percent, long-only, a 3.0 percent sovereign reserve floor, the 6.50 percent return hurdle, five-day liquidity, and an 8 percent single-issuer cap.
+
+In engine.py, build_covariance builds the covariance matrix from sleeve volatilities and correlations. optimize_constrained_mix runs a 2 percent step grid search over every long-only allocation, throws out any that break the reserve floor or miss the 6.50 percent hurdle, and keeps the one with the lowest volatility. The answer is 52 percent VT, 40 percent LQD, 8 percent IEF, no BIL: 6.50 percent return at 9.30 percent volatility.
+
+run_stress_test lets the committee change estimates, costs, correlations, the estimation window and the constraints. Return haircuts, a credit spread shock, an equity-bond correlation spike and transaction costs all feed through. I added two more drivers: an estimation window of 12 to 60 months, which re-estimates volatilities and correlations from the price file, and a reserve floor from 3 to 12 percent. If volatility goes above 12.00 percent, the optimization is infeasible, or return falls below 6.50 percent, the engine flags a stop. Capping equity at 50 percent after a stop is a proposed committee action, not something the engine enforces.
+
+point_in_time.py keeps two dates in mind for every observation: when the event happened and when it was published. The app demonstrates the as-of rule on one snapshot. At a decision date of September 30, 2026, September CPI was not yet published, so the audit excludes it and returns August, 334.131. The data file has fixed vintage columns, not a publication date for every observation, so I show the rule for that snapshot, not for every date. Comparing the vintages detects 13 revisions across 31 rows; 60 months is the possible revision window, not the count. CPI does not feed the optimizer, which uses a fixed 2.50 percent inflation input.
+
+To reproduce: clone the repo, run pip install -r requirements.txt, then this command.
+
+The suite has nine tests, and all pass. Test 1 checks correlation symmetry and a diagonal equal to 1; an asymmetric matrix would fail here before the optimizer ever runs. Tests 2 and 3 match equal weight, 5.20 percent return and 5.21 percent volatility, and the 60/40 benchmark, 6.80 percent and 10.46 percent. Test 4 checks the optimizer's answer. Test 5 checks the kill rule at a 100 basis point equity shock. Test 6 checks that the mandate checker passes the optimal portfolio and fails the other two. Test 7 flips the shock to confirm the kill rule turns on and off. Test 8 checks that the key engine figures, 9.30, 12.70 and 12.00 percent, appear in the memo and the validation record; it is a consistency check, not a full comparison. Test 9 checks the window and reserve-floor drivers. Thank you.

@@ -1,0 +1,31 @@
+Members of the Committee, my name is Oladapo Olaniyan. Before I present:
+
+First, I used Anthropic Claude and Google Antigravity to support code generation and interface design, while owning all analysis, calculations and investment judgments.
+
+Second, this is an educational demonstration for FIN 43900 at Purdue University, not investment advice.
+
+This is the live app for the 100 million dollar Meridian Foundation Reserve. The mandate needs CPI plus 4.0 percent, or 6.50 percent, and 12 months of payouts, 3.0 million dollars, in daily-liquid sovereign paper.
+
+Equal weight earns 5.20 percent. It misses the hurdle, so it fails.
+
+The Foundation's 60/40 benchmark earns 6.80 percent but holds nothing in Treasuries. It fails the reserve rule.
+
+The constrained optimal portfolio is 52 percent VT, 40 percent LQD, 8 percent IEF and no BIL. It earns 6.50 percent, holds 8 million dollars in sovereign paper, 2.67 times the requirement, and cuts volatility from 10.46 to 9.30 percent.
+
+On the Point-in-Time tab, CPI is revised for years after it is first published. The engine only uses values published on or before the decision date, so no decision uses information that did not exist yet.
+
+On the Stress tab I can change return haircuts, credit spreads, correlations, costs, the estimation window and the reserve floor.
+
+In the first locked record, a 100 basis point cut in equity return, 8.0 to 7.0 percent, forces equity to 78 percent and volatility to 12.70 percent. That is above the 12.00 percent ceiling, so the kill rule fires: optimization stops, equity is capped at 50 percent, and the rest goes to Treasuries.
+
+For the second record I wrote my prediction first and committed it to GitHub before running the engine. I predicted a 50 basis point credit spread shock would raise volatility by about 50 basis points, trigger the kill rule, and leave the weights unchanged. The actual result: volatility rose 40 basis points to 9.70 percent, the kill rule did not fire, and the optimizer dropped LQD for 38 percent IEF and 60 percent VT. Two of my three predictions were wrong. The lesson is that the kill rule responds to the equity return shock, because the optimizer can route around a credit spread shock.
+
+I ask the Committee to do three things.
+
+One, adopt the target mix of 52 percent VT, 40 percent LQD, 8 percent IEF, and no BIL, with bands of 48 to 55 percent for VT, 36 to 44 for LQD, 3 to 10 for IEF and up to 3 for BIL.
+
+Two, sweep excess cash each quarter into T-bills and Treasuries to keep the 3 million dollar buffer.
+
+Three, reconvene if trailing 12-month real return stays below CPI plus 1.0 percent for two quarters, if the 10-year Treasury yield falls below 3.0 percent, or if tracking error to the 60/40 benchmark exceeds 250 basis points. Also review the mix if credit spreads widen about 50 basis points, because the optimizer would exit LQD.
+
+This keeps the Foundation compliant with its mandate and protects spending liquidity. Thank you.

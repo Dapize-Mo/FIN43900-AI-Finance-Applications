@@ -44,7 +44,7 @@ All three videos are Unlisted YouTube links with captions enabled. **Status: All
 | Video | Limit | YouTube link | Actual duration | Transcript |
 | :--- | :---: | :--- | :---: | :--- |
 | 1 - Research evolution & thinking changes | 3:00 | [https://youtu.be/C-fHpIHxUow](https://youtu.be/C-fHpIHxUow) (unlisted) | 2:42 (per YouTube) | [transcript-video-1.txt](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/submission/transcripts/transcript-video-1.txt) |
-| 2 - Technical code & model walkthrough | 5:00 | [https://youtu.be/Fm9Eh4odHSA](https://youtu.be/Fm9Eh4odHSA) (unlisted) | 3:39 (per YouTube) | [transcript-video-2.txt](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/submission/transcripts/transcript-video-2.txt) |
+| 2 - Technical code & model walkthrough | 5:00 | [https://youtu.be/mBZEseHDXXk](https://youtu.be/mBZEseHDXXk) (unlisted) | 4:40 (per YouTube) | [transcript-video-2.txt](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/submission/transcripts/transcript-video-2.txt) |
 | 3 - Committee defense & live demo (opens with live app) | 5:00 | [https://youtu.be/qsCibfoSNPY](https://youtu.be/qsCibfoSNPY) (unlisted) | 3:52 (per YouTube) | [transcript-video-3.txt](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/submission/transcripts/transcript-video-3.txt) |
 
 ### Timestamp index (approximate, taken from the prepared scripts; use YouTube captions for exact positions)
@@ -54,11 +54,11 @@ All three videos are Unlisted YouTube links with captions enabled. **Status: All
 | 1 | 0:00 | Two required statements (AI use; ownership) |
 | 1 | ~0:25 | What changed from Lab 13 to Project 2 |
 | 1 | ~1:15 | How AI output was independently checked |
-| 2 | 0:00 | Two required statements |
-| 2 | ~0:10 | `mandate.py`: mandate constants and 60/40 covenant failure |
-| 2 | ~1:15 | `engine.py`: covariance, optimizer, stress drivers |
-| 2 | ~2:15 | `point_in_time.py`: ALFRED point-in-time data card |
-| 2 | ~3:00 | Tests (9/9) |
+| 2 | 0:00 | Two required statements; repository tour |
+| 2 | ~0:45 | `mandate.py` and `engine.py`: mandate checks, covariance, optimizer |
+| 2 | ~1:30 | Stress engine: drivers and stop condition |
+| 2 | ~2:20 | `point_in_time.py`: ALFRED snapshot and data card |
+| 2 | ~3:20 | Tests (9/9), run live in the terminal |
 | 3 | 0:00 | Live app shown first; two required statements |
 | 3 | ~0:25 | Three-portfolio comparison and recommendation |
 | 3 | ~1:10 | Point-in-time data card |
