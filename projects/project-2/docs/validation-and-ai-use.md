@@ -181,7 +181,7 @@ Automated programmatic unit checks verified the analytical engine before deploym
 | **TEST-03** | `test_03_benchmark` | 0/0/40/60 | Ret 6.80%, Vol 10.46%, Res 0.0% | Matches | **PASS** |
 | **TEST-04** | `test_04_optimizer` | Min vol s.t. Ret >= 6.5%, Res >= 3% | Vol < 10.46%, Ret >= 6.5% | Vol 9.30%, Ret 6.50%, Res 8.0% | **PASS** |
 | **TEST-05** | `test_05_kill_rule` | -100 bps equity shock; base case | Kill at 12.70%; no kill at base | Matches | **PASS** |
-| **TEST-06** | `test_06_mandate_consistency` | Optimal, benchmark, equal weight | Optimal PASS; the other two fail on reserve | Matches | **PASS** |
+| **TEST-06** | `test_06_mandate_consistency` | Optimal, benchmark, equal weight | Optimal PASS; equal weight fails the return hurdle, 60/40 fails the reserve floor | Matches | **PASS** |
 | **TEST-07** | `test_07_flip_test` | 0, 50 and 100 bps shocks | Kill off at 0 bps, on at 100 bps | Matches | **PASS** |
 | **TEST-08** | `test_08_doc_engine_concordance` | Engine volatilities vs. text of the memo and this record | 9.30% appears in the memo, 12.70% in this record, and "12.00%" in both (string presence check only) | Matches | **PASS** |
 | **TEST-09** | `test_09_window_and_constraint_stress` | 12-60 month window; reserve floor 3-12% | Runs; floor raises sovereign weight | Matches | **PASS** |

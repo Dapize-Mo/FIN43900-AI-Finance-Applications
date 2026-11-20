@@ -3,6 +3,7 @@ FIN 43900 Project 2 — Video 2 Transcript: Technical Code & Model Walkthrough (
 Author: Oladapo Olaniyan (oolaniy@purdue.edu)
 Course: FIN 43900 — AI Finance Applications, Fall 2026, Purdue University
 Target Duration: <= 5:00. Actual duration (per YouTube): 4:40. This is the prepared script; the recording was sped up to 1.2x, so wording follows the captions on YouTube.
+Clarifications (video not re-recorded; see docs/validation-and-ai-use.md Section 7): Test 6 means equal weight fails the return hurdle and 60/40 fails the reserve floor. Test 8 means 9.30% appears in the memo, 12.70% in the validation record, and 12.00% in both.
 ================================================================================
 
 [MANDATORY OPENING STATEMENTS]

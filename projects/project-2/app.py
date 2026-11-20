@@ -227,7 +227,7 @@ st.markdown("""
     <span class="meta-pill">👤 Analyst: <strong>Oladapo Olaniyan</strong></span>
     <span class="meta-pill">🏫 Purdue Daniels School of Business</span>
     <span class="meta-pill meta-pill-gold">💼 Reserve Fund: $100,000,000</span>
-    <span class="meta-pill meta-pill-green">🟢 Mandate Status: 100% Compliant</span>
+    <span class="meta-pill meta-pill-green">🟢 Base portfolio: passes six implemented checks</span>
     <span class="meta-pill">📅 As-Of Boundary: November 10, 2026</span>
 </div>
 """, unsafe_allow_html=True)
@@ -238,7 +238,7 @@ with st.container(border=True):
         🏛️ MANDATORY FIDUCIARY & AI GOVERNANCE DISCLOSURES (SR 26-2 & BASE REQUIREMENT 8)
     </div>
     <div style="font-size: 0.84rem; line-height: 1.5; opacity: 0.9;">
-        <strong>1. AI Tool Disclosure:</strong> Anthropic Claude (Claude 3.5 Sonnet / Claude Opus) and Google Antigravity were utilized in designing analytical scripts, unit test architecture, visualization ergonomics, and formatting optimization. All mathematical derivations, input validations, fiduciary constraints, and investment decisions were directed, verified, and finalized independently by the student analyst.<br>
+        <strong>1. AI Tool Disclosure:</strong> Anthropic Claude and Google Antigravity were utilized in designing analytical scripts, unit test architecture, visualization ergonomics, and formatting optimization. All mathematical derivations, input validations, fiduciary constraints, and investment decisions were directed, verified, and finalized independently by the student analyst.<br>
         <strong>2. Ownership & Academic Notice:</strong> The analysis, models, interpretations, and committee recommendations presented herein are solely the author's work; this application is an educational simulation developed for academic demonstration in FIN 43900 at Purdue University, not personalized investment advice.
     </div>
     """, unsafe_allow_html=True)
@@ -307,8 +307,8 @@ with st.sidebar:
     with st.container(border=True):
         st.caption(
             "Adheres to Federal Reserve SR 26-2 model risk guidelines: "
-            "enforces mathematical input symmetry, discrete known-answer reconciliation, "
-            "and strict point-in-time provenance isolation."
+            "The engine validates correlation inputs. The separate test suite checks known answers. "
+            "Point-in-time handling is a single-snapshot demonstration."
         )
 
 # ------------------------------------------------------------------------------
@@ -392,7 +392,7 @@ with tab1:
             border=True,
         )
         verdict_str = "PASS ✅" if a_audit["overall_pass"] else "FAIL ❌"
-        verdict_delta = "All 6 Covenants Met" if a_audit["overall_pass"] else "Breach Detected"
+        verdict_delta = "Six Implemented Checks Met" if a_audit["overall_pass"] else "Breach Detected"
         m_c4.metric(
             label="Mandate Verdict",
             value=verdict_str,
@@ -537,7 +537,7 @@ with tab1:
                 "Sharpe": f"{res_opt['sharpe']:.2f}",
                 "Reserve Buffer": f"{res_opt['reserve_weight']*100:.1f}%",
                 "Verdict": "PASS ✅",
-                "Fiduciary Breach Diagnosis": "100% Compliant across all 6 covenants; dominates benchmark with -116 bps risk reduction.",
+                "Fiduciary Breach Diagnosis": "Passes the six implemented checks; 116 bps lower volatility than the benchmark (with a lower expected return).",
             },
         ])
         st.dataframe(comp_df, use_container_width=True, hide_index=True)
@@ -633,7 +633,7 @@ with tab1:
 # ==============================================================================
 with tab2:
     st.markdown("### :material/verified: Algorithmic Mandate Audit Ledger (six implemented mandate checks)")
-    st.caption("Under Federal Reserve SR 26-2 model governance, an attractive output cannot be used unless every legal covenant is verified by a strict mathematical gate.")
+    st.caption("Under Federal Reserve SR 26-2 model governance, the six implemented mandate checks are shown here for committee review; they do not replace legal review.")
 
     port_inspect = st.pills(
         "Select Portfolio for Covenant Verification:",
@@ -692,14 +692,14 @@ with tab2:
     if a["breaches"]:
         st.error(f"**Identified Fiduciary Covenant Breaches:**\n• " + "\n• ".join(a["breaches"]))
     else:
-        st.success("All 6 hard legal covenants are fully satisfied with zero exceptions.")
+        st.success("All six implemented mandate checks pass (S9 is unverifiable as written).")
 
 # ==============================================================================
 # TAB 3: POINT-IN-TIME SIGNAL & DATA CARD
 # ==============================================================================
 with tab3:
     st.markdown("### :material/history_toggle_off: Point-in-Time Signal & Fiduciary Data Card (Base Requirement 4)")
-    st.caption("Auditing the macroeconomic inflation driver (CPIAUCSL) under a dual-timestamp coordinate system on ALFRED to eliminate look-ahead bias.")
+    st.caption("Auditing the macroeconomic inflation driver (CPIAUCSL) using a single September 30, 2026 ALFRED vintage snapshot (a demonstration, not a general look-ahead gate).")
 
     pit_cols = st.columns([1.2, 0.8])
     with pit_cols[0].container(border=True):
@@ -738,9 +738,8 @@ with tab3:
 
     with st.container(border=True):
         st.warning(
-            "⚠️ **Fiduciary Quarantine Imposed:** Because BLS seasonal adjustments recalculate the preceding 5 years "
-            "every January, raw `CPIAUCSL` is quarantined for historical backtesting. This app demonstrates the as-of gate on one snapshot "
-            "(decision date 2026-09-30); backtests should use point-in-time vintages or unrevised headline CPI (`CPIAUCNS`). CPI does not feed the optimizer, which uses a fixed 2.50% inflation input."
+            "⚠️ **Point-in-time note:** September 30, 2026 CPI vintage snapshot. The CSV contains observation dates and fixed vintage columns; exact publication dates are discussed as recommended practice, not enforced. "
+            "BLS seasonal adjustments recalculate prior years every January, so backtests should use point-in-time vintages or unrevised headline CPI (`CPIAUCNS`). CPI does not feed the optimizer, which uses a fixed 2.50% inflation input."
         )
 
 # ==============================================================================
