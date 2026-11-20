@@ -29,8 +29,8 @@ Every written deliverable is maintained in GitHub-versioned Markdown in complian
 | **Validation & AI-Use Record** | `projects/project-2/docs/validation-and-ai-use.md` | SR 26-2 model audit, test ledger, AI disposition, and Locked Changed-Input Record | [validation-and-ai-use.md on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/docs/validation-and-ai-use.md) |
 | **Streamlit Web Application** | `projects/project-2/app.py` | Standalone interactive fiduciary allocation, mandate check & stress app | [app.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/app.py) |
 | **Analytical Engine** | `projects/project-2/src/engine.py` | Covariance math, optimization search, stress testing, and Stop Condition | [engine.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/src/engine.py) |
-| **Mandate Verification** | `projects/project-2/src/mandate.py` | Algorithmic covenant checks across all Meridian S1–S10 constraints | [mandate.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/src/mandate.py) |
-| **Point-in-Time Signal** | `projects/project-2/src/point_in_time.py` | Dual timestamp engine ($t_{\text{event}}, t_{\text{pub}}$) and official Data Card | [point_in_time.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/src/point_in_time.py) |
+| **Mandate Verification** | `projects/project-2/src/mandate.py` | Six implemented algorithmic mandate checks (S9 unverifiable as written) | [mandate.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/src/mandate.py) |
+| **Point-in-Time Signal** | `projects/project-2/src/point_in_time.py` | September 30, 2026 CPI vintage snapshot ($t_{\text{event}}, t_{\text{pub}}$ fields) and data card | [point_in_time.py on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/src/point_in_time.py) |
 | **Historical Price Dataset** | `projects/project-2/data/prices.csv` | 5-Year monthly adjusted close prices across ETF universe (BIL, IEF, LQD, VT) | [prices.csv on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/data/prices.csv) |
 | **Point-in-Time Vintage Dataset** | `projects/project-2/data/pit_macro.csv` | CPI vintage snapshot (60-month revision window; 13 revisions detected across 31 rows) | [pit_macro.csv on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/data/pit_macro.csv) |
 | **Dependency Specification** | `projects/project-2/requirements.txt` | Complete execution dependencies for local and cloud environments | [requirements.txt on GitHub](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/requirements.txt) |
@@ -66,10 +66,21 @@ All three videos are Unlisted YouTube links with captions enabled. **Status: All
 | 3 | ~2:10 | Locked Changed-Input Record |
 | 3 | ~2:45 | Reversal triggers and committee ask |
 
+### Caption files (plain text, uploaded to YouTube as "Without timing")
+
+- [video-1-captions.txt](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/submission/captions/video-1-captions.txt)
+- [video-2-captions.txt](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/submission/captions/video-2-captions.txt)
+- [video-3-captions.txt](https://github.com/Dapize-Mo/FIN43900-AI-Finance-Applications/blob/main/projects/project-2/submission/captions/video-3-captions.txt)
+
+### Corrections to the recorded videos
+
+Videos 1 and 3 were not re-recorded. Where a spoken line is broader than the evidence, `docs/validation-and-ai-use.md` Section 7 governs. In short: V1's claim that ALFRED feeds the optimizer is wrong (the optimizer uses a fixed 2.50% inflation input; the CPI audit is separate). V3's lines on publication-date enforcement and automatic de-risking are broader than the demo: it shows one snapshot, and the engine flags a stop while the 50% cap and Treasury fallback are proposed committee actions. V2 Test 8 checks 9.30% in the memo, 12.70% in the validation record, and 12.00% in both.
+
 ### Access confirmation
 
 - [x] GitHub repository is public (verified).
-- [x] Each video opened logged out / incognito and played (checked Nov 19, 2026).
+- [x] Videos 1 and 3 opened logged out / incognito and played (checked Nov 19, 2026).
+- [ ] Replacement Video 2 (https://youtu.be/mBZEseHDXXk) opened logged out and played.
 - [ ] Same `.md` files attached to Brightspace.
 
 ---
@@ -79,7 +90,8 @@ All three videos are Unlisted YouTube links with captions enabled. **Status: All
 - [x] A stranger can clone the repo and execute `streamlit run app.py` from the README without error.
 - [x] Mandatory AI and Educational disclaimers open README, Decision Memo, and all video scripts.
 - [x] Decision Memo, Validation Record, and Live App report identical numbers (Return: 6.50%, Vol: 9.30%, Res: 8.0%).
-- [ ] Locked Changed-Input Record with AI-off prediction committed to Git before the run (LCIR-001 and LCIR-002; LCIR-002 prediction committed before the run).
+- [ ] LCIR-001: AI-off prediction committed to Git before the run (earlier freeze not independently verified).
+- [x] LCIR-002: prediction and result committed as separate commits (prediction before the run).
 - [x] Point-in-time data card documents dual timestamps, publication lags, and revision risk.
 - [x] No private API keys, passwords, or personal credentials committed to Git.
 

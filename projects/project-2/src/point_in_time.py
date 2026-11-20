@@ -35,11 +35,12 @@ PIT_DATA_CARD: Dict[str, Any] = {
         "High. Using modern finalized data retrospectively attributes future inflation revisions "
         "and unreleased month prints to historical trading days, falsely depressing measured tracking error."
     ),
-    "fiduciary_disposition": "CONDITIONAL ADMISSION (QUARANTINE ENFORCED)",
+    "fiduciary_disposition": "SNAPSHOT DEMONSTRATION (RECOMMENDED PRACTICE; NOT A GENERAL ENFORCED GATE)",
     "admission_protocol": (
-        "Admitted for strategy execution and mandate verification ONLY when vintage date "
-        "is strictly <= trade execution date (ALFRED point-in-time query), or by substituting "
-        "the unrevised non-seasonally adjusted index (CPIAUCNS)."
+        "Recommended practice: use only values whose vintage date is <= the decision date "
+        "(ALFRED point-in-time query), or the unrevised non-seasonally adjusted index (CPIAUCNS). "
+        "This app demonstrates the rule on one snapshot (decision date 2026-09-30); it does not "
+        "enforce a publication-date gate across all observations, and CPI does not feed the optimizer."
     ),
     "empirical_evidence_lab17": {
         "test_vintage": "2026-09-30",

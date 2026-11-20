@@ -632,7 +632,7 @@ with tab1:
 # TAB 2: DETAILED MANDATE COVENANT AUDIT
 # ==============================================================================
 with tab2:
-    st.markdown("### :material/verified: Algorithmic Mandate Audit Ledger (Meridian Facts S1–S10)")
+    st.markdown("### :material/verified: Algorithmic Mandate Audit Ledger (six implemented mandate checks)")
     st.caption("Under Federal Reserve SR 26-2 model governance, an attractive output cannot be used unless every legal covenant is verified by a strict mathematical gate.")
 
     port_inspect = st.pills(
@@ -644,7 +644,7 @@ with tab2:
     a = active_audit_res["audit"]
 
     verdict_badge = (
-        '<span class="badge-pass">MANDATE VERDICT: PASS ✅</span>'
+        '<span class="badge-pass">PASSES THE SIX IMPLEMENTED MANDATE CHECKS ✅</span>'
         if a["overall_pass"]
         else '<span class="badge-fail">MANDATE VERDICT: FAIL ❌</span>'
     )
@@ -819,7 +819,7 @@ with tab4:
     with stress_cols[1].container(border=True):
         st.markdown("#### :material/health_and_safety: Process Feasibility & Kill Rule Verdict")
         if stress_result["is_killed"]:
-            st.error(f"🛑 **PROCESS STOPPED — KILL RULE TRIGGERED**\n\n{stress_result['kill_reason']}")
+            st.error(f"🛑 **STOP FLAGGED — COMMITTEE ACTION REQUIRED**\n\n{stress_result['kill_reason'].replace('3.0% reserve buffer', f'{reserve_floor_pct:.1f}% reserve buffer')}")
         else:
             st.success(f"🟢 **PROCESS FEASIBLE WITHIN TOLERANCES**\n\n{stress_result['kill_reason']}")
 
@@ -836,11 +836,13 @@ with tab4:
 
     with st.container(border=True):
         st.markdown("""
-        #### 🛡️ Institutional Kill Condition Specification (SR 26-2)
-        The Meridian Foundation governance rules establish an automatic **DE-RISKING / KILL RULE** under three conditions:
-        1. **Infeasible Optimization:** If macroeconomic shocks prevent achieving 6.50% net return at the 3.0% reserve buffer, optimization halts.
-        2. **Risk Ceiling Breach:** If portfolio volatility exceeds **12.00%**, manager discretion is stripped and equity weight is capped at 50%.
-        3. **Performance Drawdown:** If trailing 12-month real return falls below CPI + 1.0% for two consecutive quarters, capital is locked into short Treasuries.
+        #### 🛡️ Stop Conditions Implemented in This Engine (SR 26-2)
+        The engine **flags a stop** for the committee when any of these is true under the tested inputs:
+        1. **Infeasible optimization:** no allocation meets the 6.50% net return hurdle at the selected reserve floor.
+        2. **Risk ceiling breach:** portfolio volatility exceeds **12.00%**.
+        3. **Return below hurdle:** the best feasible net return falls below 6.50%.
+
+        **Proposed committee actions (not executed by this app):** capping equity at 50% after a volatility stop, and moving capital into short Treasuries after a trailing-return trigger. The engine does not carry out either action and does not evaluate the trailing 12-month real-return trigger (CPI + 1.0% for two consecutive quarters).
         """)
 
 # ==============================================================================

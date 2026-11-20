@@ -42,7 +42,7 @@ Federal Reserve SR 26-2 provides the professional standard for assessing whether
 - **Known-Answer Reconciliation:** Evaluated three simple baselines against published course anchors:
   - *Baseline 1 (Equal Weight):* Expected return 5.20%, Volatility 5.21%, Reserve Buffer 50.0% -> **FAILS return hurdle**.
   - *Baseline 2 (Policy Benchmark):* Expected return 6.80%, Volatility 10.46%, Reserve Buffer 0.0% -> **FAILS reserve buffer**.
-  - *Constrained Optimal Portfolio:* Expected return 6.50%, Volatility 9.30%, Reserve Buffer 8.0% -> **PASSES all rules**.
+  - *Constrained Optimal Portfolio:* Expected return 6.50%, Volatility 9.30%, Reserve Buffer 8.0% -> **passes the six implemented mandate checks**.
 - **Efficiency Dominance:** The Constrained Optimal Portfolio achieves lower volatility (9.30%) than the Policy Benchmark (10.46%) while unlocking $8.0M in legal liquidity.
 
 ### C. Ongoing Monitoring & Point-in-Time Data Governance
@@ -183,7 +183,7 @@ Automated programmatic unit checks verified the analytical engine before deploym
 | **TEST-05** | `test_05_kill_rule` | -100 bps equity shock; base case | Kill at 12.70%; no kill at base | Matches | **PASS** |
 | **TEST-06** | `test_06_mandate_consistency` | Optimal, benchmark, equal weight | Optimal PASS; the other two fail on reserve | Matches | **PASS** |
 | **TEST-07** | `test_07_flip_test` | 0, 50 and 100 bps shocks | Kill off at 0 bps, on at 100 bps | Matches | **PASS** |
-| **TEST-08** | `test_08_doc_engine_concordance` | Engine volatilities vs. text of the memo and this record | Engine's 9.30% and 12.70%, and "12.00%", appear in the docs (string presence check only) | Matches | **PASS** |
+| **TEST-08** | `test_08_doc_engine_concordance` | Engine volatilities vs. text of the memo and this record | 9.30% appears in the memo, 12.70% in this record, and "12.00%" in both (string presence check only) | Matches | **PASS** |
 | **TEST-09** | `test_09_window_and_constraint_stress` | 12-60 month window; reserve floor 3-12% | Runs; floor raises sovereign weight | Matches | **PASS** |
 
 The ALFRED as-of demonstration (decision date 2026-09-30) is shown in the app's Point-in-Time tab; it is not part of this suite. Run the suite with `python tests/test_known_answers.py` (prints `PASS` per test, then `All tests passed`).
@@ -214,6 +214,9 @@ The ALFRED as-of demonstration (decision date 2026-09-30) is shown in the app's 
 The transcripts in `submission/transcripts/` are the prepared scripts; YouTube's captions are the verbatim record. Where a spoken line is broader than the evidence, this record governs:
 
 1. **CPI revisions (V1-V3):** "about 60 months revised" means a 60-month potential revision window. The vintage comparison detects 13 revisions across 31 rows (Section 2C).
-2. **Test 8 (V2):** it checks that key engine figures (9.30%, 12.70%, 12.00%) appear in the memo and this record; it does not compare every number.
+2. **Test 8 (V2):** it checks that 9.30% appears in the memo, 12.70% appears in this record, and 12.00% appears in both; it does not compare every number.
 3. **LCIR-002 (V3):** the app's Locked tab carries a compact LCIR-002 summary; the full record is Section 3B.
 4. **Mandate checks:** "all checks pass" means the six implemented mandate checks, not every S1-S10 fact (S9 is unverifiable as written).
+5. **ALFRED and the optimizer (V1):** any line suggesting ALFRED/CPI data feeds the optimization is corrected here. The CPI vintage audit is a separate check; the optimizer uses a fixed 2.50% inflation input.
+6. **Publication-date enforcement (V3):** the app demonstrates the as-of rule on one snapshot (decision date 2026-09-30). It has no general publication-date gate across observations.
+7. **Kill rule and de-risking (V3):** the engine flags a stop (volatility above 12.00%, infeasible optimization, or return below 6.50%) for the committee to act on. Capping equity at 50% and moving to short Treasuries are proposed committee actions, not behavior the engine or app executes. The trailing 12-month real-return trigger is not evaluated.

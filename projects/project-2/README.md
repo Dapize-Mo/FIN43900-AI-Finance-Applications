@@ -49,7 +49,7 @@ streamlit run app.py
 | :--- | :--- | :--- |
 | **1. The App Runs** | [`app.py`](app.py) via Streamlit | Standalone multi-tab institutional dashboard runnable cold |
 | **2. Mandate** | [`src/mandate.py`](src/mandate.py) | $100M reserve, 3.0% reserve-eligible buffer floor, 6.50% net hurdle |
-| **3. Two Baselines & Portfolio** | `app.py` (Tab 1 & 2) & [`src/engine.py`](src/engine.py) | **Equal Weight** (Fails Return), **Benchmark** (Fails Buffer), **Constrained Optimal** (PASSES ALL) |
+| **3. Two Baselines & Portfolio** | `app.py` (Tab 1 & 2) & [`src/engine.py`](src/engine.py) | **Equal Weight** (Fails Return), **Benchmark** (Fails Buffer), **Constrained Optimal** (passes the six implemented mandate checks) |
 | **4. Point-in-Time Signal** | [`src/point_in_time.py`](src/point_in_time.py) & `data/pit_macro.csv` | ALFRED CPI vintage snapshot audit (13 revisions detected across 31 rows; 60 months is the potential window) + Data Card |
 | **5. Stress Run & Kill Condition** | `app.py` (Tab 4) & [`src/engine.py`](src/engine.py) | Return shocks, credit spread widening, and volatility stop rule (> 12.00%) |
 | **6. Locked Changed-Input Record** | [`docs/validation-and-ai-use.md`](docs/validation-and-ai-use.md) | Pre-run AI-off predictions: LCIR-001 (equity -100 bps, first commit `44ed6cf`) and LCIR-002 (+50 bps credit haircut, prediction commit `fd80e67`) |
@@ -91,8 +91,8 @@ projects/project-2/
 1. **Benchmark Covenant Breach:** The Meridian Foundation's policy benchmark (60% Global Equity `VT` / 40% IG Corporate Bonds `LQD`) holds **zero sovereign liquidity**, breaching the legal requirement to hold 12 months of quarterly spending ($3.0M / 3.0%) in U.S. Treasury bills or notes.
 2. **Equal Weight Return Drag:** The transparent Equal Weight baseline ($25\%$ per sleeve) holds ample liquidity ($50\%$), but generates only **5.20% net return**, falling 130 bps short of the CPI + 4.0% (**6.50%**) purchasing power hurdle.
 3. **The Constrained Solution:** The Constrained Optimal Portfolio allocates **52% VT, 40% LQD, 8% IEF, and 0% BIL**, achieving:
-   - **Net Return:** 6.50% (exactly meeting the hurdle net of costs)
+   - **Net Return:** 6.504% at zero modeled trading cost (0.4 bp above the 6.50% hurdle)
    - **Annualized Volatility:** 9.30% (a 116 bps risk reduction vs. benchmark's 10.46%)
    - **Reserve Buffer:** 8.0% ($8.0M; a 2.67x coverage ratio over the required 12-month spending floor)
-   - **Mandate Verdict:** **100% PASS** on all legal and investment constraints.
+   - **Mandate Verdict:** Passes the six implemented mandate checks (S9 is unverifiable as written).
 
