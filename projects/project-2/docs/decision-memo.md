@@ -47,6 +47,7 @@ The engine stresses returns, credit spreads, correlations, costs, the estimation
 ## 4. Committee Ask and Reversal Triggers
 
 The Committee is asked to (1) approve rebalancing the $100M to the targets above, (2) sweep excess cash quarterly into `BIL`/`IEF` to keep the $3.0M buffer, and (3) reconvene if any of these occurs:
+
 - Rolling 12-month net real return is below CPI + 1.0% for two consecutive quarters.
 - The 10-year Treasury yield falls below 3.0%.
 - Annual tracking error versus the 60/40 benchmark exceeds 250 bps.
